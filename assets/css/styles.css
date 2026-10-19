@@ -771,3 +771,15 @@ body.menu-open { overflow: hidden; }
 .form-grid > *, .mini-form__row > * { min-width: 0; }
 .field input[type="date"] { min-width: 0; padding-inline: 10px; }
 @media (max-width: 379.98px) { .form-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Logo sits directly on the midnight surfaces (no ivory tag) */
+.brand, .site-header.is-scrolled .brand { align-self: center; background: none; box-shadow: none; padding: 0; }
+.brand img { width: 120px; }
+.site-header.is-scrolled .brand img { width: 108px; }
+.footer__logo { background: none; padding: 0; }
+@media (min-width: 640px) and (max-width: 1023.98px) { .brand img { width: 136px; } }
+@media (min-width: 1024px) {
+  .brand, .site-header.is-scrolled .brand { padding: 0; }
+  .brand img { width: 156px; }
+  .site-header.is-scrolled .brand img { width: 128px; }
+}
