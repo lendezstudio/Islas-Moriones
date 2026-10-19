@@ -783,3 +783,4 @@ body.menu-open { overflow: hidden; }
   .brand img { width: 156px; }
   .site-header.is-scrolled .brand img { width: 128px; }
 }
+.footer__brand p { color: #fff; }

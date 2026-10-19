@@ -57,3 +57,18 @@ $gableMark = [ImageTools]::CropArgb($alpha, $gable)
 [ImageTools]::SaveIcon($gableMark, (Join-Path $root 'favicon-32.png'), 32, $ivory, 0.06, $true)
 [ImageTools]::SaveIcon($gableMark, (Join-Path $root 'favicon-48.png'), 48, $ivory, 0.08, $true)
 "favicon done"
+
+# White (reversed) logo for dark backgrounds: same shape and alpha, every pixel white.
+foreach ($w in 380, 760) {
+  $srcPng = Join-Path $out $(if ($w -eq 380) { 'logo-islas-moriones-380.png' } else { 'logo-islas-moriones.png' })
+  $bmp = [System.Drawing.Bitmap]::FromFile($srcPng)
+  $wb = New-Object System.Drawing.Bitmap $bmp.Width, $bmp.Height, ([System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+  for ($y = 0; $y -lt $bmp.Height; $y++) { for ($x = 0; $x -lt $bmp.Width; $x++) {
+    $a = $bmp.GetPixel($x, $y).A
+    $wb.SetPixel($x, $y, [System.Drawing.Color]::FromArgb($a, 255, 255, 255))
+  } }
+  $bmp.Dispose()
+  $wb.Save((Join-Path $out ("logo-islas-moriones-white-$w.png")), [System.Drawing.Imaging.ImageFormat]::Png)
+  $wb.Dispose()
+}
+"white logo done"
