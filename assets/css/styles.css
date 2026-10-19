@@ -784,3 +784,38 @@ body.menu-open { overflow: hidden; }
   .site-header.is-scrolled .brand img { width: 128px; }
 }
 .footer__brand p { color: #fff; }
+.feature--c .frame { aspect-ratio: 1 / 1; }
+
+/* Kubo photos: show the whole hut (natural ratio), captions below the photo */
+.frame--kubo { aspect-ratio: 936 / 856; }
+.intro__media { align-items: start; }
+.intro__media .frame { overflow: visible; background: none; }
+.intro__media .frame img { display: block; }
+.intro__media .frame--kubo img { aspect-ratio: 936 / 856; }
+.intro__media .frame--offset img { aspect-ratio: 4 / 5; }
+.intro__media .frame--kubo, .intro__media .frame--offset { aspect-ratio: auto; }
+.intro__media .frame figcaption { position: static; padding: 10px 0 0; background: none; }
+.intro__media .frame--offset { margin-top: 18%; }
+.kubo__main { width: 86%; }
+.kubo__inset { width: 36%; }
+.kubo__media { padding-bottom: 28%; }
+
+/* ---------- Slideshow controls as an overlay on the photo ---------- */
+.hero__media .carousel-controls {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 4;
+  margin: 0; border: 0; animation: none;
+  padding: 56px var(--gutter) 18px;
+  background: linear-gradient(to top, rgba(8,15,26,.85), rgba(8,15,26,.55) 55%, rgba(8,15,26,0));
+  opacity: 0; transform: translateY(12px); pointer-events: none;
+  transition: opacity .45s var(--ease-out), transform .55s var(--ease-out);
+}
+.hero__media .carousel-controls.is-visible,
+.hero__media .carousel-controls:has(:focus-visible) { opacity: 1; transform: none; pointer-events: auto; }
+.hero__media .carousel-controls__caption { color: rgba(255,255,255,.85); }
+.hero__media .carousel-controls .icon-btn { background: rgba(11,22,38,.45); border-color: rgba(238,232,218,.35); }
+.hero__media .carousel-controls .icon-btn:hover { background: rgba(11,22,38,.7); }
+/* Thin progress line stays visible along the photo's bottom edge */
+.hero__media .carousel-controls__progress { position: absolute; left: 0; right: 0; bottom: 0; top: auto; height: 2px; z-index: 5; background: rgba(238,232,218,.18); }
+@media (min-width: 1024px) {
+  .hero__media .carousel-controls { padding: 72px clamp(24px, 3vw, 48px) 28px; }
+}

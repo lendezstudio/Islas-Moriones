@@ -109,7 +109,7 @@
     var elTotal = $('[data-total]', controls);
     var elCaption = $('[data-caption]', controls);
     var captionWrap = $('.carousel-controls__caption', controls);
-    var bar = $('.carousel-controls__progress span', controls);
+    var bar = $('.carousel-controls__progress span', media);
     var track = $('.carousel__track', media);
 
     var DURATION = 6500;
@@ -196,7 +196,19 @@
       else if (e.key === 'ArrowRight') { e.preventDefault(); go(index + 1); }
     }
     media.addEventListener('keydown', onKey);
-    controls.addEventListener('keydown', onKey);
+
+    // Controls overlay: hidden until the viewer taps the photo (or moves the mouse over it),
+    // then visible for 3 seconds after the last interaction. Keyboard focus keeps it visible (CSS).
+    var hideTimer;
+    function revealControls() {
+      controls.classList.add('is-visible');
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(function () { controls.classList.remove('is-visible'); }, 3000);
+    }
+    media.addEventListener('click', revealControls);
+    media.addEventListener('pointermove', function (e) { if (e.pointerType === 'mouse') revealControls(); });
+    media.addEventListener('touchend', revealControls, { passive: true });
+    media.addEventListener('focusin', revealControls);
 
     // Touch swipe (vertical scrolling stays native via touch-action: pan-y)
     onSwipe(media, function (dir) { go(index + dir); }, function (active) {
