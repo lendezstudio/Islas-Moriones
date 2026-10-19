@@ -819,3 +819,4 @@ body.menu-open { overflow: hidden; }
 @media (min-width: 1024px) {
   .hero__media .carousel-controls { padding: 72px clamp(24px, 3vw, 48px) 28px; }
 }
+.hero__media.carousel:focus-visible .carousel-controls { opacity: 1; transform: none; pointer-events: auto; }

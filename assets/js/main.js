@@ -184,11 +184,16 @@
     });
 
     // Pause while a visitor is looking closely at the photo or using the controls.
-    [media, controls].forEach(function (el) {
-      el.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') hold('hover', true); });
-      el.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') hold('hover', false); });
+    // Only the control buttons pause on hover (the photo itself is large and often under the cursor),
+    // and only keyboard focus pauses; a tap or click on the photo must not stop autoplay.
+    var buttonsEl = $('.carousel-controls__buttons', controls);
+    buttonsEl.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') hold('hover', true); });
+    buttonsEl.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') hold('hover', false); });
+    media.addEventListener('focusin', function (e) {
+      var kb = false;
+      try { kb = e.target.matches(':focus-visible'); } catch (err) { kb = false; }
+      hold('focus', kb);
     });
-    media.addEventListener('focusin', function () { hold('focus', true); });
     media.addEventListener('focusout', function () { hold('focus', false); });
 
     function onKey(e) {
@@ -203,7 +208,7 @@
     function revealControls() {
       controls.classList.add('is-visible');
       clearTimeout(hideTimer);
-      hideTimer = setTimeout(function () { controls.classList.remove('is-visible'); }, 3000);
+      hideTimer = setTimeout(function () { controls.classList.remove('is-visible'); hold('hover', false); }, 3000);
     }
     media.addEventListener('click', revealControls);
     media.addEventListener('pointermove', function (e) { if (e.pointerType === 'mouse') revealControls(); });
