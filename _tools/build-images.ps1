@@ -71,6 +71,16 @@ $jobs = @(
   'boat-st-longinus|IMG_5191|519,350,401,402|401'
   'boat-omon-express|IMG_5191|996,350,401,402|401'
   'morion-reef-raft|IMG_5193|610,1075,365,270|365'
+  # Activity photos from the client's "Paid amenities & activities" sheet (IMG_5180)
+  'act-bikes|IMG_5180|114,232,229,218|229'
+  'act-kayak|IMG_5180|424,232,229,218|229'
+  'act-ecart|IMG_5180|732,232,229,218|229'
+  'act-karaoke|IMG_5180|114,555,229,218|229'
+  'act-massage|IMG_5180|424,555,229,218|229'
+  'act-laundry|IMG_5180|114,877,229,219|229'
+  'act-snorkel|IMG_5180|424,877,229,219|229'
+  # The resort's rental van (frame and logo cropped out)
+  'van|469332244|400,64,1446,926|720,1100'
   # The resort's own guides and menus, shown whole in the lightbox (no crop)
   'guide-commute|IMG_5188||1073'
   'guide-drive|IMG_5189||1143'

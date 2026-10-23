@@ -40,8 +40,8 @@
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    var links = $$('.primary-nav a');
-    if ('IntersectionObserver' in window) {
+    var links = $$('.primary-nav a').filter(function (a) { return a.getAttribute('href').charAt(0) === '#'; });
+    if (links.length && 'IntersectionObserver' in window) {
       var map = {};
       links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
       var io = new IntersectionObserver(function (entries) {
@@ -254,7 +254,7 @@
     var buttons = $$('[data-gallery-filter]');
     var moreWrap = $('.gallery__more');
     var moreBtn = $('[data-gallery-more]');
-    var INITIAL = 12, filter = 'all', expanded = false;
+    var INITIAL = 12, filter = 'all', expanded = !moreBtn;
 
     function matches(el) { return filter === 'all' || el.getAttribute('data-cat') === filter; }
     function visible(el) { return matches(el) && (filter !== 'all' || expanded || items.indexOf(el) < INITIAL); }
@@ -272,7 +272,7 @@
           apply(true);
         });
       });
-      moreBtn.addEventListener('click', function () {
+      if (moreBtn) moreBtn.addEventListener('click', function () {
         expanded = true; apply(true);
         var firstNew = items[INITIAL];
         if (firstNew) setTimeout(function () { var b = $('button', firstNew); if (b) b.focus({ preventScroll: true }); }, 400);
@@ -379,9 +379,9 @@
   function initMobileCta() {
     var cta = $('[data-mobile-cta]');
     if (!cta || !('IntersectionObserver' in window)) return;
-    var state = { hero: true, contact: false, footer: false };
+    var state = { hero: !!$('.hero'), contact: false, footer: false };
     var update = function () { cta.classList.toggle('is-visible', !state.hero && !state.contact && !state.footer); };
-    [['.hero', 'hero'], ['#contact', 'contact'], ['.site-footer', 'footer']].forEach(function (p) {
+    [['.hero', 'hero'], ['#contact, #book', 'contact'], ['.site-footer', 'footer']].forEach(function (p) {
       var el = $(p[0]);
       if (el) new IntersectionObserver(function (en) { state[p[1]] = en[0].isIntersecting; update(); }).observe(el);
     });
