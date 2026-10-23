@@ -963,3 +963,8 @@ body { font-weight: 400; letter-spacing: .005em; }
 .flow-hero__title { text-shadow: 0 2px 24px rgba(0,15,25,.45); }
 .flow-hero__place { text-shadow: 0 1px 3px rgba(0,10,20,.8), 0 0 18px rgba(0,10,20,.6); }
 @media (max-width: 699.98px) { .flow-hero__shade { background: linear-gradient(to bottom, rgba(6,18,28,.55), rgba(6,18,28,.15) 45%, rgba(6,18,28,0) 55%), linear-gradient(to top, rgba(6,18,28,.72), rgba(6,18,28,0) 55%); } }
+
+/* Dining duo: show the whole photos (natural tall shape), smaller frames */
+.duo { max-width: 880px; margin-inline: auto; }
+.duo__item img { aspect-ratio: 2 / 3; }
+.duo__item:first-child img { object-position: 50% 50%; }
