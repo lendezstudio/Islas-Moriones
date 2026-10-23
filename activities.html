@@ -27,7 +27,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/main.js" defer></script>
 </head>
@@ -124,26 +124,56 @@
       </div>
     </section>
 
-    <section class="page-block page-block--light" aria-label="Included and optional activities">
-      <div class="wrap activities">
+    <section class="page-block page-block--light" aria-labelledby="included-title">
+      <div class="wrap split">
+        <figure class="split__photo" data-reveal style="--pos: 50% 50%">
+          <img src="assets/img/bonfire-circle-936.jpg" srcset="assets/img/bonfire-circle-560.jpg 560w, assets/img/bonfire-circle-936.jpg 936w" sizes="(min-width: 900px) 46vw, 92vw" width="936" height="856" loading="lazy" decoding="async" alt="Timber benches around the bonfire pit on the lawn under coconut palms">
+        </figure>
         <div data-reveal>
-          <h2 class="display-caps section-title">Enjoy more of your stay.</h2>
-          <p>Included for staying guests:</p>
+          <p class="label label--caps">Included for staying guests</p>
+          <h2 class="display-caps" id="included-title">Enjoy more of your stay.</h2>
           <ul class="tick-list">
             <li>Swimming pool</li><li>Beach volleyball</li><li>Bamboo raft</li><li>Bonfire</li><li>Badminton</li><li>Ping-pong</li><li>Darts</li>
           </ul>
-          <figure class="activities__photo" style="--pos: 50% 50%"><img src="assets/img/bonfire-circle-936.jpg" width="936" height="856" loading="lazy" decoding="async" alt="Timber benches around the bonfire pit on the lawn under coconut palms"></figure>
         </div>
-        <div data-reveal>
-          <h2 class="display-caps section-title">Explore a little further.</h2>
+      </div>
+    </section>
+
+    <section class="page-block" aria-labelledby="further-title">
+      <div class="wrap">
+        <div class="section-head-flow section-head-flow--center" data-reveal>
+          <p class="label label--caps">Optional activities</p>
+          <h2 class="display-caps" id="further-title">Explore a little further.</h2>
           <p>Ask about clear kayaks, snorkelling equipment, mountain bikes, e-cart tours, and other activities available during your visit.</p>
-          <ul class="extras extras--4">
-            <li><img src="assets/img/act-kayak-229.jpg" width="229" height="218" loading="lazy" decoding="async" alt="Two clear kayaks with black seats on the sand"><span>Clear kayaks</span></li>
-            <li><img src="assets/img/act-snorkel-229.jpg" width="229" height="219" loading="lazy" decoding="async" alt="A snorkel, mask and a pair of fins on gravel"><span>Snorkelling equipment</span></li>
-            <li><img src="assets/img/act-bikes-229.jpg" width="229" height="218" loading="lazy" decoding="async" alt="A mountain bike parked on rocks by the sea"><span>Mountain bikes</span></li>
-            <li><img src="assets/img/act-ecart-229.jpg" width="229" height="218" loading="lazy" decoding="async" alt="An open-sided electric cart by a seawall"><span>E-cart land tours</span></li>
-          </ul>
-          <p class="note">Also available on request: in-room massage, karaoke and laundry service. Additional charges apply to optional activities.</p>
+        </div>
+        <div class="mosaic">
+          <figure class="mosaic__item mosaic__item--a" data-reveal style="--pos: 40% 55%">
+            <div class="mosaic__img"><img src="assets/img/exp-kayak-800.jpg" srcset="assets/img/exp-kayak-800.jpg 800w, assets/img/exp-kayak-1400.jpg 1400w" sizes="(min-width: 900px) 56vw, 92vw" width="1400" height="933" loading="lazy" decoding="async" alt="A paddler in an orange kayak on calm green sea water"></div>
+            <figcaption><span class="mosaic__name">Kayaking</span> Paddle out from the beach, with a rowing guide if you’d like one.</figcaption>
+          </figure>
+          <figure class="mosaic__item mosaic__item--b" data-reveal style="--pos: 50% 30%">
+            <div class="mosaic__img"><img src="assets/img/exp-snorkel-700.jpg" srcset="assets/img/exp-snorkel-700.jpg 700w, assets/img/exp-snorkel-1200.jpg 1200w" sizes="(min-width: 900px) 38vw, 92vw" width="1200" height="1500" loading="lazy" decoding="async" alt="A snorkeller swimming underwater through clear blue water"></div>
+            <figcaption><span class="mosaic__name">Snorkelling</span> Masks, snorkels and fins are available to borrow.</figcaption>
+          </figure>
+          <figure class="mosaic__item mosaic__item--c" data-reveal style="--pos: 55% 50%">
+            <div class="mosaic__img"><img src="assets/img/exp-bike-700.jpg" srcset="assets/img/exp-bike-700.jpg 700w, assets/img/exp-bike-1200.jpg 1200w" sizes="(min-width: 900px) 38vw, 92vw" width="1200" height="1600" loading="lazy" decoding="async" alt="A cyclist in a helmet resting on a mountain bike on a grassy hilltop"></div>
+            <figcaption><span class="mosaic__name">Mountain Biking</span> Ride around Maniwaya, or join a guide or an e-cart land tour.</figcaption>
+          </figure>
+          <figure class="mosaic__item mosaic__item--d" data-reveal style="--pos: 60% 50%">
+            <div class="mosaic__img"><img src="assets/img/exp-massage-800.jpg" srcset="assets/img/exp-massage-800.jpg 800w, assets/img/exp-massage-1400.jpg 1400w" sizes="(min-width: 900px) 56vw, 92vw" width="1400" height="933" loading="lazy" decoding="async" alt="Hands giving a relaxing back massage to a guest lying under a white towel"></div>
+            <figcaption><span class="mosaic__name">In-room Massage</span> Unwind after a day outdoors, in the comfort of your room.</figcaption>
+          </figure>
+          <figure class="mosaic__item mosaic__item--e" data-reveal style="--pos: 35% 50%">
+            <div class="mosaic__img"><img src="assets/img/exp-karaoke-800.jpg" srcset="assets/img/exp-karaoke-800.jpg 800w, assets/img/exp-karaoke-1400.jpg 1400w" sizes="(min-width: 900px) 56vw, 92vw" width="1400" height="788" loading="lazy" decoding="async" alt="A microphone lit in purple stage light"></div>
+            <figcaption><span class="mosaic__name">Karaoke</span> A night in with your group and a few favourite songs.</figcaption>
+          </figure>
+          <figure class="mosaic__item mosaic__item--f" data-reveal style="--pos: 45% 50%">
+            <div class="mosaic__img"><img src="assets/img/exp-laundry-800.jpg" srcset="assets/img/exp-laundry-800.jpg 800w, assets/img/exp-laundry-1400.jpg 1400w" sizes="(min-width: 900px) 38vw, 92vw" width="1400" height="933" loading="lazy" decoding="async" alt="A man loading white linen into a front-loading machine"></div>
+            <figcaption><span class="mosaic__name">Laundry Service</span> For longer stays, so you can pack light.</figcaption>
+          </figure>
+        </div>
+        <div class="mosaic__foot" data-reveal>
+          <p class="note">Additional charges apply to optional activities. Photos are illustrative.</p>
           <p class="coming"><span>In progress</span> Pickleball court under development.</p>
         </div>
       </div>
@@ -164,7 +194,7 @@
   <footer class="site-footer">
     <div class="footer__inner">
       <a class="footer__badge" href="index.html" aria-label="Islas Moriones Beach Resort, home">
-        <img src="assets/brand/logo-islas-moriones-teal-380.png" srcset="assets/brand/logo-islas-moriones-teal-380.png 380w, assets/brand/logo-islas-moriones-teal-760.png 760w" sizes="150px" width="380" height="165" loading="lazy" alt="Islas Moriones Beach Resort, Marinduque">
+        <img src="assets/brand/logo-islas-moriones-white-380.png" srcset="assets/brand/logo-islas-moriones-white-380.png 380w, assets/brand/logo-islas-moriones-white-760.png 760w" sizes="150px" width="380" height="165" loading="lazy" alt="Islas Moriones Beach Resort, Marinduque">
       </a>
       <div class="footer__main">
         <p class="footer__name">Islas Moriones Beach Resort<br><span>Maniwaya Island, Santa Cruz, Marinduque, Philippines</span></p>

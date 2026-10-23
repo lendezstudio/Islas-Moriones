@@ -81,12 +81,19 @@ $jobs = @(
   'act-snorkel|IMG_5180|424,877,229,219|229'
   # The resort's rental van (frame and logo cropped out)
   'van|469332244|400,64,1446,926|720,1100'
+  # Illustrative activity photos supplied by the client (Pexels, Initial Images/Activities)
+  'exp-kayak|pexels-efrem||800,1400'
+  'exp-bike|pexels-enrico||700,1200'
+  'exp-snorkel|pexels-jess||700,1200'
+  'exp-karaoke|pexels-karla||800,1400'
+  'exp-laundry|pexels-tima-miroshnichenko-8774531||800,1400'
+  'exp-massage|pexels-tommaso||800,1400'
   # The resort's own guides and menus, shown whole in the lightbox (no crop)
   'guide-commute|IMG_5188||1073'
   'guide-drive|IMG_5189||1143'
 )
 
-$files = @(Get-ChildItem $in -File) + @(Get-ChildItem (Join-Path $root 'Assets from Client') -File)
+$files = @(Get-ChildItem $in -File) + @(Get-ChildItem (Join-Path $root 'Assets from Client') -File) + @(Get-ChildItem (Join-Path $in 'Activities') -File)
 foreach ($j in $jobs) {
   $id, $prefix, $crop, $widths = $j.Split('|')
   $file = $files | Where-Object { $_.Name.StartsWith($prefix) } | Select-Object -First 1
