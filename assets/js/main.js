@@ -379,19 +379,42 @@
   function initMobileCta() {
     var cta = $('[data-mobile-cta]');
     if (!cta || !('IntersectionObserver' in window)) return;
-    var state = { hero: !!$('.hero'), contact: false, footer: false };
+    var state = { hero: !!$('.hero, .flow-hero'), contact: false, footer: false };
     var update = function () { cta.classList.toggle('is-visible', !state.hero && !state.contact && !state.footer); };
-    [['.hero', 'hero'], ['#contact, #book', 'contact'], ['.site-footer', 'footer']].forEach(function (p) {
+    [['.hero, .flow-hero', 'hero'], ['#contact, #book', 'contact'], ['.site-footer', 'footer']].forEach(function (p) {
       var el = $(p[0]);
       if (el) new IntersectionObserver(function (en) { state[p[1]] = en[0].isIntersecting; update(); }).observe(el);
     });
+  }
+
+  /* ---------- Horizontal photo strip (native swipe; arrows on wider screens) ---------- */
+  function initStrip() {
+    var track = $('[data-strip]');
+    if (!track) return;
+    var prev = $('[data-strip-prev]'), next = $('[data-strip-next]');
+    function update() {
+      var max = track.scrollWidth - track.clientWidth - 2;
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= max;
+    }
+    function go(dir) { track.scrollBy({ left: dir * track.clientWidth * 0.8, behavior: reduceMotion() ? 'auto' : 'smooth' }); }
+    prev.addEventListener('click', function () { go(-1); });
+    next.addEventListener('click', function () { go(1); });
+    track.addEventListener('scroll', update, { passive: true });
+    track.addEventListener('keydown', function (e) {
+      if (e.target !== track) return;
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+    });
+    window.addEventListener('resize', update);
+    update();
   }
 
   function initYear() { var y = $('[data-year]'); if (y) y.textContent = String(new Date().getFullYear()); }
 
   function start() {
     try { initReveals(); } catch (err) { root.classList.remove('js-anim'); }
-    [initHeader, initCarousel, initTabs, initGallery, initFaq, initMobileCta, initYear].forEach(safe);
+    [initHeader, initCarousel, initTabs, initGallery, initFaq, initMobileCta, initStrip, initYear].forEach(safe);
   }
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', start); else start();
 })();
