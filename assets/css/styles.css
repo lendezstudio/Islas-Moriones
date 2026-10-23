@@ -491,3 +491,6 @@ body.menu-open { overflow: hidden; }
 .contact-list a { color: var(--black); border-bottom-color: rgba(21,25,24,.3); }
 .btn--outline-white { --fg: var(--black); --bd: var(--black); --fill: var(--black); --fg-hover: var(--white); }
 .site-header { background: var(--white); }
+/* Welcome photo: portrait, shown whole at its natural 3:4 shape */
+.welcome__photo--tall img { aspect-ratio: 3 / 4; }
+@media (min-width: 900px) { .welcome__photo--tall { max-width: 520px; justify-self: end; width: 100%; } }
