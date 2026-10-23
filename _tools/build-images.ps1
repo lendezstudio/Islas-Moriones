@@ -18,6 +18,7 @@ New-Item -ItemType Directory -Force $clean | Out-Null
 # id | source file (prefix) | crop x,y,w,h ('' = none) | widths
 $jobs = @(
   # Hero slideshow
+  'hero-aerial|468962364||800'
   'hero-dusk-pool|480668276|0,0,1536,1880|720,1100,1536'
   'pool-grounds-day|480789432||720,1100,1600'
   'beach-outrigger|480677027||720,1100,1290'
