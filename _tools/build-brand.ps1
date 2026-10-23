@@ -72,3 +72,33 @@ foreach ($w in 380, 760) {
   $wb.Dispose()
 }
 "white logo done"
+
+# Official single-colour logo (#009891, client questionnaire Q8) on a transparent background.
+# Same shape and alpha as the official logo; every pixel recoloured to the official teal.
+$teal = [System.Drawing.Color]::FromArgb(0x00, 0x98, 0x91)
+foreach ($w in 380, 760) {
+  $srcPng = Join-Path $out $(if ($w -eq 380) { 'logo-islas-moriones-380.png' } else { 'logo-islas-moriones.png' })
+  $bmp = [System.Drawing.Bitmap]::FromFile($srcPng)
+  $tb = New-Object System.Drawing.Bitmap $bmp.Width, $bmp.Height, ([System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+  for ($y = 0; $y -lt $bmp.Height; $y++) { for ($x = 0; $x -lt $bmp.Width; $x++) {
+    $tb.SetPixel($x, $y, [System.Drawing.Color]::FromArgb($bmp.GetPixel($x, $y).A, $teal.R, $teal.G, $teal.B))
+  } }
+  $bmp.Dispose()
+  $tb.Save((Join-Path $out ("logo-islas-moriones-teal-$w.png")), [System.Drawing.Imaging.ImageFormat]::Png)
+  $tb.Dispose()
+}
+# Favicons and share image in the official colours: teal mark on white.
+$white = [System.Drawing.Color]::White
+$tealLogo = [System.Drawing.Bitmap]::FromFile((Join-Path $out 'logo-islas-moriones-teal-760.png'))
+$tealGable = New-Object System.Drawing.Bitmap $gableMark.Width, $gableMark.Height, ([System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+for ($y = 0; $y -lt $gableMark.Height; $y++) { for ($x = 0; $x -lt $gableMark.Width; $x++) { $tealGable.SetPixel($x, $y, [System.Drawing.Color]::FromArgb($gableMark.GetPixel($x, $y).A, $teal.R, $teal.G, $teal.B)) } }
+$tealMark = New-Object System.Drawing.Bitmap $mark.Width, $mark.Height, ([System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+for ($y = 0; $y -lt $mark.Height; $y++) { for ($x = 0; $x -lt $mark.Width; $x++) { $tealMark.SetPixel($x, $y, [System.Drawing.Color]::FromArgb($mark.GetPixel($x, $y).A, $teal.R, $teal.G, $teal.B)) } }
+[ImageTools]::SaveIcon($tealMark, (Join-Path $root 'favicon-32.png'), 32, [System.Drawing.Color]::Transparent, 0.0, $false)
+[ImageTools]::SaveIcon($tealMark, (Join-Path $root 'favicon-48.png'), 48, [System.Drawing.Color]::Transparent, 0.0, $false)
+[ImageTools]::SaveIcon($tealMark, (Join-Path $root 'favicon-192.png'), 192, [System.Drawing.Color]::Transparent, 0.02, $false)
+# Apple home-screen icon keeps a white tile: iOS fills transparent icons with black.
+[ImageTools]::SaveIcon($tealMark, (Join-Path $root 'apple-touch-icon.png'), 180, $white, 0.14, $false)
+$beach = Join-Path $root 'Initial Images\480677027_609135518532316_8815090891667738861_n.jpg'
+[ImageTools]::SaveShareImage($beach, (New-Object System.Drawing.Rectangle 0, 330, 1290, 1161), $tealLogo, (Join-Path $root 'assets\img\share-preview.jpg'))
+"teal logo, favicons, share image done"

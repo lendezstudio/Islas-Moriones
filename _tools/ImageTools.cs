@@ -150,12 +150,12 @@ public static class ImageTools
                 g.InterpolationMode = InterpolationMode.HighQualityBicubic;
                 g.PixelOffsetMode = PixelOffsetMode.HighQuality;
                 g.SmoothingMode = SmoothingMode.AntiAlias;
-                g.Clear(Color.FromArgb(0xEE, 0xE8, 0xDA));
+                g.Clear(Color.White);
                 g.DrawImage(photo, new Rectangle(500, 0, 700, 630));
                 double s = 380.0 / logo.Width;
                 int lw = 380, lh = (int)Math.Round(logo.Height * s);
                 g.DrawImage(logo, 60, (630 - lh) / 2, lw, lh);
-                using (var pen = new Pen(Color.FromArgb(0x73, 0xBC, 0xBF), 4)) g.DrawLine(pen, 500, 0, 500, 630);
+                using (var pen = new Pen(Color.FromArgb(0x00, 0x98, 0x91), 4)) g.DrawLine(pen, 500, 0, 500, 630);
             }
             var p = new EncoderParameters(1);
             p.Param[0] = new EncoderParameter(Encoder.Quality, 88L);

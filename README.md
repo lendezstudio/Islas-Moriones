@@ -1,23 +1,17 @@
-# Islas Moriones Beach Resort: website concept (Twilight Retreat)
+# Islas Moriones Beach Resort: website
 
-A static, single-page website concept with no build step. It is ready to host on GitHub Pages.
+Static, single-page site with no build step, ready for GitHub Pages.
+
+- `main` branch: version 1, the Twilight Retreat concept.
+- `version-2` branch: the digital brochure built from the client's assets and questionnaire. Official colours #009891, white, gray and black; booking through Little Hotelier; no rates on the site.
 
 ## Preview
-- Quickest: open `index.html` directly in a browser.
-- With a local server (closer to real hosting), run this from the project folder:
-  `python -m http.server 8080` or `npx serve .`, then open http://localhost:8080
+Open `index.html` in a browser, or run `python -m http.server 8080` in this folder and visit http://localhost:8080.
 
 ## Structure
-- `index.html`: the page.
-- `assets/css/styles.css`, `assets/js/main.js`: styles and interactions. Plain CSS and JS, no libraries.
-- `assets/img/`: optimized, responsive image derivatives.
-- `assets/brand/`: logo derivatives (transparent background), the logo mark and the favicon source.
-- `edited-images/`: full-resolution cleaned copies of photos with graphic overlays removed (by cropping).
-- `Initial Images/`: untouched originals, including `Logo.jpg`.
-- `_tools/`: PowerShell scripts that regenerate the images (`build-images.ps1`, then `build-brand.ps1`) and a headless-Chrome QA helper.
-- `_notes/content-sources.md`: internal record of every fact and its source file. Not published by GitHub Pages.
-
-## Before going live
-- Set absolute `og:image` / `twitter:image` URLs and add a canonical URL once the domain is known.
-- Confirm the items listed as pending in `_notes/content-sources.md`.
-- The inquiry form opens a prefilled WhatsApp or email draft. It has no backend and does not book.
+- `index.html`, `assets/css/styles.css`, `assets/js/main.js`: the page, plain CSS and JS.
+- `assets/img/`: optimized images. `assets/brand/`: logo derivatives (teal, white, full colour; transparent).
+- `edited-images/`: full-size cleaned copies of photos (overlays cropped out).
+- `Initial Images/`, `Assets from Client/`: untouched originals.
+- `_tools/`: PowerShell scripts that rebuild the images (`build-images.ps1`, then `build-brand.ps1`), plus a headless-Chrome QA helper.
+- `_notes/`: internal content-source record (git-ignored).

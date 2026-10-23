@@ -65,9 +65,17 @@ $jobs = @(
   'century-tree|471282341|0,0,940,600|720,940'
   'morion-reef|283639303|0,140,940,648|720,940'
   'maniwaya-map|476633415||760,1528'
+  # From "Assets from Client" (Oct 2026): real boat and raft photos cropped out of the resort's graphics
+  'boat-rogelius|IMG_5191|42,350,401,402|401'
+  'boat-st-longinus|IMG_5191|519,350,401,402|401'
+  'boat-omon-express|IMG_5191|996,350,401,402|401'
+  'morion-reef-raft|IMG_5193|610,1075,365,270|365'
+  # The resort's own guides and menus, shown whole in the lightbox (no crop)
+  'guide-commute|IMG_5188||1073'
+  'guide-drive|IMG_5189||1143'
 )
 
-$files = Get-ChildItem $in -File
+$files = @(Get-ChildItem $in -File) + @(Get-ChildItem (Join-Path $root 'Assets from Client') -File)
 foreach ($j in $jobs) {
   $id, $prefix, $crop, $widths = $j.Split('|')
   $file = $files | Where-Object { $_.Name.StartsWith($prefix) } | Select-Object -First 1
