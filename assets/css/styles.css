@@ -945,3 +945,12 @@ body { font-weight: 400; letter-spacing: .005em; }
 @media (max-width: 639.98px) { .contact-icons { flex-direction: column; align-items: flex-start; width: max-content; max-width: 100%; margin-inline: auto; } }
 .flow-hero__img { object-position: 50% 45%; } @media (max-width: 699.98px) { .flow-hero__img { object-position: 40% 50%; } }
 .flow-hero__shade { background: linear-gradient(to bottom, rgba(6,18,28,.42), rgba(6,18,28,.12) 42%, rgba(6,18,28,0) 55%), radial-gradient(ellipse 48% 46% at 84% 82%, rgba(5,15,24,.7), rgba(5,15,24,.3) 55%, rgba(5,15,24,0) 80%); } @media (max-width: 699.98px) { .flow-hero__shade { background: linear-gradient(to bottom, rgba(6,18,28,.42), rgba(6,18,28,0) 45%), linear-gradient(to top, rgba(6,18,28,.7), rgba(6,18,28,0) 55%); } }
+
+/* One heading style everywhere: Playfair Display in capitals, as in the reference */
+.room__name, .stop h3, .stop h2, .boat h3, .menu-group, .dish h3, .mini h3, .package h3, .qa summary, .toc-card h3, .pets h2, .van h2 {
+  font-family: var(--font-display); text-transform: uppercase; font-weight: 400; letter-spacing: 0; line-height: 1.12;
+}
+.room__name { font-size: clamp(1.3rem, 1.1rem + .6vw, 1.6rem); }
+.stop h3, .stop h2 { font-size: clamp(1.15rem, 1rem + .4vw, 1.35rem); }
+.qa summary { font-size: clamp(1.05rem, .95rem + .4vw, 1.25rem); }
+.page-intro .label, .label:not(.label--caps) { font-size: .76rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; }

@@ -25,7 +25,7 @@ $jobs = @(
   'night-facade|469778213||720,1100,1600'
   'bamboo-raft|481042792||720,1100,1200'
   'beach-dusk-tower|844278644||720,1100,1320'
-  'night-pool-building|480819549|600,0,1000,1090|720,1000'
+  'night-pool-building|480819549|600,0,1000,1050|720,1000'
   'sign-dusk|480669228||720,1200'
   # Rooms: photos taken from the resort's rate sheets (effective 15 Feb 2026)
   'room-single-standard|634704403|580,262,570,404|570'
