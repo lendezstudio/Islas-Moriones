@@ -927,3 +927,19 @@ body { font-weight: 400; letter-spacing: .005em; }
 .footer__badge { width: auto; height: auto; border-radius: 0; background: none; transform: none; }
 .footer__badge img { width: 190px; }
 @media (min-width: 1024px) { .footer__badge { width: auto; height: auto; transform: none; } .footer__badge img { width: 200px; } }
+
+/* Contact icons (no underlines) */
+.contact-icons { display: flex; justify-content: center; gap: 20px; }
+.contact-icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--teal); color: var(--black); text-decoration: none; transition: background-color .3s, color .3s, transform .3s var(--ease); }
+.contact-icon svg { width: 28px; height: 28px; }
+.contact-icon:hover { background: var(--black); color: var(--white); transform: translateY(-3px); }
+.contact-icon:focus-visible { outline: 2px solid var(--black); outline-offset: 4px; }
+/* Icon + visible number/email */
+.contact-icons { flex-wrap: wrap; align-items: center; gap: 16px 32px; }
+.contact-icons li { display: flex; }
+.contact-icon:has(.contact-icon__text) { display: flex; gap: 14px; width: auto; height: auto; padding: 0; border-radius: 0; background: none; }
+.contact-icon:has(.contact-icon__text) svg { box-sizing: content-box; flex: none; padding: 18px; border-radius: 50%; background: var(--teal); color: var(--black); transition: background-color .3s, color .3s; }
+.contact-icon:has(.contact-icon__text):hover { background: none; color: var(--black); }
+.contact-icon:has(.contact-icon__text):hover svg { background: var(--black); color: var(--white); }
+.contact-icon__text { color: var(--black); font-size: 1.05rem; overflow-wrap: anywhere; text-align: left; }
+@media (max-width: 639.98px) { .contact-icons { flex-direction: column; align-items: flex-start; width: max-content; max-width: 100%; margin-inline: auto; } }
