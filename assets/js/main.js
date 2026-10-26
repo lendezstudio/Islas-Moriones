@@ -584,11 +584,28 @@
     });
   }
 
+  /* Keep sticky elements (gallery filters) just below the header, whatever its height */
+  function initStickyOffset() {
+    var header = $('.site-header'), bar = $('.gallery-filter');
+    if (!header) return;
+    function set() { root.style.setProperty('--hdr', header.offsetHeight + 'px'); }
+    set(); window.addEventListener('resize', set);
+    if (bar) window.addEventListener('scroll', function () { bar.classList.toggle('is-stuck', bar.getBoundingClientRect().top <= header.offsetHeight + 1); }, { passive: true });
+    // After choosing a filter further down the page, bring the start of the photos back into view.
+    $$('[data-gallery-filter]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var grid = $('[data-gallery-grid]'); if (!grid || !bar) return;
+        var y = grid.getBoundingClientRect().top + window.scrollY - header.offsetHeight - bar.offsetHeight - 8;
+        if (window.scrollY > y) window.scrollTo({ top: y, behavior: reduceMotion() ? 'auto' : 'smooth' });
+      });
+    });
+  }
+
   function initYear() { var y = $('[data-year]'); if (y) y.textContent = String(new Date().getFullYear()); }
 
   function start() {
     try { initReveals(); } catch (err) { root.classList.remove('js-anim'); }
-    [initHeader, initCarousel, initTabs, initGallery, initFaq, initMobileCta, initStrip, initFilm, initSliders, initYear].forEach(safe);
+    [initHeader, initCarousel, initTabs, initGallery, initFaq, initMobileCta, initStrip, initFilm, initSliders, initStickyOffset, initYear].forEach(safe);
   }
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', start); else start();
 })();

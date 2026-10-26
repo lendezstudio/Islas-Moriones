@@ -645,3 +645,10 @@ body.menu-open .subnav { visibility: hidden; }
   .venue__a { aspect-ratio: auto; min-height: 100%; }
   .venue__b, .venue__c { aspect-ratio: 4 / 5; }
 }
+
+/* Gallery filters stay visible while scrolling, just below the header */
+.gallery-filter { position: sticky; top: var(--hdr, var(--header-h)); z-index: 50; margin-inline: calc(-1 * var(--gutter)); padding: 12px var(--gutter); background: var(--sand); flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; justify-content: flex-start; }
+.gallery-filter::-webkit-scrollbar { display: none; }
+.gallery-filter .chip { flex: none; }
+.gallery-filter.is-stuck { box-shadow: 0 8px 18px -14px rgba(41,45,41,.45); }
+@media (min-width: 900px) { .gallery-filter { justify-content: center; } }

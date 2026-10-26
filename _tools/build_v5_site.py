@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '7.4'
+V = '7.5'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -959,7 +959,7 @@ here = intro('Getting Here', 'Your journey to Maniwaya', 'Islas Moriones Beach R
     <section class="section section--dune" aria-labelledby="where-title">
       <div class="wrap">
         <div class="feature">
-          <figure class="feature__media feature__media--wide" data-reveal>{old('sunset-boat', 'An outrigger boat at the shore beneath an orange sunset', '(min-width: 900px) 56vw, 92vw', '8% 65%')}</figure>
+          <figure class="feature__media feature__media--wide" data-reveal>{pic('sunset-boat-beach', 'An outrigger boat pulled up on the beach beneath an orange sunset over the water', '(min-width: 900px) 56vw, 92vw', '20% 75%')}</figure>
           <div class="feature__text" data-reveal>
             <p class="eyebrow">Where to find us</p>
             <h2 class="h-section" id="where-title">On the west coast of Maniwaya</h2>
