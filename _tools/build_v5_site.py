@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '7.6'
+V = '7.7'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -761,7 +761,7 @@ page('activities.html', 'activities.html', 'Experiences | Islas Moriones Beach R
 
 # =====================================================================================  DINING
 dining = intro('Dining', 'A table for your island stay', 'From everyday meals to dining together as a group, explore the food experiences available at Islas Moriones.') + f'''
-    <section class="section section--dune" aria-labelledby="sky-title">
+    <section class="section section--sandbg2" aria-labelledby="sky-title">
       <div class="wrap">
         <div class="feature">
           <figure class="feature__media feature__media--wide" data-reveal>{pic('skylight', 'Skylight Dining: tables and chairs beneath a glass-roofed pavilion beside the main building, framed by coconut palms', '(min-width: 900px) 56vw, 92vw', '45% 55%', eager=True)}</figure>

@@ -660,3 +660,9 @@ body.menu-open .subnav { visibility: hidden; }
 .section--sandbg .events__text p:not(.eyebrow) { color: var(--ink-2); }
 .section--sandbg .eyebrow { color: var(--deep-teal); }
 .section--sandbg .h-section { color: var(--ink); }
+
+/* Skylight Dining band: fine-sand photo with a light wash */
+.section--sandbg2 { color: var(--ink);
+  background: linear-gradient(rgba(241,233,220,.62), rgba(241,233,220,.7)), url("../img/v5/sand-bg2-900.jpg") center / cover no-repeat; }
+@media (min-width: 900px) { .section--sandbg2 { background-image: linear-gradient(rgba(241,233,220,.62), rgba(241,233,220,.7)), image-set(url("../img/v5/sand-bg2-1800.webp") type("image/webp"), url("../img/v5/sand-bg2-1800.jpg") type("image/jpeg")); } }
+.section--sandbg2 .feature__text p:not(.eyebrow) { color: var(--ink-2); }
