@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '6.5'
+V = '6.9'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -66,6 +66,7 @@ def old(jid, alt, sizes='100vw', pos='50% 50%'):
             f'loading="lazy" decoding="async" style="--pos: {pos}" alt="{html.escape(alt, quote=True)}">')
 
 FOCUS = {  # subject positions for photos whose subject sits off-centre
+    'lobby-lounge': '50% 88%', 'maniwaya-cove': '28% 18%', 'beach-loungers': '50% 82%', 'sandbar-boat': '55% 70%',
     'tower-wide': '50% 92%', 'tower-blue': '50% 90%', 'tower-storm': '50% 85%', 'ecart': '50% 100%',
     'bikes-crop': '50% 35%', 'bikes': '50% 100%', 'kayak-pov': '50% 55%', 'kayak-pov-2': '40% 45%', 'beach-loungers': '50% 62%', 'kayak-clear': '50% 100%', 'kayak-clear-2': '50% 100%', 'tents-campsite': '32% 96%',
     'tent': '50% 78%', 'ungab-arch': '50% 70%', 'main-building': '50% 45%', 'genesis-front': '50% 70%',
@@ -139,6 +140,7 @@ FOOTER = f'''  <footer class="site-footer">
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="getting-here.html">Getting Here</a></li>
             <li><a href="good-to-know.html">Good to Know</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
         <div>
@@ -217,7 +219,7 @@ def page(fname, cur, title, desc, main, sets='', preload='', canonical=None, ext
     canon = canonical or ('https://lendezstudio.github.io/Islas-Moriones/' + ('' if fname == 'index.html' else fname))
     h = head(title, desc, preload).replace('</head>', f'  <link rel="canonical" href="{canon}">\n{extra_head}</head>')
     body = (f'<body class="{"home" if fname == "index.html" else "inner"}">\n  <a class="skip-link" href="#main">Skip to content</a>\n\n'
-            + header(cur) + f'\n  <main id="main">\n{main}\n  </main>\n\n' + FOOTER
+            + header(cur) + f'\n  <main id="main">\n{main}\n  </main>\n\n' + FOOTER.replace(f'<li><a href="{cur}">', f'<li><a href="{cur}" aria-current="page">', 1)
             + (f'\n  <div hidden>\n{sets}  </div>\n' if sets else '') + '\n' + LIGHTBOX + '</body>\n</html>\n')
     wr(fname, h + body)
 
@@ -274,10 +276,10 @@ def included_grid(sizes='(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw'
 
 
 CLOSER = [  # resort photographs, no overlaid text
-    ('tower-wide', 'The beachfront', 'The white lifeguard tower and resort flags on the sandy beach beside calm blue water'),
+    ('maniwaya-cove', 'Maniwaya shoreline', 'A small sandy cove below the Maniwaya sign on the rocks, waves washing onto the beach'),
     ('dusk-pool', 'The pool at dusk', 'The pool glowing turquoise beside the two-storey main building at dusk'),
     ('beach-loungers', 'Shade on the sand', 'Wicker sun loungers in the shade of a tree on the beach, the lifeguard tower beyond'),
-    ('main-building', 'The main building', 'The white main building with its tall gabled roof and balconies'),
+    ('sandbar-boat', 'Palad Sandbar', 'Aerial view of an outrigger boat moored at the tip of a long white sandbar in turquoise water'),
     ('beach-palms', 'Palms along the shore', 'Palms shading the sand in front of the resort buildings'),
     ('tower-blue', 'The lifeguard tower', 'The lifeguard tower on white sand under a deep blue sky'),
     ('lobby-lounge', 'The lobby lounge', 'The lobby lounge with a leaf-pattern mural and dark sofas'),
@@ -288,7 +290,7 @@ def closer_slides():
 home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from the air and on the beach">
       <div class="film__frame">
         <video class="film__video" autoplay muted loop playsinline preload="auto" poster="assets/video/islas-moriones-hero-poster.jpg?v=2" aria-label="Aerial and beach views of Islas Moriones on Maniwaya Island" data-film>
-          <source src="assets/video/islas-moriones-hero.mp4?v=3" type="video/mp4">
+          <source src="assets/video/islas-moriones-hero.mp4?v=4" type="video/mp4">
         </video>
         <div class="film__controls" data-film-controls>
           <button class="film__btn" type="button" data-film-toggle aria-pressed="false" aria-label="Pause the film">
@@ -389,6 +391,7 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
           <button class="slider__arrow slider__arrow--next" type="button" data-slider-next aria-label="Next amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
         <p class="note center">Use of the bonfire area is included; bonfire menu packages are arranged separately.</p>
+        <p class="soon center"><span>Coming soon</span> A pickleball court is being built at the resort.</p>
       </div>
     </section>
 
@@ -665,7 +668,8 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
           <button class="slider__arrow slider__arrow--prev" type="button" data-slider-prev aria-label="Previous amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
           <button class="slider__arrow slider__arrow--next" type="button" data-slider-next aria-label="Next amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
-        <p class="note center">Use of the bonfire area is included; bonfire menu packages are arranged separately. A pickleball court is under development.</p>
+        <p class="note center">Use of the bonfire area is included; bonfire menu packages are arranged separately.</p>
+        <p class="soon center"><span>Coming soon</span> A pickleball court is being built at the resort. Ask the team for updates.</p>
       </div>
     </section>
 
@@ -829,9 +833,9 @@ groups = intro('Gatherings &amp; Events', 'An island setting for getting togethe
     <section class="section section--dune" aria-labelledby="gen-title">
       <div class="wrap">
         <div class="venue">
-          <figure class="venue__a" data-reveal>{pic('genesis-hall', 'The Genesis Events Place: white fabric draped from a high ceiling over long dining tables, with glass walls to the garden', '(min-width: 900px) 46vw, 92vw', '50% 50%', eager=True)}<figcaption>Inside The Genesis, set for a reception</figcaption></figure>
-          <figure class="venue__b" data-reveal>{pic('genesis-front', 'The Genesis from the lawn, with white-dressed cocktail tables', '(min-width: 900px) 24vw, 46vw', '50% 65%')}<figcaption>The venue from the lawn</figcaption></figure>
-          <figure class="venue__c" data-reveal>{pic('genesis-tables', 'Round tables with gold chairs and flower arrangements inside The Genesis', '(min-width: 900px) 24vw, 46vw', '50% 60%')}<figcaption>Round-table setup</figcaption></figure>
+          <figure class="venue__a" data-reveal>{pic('genesis-hall', 'The Genesis Events Place: white fabric draped from a high ceiling over long dining tables, with glass walls to the garden', '(min-width: 900px) 46vw, 92vw', '50% 50%', eager=True)}</figure>
+          <figure class="venue__b" data-reveal>{pic('genesis-front', 'The Genesis from the lawn, with white-dressed cocktail tables', '(min-width: 900px) 24vw, 46vw', '50% 65%')}</figure>
+          <figure class="venue__c" data-reveal>{pic('genesis-tables', 'Round tables with gold chairs and flower arrangements inside The Genesis', '(min-width: 900px) 24vw, 46vw', '50% 60%')}</figure>
           <div class="venue__text" data-reveal>
             <p class="eyebrow">The Genesis Events Place</p>
             <h2 class="h-section" id="gen-title">A versatile space for your group</h2>

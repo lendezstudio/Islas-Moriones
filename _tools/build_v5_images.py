@@ -84,6 +84,8 @@ JOBS = [
     ('sunong-bato-b',    'edited-images/brochure/sunong-bato.jpg', None, (756,)),
     ('beach-loungers',   'viber_image_2026-10-21_08-43-10-768.jpg', MARK_L, (800, 1424)),
     ('bonfire-smores',   '749f2544-eec8-425f-98f1-c7b7e0e02762-md.jpeg', None, (800,)),
+    ('maniwaya-cove',    'IMG_1188.HEIC', (0, .26, 1, .70), (800, 1400)),
+    ('sandbar-boat',     'Screenshot 2025-12-20 at 12.26.39 AM.png', None, (738,)),
     ('badminton',        '69d30c820f458aa14e24c2487352050a.jpg', None, (640, 736)),
     # The Genesis Events Place
     ('genesis-hall',     'IMG_1212.HEIC', None, (800, 1200)),

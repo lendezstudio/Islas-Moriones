@@ -458,6 +458,7 @@
     btn.addEventListener('click', function () { if (video.paused) { userPaused = false; play(); } else { userPaused = true; video.pause(); } show(); });
     if (mute) mute.addEventListener('click', function () {
       video.muted = !video.muted;
+      if (!video.muted && video.paused) { userPaused = false; play(); }
       if (!video.muted && video.volume === 0) { video.volume = 0.6; if (vol) vol.value = 0.6; }
       sync(); show();
     });
