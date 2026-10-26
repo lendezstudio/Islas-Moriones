@@ -1,0 +1,52 @@
+dusk-pool|640x843 1215x1600|IMG_1857 2.JPG
+main-building|640x785 1200x1472|viber_image_2026-10-20_16-40-24-711.jpg
+lobby-lounge|800x534 1424x951|viber_image_2026-10-21_06-38-24-660.jpg
+reception|640x785 1200x1472|viber_image_2026-10-21_08-30-39-336.jpg
+beach-palms|800x534 1424x951|viber_image_2026-10-21_08-43-10-706.jpg
+tower-blue|640x785 1200x1472|viber_image_2026-10-21_08-43-10-998.jpg
+tower-wide|800x534 1424x951|viber_image_2026-10-21_08-43-11-069.jpg
+tower-storm|640x1138 1100x1956|IMG_8835.HEIC
+palms-sky|640x1138 1100x1956|IMG_1077.HEIC
+corridor|640x785 1200x1472|viber_image_2026-10-20_16-40-23-831.jpg
+poolsuite-room|800x1067 1200x1600|IMG_2159 2.HEIC
+poolsuite-bed|800x1067 1200x1600|IMG_2160 2.HEIC
+poolsuite-bar|800x1067 1200x1600|IMG_2161 2.HEIC
+poolsuite-pantry|800x1067 1200x1600|IMG_2162 2.HEIC
+poolsuite-family|800x1067 1200x1600|IMG_2168 2.HEIC
+poolsuite-loft|800x1067 1200x1600|IMG_2171.HEIC
+poolsuite-bath|800x1067 1200x1600|IMG_2166 2.HEIC
+kubo-exterior|640x1138 1100x1956|IMG_1068.HEIC
+kubo-living|800x1067 1200x1600|IMG_2176.HEIC
+kubo-bedroom|800x594 1080x802|IMG_2181 2.JPG
+kubo-loftbeds|800x603 1080x814|IMG_2183 2.JPG
+kubo-bath|640x839 976x1280|IMG_2182 2.JPG
+room-single|800x534 1424x951|viber_image_2026-10-20_18-20-57-643.jpg
+room-superior|800x534 1424x951|viber_image_2026-10-20_18-42-48-996.jpg
+room-deluxe|800x534 1424x951|viber_image_2026-10-20_16-41-17-547.jpg
+room-suiteloft|800x534 1424x951|viber_image_2026-10-20_16-45-33-108.jpg
+room-execloft|640x785 1200x1472|viber_image_2026-10-20_17-15-20-146.jpg
+room-loftsingles|800x534 1424x951|viber_image_2026-10-20_17-06-58-304.jpg
+room-bath|640x785 1200x1472|viber_image_2026-10-20_16-44-51-697.jpg
+tent|640x1138 1100x1955|309AD28B-9FEB-4664-9C5C-4FA98A62EBED.heic
+kayak-clear|640x1138 1100x1956|IMG_2380.HEIC
+kayak-clear-2|640x1138 1100x1956|IMG_2372.HEIC
+boat-longinus|800x534 1424x951|IMG_9169.JPG
+boat-rogelius|800x534 1424x951|IMG_9170.JPG
+boat-omon|800x534 1424x951|IMG_9171.JPG
+ecart|640x908 1200x1702|RESORT PRINTABLES (2).png
+bikes|640x1138 1100x1955|IMG_1159.jpg
+ungab|640x1138 1100x1956|IMG_4354.heic
+ungab-arch|640x1138 1100x1956|IMG_4355.heic
+sandbar-aerial|800x450 1080x608|image (1).png
+reef-raft|572x536|Screenshot 2025-10-02 at 8.57.18 AM.png
+maniwaya-rocks|640x1138 1100x1955|IMG_1156.jpg
+pingpong-darts|800x534 1424x951|viber_image_2026-10-20_16-40-24-808.jpg
+badminton|640x960 736x1104|69d30c820f458aa14e24c2487352050a.jpg
+genesis-hall|800x1067 1200x1600|IMG_1212.HEIC
+genesis-tables|800x1067 1200x1600|IMG_1213.HEIC
+genesis-setup|800x1067 1200x1600|IMG_1216.HEIC
+genesis-dinner|800x1423 1200x2134|IMG_1225.heic
+genesis-lawn|800x1423 1200x2134|IMG_1250.heic
+genesis-front|800x1423 1200x2134|IMG_1249.heic
+skylight|800x534 1424x951|viber_image_2026-10-20_16-40-23-113.jpg
+skylight-2|800x534 1424x951|viber_image_2026-10-20_16-40-23-429.jpg

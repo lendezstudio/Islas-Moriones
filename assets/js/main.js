@@ -63,7 +63,7 @@
     function setOpen(open) {
       clearTimeout(closeTimer);
       toggle.setAttribute('aria-expanded', String(open));
-      label.textContent = open ? 'Close' : 'Contents';
+      label.textContent = open ? 'Close' : 'Menu';
       doc.body.classList.toggle('menu-open', open);
       outside.forEach(function (el) { if (el) el.inert = open; });
       if (open) {
@@ -410,11 +410,42 @@
     update();
   }
 
+  /* ---------- Opening film: muted loop with a visible pause/play control ---------- */
+  function initFilm() {
+    var video = $('[data-film]');
+    var btn = $('[data-film-toggle]');
+    if (!video || !btn) return;
+    function sync() {
+      var paused = video.paused;
+      btn.setAttribute('aria-pressed', String(paused));
+      btn.setAttribute('aria-label', paused ? 'Play the film' : 'Pause the film');
+    }
+    // Respect reduced motion and data saving: keep the poster frame until the visitor presses play.
+    var saveData = navigator.connection && navigator.connection.saveData;
+    if (reduceMotion() || saveData) { video.removeAttribute('autoplay'); video.pause(); }
+    btn.addEventListener('click', function () {
+      if (video.paused) { var p = video.play(); if (p && p.catch) p.catch(function () {}); } else video.pause();
+    });
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+    reduceMotionQuery.addEventListener('change', function () { if (reduceMotion()) video.pause(); });
+    // Pause while the film is off screen to save battery.
+    if ('IntersectionObserver' in window) {
+      var userPaused = false;
+      btn.addEventListener('click', function () { userPaused = !video.paused ? false : true; });
+      new IntersectionObserver(function (en) {
+        if (en[0].isIntersecting) { if (!userPaused && !reduceMotion() && !saveData && video.paused) { var p = video.play(); if (p && p.catch) p.catch(function () {}); } }
+        else if (!video.paused) video.pause();
+      }, { threshold: 0.15 }).observe(video);
+    }
+    sync();
+  }
+
   function initYear() { var y = $('[data-year]'); if (y) y.textContent = String(new Date().getFullYear()); }
 
   function start() {
     try { initReveals(); } catch (err) { root.classList.remove('js-anim'); }
-    [initHeader, initCarousel, initTabs, initGallery, initFaq, initMobileCta, initStrip, initYear].forEach(safe);
+    [initHeader, initCarousel, initTabs, initGallery, initFaq, initMobileCta, initStrip, initFilm, initYear].forEach(safe);
   }
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', start); else start();
 })();
