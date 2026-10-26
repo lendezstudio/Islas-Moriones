@@ -675,3 +675,15 @@ body.menu-open .subnav { visibility: hidden; }
 .section--sandbg3 .h-section { color: var(--ink); }
 
 .section--sandbg2 .suite__text > p:not(.eyebrow), .section--sandbg2 .spec dd { color: var(--ink-2); }
+
+/* Gatherings venue: wet-sand photo, darker tone, so a stronger cream wash keeps the text readable */
+.section--sandbg5 { color: var(--ink);
+  background: linear-gradient(rgba(241,233,220,.8), rgba(241,233,220,.84)), url("../img/v5/sand-bg5-900.jpg") center / cover no-repeat; }
+@media (min-width: 900px) { .section--sandbg5 { background-image: linear-gradient(rgba(241,233,220,.8), rgba(241,233,220,.84)), image-set(url("../img/v5/sand-bg5-1800.webp") type("image/webp"), url("../img/v5/sand-bg5-1800.jpg") type("image/jpeg")); } }
+.section--sandbg5 .venue__text > p:not(.eyebrow), .section--sandbg5 .spec dd { color: var(--ink-2); }
+
+/* Getting Here "Where to find us": rippled-sand photo, strong cream wash for dark text */
+.section--sandbg6 { color: var(--ink);
+  background: linear-gradient(rgba(241,233,220,.8), rgba(241,233,220,.84)), url("../img/v5/sand-bg6-900.jpg") center 70% / cover no-repeat; }
+@media (min-width: 900px) { .section--sandbg6 { background-image: linear-gradient(rgba(241,233,220,.8), rgba(241,233,220,.84)), image-set(url("../img/v5/sand-bg6-1800.webp") type("image/webp"), url("../img/v5/sand-bg6-1800.jpg") type("image/jpeg")); } }
+.section--sandbg6 .feature__text p:not(.eyebrow) { color: var(--ink-2); }

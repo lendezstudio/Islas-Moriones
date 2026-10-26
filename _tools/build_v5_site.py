@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '8.0'
+V = '8.2'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -825,7 +825,7 @@ gen_set = lb_set('genesis', [
 ])
 WA_EVT = WA + '?text=' + 'Hi%20Islas%20Moriones!%20We%27re%20planning%20a%20gathering.%20Preferred%20date%3A%20%20%7C%20Number%20of%20guests%3A%20%20%7C%20Occasion%3A%20'
 groups = intro('Gatherings &amp; Events', 'An island setting for getting together', 'Explore the events venue at Islas Moriones and speak with the team about bringing your group to Maniwaya.') + f'''
-    <section class="section section--dune" aria-labelledby="gen-title">
+    <section class="section section--sandbg5" aria-labelledby="gen-title">
       <div class="wrap">
         <div class="venue">
           <figure class="venue__a" data-reveal>{pic('genesis-hall', 'The Genesis Events Place: white fabric draped from a high ceiling over long dining tables, with glass walls to the garden', '(min-width: 900px) 46vw, 92vw', '50% 50%', eager=True)}</figure>
@@ -956,7 +956,7 @@ page('gallery.html', 'gallery.html', 'Gallery | Islas Moriones Beach Resort',
 
 # =====================================================================================  GETTING HERE
 here = intro('Getting Here', 'Your journey to Maniwaya', 'Islas Moriones Beach Resort is on Maniwaya Island, Santa Cruz, Marinduque. Plan your route and confirm arrival arrangements with the resort before setting out.') + f'''
-    <section class="section section--dune" aria-labelledby="where-title">
+    <section class="section section--sandbg6" aria-labelledby="where-title">
       <div class="wrap">
         <div class="feature">
           <figure class="feature__media feature__media--wide" data-reveal>{pic('sunset-boat-beach', 'An outrigger boat pulled up on the beach beneath an orange sunset over the water', '(min-width: 900px) 56vw, 92vw', '20% 75%')}</figure>
