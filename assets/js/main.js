@@ -465,11 +465,68 @@
     sync(); show();
   }
 
+  /* ---------- Slideshow (included amenities): swipe, arrows, dots, autoplay with pause ---------- */
+  function initSliders() {
+    $$('[data-slider]').forEach(function (root) {
+      var track = $('[data-slider-track]', root), items = $$('.slide-item', track);
+      var dotsEl = $('[data-slider-dots]', root), toggle = $('[data-slider-toggle]', root);
+      if (!items.length) return;
+      var paused = reduceMotion(), hold = false, timer;
+      // Each slide is centred in turn (gallery-style showcase).
+      function pages() { return items.length; }
+      function center(el) { return el.offsetLeft - track.offsetLeft + el.offsetWidth / 2; }
+      function current() {
+        var mid = track.scrollLeft + track.clientWidth / 2, best = 0, d = Infinity;
+        items.forEach(function (el, i) { var x = Math.abs(center(el) - mid); if (x < d) { d = x; best = i; } });
+        return best;
+      }
+      function go(i) {
+        var n = pages(); i = (i + n) % n;
+        track.scrollTo({ left: center(items[i]) - track.clientWidth / 2, behavior: reduceMotion() ? 'auto' : 'smooth' });
+        items.forEach(function (el, k) { el.classList.toggle('is-current', k === i); });
+      }
+      function sync() { var c = current(); items.forEach(function (el, k) { el.classList.toggle('is-current', k === c); }); $$('.slider__dot', dotsEl).forEach(function (d, i) { d.setAttribute('aria-current', String(i === c)); }); }
+      function buildDots() {
+        dotsEl.innerHTML = '';
+        for (var i = 0; i < pages(); i++) {
+          var b = doc.createElement('button');
+          b.type = 'button'; b.className = 'slider__dot'; b.setAttribute('aria-label', 'Show slide ' + (i + 1));
+          (function (k) { b.addEventListener('click', function () { go(k); restart(); }); })(i);
+          dotsEl.appendChild(b);
+        }
+        sync();
+      }
+      function restart() { clearInterval(timer); if (!paused) timer = setInterval(function () { if (!hold && !doc.hidden) go(current() + 1); }, 4500); }
+      function syncToggle() { toggle.setAttribute('aria-pressed', String(paused)); toggle.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow'); }
+      $('[data-slider-prev]', root).addEventListener('click', function () { go(current() - 1); restart(); });
+      $('[data-slider-next]', root).addEventListener('click', function () { go(current() + 1); restart(); });
+      toggle.addEventListener('click', function () { paused = !paused; syncToggle(); restart(); });
+      track.addEventListener('scroll', function () { requestAnimationFrame(sync); }, { passive: true });
+      track.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1); restart(); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); go(current() - 1); restart(); }
+      });
+      // Pause while the visitor is hovering, focused inside, or touching the slideshow.
+      track.addEventListener('pointerenter', function () { hold = true; });
+      track.addEventListener('pointerleave', function () { hold = false; });
+      root.addEventListener('focusin', function () { hold = true; });
+      root.addEventListener('focusout', function () { hold = false; });
+      track.addEventListener('touchstart', function () { hold = true; }, { passive: true });
+      track.addEventListener('touchend', function () { setTimeout(function () { hold = false; }, 2500); }, { passive: true });
+      reduceMotionQuery.addEventListener('change', function () { if (reduceMotion()) { paused = true; syncToggle(); restart(); } });
+      window.addEventListener('resize', buildDots);
+      // Start on a middle slide so photos sit on both sides, as in the reference.
+      var startAt = Math.floor(items.length / 2);
+      track.scrollLeft = center(items[startAt]) - track.clientWidth / 2;
+      buildDots(); syncToggle(); restart();
+    });
+  }
+
   function initYear() { var y = $('[data-year]'); if (y) y.textContent = String(new Date().getFullYear()); }
 
   function start() {
     try { initReveals(); } catch (err) { root.classList.remove('js-anim'); }
-    [initHeader, initCarousel, initTabs, initGallery, initFaq, initMobileCta, initStrip, initFilm, initYear].forEach(safe);
+    [initHeader, initCarousel, initTabs, initGallery, initFaq, initMobileCta, initStrip, initFilm, initSliders, initYear].forEach(safe);
   }
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', start); else start();
 })();

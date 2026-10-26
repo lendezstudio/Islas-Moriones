@@ -23,8 +23,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
-  <link rel="stylesheet" href="assets/css/styles.css?v=5.6">
-  <script src="assets/js/main.js?v=5.6" defer></script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=6.0">
+  <script src="assets/js/main.js?v=6.0" defer></script>
   <link rel="canonical" href="https://lendezstudio.github.io/Islas-Moriones/">
 </head>
 <body class="home">
@@ -74,8 +74,8 @@
   <main id="main">
     <section class="film flow-hero" aria-label="Islas Moriones from the air and on the beach">
       <div class="film__frame">
-        <video class="film__video" autoplay muted loop playsinline preload="auto" poster="assets/video/islas-moriones-hero-poster.jpg" aria-label="Aerial and beach views of Islas Moriones on Maniwaya Island" data-film>
-          <source src="assets/video/islas-moriones-hero.mp4" type="video/mp4">
+        <video class="film__video" autoplay muted loop playsinline preload="auto" poster="assets/video/islas-moriones-hero-poster.jpg?v=2" aria-label="Aerial and beach views of Islas Moriones on Maniwaya Island" data-film>
+          <source src="assets/video/islas-moriones-hero.mp4?v=2" type="video/mp4">
         </video>
         <div class="film__controls" data-film-controls>
           <button class="film__btn" type="button" data-film-toggle aria-pressed="false" aria-label="Pause the film">
@@ -132,11 +132,22 @@
           <h2 class="h-section" id="closer-title">A closer look at island life</h2>
           <p>Explore the shoreline, pool, and places to spend time together at Islas Moriones.</p>
         </header>
-        <div class="mosaic4">
-          <figure class="m4 m4--a" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/tower-wide-800.webp 800w, assets/img/v5/tower-wide-1424.webp 1424w" sizes="(min-width: 900px) 58vw, 92vw"><img src="assets/img/v5/tower-wide-800.jpg" srcset="assets/img/v5/tower-wide-800.jpg 800w, assets/img/v5/tower-wide-1424.jpg 1424w" sizes="(min-width: 900px) 58vw, 92vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 80%" alt="The white lifeguard tower and resort flags on the sandy beach beside calm blue water"></picture><figcaption>The beachfront</figcaption></figure>
-          <figure class="m4 m4--b" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/dusk-pool-640.webp 640w, assets/img/v5/dusk-pool-1215.webp 1215w" sizes="(min-width: 900px) 30vw, 46vw"><img src="assets/img/v5/dusk-pool-640.jpg" srcset="assets/img/v5/dusk-pool-640.jpg 640w, assets/img/v5/dusk-pool-1215.jpg 1215w" sizes="(min-width: 900px) 30vw, 46vw" width="1215" height="1600" loading="lazy" decoding="async" style="--pos: 50% 62%" alt="The pool glowing turquoise beside the two-storey main building at dusk"></picture><figcaption>The pool at dusk</figcaption></figure>
-          <figure class="m4 m4--c" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/beach-loungers-800.webp 800w, assets/img/v5/beach-loungers-1424.webp 1424w" sizes="(min-width: 900px) 30vw, 46vw"><img src="assets/img/v5/beach-loungers-800.jpg" srcset="assets/img/v5/beach-loungers-800.jpg 800w, assets/img/v5/beach-loungers-1424.jpg 1424w" sizes="(min-width: 900px) 30vw, 46vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 62%" alt="Two wicker sun loungers in the shade of a tree on the white-sand beach, the lifeguard tower and a resort boat beyond"></picture><figcaption>Shade on the sand</figcaption></figure>
-          <figure class="m4 m4--d" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/main-building-640.webp 640w, assets/img/v5/main-building-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 92vw"><img src="assets/img/v5/main-building-640.jpg" srcset="assets/img/v5/main-building-640.jpg 640w, assets/img/v5/main-building-1200.jpg 1200w" sizes="(min-width: 900px) 30vw, 92vw" width="1200" height="1472" loading="lazy" decoding="async" style="--pos: 50% 45%" alt="The white main building with its tall gabled roof and balconies"></picture><figcaption>The main building</figcaption></figure>
+        <div class="slider slider--plain" data-slider aria-roledescription="carousel" aria-label="Photographs of the resort">
+          <ul class="slider__track" data-slider-track tabindex="0">
+            <li class="slide-item" aria-roledescription="slide" aria-label="The beachfront"><figure class="tile"><div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/tower-wide-800.webp 800w, assets/img/v5/tower-wide-1424.webp 1424w" sizes="(min-width: 600px) 300px, 68vw"><img src="assets/img/v5/tower-wide-800.jpg" srcset="assets/img/v5/tower-wide-800.jpg 800w, assets/img/v5/tower-wide-1424.jpg 1424w" sizes="(min-width: 600px) 300px, 68vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 92%" alt="The white lifeguard tower and resort flags on the sandy beach beside calm blue water"></picture></div></figure></li>
+            <li class="slide-item" aria-roledescription="slide" aria-label="The pool at dusk"><figure class="tile"><div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/dusk-pool-640.webp 640w, assets/img/v5/dusk-pool-1215.webp 1215w" sizes="(min-width: 600px) 300px, 68vw"><img src="assets/img/v5/dusk-pool-640.jpg" srcset="assets/img/v5/dusk-pool-640.jpg 640w, assets/img/v5/dusk-pool-1215.jpg 1215w" sizes="(min-width: 600px) 300px, 68vw" width="1215" height="1600" loading="lazy" decoding="async" style="--pos: 50% 50%" alt="The pool glowing turquoise beside the two-storey main building at dusk"></picture></div></figure></li>
+            <li class="slide-item" aria-roledescription="slide" aria-label="Shade on the sand"><figure class="tile"><div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/beach-loungers-800.webp 800w, assets/img/v5/beach-loungers-1424.webp 1424w" sizes="(min-width: 600px) 300px, 68vw"><img src="assets/img/v5/beach-loungers-800.jpg" srcset="assets/img/v5/beach-loungers-800.jpg 800w, assets/img/v5/beach-loungers-1424.jpg 1424w" sizes="(min-width: 600px) 300px, 68vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 62%" alt="Wicker sun loungers in the shade of a tree on the beach, the lifeguard tower beyond"></picture></div></figure></li>
+            <li class="slide-item" aria-roledescription="slide" aria-label="The main building"><figure class="tile"><div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/main-building-640.webp 640w, assets/img/v5/main-building-1200.webp 1200w" sizes="(min-width: 600px) 300px, 68vw"><img src="assets/img/v5/main-building-640.jpg" srcset="assets/img/v5/main-building-640.jpg 640w, assets/img/v5/main-building-1200.jpg 1200w" sizes="(min-width: 600px) 300px, 68vw" width="1200" height="1472" loading="lazy" decoding="async" style="--pos: 50% 45%" alt="The white main building with its tall gabled roof and balconies"></picture></div></figure></li>
+            <li class="slide-item" aria-roledescription="slide" aria-label="Palms along the shore"><figure class="tile"><div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/beach-palms-800.webp 800w, assets/img/v5/beach-palms-1424.webp 1424w" sizes="(min-width: 600px) 300px, 68vw"><img src="assets/img/v5/beach-palms-800.jpg" srcset="assets/img/v5/beach-palms-800.jpg 800w, assets/img/v5/beach-palms-1424.jpg 1424w" sizes="(min-width: 600px) 300px, 68vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 50%" alt="Palms shading the sand in front of the resort buildings"></picture></div></figure></li>
+            <li class="slide-item" aria-roledescription="slide" aria-label="The lifeguard tower"><figure class="tile"><div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/tower-blue-640.webp 640w, assets/img/v5/tower-blue-1200.webp 1200w" sizes="(min-width: 600px) 300px, 68vw"><img src="assets/img/v5/tower-blue-640.jpg" srcset="assets/img/v5/tower-blue-640.jpg 640w, assets/img/v5/tower-blue-1200.jpg 1200w" sizes="(min-width: 600px) 300px, 68vw" width="1200" height="1472" loading="lazy" decoding="async" style="--pos: 50% 90%" alt="The lifeguard tower on white sand under a deep blue sky"></picture></div></figure></li>
+            <li class="slide-item" aria-roledescription="slide" aria-label="The lobby lounge"><figure class="tile"><div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/lobby-lounge-800.webp 800w, assets/img/v5/lobby-lounge-1424.webp 1424w" sizes="(min-width: 600px) 300px, 68vw"><img src="assets/img/v5/lobby-lounge-800.jpg" srcset="assets/img/v5/lobby-lounge-800.jpg 800w, assets/img/v5/lobby-lounge-1424.jpg 1424w" sizes="(min-width: 600px) 300px, 68vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 50%" alt="The lobby lounge with a leaf-pattern mural and dark sofas"></picture></div></figure></li>
+          </ul>
+          <div class="slider__controls">
+            <button class="slider__btn" type="button" data-slider-prev aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <div class="slider__dots" data-slider-dots></div>
+            <button class="slider__btn" type="button" data-slider-toggle aria-pressed="false" aria-label="Pause slideshow"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5l11 6.5-11 6.5z"/></svg></button>
+            <button class="slider__btn" type="button" data-slider-next aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+          </div>
         </div>
       </div>
     </section>
@@ -167,35 +178,43 @@
           <h2 class="h-section" id="included-title">Time to enjoy, already part of your stay</h2>
           <p>Take a closer look at the activities and amenities included for staying guests.</p>
         </header>
-        <div class="tiles">
-        <figure class="tile" data-reveal>
-          <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/pool-loungers-640.webp 640w, assets/img/v5/pool-loungers-908.webp 908w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw"><img src="assets/img/v5/pool-loungers-640.jpg" srcset="assets/img/v5/pool-loungers-640.jpg 640w, assets/img/v5/pool-loungers-908.jpg 908w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="908" height="1613" loading="lazy" decoding="async" style="--pos: 50% 62%" alt="Sun loungers and umbrellas beside the turquoise outdoor pool, shaded by tropical trees"></picture></div>
-          <figcaption><span class="h-card">Swimming pool</span>The outdoor pool, with loungers in the shade.</figcaption>
-        </figure>
-        <figure class="tile" data-reveal>
-          <div class="tile__media"><img src="assets/img/beach-volleyball-720.jpg" srcset="assets/img/beach-volleyball-720.jpg 720w, assets/img/beach-volleyball-1400.jpg 1400w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="1774" height="837" loading="lazy" decoding="async" style="--pos: 40% 50%" alt="A volleyball net on the resort beach beside clear water"></div>
-          <figcaption><span class="h-card">Beach volleyball</span>A net on the sand, a few steps from the water.</figcaption>
-        </figure>
-        <figure class="tile" data-reveal>
-          <div class="tile__media"><img src="assets/img/bamboo-raft-720.jpg" srcset="assets/img/bamboo-raft-720.jpg 720w, assets/img/bamboo-raft-1100.jpg 1100w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="1200" height="1600" loading="lazy" decoding="async" style="--pos: 50% 45%" alt="The covered bamboo raft with a long table on turquoise water"></div>
-          <figcaption><span class="h-card">Bamboo raft</span>Float off the shore on the resort’s bamboo raft.</figcaption>
-        </figure>
-        <figure class="tile" data-reveal>
-          <div class="tile__media"><img src="assets/img/bonfire-circle-560.jpg" srcset="assets/img/bonfire-circle-560.jpg 560w, assets/img/bonfire-circle-936.jpg 936w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="936" height="856" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="Timber benches around the bonfire pit on the lawn under palms"></div>
-          <figcaption><span class="h-card">Bonfire</span>The bonfire area on the lawn, for evenings outdoors.</figcaption>
-        </figure>
-        <figure class="tile" data-reveal>
-          <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/pingpong-darts-800.webp 800w, assets/img/v5/pingpong-darts-1424.webp 1424w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw"><img src="assets/img/v5/pingpong-darts-800.jpg" srcset="assets/img/v5/pingpong-darts-800.jpg 800w, assets/img/v5/pingpong-darts-1424.jpg 1424w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 60%" alt="A ping-pong table in the resort’s open-sided games room"></picture></div>
-          <figcaption><span class="h-card">Ping-pong</span>A games room open to the breeze.</figcaption>
-        </figure>
-        <figure class="tile" data-reveal>
-          <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/darts-600.webp 600w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw"><img src="assets/img/v5/darts-600.jpg" srcset="assets/img/v5/darts-600.jpg 600w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="600" height="914" loading="lazy" decoding="async" style="--pos: 50% 40%" alt="A dartboard with darts on a rustic timber board"></picture></div>
-          <figcaption><span class="h-card">Darts</span>A dartboard for friendly games.</figcaption>
-        </figure>
-        <figure class="tile" data-reveal>
-          <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/badminton-640.webp 640w, assets/img/v5/badminton-736.webp 736w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw"><img src="assets/img/v5/badminton-640.jpg" srcset="assets/img/v5/badminton-640.jpg 640w, assets/img/v5/badminton-736.jpg 736w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="736" height="1104" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="Two badminton rackets and shuttlecocks resting on grass"></picture></div>
-          <figcaption><span class="h-card">Badminton</span>Rackets for a game on the lawn.</figcaption>
-        </figure>
+        <div class="slider" data-slider aria-roledescription="carousel" aria-label="Included amenities">
+          <ul class="slider__track" data-slider-track tabindex="0">
+            <li class="slide-item" aria-roledescription="slide" aria-label="Swimming pool"><figure class="tile">
+              <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/pool-loungers-640.webp 640w, assets/img/v5/pool-loungers-908.webp 908w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw"><img src="assets/img/v5/pool-loungers-640.jpg" srcset="assets/img/v5/pool-loungers-640.jpg 640w, assets/img/v5/pool-loungers-908.jpg 908w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw" width="908" height="1613" loading="lazy" decoding="async" style="--pos: 50% 62%" alt="Sun loungers and umbrellas beside the turquoise outdoor pool, shaded by tropical trees"></picture></div>
+              <figcaption><span class="h-card">Swimming pool</span>The outdoor pool, with loungers in the shade.</figcaption>
+            </figure></li>
+            <li class="slide-item" aria-roledescription="slide" aria-label="Beach volleyball"><figure class="tile">
+              <div class="tile__media"><img src="assets/img/beach-volleyball-720.jpg" srcset="assets/img/beach-volleyball-720.jpg 720w, assets/img/beach-volleyball-1400.jpg 1400w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw" width="1774" height="837" loading="lazy" decoding="async" style="--pos: 40% 50%" alt="A volleyball net on the resort beach beside clear water"></div>
+              <figcaption><span class="h-card">Beach volleyball</span>A net on the sand, a few steps from the water.</figcaption>
+            </figure></li>
+            <li class="slide-item" aria-roledescription="slide" aria-label="Bamboo raft"><figure class="tile">
+              <div class="tile__media"><img src="assets/img/bamboo-raft-720.jpg" srcset="assets/img/bamboo-raft-720.jpg 720w, assets/img/bamboo-raft-1100.jpg 1100w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw" width="1200" height="1600" loading="lazy" decoding="async" style="--pos: 50% 45%" alt="The covered bamboo raft with a long table on turquoise water"></div>
+              <figcaption><span class="h-card">Bamboo raft</span>Float off the shore on the resort’s bamboo raft.</figcaption>
+            </figure></li>
+            <li class="slide-item" aria-roledescription="slide" aria-label="Bonfire"><figure class="tile">
+              <div class="tile__media"><img src="assets/img/bonfire-circle-560.jpg" srcset="assets/img/bonfire-circle-560.jpg 560w, assets/img/bonfire-circle-936.jpg 936w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw" width="936" height="856" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="Timber benches around the bonfire pit on the lawn under palms"></div>
+              <figcaption><span class="h-card">Bonfire</span>The bonfire area on the lawn, for evenings outdoors.</figcaption>
+            </figure></li>
+            <li class="slide-item" aria-roledescription="slide" aria-label="Ping-pong"><figure class="tile">
+              <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/pingpong-darts-800.webp 800w, assets/img/v5/pingpong-darts-1424.webp 1424w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw"><img src="assets/img/v5/pingpong-darts-800.jpg" srcset="assets/img/v5/pingpong-darts-800.jpg 800w, assets/img/v5/pingpong-darts-1424.jpg 1424w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 60%" alt="A ping-pong table in the resort’s open-sided games room"></picture></div>
+              <figcaption><span class="h-card">Ping-pong</span>A games room open to the breeze.</figcaption>
+            </figure></li>
+            <li class="slide-item" aria-roledescription="slide" aria-label="Darts"><figure class="tile">
+              <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/darts-600.webp 600w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw"><img src="assets/img/v5/darts-600.jpg" srcset="assets/img/v5/darts-600.jpg 600w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw" width="600" height="914" loading="lazy" decoding="async" style="--pos: 50% 40%" alt="A dartboard with darts on a rustic timber board"></picture></div>
+              <figcaption><span class="h-card">Darts</span>A dartboard for friendly games.</figcaption>
+            </figure></li>
+            <li class="slide-item" aria-roledescription="slide" aria-label="Badminton"><figure class="tile">
+              <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/badminton-640.webp 640w, assets/img/v5/badminton-736.webp 736w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw"><img src="assets/img/v5/badminton-640.jpg" srcset="assets/img/v5/badminton-640.jpg 640w, assets/img/v5/badminton-736.jpg 736w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw" width="736" height="1104" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="Two badminton rackets and shuttlecocks resting on grass"></picture></div>
+              <figcaption><span class="h-card">Badminton</span>Rackets for a game on the lawn.</figcaption>
+            </figure></li>
+          </ul>
+          <div class="slider__controls">
+            <button class="slider__btn" type="button" data-slider-prev aria-label="Previous amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <div class="slider__dots" data-slider-dots></div>
+            <button class="slider__btn" type="button" data-slider-toggle aria-pressed="false" aria-label="Pause slideshow"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5l11 6.5-11 6.5z"/></svg></button>
+            <button class="slider__btn" type="button" data-slider-next aria-label="Next amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+          </div>
         </div>
         <p class="note center">Use of the bonfire area is included; bonfire menu packages are arranged separately.</p>
       </div>

@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '5.6'
+V = '6.0'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -262,16 +262,33 @@ INCLUDED = [  # (image html, title, caption) all from the resort's inclusion lis
     (lambda s: pic('darts', 'A dartboard with darts on a rustic timber board', s, '50% 40%'), 'Darts', 'A dartboard for friendly games.'),
     (lambda s: pic('badminton', 'Two badminton rackets and shuttlecocks resting on grass', s, '50% 55%'), 'Badminton', 'Rackets for a game on the lawn.'),
 ]
-def included_grid(sizes='(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw'):
-    return '\n'.join(f'''        <figure class="tile" data-reveal>
-          <div class="tile__media">{f(sizes)}</div>
-          <figcaption><span class="h-card">{t}</span>{c}</figcaption>
-        </figure>''' for f, t, c in INCLUDED)
+def included_grid(sizes='(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw'):
+    out = []
+    for f, t, c in INCLUDED:
+        label = t.replace('&amp;', 'and')
+        out.append(f'''            <li class="slide-item" aria-roledescription="slide" aria-label="{label}"><figure class="tile">
+              <div class="tile__media">{f(sizes)}</div>
+              <figcaption><span class="h-card">{t}</span>{c}</figcaption>
+            </figure></li>''')
+    return '\n'.join(out)
+
+
+CLOSER = [  # resort photographs, no overlaid text
+    ('tower-wide', 'The beachfront', 'The white lifeguard tower and resort flags on the sandy beach beside calm blue water'),
+    ('dusk-pool', 'The pool at dusk', 'The pool glowing turquoise beside the two-storey main building at dusk'),
+    ('beach-loungers', 'Shade on the sand', 'Wicker sun loungers in the shade of a tree on the beach, the lifeguard tower beyond'),
+    ('main-building', 'The main building', 'The white main building with its tall gabled roof and balconies'),
+    ('beach-palms', 'Palms along the shore', 'Palms shading the sand in front of the resort buildings'),
+    ('tower-blue', 'The lifeguard tower', 'The lifeguard tower on white sand under a deep blue sky'),
+    ('lobby-lounge', 'The lobby lounge', 'The lobby lounge with a leaf-pattern mural and dark sofas'),
+]
+def closer_slides():
+    return '\n'.join(f'''            <li class="slide-item" aria-roledescription="slide" aria-label="{t}"><figure class="tile"><div class="tile__media">{pic(j, alt, "(min-width: 600px) 300px, 68vw")}</div></figure></li>''' for j, t, alt in CLOSER)
 
 home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from the air and on the beach">
       <div class="film__frame">
-        <video class="film__video" autoplay muted loop playsinline preload="auto" poster="assets/video/islas-moriones-hero-poster.jpg" aria-label="Aerial and beach views of Islas Moriones on Maniwaya Island" data-film>
-          <source src="assets/video/islas-moriones-hero.mp4" type="video/mp4">
+        <video class="film__video" autoplay muted loop playsinline preload="auto" poster="assets/video/islas-moriones-hero-poster.jpg?v=2" aria-label="Aerial and beach views of Islas Moriones on Maniwaya Island" data-film>
+          <source src="assets/video/islas-moriones-hero.mp4?v=2" type="video/mp4">
         </video>
         <div class="film__controls" data-film-controls>
           <button class="film__btn" type="button" data-film-toggle aria-pressed="false" aria-label="Pause the film">
@@ -328,11 +345,16 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
           <h2 class="h-section" id="closer-title">A closer look at island life</h2>
           <p>Explore the shoreline, pool, and places to spend time together at Islas Moriones.</p>
         </header>
-        <div class="mosaic4">
-          <figure class="m4 m4--a" data-reveal>{pic('tower-wide', 'The white lifeguard tower and resort flags on the sandy beach beside calm blue water', '(min-width: 900px) 58vw, 92vw', '50% 80%')}<figcaption>The beachfront</figcaption></figure>
-          <figure class="m4 m4--b" data-reveal>{pic('dusk-pool', 'The pool glowing turquoise beside the two-storey main building at dusk', '(min-width: 900px) 30vw, 46vw', '50% 62%')}<figcaption>The pool at dusk</figcaption></figure>
-          <figure class="m4 m4--c" data-reveal>{pic('beach-loungers', 'Two wicker sun loungers in the shade of a tree on the white-sand beach, the lifeguard tower and a resort boat beyond', '(min-width: 900px) 30vw, 46vw')}<figcaption>Shade on the sand</figcaption></figure>
-          <figure class="m4 m4--d" data-reveal>{pic('main-building', 'The white main building with its tall gabled roof and balconies', '(min-width: 900px) 30vw, 92vw', '50% 45%')}<figcaption>The main building</figcaption></figure>
+        <div class="slider slider--plain" data-slider aria-roledescription="carousel" aria-label="Photographs of the resort">
+          <ul class="slider__track" data-slider-track tabindex="0">
+{closer_slides()}
+          </ul>
+          <div class="slider__controls">
+            <button class="slider__btn" type="button" data-slider-prev aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <div class="slider__dots" data-slider-dots></div>
+            <button class="slider__btn" type="button" data-slider-toggle aria-pressed="false" aria-label="Pause slideshow"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5l11 6.5-11 6.5z"/></svg></button>
+            <button class="slider__btn" type="button" data-slider-next aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+          </div>
         </div>
       </div>
     </section>
@@ -363,8 +385,16 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
           <h2 class="h-section" id="included-title">Time to enjoy, already part of your stay</h2>
           <p>Take a closer look at the activities and amenities included for staying guests.</p>
         </header>
-        <div class="tiles">
+        <div class="slider" data-slider aria-roledescription="carousel" aria-label="Included amenities">
+          <ul class="slider__track" data-slider-track tabindex="0">
 {included_grid()}
+          </ul>
+          <div class="slider__controls">
+            <button class="slider__btn" type="button" data-slider-prev aria-label="Previous amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <div class="slider__dots" data-slider-dots></div>
+            <button class="slider__btn" type="button" data-slider-toggle aria-pressed="false" aria-label="Pause slideshow"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5l11 6.5-11 6.5z"/></svg></button>
+            <button class="slider__btn" type="button" data-slider-next aria-label="Next amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+          </div>
         </div>
         <p class="note center">Use of the bonfire area is included; bonfire menu packages are arranged separately.</p>
       </div>
@@ -636,8 +666,16 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
           <h2 class="h-section" id="inc-title">Time to enjoy, already part of your stay</h2>
           <p>Free for staying guests, from the resort’s own amenities list.</p>
         </header>
-        <div class="tiles">
+        <div class="slider" data-slider aria-roledescription="carousel" aria-label="Included amenities">
+          <ul class="slider__track" data-slider-track tabindex="0">
 {included_grid()}
+          </ul>
+          <div class="slider__controls">
+            <button class="slider__btn" type="button" data-slider-prev aria-label="Previous amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <div class="slider__dots" data-slider-dots></div>
+            <button class="slider__btn" type="button" data-slider-toggle aria-pressed="false" aria-label="Pause slideshow"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5l11 6.5-11 6.5z"/></svg></button>
+            <button class="slider__btn" type="button" data-slider-next aria-label="Next amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+          </div>
         </div>
         <p class="note center">Use of the bonfire area is included; bonfire menu packages are arranged separately. A pickleball court is under development.</p>
       </div>
