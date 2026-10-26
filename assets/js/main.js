@@ -484,9 +484,17 @@
   /* ---------- Slideshow (included amenities): swipe, arrows, dots, autoplay with pause ---------- */
   function initSliders() {
     $$('[data-slider]').forEach(function (root) {
-      var track = $('[data-slider-track]', root), items = $$('.slide-item', track);
+      var track = $('[data-slider-track]', root), originals = $$('.slide-item', track);
       var dotsEl = $('[data-slider-dots]', root) || doc.createElement('div'), toggle = $('[data-slider-toggle]', root) || doc.createElement('button');
-      if (!items.length) return;
+      if (!originals.length) return;
+      // Endless loop: two copies of the photos on each side (hidden from assistive tech),
+      // so there are always photos left and right of the centred one.
+      var n = originals.length, jump = n % 2 ? 2 * n : n;
+      function copy() { return originals.map(function (el) { var c = el.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.inert = true; c.classList.add('is-clone'); return c; }); }
+      var before = copy().concat(copy()), after = copy().concat(copy());
+      before.forEach(function (c) { track.insertBefore(c, originals[0]); });
+      after.forEach(function (c) { track.appendChild(c); });
+      var items = $$('.slide-item', track);
       var paused = reduceMotion(), hold = false, timer;
       // Each slide is centred in turn (gallery-style showcase).
       function pages() { return items.length; }
@@ -497,7 +505,7 @@
         return best;
       }
       function go(i) {
-        var n = pages(); i = (i + n) % n;
+        i = Math.max(0, Math.min(items.length - 1, i));
         track.scrollTo({ left: center(items[i]) - track.clientWidth / 2, behavior: reduceMotion() ? 'auto' : 'smooth' });
         items.forEach(function (el, k) { el.classList.toggle('is-current', k === i); });
       }
@@ -517,7 +525,18 @@
       $('[data-slider-prev]', root).addEventListener('click', function () { go(current() - 1); restart(); });
       $('[data-slider-next]', root).addEventListener('click', function () { go(current() + 1); restart(); });
       toggle.addEventListener('click', function () { paused = !paused; syncToggle(); restart(); });
-      track.addEventListener('scroll', function () { requestAnimationFrame(sync); }, { passive: true });
+      // After scrolling settles in an outer copy, jump silently to the same photo in the middle copy.
+      var settle;
+      track.addEventListener('scroll', function () {
+        requestAnimationFrame(sync);
+        clearTimeout(settle);
+        settle = setTimeout(function () {
+          var c = current();
+          if (c < n) track.scrollLeft += center(items[c + jump]) - center(items[c]);
+          else if (c >= 4 * n) track.scrollLeft -= center(items[c]) - center(items[c - jump]);
+          sync();
+        }, 160);
+      }, { passive: true });
       track.addEventListener('keydown', function (e) {
         if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1); restart(); }
         if (e.key === 'ArrowLeft') { e.preventDefault(); go(current() - 1); restart(); }
@@ -530,7 +549,7 @@
       track.addEventListener('touchstart', function () { hold = true; }, { passive: true });
       track.addEventListener('touchend', function () { setTimeout(function () { hold = false; }, 2500); }, { passive: true });
       reduceMotionQuery.addEventListener('change', function () { if (reduceMotion()) { paused = true; syncToggle(); restart(); } });
-      window.addEventListener('resize', buildDots);
+      window.addEventListener('resize', function () { track.scrollLeft = center(items[current()]) - track.clientWidth / 2; });
       // Edge arrows appear on interaction and fade 3 seconds later.
       var arrowTimer;
       function showArrows() {
@@ -547,9 +566,9 @@
       root.addEventListener('focusin', showArrows);
       $$('.slider__arrow', root).forEach(function (b) { b.addEventListener('click', showArrows); });
       // Start on a middle slide so photos sit on both sides, as in the reference.
-      var startAt = Math.floor(items.length / 2);
+      var startAt = 2 * n + Math.floor(n / 2);
       track.scrollLeft = center(items[startAt]) - track.clientWidth / 2;
-      buildDots(); syncToggle(); restart();
+      sync(); syncToggle(); restart();
     });
   }
 

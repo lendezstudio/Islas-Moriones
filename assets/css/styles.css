@@ -624,3 +624,4 @@ body.menu-open .subnav { visibility: hidden; }
 .slider:not(.slider--plain) .slide-item .tile { aspect-ratio: 3 / 4; display: flex; flex-direction: column; justify-content: center; position: relative; }
 .slider:not(.slider--plain) .slide-item .tile__media { flex: none; width: 100%; }
 .slider:not(.slider--plain) .slide-item figcaption { position: absolute; left: 0; right: 0; top: 100%; }
+/* loop clones keep the shapes: alternate by position counted within each copy */
