@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '7.9'
+V = '8.0'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -544,7 +544,7 @@ for name, img, facts, beds in ROOMS:
         </article>''')
 
 stay = intro('Stay', 'Your stay on Maniwaya', 'Explore the accommodations at Islas Moriones, from rooms for your island escape to tent stays. Browse the photographs and find the setting that suits your visit.') + f'''
-    <section class="section section--dune" id="pool-suite" aria-labelledby="ps-title">
+    <section class="section section--sandbg2" id="pool-suite" aria-labelledby="ps-title">
       <div class="wrap">
         <div class="suite">
           <figure class="suite__main" data-reveal>{pic('poolsuite-room', 'Inside the Pool Suite Room: queen bed, sofa and a kitchen with a brick breakfast bar', '(min-width: 900px) 48vw, 92vw', '55% 70%', eager=True)}</figure>
