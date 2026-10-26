@@ -447,3 +447,10 @@ body.menu-open .site-header { z-index: 200; }
   .js-anim [data-reveal] { opacity: 1 !important; transform: none !important; }
 }
 @media print { .site-header, .mobile-cta, .film, .lightbox { display: none !important; } .js-anim [data-reveal] { opacity: 1 !important; transform: none !important; } }
+
+/* Events (home): main photo fills both rows so its bottom lines up with the two side photos */
+@media (min-width: 900px) {
+  .events { align-items: stretch; }
+  .events__main { aspect-ratio: auto; min-height: 100%; }
+  .events__side { align-self: end; }
+}
