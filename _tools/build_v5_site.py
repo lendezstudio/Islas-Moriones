@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '7.0'
+V = '7.2'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -66,7 +66,7 @@ def old(jid, alt, sizes='100vw', pos='50% 50%'):
             f'loading="lazy" decoding="async" style="--pos: {pos}" alt="{html.escape(alt, quote=True)}">')
 
 FOCUS = {  # subject positions for photos whose subject sits off-centre
-    'lobby-lounge': '50% 88%', 'maniwaya-cove': '28% 18%', 'beach-loungers': '50% 82%', 'sandbar-boat': '55% 70%',
+    'lobby-lounge': '50% 88%', 'maniwaya-cove': '40% 45%', 'beach-loungers': '50% 82%', 'sandbar-boat': '55% 70%',
     'tower-wide': '50% 92%', 'tower-blue': '50% 90%', 'tower-storm': '50% 85%', 'ecart': '50% 100%',
     'bikes-crop': '50% 35%', 'bikes': '50% 100%', 'kayak-pov': '50% 55%', 'kayak-pov-2': '40% 45%', 'beach-loungers': '50% 62%', 'kayak-clear': '50% 100%', 'kayak-clear-2': '50% 100%', 'tents-campsite': '32% 96%',
     'tent': '50% 78%', 'ungab-arch': '50% 70%', 'main-building': '50% 45%', 'genesis-front': '50% 70%',
@@ -270,7 +270,7 @@ def included_grid(sizes='(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw'
         label = t.replace('&amp;', 'and')
         out.append(f'''            <li class="slide-item" aria-roledescription="slide" aria-label="{label}"><figure class="tile">
               <div class="tile__media">{f(sizes)}</div>
-              <figcaption><span class="h-card">{t}</span>{c}</figcaption>
+              <figcaption><span class="h-card">{t}</span></figcaption>
             </figure></li>''')
     return '\n'.join(out)
 
@@ -390,7 +390,6 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
           <button class="slider__arrow slider__arrow--prev" type="button" data-slider-prev aria-label="Previous amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
           <button class="slider__arrow slider__arrow--next" type="button" data-slider-next aria-label="Next amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
-        <p class="note center">Use of the bonfire area is included; bonfire menu packages are arranged separately.</p>
         <p class="soon center"><span>Coming soon</span> A pickleball court is being built at the resort.</p>
       </div>
     </section>
@@ -456,12 +455,12 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
           </div>
         </header>
       </div>
-      <div class="strip__frame">
-        <ul class="strip__track" data-strip tabindex="0" aria-label="Photo strip, scroll sideways for more">
+      <div class="slider slider--plain" data-slider aria-roledescription="carousel" aria-label="Photo gallery preview">
+        <ul class="slider__track" data-slider-track tabindex="0">
 STRIPITEMS
         </ul>
-        <button class="strip__arrow strip__arrow--prev" type="button" data-strip-prev aria-label="Scroll photos left"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <button class="strip__arrow strip__arrow--next" type="button" data-strip-next aria-label="Scroll photos right"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        <button class="slider__arrow slider__arrow--prev" type="button" data-slider-prev aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="slider__arrow slider__arrow--next" type="button" data-slider-next aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
     </section>
 
@@ -494,7 +493,7 @@ STRIP = [
 ]
 items = []
 for i, (jid, cap, alt) in enumerate(STRIP, 1):
-    items.append(f'          <li><button type="button" data-lightbox="strip" data-start="s{i}" aria-label="Open photo: {cap}">{pic(jid, alt, "(min-width: 900px) 17vw, 44vw")}</button></li>')
+    items.append(f'          <li class="slide-item" aria-roledescription="slide" aria-label="{cap}"><figure class="tile"><div class="tile__media"><button class="slide-open" type="button" data-lightbox="strip" data-start="s{i}" aria-label="Open photo: {cap}">{pic(jid, alt, "(min-width: 600px) 420px, 76vw")}</button></div></figure></li>')
 home = home.replace('STRIPITEMS', '\n'.join(items))
 strip_set = lb_set('strip', [(j, c, a) for j, c, a in STRIP]).replace('<li data-full', '<li data-id="sX" data-full')
 n = 0
@@ -622,7 +621,7 @@ stay = intro('Stay', 'Your stay on Maniwaya', 'Explore the accommodations at Isl
     <section class="section" id="tents" aria-labelledby="tents-title">
       <div class="wrap">
         <div class="feature">
-          <figure class="feature__media" data-reveal>{pic('tents-campsite', 'Tents pitched on the resort lawn under tall coconut palms, beside a thatched cottage', '(min-width: 900px) 52vw, 92vw', '32% 96%')}</figure>
+          <div class="feature__stack" data-reveal><figure class="feature__media">{pic('tents-campsite', 'Tents pitched on the resort lawn under tall coconut palms, beside a thatched cottage', '(min-width: 900px) 52vw, 92vw', '32% 96%')}</figure><figure class="feature__media">{pic('tent', 'A dome tent beneath tall coconut palms', '(min-width: 900px) 52vw, 92vw', '50% 78%')}</figure></div>
           <div class="feature__text" data-reveal>
             <p class="eyebrow">Tent stays</p>
             <h2 class="h-section" id="tents-title">A different way to stay</h2>
@@ -633,7 +632,6 @@ stay = intro('Stay', 'Your stay on Maniwaya', 'Explore the accommodations at Isl
               <div><dt>Facilities</dt><dd>Communal toilets and showers, and a charging station</dd></div>
               <div><dt>Included</dt><dd>Use of the pool, bonfire, volleyball, bamboo raft and badminton</dd></div>
             </dl>
-            <figure class="inset">{pic('tent', 'A dome tent beneath tall coconut palms', '(min-width: 900px) 16vw, 44vw', '50% 70%')}</figure>
             <a class="btn btn--line" href="contact.html">Ask about tent stays</a>
           </div>
         </div>
@@ -668,7 +666,6 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
           <button class="slider__arrow slider__arrow--prev" type="button" data-slider-prev aria-label="Previous amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
           <button class="slider__arrow slider__arrow--next" type="button" data-slider-next aria-label="Next amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
-        <p class="note center">Use of the bonfire area is included; bonfire menu packages are arranged separately.</p>
         <p class="soon center"><span>Coming soon</span> A pickleball court is being built at the resort. Ask the team for updates.</p>
       </div>
     </section>

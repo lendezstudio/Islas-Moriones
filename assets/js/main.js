@@ -490,7 +490,19 @@
       // Endless loop: two copies of the photos on each side (hidden from assistive tech),
       // so there are always photos left and right of the centred one.
       var n = originals.length, jump = n % 2 ? 2 * n : n;
-      function copy() { return originals.map(function (el) { var c = el.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.inert = true; c.classList.add('is-clone'); return c; }); }
+      function copy() {
+        return originals.map(function (el, k) {
+          var c = el.cloneNode(true);
+          c.setAttribute('aria-hidden', 'true'); c.classList.add('is-clone');
+          $$('button, a', c).forEach(function (b) { b.tabIndex = -1; });
+          // A click on a copied photo opens the original one.
+          c.addEventListener('click', function (e) {
+            if (!e.target.closest('[data-lightbox]')) return;
+            var o = $('[data-lightbox]', originals[k]); if (o) o.click();
+          });
+          return c;
+        });
+      }
       var before = copy().concat(copy()), after = copy().concat(copy());
       before.forEach(function (c) { track.insertBefore(c, originals[0]); });
       after.forEach(function (c) { track.appendChild(c); });
