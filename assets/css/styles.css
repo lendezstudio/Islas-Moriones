@@ -687,3 +687,12 @@ body.menu-open .subnav { visibility: hidden; }
   background: linear-gradient(rgba(241,233,220,.8), rgba(241,233,220,.84)), url("../img/v5/sand-bg6-900.jpg") center 70% / cover no-repeat; }
 @media (min-width: 900px) { .section--sandbg6 { background-image: linear-gradient(rgba(241,233,220,.8), rgba(241,233,220,.84)), image-set(url("../img/v5/sand-bg6-1800.webp") type("image/webp"), url("../img/v5/sand-bg6-1800.jpg") type("image/jpeg")); } }
 .section--sandbg6 .feature__text p:not(.eyebrow) { color: var(--ink-2); }
+
+/* Stronger, even wash on all sand-photo sections so text stays crisp */
+.section--sandbg, .section--sandbg2, .section--sandbg3, .section--sandbg5, .section--sandbg6 { position: relative; isolation: isolate; }
+.section--sandbg::before, .section--sandbg2::before, .section--sandbg3::before, .section--sandbg5::before, .section--sandbg6::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(244,238,228,.55); pointer-events: none; }
+.section--sandbg p, .section--sandbg2 p, .section--sandbg3 p, .section--sandbg5 p, .section--sandbg6 p,
+.section--sandbg dd, .section--sandbg2 dd, .section--sandbg3 dd, .section--sandbg5 dd, .section--sandbg6 dd { color: var(--ink) !important; }
+.section--sandbg .eyebrow, .section--sandbg2 .eyebrow, .section--sandbg3 .eyebrow, .section--sandbg5 .eyebrow, .section--sandbg6 .eyebrow { color: var(--deep-teal-2) !important; font-weight: 700; }
+.section--sandbg .spec > div, .section--sandbg2 .spec > div, .section--sandbg5 .spec > div, .section--sandbg2 .spec, .section--sandbg5 .spec { border-color: rgba(41,45,41,.22); }
