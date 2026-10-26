@@ -437,7 +437,12 @@
       if (!box) return;
       box.classList.add('is-visible');
       clearTimeout(hideTimer);
-      hideTimer = setTimeout(function () { if (!box.contains(document.activeElement)) box.classList.remove('is-visible'); }, 5000);
+      hideTimer = setTimeout(function () {
+        // Stay visible only for keyboard users; a mouse or tap leaves focus on the button, so release it.
+        var a = document.activeElement, kb = false;
+        if (box.contains(a)) { try { kb = a.matches(':focus-visible'); } catch (e) { kb = false; } if (!kb) a.blur(); }
+        if (!kb) box.classList.remove('is-visible');
+      }, 5000);
     }
     if (reduceMotion() || saveData) { video.removeAttribute('autoplay'); video.pause(); }
     btn.addEventListener('click', function () { if (video.paused) { userPaused = false; play(); } else { userPaused = true; video.pause(); } show(); });

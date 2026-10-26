@@ -481,7 +481,7 @@ body.menu-open .subnav { visibility: hidden; }
 
 /* Film controls: play/pause, sound, volume; fade out 5 s after the last interaction */
 .film__controls { position: absolute; right: 14px; bottom: 12px; display: flex; align-items: center; gap: 8px; padding: 6px; border-radius: 999px; background: rgba(20,24,22,.45); opacity: 0; pointer-events: none; transition: opacity .4s var(--ease); }
-.film__controls.is-visible, .film__controls:focus-within { opacity: 1; pointer-events: auto; }
+.film__controls.is-visible, .film__controls:has(:focus-visible) { opacity: 1; pointer-events: auto; }
 .film__btn { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; background: transparent; color: #fff; }
 .film__btn:hover { background: rgba(255,255,255,.15); }
 .film__btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
