@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '7.2'
+V = '7.3'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -269,9 +269,7 @@ def included_grid(sizes='(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw'
     for f, t, c in INCLUDED:
         label = t.replace('&amp;', 'and')
         out.append(f'''            <li class="slide-item" aria-roledescription="slide" aria-label="{label}"><figure class="tile">
-              <div class="tile__media">{f(sizes)}</div>
-              <figcaption><span class="h-card">{t}</span></figcaption>
-            </figure></li>''')
+              <div class="tile__media">{f(sizes)}</div>            </figure></li>''')
     return '\n'.join(out)
 
 
