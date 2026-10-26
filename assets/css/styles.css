@@ -669,7 +669,7 @@ body.menu-open .subnav { visibility: hidden; }
 
 /* Experiences "Included with your stay" band: sand photo with a stronger wash behind the heading */
 .section--sandbg3 { color: var(--ink);
-  background: linear-gradient(rgba(241,233,220,.86), rgba(241,233,220,.6) 34%, rgba(241,233,220,.6)), url("../img/v5/sand-bg3-900.jpg") center / cover no-repeat; }
-@media (min-width: 900px) { .section--sandbg3 { background-image: linear-gradient(rgba(241,233,220,.86), rgba(241,233,220,.6) 34%, rgba(241,233,220,.6)), image-set(url("../img/v5/sand-bg3-1800.webp") type("image/webp"), url("../img/v5/sand-bg3-1800.jpg") type("image/jpeg")); } }
+  background: linear-gradient(rgba(241,233,220,.86), rgba(241,233,220,.6) 34%, rgba(241,233,220,.6)), url("../img/v5/sand-bg4-900.jpg") center / cover no-repeat; }
+@media (min-width: 900px) { .section--sandbg3 { background-image: linear-gradient(rgba(241,233,220,.86), rgba(241,233,220,.6) 34%, rgba(241,233,220,.6)), image-set(url("../img/v5/sand-bg4-1800.webp") type("image/webp"), url("../img/v5/sand-bg4-1800.jpg") type("image/jpeg")); } }
 .section--sandbg3 .section-head p:not(.eyebrow), .section--sandbg3 .soon { color: var(--ink); font-weight: 500; }
 .section--sandbg3 .h-section { color: var(--ink); }
