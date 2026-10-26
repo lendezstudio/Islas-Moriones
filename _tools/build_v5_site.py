@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '7.7'
+V = '7.8'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -650,7 +650,7 @@ def stop(img, name, where, text):
             <p>{text}</p>
           </article>'''
 exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying the resort, head onto the water, or ask about experiences further afield. Explore what is included with your stay and what can be arranged separately.') + f'''
-    <section class="section section--dune" aria-labelledby="inc-title">
+    <section class="section section--sandbg3" aria-labelledby="inc-title">
       <div class="wrap">
         <header class="section-head center">
           <p class="eyebrow">1 · Included with your stay</p>
