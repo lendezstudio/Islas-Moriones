@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '6.1'
+V = '6.5'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -349,12 +349,8 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
           <ul class="slider__track" data-slider-track tabindex="0">
 {closer_slides()}
           </ul>
-          <div class="slider__controls">
-            <button class="slider__btn" type="button" data-slider-prev aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <div class="slider__dots" data-slider-dots></div>
-            <button class="slider__btn" type="button" data-slider-toggle aria-pressed="false" aria-label="Pause slideshow"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5l11 6.5-11 6.5z"/></svg></button>
-            <button class="slider__btn" type="button" data-slider-next aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-          </div>
+          <button class="slider__arrow slider__arrow--prev" type="button" data-slider-prev aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="slider__arrow slider__arrow--next" type="button" data-slider-next aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </div>
     </section>
@@ -389,12 +385,8 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
           <ul class="slider__track" data-slider-track tabindex="0">
 {included_grid()}
           </ul>
-          <div class="slider__controls">
-            <button class="slider__btn" type="button" data-slider-prev aria-label="Previous amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <div class="slider__dots" data-slider-dots></div>
-            <button class="slider__btn" type="button" data-slider-toggle aria-pressed="false" aria-label="Pause slideshow"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5l11 6.5-11 6.5z"/></svg></button>
-            <button class="slider__btn" type="button" data-slider-next aria-label="Next amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-          </div>
+          <button class="slider__arrow slider__arrow--prev" type="button" data-slider-prev aria-label="Previous amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="slider__arrow slider__arrow--next" type="button" data-slider-next aria-label="Next amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
         <p class="note center">Use of the bonfire area is included; bonfire menu packages are arranged separately.</p>
       </div>
@@ -670,12 +662,8 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
           <ul class="slider__track" data-slider-track tabindex="0">
 {included_grid()}
           </ul>
-          <div class="slider__controls">
-            <button class="slider__btn" type="button" data-slider-prev aria-label="Previous amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <div class="slider__dots" data-slider-dots></div>
-            <button class="slider__btn" type="button" data-slider-toggle aria-pressed="false" aria-label="Pause slideshow"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5l11 6.5-11 6.5z"/></svg></button>
-            <button class="slider__btn" type="button" data-slider-next aria-label="Next amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-          </div>
+          <button class="slider__arrow slider__arrow--prev" type="button" data-slider-prev aria-label="Previous amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="slider__arrow slider__arrow--next" type="button" data-slider-next aria-label="Next amenities"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
         <p class="note center">Use of the bonfire area is included; bonfire menu packages are arranged separately. A pickleball court is under development.</p>
       </div>

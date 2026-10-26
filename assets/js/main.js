@@ -407,6 +407,16 @@
       if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
     });
     window.addEventListener('resize', update);
+    // Arrows appear on interaction and fade 3 seconds later.
+    var frame = track.parentNode, t;
+    function showArrows() {
+      frame.classList.add('arrows-on'); clearTimeout(t);
+      t = setTimeout(function () { var a = doc.activeElement, kb = false; if (a && a.classList && a.classList.contains('strip__arrow')) { try { kb = a.matches(':focus-visible'); } catch (e) {} if (kb) return; a.blur(); } frame.classList.remove('arrows-on'); }, 3000);
+    }
+    frame.addEventListener('pointermove', showArrows);
+    frame.addEventListener('touchstart', showArrows, { passive: true });
+    frame.addEventListener('focusin', showArrows);
+    [prev, next].forEach(function (b) { b.addEventListener('click', showArrows); });
     update();
   }
 
@@ -474,7 +484,7 @@
   function initSliders() {
     $$('[data-slider]').forEach(function (root) {
       var track = $('[data-slider-track]', root), items = $$('.slide-item', track);
-      var dotsEl = $('[data-slider-dots]', root), toggle = $('[data-slider-toggle]', root);
+      var dotsEl = $('[data-slider-dots]', root) || doc.createElement('div'), toggle = $('[data-slider-toggle]', root) || doc.createElement('button');
       if (!items.length) return;
       var paused = reduceMotion(), hold = false, timer;
       // Each slide is centred in turn (gallery-style showcase).
@@ -520,6 +530,21 @@
       track.addEventListener('touchend', function () { setTimeout(function () { hold = false; }, 2500); }, { passive: true });
       reduceMotionQuery.addEventListener('change', function () { if (reduceMotion()) { paused = true; syncToggle(); restart(); } });
       window.addEventListener('resize', buildDots);
+      // Edge arrows appear on interaction and fade 3 seconds later.
+      var arrowTimer;
+      function showArrows() {
+        root.classList.add('arrows-on');
+        clearTimeout(arrowTimer);
+        arrowTimer = setTimeout(function () {
+          var a = doc.activeElement;
+          if (a && a.classList && a.classList.contains('slider__arrow')) { var kb = false; try { kb = a.matches(':focus-visible'); } catch (e) {} if (kb) return; a.blur(); }
+          root.classList.remove('arrows-on');
+        }, 3000);
+      }
+      root.addEventListener('pointermove', showArrows);
+      root.addEventListener('touchstart', showArrows, { passive: true });
+      root.addEventListener('focusin', showArrows);
+      $$('.slider__arrow', root).forEach(function (b) { b.addEventListener('click', showArrows); });
       // Start on a middle slide so photos sit on both sides, as in the reference.
       var startAt = Math.floor(items.length / 2);
       track.scrollLeft = center(items[startAt]) - track.clientWidth / 2;

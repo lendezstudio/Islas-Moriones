@@ -558,3 +558,52 @@ body.menu-open .subnav { visibility: hidden; }
 .slider--plain .slider__track { grid-auto-columns: clamp(240px, 24vw, 340px); padding-inline: calc(50vw - clamp(240px, 24vw, 340px) / 2); }
 .slider--plain .tile__media { margin-bottom: 0; }
 @media (max-width: 599.98px) { .slider--plain .slider__track { grid-auto-columns: 68vw; padding-inline: 16vw; } }
+
+/* Showcase slider, matched to the reference: equal widths, alternating landscape / portrait / square,
+   every photo centred on the same horizontal line; captions hang below without shifting the photos */
+.slider__track { align-items: center; padding-bottom: 96px; }
+.slider--plain .slider__track { padding-bottom: 8px; }
+.slide-item:nth-child(n) { align-self: center; padding: 0; }
+.slide-item .tile { position: relative; }
+.slide-item .tile__media { margin: 0; }
+.slide-item:nth-child(3n+1) .tile__media { aspect-ratio: 1.63; }
+.slide-item:nth-child(3n+2) .tile__media { aspect-ratio: .76; }
+.slide-item:nth-child(3n) .tile__media { aspect-ratio: 1; }
+.slide-item figcaption { position: absolute; left: 0; right: 0; top: 100%; padding-top: 12px; }
+.slider .tile__media img { object-position: var(--pos, 50% 50%); }
+
+/* Edge arrows: on the left and right of the photo row, fading out 3 s after the last interaction */
+.slider__arrow { position: absolute; z-index: 2; top: calc(50% - 48px - 34px); display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 1px solid rgba(41,45,41,.25); border-radius: 50%; background: rgba(247,242,233,.92); color: var(--ink); box-shadow: 0 6px 20px -10px rgba(0,0,0,.35); opacity: 0; pointer-events: none; transition: opacity .35s var(--ease); }
+.slider--plain .slider__arrow { top: calc(50% - 24px - 34px); }
+.slider__arrow svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.slider__arrow--prev { left: max(12px, calc(var(--gutter) - 8px)); }
+.slider__arrow--next { right: max(12px, calc(var(--gutter) - 8px)); }
+.slider.arrows-on .slider__arrow, .slider__arrow:focus-visible { opacity: 1; pointer-events: auto; }
+.slider__arrow:hover { background: #fff; }
+@media (max-width: 599.98px) { .slider__track { padding-bottom: 104px; } }
+
+/* Photo strip: same steady rhythm as the slideshows (landscape / portrait / square, equal widths,
+   centred on one line) on every screen size */
+.strip__track { align-items: center; }
+.strip__track li { flex: 0 0 clamp(200px, 58vw, 260px); }
+.strip__track button { aspect-ratio: auto; }
+.strip__track li:nth-child(3n+1) button { aspect-ratio: 1.63; }
+.strip__track li:nth-child(3n+2) button { aspect-ratio: .76; }
+.strip__track li:nth-child(3n) button { aspect-ratio: 1; }
+@media (min-width: 900px) { .strip__track { gap: 28px; } .strip__track li { flex-basis: calc((100% - 5 * 28px) / 5.2); } }
+/* Strip arrows fade like the slideshow arrows */
+.strip__arrow { opacity: 0; pointer-events: none; transition: opacity .35s var(--ease); }
+.strip__frame.arrows-on .strip__arrow:not([disabled]), .strip__arrow:focus-visible { opacity: 1; pointer-events: auto; }
+@media (max-width: 899.98px) { .strip__arrow { display: grid; } }
+/* Slideshows on phones keep the same alternating shapes and one centre line */
+@media (max-width: 599.98px) { .slider__track { grid-auto-columns: 64vw; padding-inline: 18vw; } }
+
+/* Steady two-shape rhythm everywhere: landscape, portrait, landscape, portrait... same width, one centre line */
+.slide-item:nth-child(odd) .tile__media, .strip__track li:nth-child(odd) button { aspect-ratio: 4 / 3; }
+.slide-item:nth-child(even) .tile__media, .strip__track li:nth-child(even) button { aspect-ratio: 3 / 4; }
+.slider__controls { display: none; }
+.slider__track { padding-bottom: 96px; }
+.slider--plain .slider__track { padding-bottom: 24px; }
+
+.strip__arrow--prev { left: max(8px, calc(var(--gutter) - 23px)); }
+.strip__arrow--next { right: max(8px, calc(var(--gutter) - 23px)); }
