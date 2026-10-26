@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '7.5'
+V = '7.6'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -427,7 +427,7 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
       </div>
     </section>
 
-    <section class="section section--ink" aria-labelledby="events-title">
+    <section class="section section--sandbg" aria-labelledby="events-title">
       <div class="wrap">
         <div class="events">
           <figure class="events__main" data-reveal>{pic('genesis-hall', 'The Genesis Events Place set for a reception, white fabric draped from the ceiling over long dining tables', '(min-width: 900px) 50vw, 92vw', '50% 50%')}</figure>
@@ -435,7 +435,7 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
             <p class="eyebrow">Gatherings &amp; Events</p>
             <h2 class="h-section" id="events-title">Bring everyone together on Maniwaya</h2>
             <p>Explore the resort's events venue and picture your next gathering at Islas Moriones. Share your plans with the team to discuss the space and arrangements for your group.</p>
-            <a class="btn btn--sand" href="groups.html">Explore the venue</a>
+            <a class="btn btn--teal" href="groups.html">Explore the venue</a>
           </div>
           <figure class="events__side" data-reveal>{pic('genesis-lawn', 'Cocktail tables dressed in white on the lawn in front of The Genesis', '(min-width: 900px) 24vw, 46vw', '50% 75%')}</figure>
           <figure class="events__side" data-reveal>{pic('genesis-tables', 'Round tables with gold chairs and flowers inside The Genesis', '(min-width: 900px) 24vw, 46vw', '50% 60%')}</figure>

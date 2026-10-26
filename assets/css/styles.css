@@ -652,3 +652,11 @@ body.menu-open .subnav { visibility: hidden; }
 .gallery-filter .chip { flex: none; }
 .gallery-filter.is-stuck { box-shadow: 0 8px 18px -14px rgba(41,45,41,.45); }
 @media (min-width: 900px) { .gallery-filter { justify-content: center; } }
+
+/* Gatherings band (home): sand-texture photo with a light wash so dark text reads clearly */
+.section--sandbg { position: relative; isolation: isolate; color: var(--ink);
+  background: linear-gradient(rgba(241,233,220,.78), rgba(241,233,220,.82)), url("../img/v5/sand-bg-900.jpg") center / cover no-repeat; }
+@media (min-width: 900px) { .section--sandbg { background-image: linear-gradient(rgba(241,233,220,.78), rgba(241,233,220,.82)), image-set(url("../img/v5/sand-bg-1800.webp") type("image/webp"), url("../img/v5/sand-bg-1800.jpg") type("image/jpeg")); } }
+.section--sandbg .events__text p:not(.eyebrow) { color: var(--ink-2); }
+.section--sandbg .eyebrow { color: var(--deep-teal); }
+.section--sandbg .h-section { color: var(--ink); }
