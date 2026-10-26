@@ -259,7 +259,7 @@ INCLUDED = [  # (image html, title, caption) all from the resort's inclusion lis
     (lambda s: pic('pool-loungers', 'Sun loungers and umbrellas beside the turquoise outdoor pool, shaded by tropical trees', s, '50% 62%'), 'Swimming pool', 'The outdoor pool, with loungers in the shade.'),
     (lambda s: old('beach-volleyball', 'A volleyball net on the resort beach beside clear water', s, '40% 50%'), 'Beach volleyball', 'A net on the sand, a few steps from the water.'),
     (lambda s: old('bamboo-raft', 'The covered bamboo raft with a long table on turquoise water', s, '50% 45%'), 'Bamboo raft', 'Float off the shore on the resort’s bamboo raft.'),
-    (lambda s: old('bonfire-night', 'The bonfire blazing at night on the resort grounds, a lit cottage behind', s, '50% 62%'), 'Bonfire', 'The bonfire area on the lawn, for evenings outdoors.'),
+    (lambda s: pic('bonfire-smores', 'Marshmallows toasting on skewers over a campfire at night', s, '55% 50%'), 'Bonfire', 'Evenings around the fire. Photo for illustration.'),
     (lambda s: pic('pingpong-darts', 'A ping-pong table in the resort’s open-sided games room', s, '50% 60%'), 'Ping-pong', 'A games room open to the breeze.'),
     (lambda s: pic('darts', 'A dartboard with darts on a rustic timber board', s, '50% 40%'), 'Darts', 'A dartboard for friendly games.'),
     (lambda s: pic('badminton', 'Two badminton rackets and shuttlecocks resting on grass', s, '50% 55%'), 'Badminton', 'Rackets for a game on the lawn.'),
