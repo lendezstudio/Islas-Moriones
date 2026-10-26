@@ -54,6 +54,8 @@ JOBS = [
     ('room-bath',        'viber_image_2026-10-20_16-44-51-697.jpg', MARK_P, (640, 1200)),
     # Tents
     ('tent',             '309AD28B-9FEB-4664-9C5C-4FA98A62EBED.heic', None, (640, 1100)),
+    # Campsite tents: the resort's social post; crop inside the white frame line and above the logo/text
+    ('tents-campsite',   'Initial Images/469518456_605136372186168_174922518552061940_n.jpg', (72/1080, 54/1080, 1008/1080, 932/1080), (800, 936)),
     # Water and island
     ('kayak-clear',      'IMG_2380.HEIC', None, (640, 1100)),
     ('kayak-clear-2',    'IMG_2372.HEIC', None, (640, 1100)),
@@ -62,12 +64,26 @@ JOBS = [
     ('boat-omon',        'IMG_9171.JPG', MARK_L, (800, 1424)),
     ('ecart',            'RESORT PRINTABLES (2).png', None, (640, 1200)),
     ('bikes',            'IMG_1159.jpg', None, (640, 1100)),
+    ('bikes-crop',       'IMG_1159.jpg', (0, .40, 1, 1), (800, 1400)),
+    ('kayak-pov',        'IMG_2380.HEIC', (0, .50, 1, 1), (800, 1400)),
+    ('kayak-pov-2',      'IMG_2372.HEIC', (0, .50, 1, 1), (800, 1400)),
     ('ungab',            'IMG_4354.heic', None, (640, 1100)),
     ('ungab-arch',       'IMG_4355.heic', None, (640, 1100)),
     ('sandbar-aerial',   'image (1).png', None, (800, 1080)),
     ('reef-raft',        'Screenshot 2025-10-02 at 8.57.18 AM.png', None, (572,)),
     ('maniwaya-rocks',   'IMG_1156.jpg', None, (640, 1100)),
     ('pingpong-darts',   'viber_image_2026-10-20_16-40-24-808.jpg', MARK_L, (800, 1424)),
+    ('darts',            '1df6a445c2cbbc474487db571a2e7874.jpg', None, (600,)),
+    ('kayak-float',      '37d7ae8d44e5e5d5804f941192a827ea.jpg', None, (895,)),
+    # Photos extracted from ISLAS BROCHURE 2026 (1).pdf (pypdf) into edited-images/brochure/
+    ('pool-loungers',    'edited-images/brochure/pool-loungers.jpg', None, (640, 908)),
+    ('main-palms',       'edited-images/brochure/main-building-palms.jpg', None, (800, 1210)),
+    ('resort-sign',      'edited-images/brochure/resort-sign.jpg', None, (800, 1600)),
+    ('morion-statues',   'edited-images/brochure/morion-statues.jpg', None, (540,)),
+    ('century-tree-b',   'edited-images/brochure/century-cliff-tree.jpg', None, (768,)),
+    ('sunong-bato-b',    'edited-images/brochure/sunong-bato.jpg', None, (756,)),
+    ('beach-loungers',   'viber_image_2026-10-21_08-43-10-768.jpg', MARK_L, (800, 1424)),
+    ('bonfire-smores',   '749f2544-eec8-425f-98f1-c7b7e0e02762-md.jpeg', None, (800,)),
     ('badminton',        '69d30c820f458aa14e24c2487352050a.jpg', None, (640, 736)),
     # The Genesis Events Place
     ('genesis-hall',     'IMG_1212.HEIC', None, (800, 1200)),
@@ -82,7 +98,7 @@ JOBS = [
 ]
 
 def load(name):
-    path = os.path.join(NEW, name)
+    path = os.path.join(ROOT, name) if ('/' in name) else os.path.join(NEW, name)
     if not os.path.exists(path):  # some filenames contain a narrow no-break space
         key = name.replace(' ', '').lower()
         match = [f for f in os.listdir(NEW) if f.replace(' ', '').replace(' ', '').lower() == key]

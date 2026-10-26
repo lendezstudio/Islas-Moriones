@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '5.1'
+V = '5.6'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -34,8 +34,9 @@ for line in rd('assets/img/v5/manifest.txt').strip().splitlines():
     jid, sizes, _ = line.split('|')
     SIZES[jid] = [tuple(int(n) for n in s.split('x')) for s in sizes.split()]
 
-def pic(jid, alt, sizes='100vw', pos='50% 50%', eager=False, cls=''):
+def pic(jid, alt, sizes='100vw', pos=None, eager=False, cls=''):
     """<picture> for a v5 derivative: WebP with JPEG fallback, responsive widths, reserved size."""
+    pos = pos or FOCUS.get(jid, '50% 50%')
     s = SIZES[jid]
     w, h = s[-1]
     webp = ', '.join(f'assets/img/v5/{jid}-{a}.webp {a}w' for a, _ in s)
@@ -55,13 +56,21 @@ OLD = {  # earlier derivatives (assets/img) still used: id -> (widths, w, h)
     'hero-dusk-pool': ((720, 1100), 1536, 1880), 'beach-sunset-path': ((560, 900), 1200, 1600),
     'garden-path-beach': ((560, 936), 936, 856), 'kubo-interior-loft': ((560, 936), 936, 856),
     'exp-snorkel': ((700, 1200), 1200, 1500), 'campsite-tents': ((560, 936), 936, 856),
-    'night-facade': ((720, 1100), 1600, 1200), 'dining-table': ((600,), 600, 600),
+    'night-facade': ((720, 1100), 1600, 1200), 'kubo-exterior': ((560, 936), 936, 856), 'dining-table': ((600,), 600, 600), 'exp-massage': ((800, 1400), 1400, 933), 'exp-karaoke': ((800, 1400), 1400, 788), 'exp-laundry': ((800, 1400), 1400, 933),
 }
 def old(jid, alt, sizes='100vw', pos='50% 50%'):
+    pos = FOCUS.get('old:' + jid, pos)
     widths, w, h = OLD[jid]
     srcset = ', '.join(f'assets/img/{jid}-{a}.jpg {a}w' for a in widths)
     return (f'<img src="assets/img/{jid}-{widths[0]}.jpg" srcset="{srcset}" sizes="{sizes}" width="{w}" height="{h}" '
             f'loading="lazy" decoding="async" style="--pos: {pos}" alt="{html.escape(alt, quote=True)}">')
+
+FOCUS = {  # subject positions for photos whose subject sits off-centre
+    'tower-wide': '50% 92%', 'tower-blue': '50% 90%', 'tower-storm': '50% 85%', 'ecart': '50% 100%',
+    'bikes-crop': '50% 35%', 'bikes': '50% 100%', 'kayak-pov': '50% 55%', 'kayak-pov-2': '40% 45%', 'beach-loungers': '50% 62%', 'kayak-clear': '50% 100%', 'kayak-clear-2': '50% 100%', 'tents-campsite': '32% 96%',
+    'tent': '50% 78%', 'ungab-arch': '50% 70%', 'main-building': '50% 45%', 'genesis-front': '50% 70%',
+    'genesis-lawn': '50% 75%', 'palms-sky': '50% 40%', 'maniwaya-rocks': '50% 70%', 'kubo-exterior': '50% 50%',
+}
 
 def full(jid):
     """Largest file for the lightbox."""
@@ -245,11 +254,12 @@ def card(img, title, text, href=None, link=None, extra=''):
 
 # =====================================================================================  HOME
 INCLUDED = [  # (image html, title, caption) all from the resort's inclusion list
-    (lambda s: pic('dusk-pool', 'The resort pool and main building lit at dusk', s, '50% 70%'), 'Swimming pool', 'The outdoor pool beside the main building.'),
+    (lambda s: pic('pool-loungers', 'Sun loungers and umbrellas beside the turquoise outdoor pool, shaded by tropical trees', s, '50% 62%'), 'Swimming pool', 'The outdoor pool, with loungers in the shade.'),
     (lambda s: old('beach-volleyball', 'A volleyball net on the resort beach beside clear water', s, '40% 50%'), 'Beach volleyball', 'A net on the sand, a few steps from the water.'),
     (lambda s: old('bamboo-raft', 'The covered bamboo raft with a long table on turquoise water', s, '50% 45%'), 'Bamboo raft', 'Float off the shore on the resort’s bamboo raft.'),
     (lambda s: old('bonfire-circle', 'Timber benches around the bonfire pit on the lawn under palms', s, '50% 55%'), 'Bonfire', 'The bonfire area on the lawn, for evenings outdoors.'),
-    (lambda s: pic('pingpong-darts', 'A ping-pong table and dartboard in the resort’s open-sided games room', s, '50% 60%'), 'Ping-pong &amp; darts', 'A games room open to the breeze.'),
+    (lambda s: pic('pingpong-darts', 'A ping-pong table in the resort’s open-sided games room', s, '50% 60%'), 'Ping-pong', 'A games room open to the breeze.'),
+    (lambda s: pic('darts', 'A dartboard with darts on a rustic timber board', s, '50% 40%'), 'Darts', 'A dartboard for friendly games.'),
     (lambda s: pic('badminton', 'Two badminton rackets and shuttlecocks resting on grass', s, '50% 55%'), 'Badminton', 'Rackets for a game on the lawn.'),
 ]
 def included_grid(sizes='(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw'):
@@ -263,10 +273,17 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
         <video class="film__video" autoplay muted loop playsinline preload="auto" poster="assets/video/islas-moriones-hero-poster.jpg" aria-label="Aerial and beach views of Islas Moriones on Maniwaya Island" data-film>
           <source src="assets/video/islas-moriones-hero.mp4" type="video/mp4">
         </video>
-        <button class="film__toggle" type="button" data-film-toggle aria-pressed="false" aria-label="Pause the film">
-          <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
-          <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5l11 6.5-11 6.5z"/></svg>
-        </button>
+        <div class="film__controls" data-film-controls>
+          <button class="film__btn" type="button" data-film-toggle aria-pressed="false" aria-label="Pause the film">
+            <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
+            <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5l11 6.5-11 6.5z"/></svg>
+          </button>
+          <button class="film__btn" type="button" data-film-mute aria-pressed="true" aria-label="Turn sound on">
+            <svg class="i-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4zM17 9l4 6M21 9l-4 6"/></svg>
+            <svg class="i-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4zM16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+          </button>
+          <label class="film__vol"><span class="visually-hidden">Film volume</span><input type="range" min="0" max="1" step="0.05" value="0.6" data-film-volume></label>
+        </div>
       </div>
     </section>
 
@@ -283,6 +300,28 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
       </div>
     </section>
 
+    <section class="section section--linen" aria-labelledby="glance-title">
+      <div class="wrap">
+        <div class="feature">
+          <figure class="feature__media feature__media--wide" data-reveal>{pic('resort-sign', 'The Islas Moriones Beach Resort sign on the sandy grounds, palms and the main building behind', '(min-width: 900px) 56vw, 92vw', '50% 55%')}</figure>
+          <div class="feature__text" data-reveal>
+            <p class="eyebrow">The resort at a glance</p>
+            <h2 class="h-section" id="glance-title">Everything in one island getaway</h2>
+            <p>A beachfront resort on Maniwaya Island, with places to stay, eat, gather and unwind within a few steps of each other.</p>
+            <ul class="glance">
+              <li><strong>16</strong> air-conditioned rooms</li>
+              <li>Outdoor swimming pool</li>
+              <li>Spacious camping grounds</li>
+              <li>Restaurant and bar</li>
+              <li>The Genesis Events Place and conference facilities</li>
+              <li>Recreational spaces</li>
+              <li>Wi-Fi and 24-hour electricity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--tight" aria-labelledby="closer-title">
       <div class="wrap">
         <header class="section-head center">
@@ -290,9 +329,9 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
           <p>Explore the shoreline, pool, and places to spend time together at Islas Moriones.</p>
         </header>
         <div class="mosaic4">
-          <figure class="m4 m4--a" data-reveal>{pic('tower-wide', 'The white lifeguard tower and resort flags on the sandy beach beside calm blue water', '(min-width: 900px) 58vw, 92vw', '50% 60%')}<figcaption>The beachfront</figcaption></figure>
+          <figure class="m4 m4--a" data-reveal>{pic('tower-wide', 'The white lifeguard tower and resort flags on the sandy beach beside calm blue water', '(min-width: 900px) 58vw, 92vw', '50% 80%')}<figcaption>The beachfront</figcaption></figure>
           <figure class="m4 m4--b" data-reveal>{pic('dusk-pool', 'The pool glowing turquoise beside the two-storey main building at dusk', '(min-width: 900px) 30vw, 46vw', '50% 62%')}<figcaption>The pool at dusk</figcaption></figure>
-          <figure class="m4 m4--c" data-reveal>{pic('beach-palms', 'Palms shading the sand in front of the resort buildings', '(min-width: 900px) 30vw, 46vw', '50% 55%')}<figcaption>Palms along the shore</figcaption></figure>
+          <figure class="m4 m4--c" data-reveal>{pic('beach-loungers', 'Two wicker sun loungers in the shade of a tree on the white-sand beach, the lifeguard tower and a resort boat beyond', '(min-width: 900px) 30vw, 46vw')}<figcaption>Shade on the sand</figcaption></figure>
           <figure class="m4 m4--d" data-reveal>{pic('main-building', 'The white main building with its tall gabled roof and balconies', '(min-width: 900px) 30vw, 92vw', '50% 45%')}<figcaption>The main building</figcaption></figure>
         </div>
       </div>
@@ -311,8 +350,8 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
           </div>
         </div>
         <div class="pair">
-          <a class="pair__item" href="rooms.html#luxury-kubo" data-reveal>{pic('kubo-exterior', 'The thatched Luxury Kubo with its veranda, beside a bamboo cart on the lawn', '(min-width: 700px) 46vw, 92vw', '50% 45%')}<span class="pair__label">Luxury Kubo<small>A thatched-roof stay with a loft and kitchen</small></span></a>
-          <a class="pair__item" href="rooms.html#tents" data-reveal>{pic('tent', 'A dome tent pitched on the lawn beneath tall coconut palms', '(min-width: 700px) 46vw, 92vw', '50% 70%')}<span class="pair__label">Tent stays<small>Camp on the grounds under the palms</small></span></a>
+          <a class="pair__item" href="rooms.html#luxury-kubo" data-reveal>{old('kubo-exterior', 'The thatched Luxury Kubo with its white-railed veranda on the lawn under coconut palms', '(min-width: 700px) 46vw, 92vw', '50% 50%')}<span class="pair__label">Luxury Kubo<small>A thatched-roof stay with a loft and kitchen</small></span></a>
+          <a class="pair__item" href="rooms.html#tents" data-reveal>{pic('tents-campsite', 'Tents pitched on the lawn under tall coconut palms beside a thatched cottage', '(min-width: 700px) 46vw, 92vw', '32% 96%')}<span class="pair__label">Tent stays<small>Camp on the grounds under the palms</small></span></a>
         </div>
       </div>
     </section>
@@ -344,9 +383,9 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
           </div>
         </header>
         <div class="cards cards--3">
-{card(pic('kayak-clear', 'View from a crystal-clear kayak, paddle across the bow, looking over calm water to a green island', '(min-width: 900px) 30vw, 92vw', '50% 70%'), 'Crystal-clear kayaks', 'See the water from a different perspective. Ask the resort about availability and rental arrangements.', 'activities.html#kayaks', 'About the kayaks')}
+{card(pic('kayak-float', 'Seen from above, a swimmer floats beside a transparent kayak on turquoise water', '(min-width: 900px) 30vw, 92vw', '50% 50%'), 'Crystal-clear kayaks', 'See the water from a different perspective. Ask the resort about availability and rental arrangements.', 'activities.html#kayaks', 'About the kayaks')}
 {card(pic('boat-longinus', 'The resort’s outrigger boat St. Longinus moored in clear shallow water', '(min-width: 900px) 30vw, 92vw', '50% 55%'), 'Boat rentals', 'Plan time on the water with the resort’s boats, from a small boat for six to a big boat for twenty-five.', 'activities.html#boats', 'See the boats')}
-{card(old('sunong-bato', 'Sunong Bato, a stacked-rock formation in clear water', '(min-width: 900px) 30vw, 92vw'), 'Island hopping', 'Visit Palad Sandbar, Sunong Bato, Ungab Rock Formation and more around Maniwaya.', 'activities.html#island-hopping', 'Island-hopping stops')}
+{card(pic('sunong-bato-b', 'Sunong Bato, a stacked rock formation rising from clear turquoise water', '(min-width: 900px) 30vw, 92vw', '50% 50%'), 'Island hopping', 'Visit Palad Sandbar, Sunong Bato, Ungab Rock Formation, the Century Cliff Tree and more around Maniwaya.', 'activities.html#island-hopping', 'Island-hopping stops')}
         </div>
       </div>
     </section>
@@ -376,7 +415,7 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
             <p>Explore the resort's events venue and picture your next gathering at Islas Moriones. Share your plans with the team to discuss the space and arrangements for your group.</p>
             <a class="btn btn--sand" href="groups.html">Explore the venue</a>
           </div>
-          <figure class="events__side" data-reveal>{pic('genesis-lawn', 'Cocktail tables dressed in white on the lawn in front of The Genesis', '(min-width: 900px) 24vw, 46vw', '50% 70%')}</figure>
+          <figure class="events__side" data-reveal>{pic('genesis-lawn', 'Cocktail tables dressed in white on the lawn in front of The Genesis', '(min-width: 900px) 24vw, 46vw', '50% 75%')}</figure>
           <figure class="events__side" data-reveal>{pic('genesis-tables', 'Round tables with gold chairs and flowers inside The Genesis', '(min-width: 900px) 24vw, 46vw', '50% 60%')}</figure>
         </div>
       </div>
@@ -426,11 +465,11 @@ STRIP = [
     ('room-suiteloft', 'Suite Loft Room', 'A loft room with a staircase above the bed'),
     ('ungab-arch', 'Ungab Rock Formation (island hopping)', 'A natural rock arch above a quiet cove at Ungab Rock Formation'),
     ('lobby-lounge', 'The lobby lounge', 'The lobby lounge with leaf-pattern wall and dark sofas'),
-    ('bikes', 'Mountain bikes on Maniwaya', 'Two mountain bikes on the rocky shore of Maniwaya'),
+    ('bikes-crop', 'Mountain bikes on Maniwaya', 'Two mountain bikes on the rocky shore of Maniwaya'),
 ]
 items = []
 for i, (jid, cap, alt) in enumerate(STRIP, 1):
-    items.append(f'          <li><button type="button" data-lightbox="strip" data-start="s{i}" aria-label="Open photo: {cap}">{pic(jid, alt, "(min-width: 900px) 17vw, 44vw", "50% 55%")}</button></li>')
+    items.append(f'          <li><button type="button" data-lightbox="strip" data-start="s{i}" aria-label="Open photo: {cap}">{pic(jid, alt, "(min-width: 900px) 17vw, 44vw")}</button></li>')
 home = home.replace('STRIPITEMS', '\n'.join(items))
 strip_set = lb_set('strip', [(j, c, a) for j, c, a in STRIP]).replace('<li data-full', '<li data-id="sX" data-full')
 n = 0
@@ -558,7 +597,7 @@ stay = intro('Stay', 'Your stay on Maniwaya', 'Explore the accommodations at Isl
     <section class="section" id="tents" aria-labelledby="tents-title">
       <div class="wrap">
         <div class="feature">
-          <figure class="feature__media feature__media--tall" data-reveal>{pic('tent', 'A dome tent pitched on the lawn beneath tall coconut palms', '(min-width: 900px) 44vw, 92vw', '50% 72%')}</figure>
+          <figure class="feature__media" data-reveal>{pic('tents-campsite', 'Tents pitched on the resort lawn under tall coconut palms, beside a thatched cottage', '(min-width: 900px) 52vw, 92vw', '32% 96%')}</figure>
           <div class="feature__text" data-reveal>
             <p class="eyebrow">Tent stays</p>
             <h2 class="h-section" id="tents-title">A different way to stay</h2>
@@ -569,6 +608,7 @@ stay = intro('Stay', 'Your stay on Maniwaya', 'Explore the accommodations at Isl
               <div><dt>Facilities</dt><dd>Communal toilets and showers, and a charging station</dd></div>
               <div><dt>Included</dt><dd>Use of the pool, bonfire, volleyball, bamboo raft and badminton</dd></div>
             </dl>
+            <figure class="inset">{pic('tent', 'A dome tent beneath tall coconut palms', '(min-width: 900px) 16vw, 44vw', '50% 70%')}</figure>
             <a class="btn btn--line" href="contact.html">Ask about tent stays</a>
           </div>
         </div>
@@ -614,11 +654,14 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
         </header>
 
         <div class="feature" id="kayaks">
-          <figure class="feature__media" data-reveal>{pic('kayak-clear', 'A crystal-clear kayak on calm water off Maniwaya, paddle and life vest in view', '(min-width: 900px) 52vw, 92vw', '50% 78%')}</figure>
+          <figure class="feature__media feature__media--square" data-reveal>{pic('kayak-float', 'Seen from above, a swimmer floats beside a transparent kayak on bright turquoise water', '(min-width: 900px) 46vw, 92vw', '50% 50%')}</figure>
           <div class="feature__text" data-reveal>
             <h3 class="h-section h-section--sm">Crystal-clear kayaks</h3>
             <p>See the water from a different perspective in a crystal-clear kayak. Ask the resort about availability and rental arrangements. A rowing guide can be arranged.</p>
-            <figure class="inset">{pic('kayak-clear-2', 'A clear kayak with an orange life vest, a green island across the water', '(min-width: 900px) 20vw, 50vw', '50% 70%')}</figure>
+            <div class="inset-row">
+              <figure class="inset">{pic('kayak-pov', 'Inside a crystal-clear kayak on calm water off Maniwaya, paddle and life vest in view', '(min-width: 900px) 16vw, 44vw')}</figure>
+              <figure class="inset">{pic('kayak-pov-2', 'Looking through the transparent hull of a clear kayak to the green water below', '(min-width: 900px) 16vw, 44vw')}</figure>
+            </div>
           </div>
         </div>
 
@@ -636,9 +679,12 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
         </div>
 
         <div class="cards cards--3 cards--spaced">
-{card(pic('bikes', 'Two mountain bikes resting on the rocky shoreline of Maniwaya', '(min-width: 900px) 30vw, 92vw', '50% 70%'), 'Mountain bikes', 'Ride Maniwaya at your own pace. A tour guide can be arranged.')}
-{card(pic('ecart', 'An open-sided white electric cart parked on a seawall', '(min-width: 900px) 30vw, 92vw', '50% 75%'), 'Land tour by e-cart', 'See more of Maniwaya on a land tour by electric cart.')}
+{card(pic('bikes-crop', 'Two mountain bikes resting on the rocky shoreline of Maniwaya, waves behind', '(min-width: 900px) 30vw, 92vw'), 'Mountain bikes', 'Ride Maniwaya at your own pace. A tour guide can be arranged.')}
+{card(pic('ecart', 'An open-sided white electric cart parked on a seawall', '(min-width: 900px) 30vw, 92vw', '50% 100%'), 'Land tour by e-cart', 'See more of Maniwaya on a land tour by electric cart.')}
 {card(old('exp-snorkel', 'A snorkeller swimming through clear blue water', '(min-width: 900px) 30vw, 92vw', '50% 35%'), 'Snorkelling gear', 'Masks, snorkels and fins are available. Photo for illustration.')}
+{card(old('exp-massage', 'Hands giving a relaxing back massage to a guest lying under a white towel', '(min-width: 900px) 30vw, 92vw', '60% 50%'), 'In-room massage', 'Unwind after a day outdoors with a massage in your room. Photo for illustration.')}
+{card(old('exp-karaoke', 'A microphone lit in purple stage light', '(min-width: 900px) 30vw, 92vw', '35% 50%'), 'Karaoke', 'A night in with your group and a few favourite songs. Photo for illustration.')}
+{card(old('exp-laundry', 'Clothes being loaded into a front-loading washing machine', '(min-width: 900px) 30vw, 92vw', '45% 50%'), 'Laundry service', 'For longer stays, so you can pack light. Photo for illustration.')}
         </div>
       </div>
     </section>
@@ -655,13 +701,14 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
             <button class="text-link" type="button" data-lightbox="island" data-start="maniwaya-map">View the island map <span aria-hidden="true">→</span></button>
           </div>
         </header>
-        <div class="cards cards--4">
-{stop(pic('sandbar-aerial', 'Aerial view of a white sandbar in turquoise water with outrigger boats', '(min-width: 900px) 22vw, 46vw', '50% 50%'), 'Palad Sandbar', 'Offshore', 'A natural sandbar that fully appears at low tide.')}
-{stop(old('sunong-bato', 'Sunong Bato rock formation in clear water', '(min-width: 900px) 22vw, 46vw'), 'Sunong Bato', 'South-east Maniwaya', 'A stacked-rock formation above clear water.')}
-{stop(pic('ungab-arch', 'A natural rock arch above a quiet cove', '(min-width: 900px) 22vw, 46vw', '50% 50%'), 'Ungab Rock Formation', 'Mompong Island', 'Limestone arches around a sheltered cove.')}
-{stop(pic('reef-raft', 'A floating bamboo raft with a canopy and resort flags', '(min-width: 900px) 22vw, 46vw', '50% 55%'), 'Morion Reef Raft', 'Off the west coast', 'A floating raft above the Morion Reef snorkelling area.')}
+        <div class="cards cards--3">
+{stop(pic('sandbar-aerial', 'Aerial view of a white sandbar in turquoise water with outrigger boats', '(min-width: 900px) 30vw, 46vw', '50% 50%'), 'Palad Sandbar', 'Offshore', 'A natural sandbar that fully appears at low tide.')}
+{stop(pic('sunong-bato-b', 'Sunong Bato, a stacked rock formation in clear turquoise water', '(min-width: 900px) 30vw, 46vw', '50% 50%'), 'Sunong Bato', 'South-east Maniwaya', 'A stacked-rock formation above clear water.')}
+{stop(pic('ungab-arch', 'A natural rock arch above a quiet cove', '(min-width: 900px) 30vw, 46vw', '50% 50%'), 'Ungab Rock Formation', 'Mompong Island', 'Limestone arches around a sheltered cove.')}
+{stop(pic('reef-raft', 'A floating bamboo raft with a canopy and resort flags', '(min-width: 900px) 30vw, 46vw', '50% 55%'), 'Morion Reef Raft', 'Off the west coast', 'A floating raft above the Morion Reef snorkelling area.')}
+{stop(pic('century-tree-b', 'A lone tree on a grassy clifftop above bright blue sea', '(min-width: 900px) 30vw, 46vw', '50% 55%'), 'Century Cliff Tree', 'South-east Maniwaya', 'A lone tree on a clifftop above the sea.')}
+{stop(pic('morion-statues', 'Statues of Morion warriors beside white columns under a blue sky', '(min-width: 900px) 30vw, 46vw', '50% 50%'), 'Morion Statues', 'Island-hopping stop', 'Statues of Marinduque’s Morion warriors.')}
         </div>
-        <p class="note">Other stops in the resort’s brochure include the Century Cliff Tree and the Morion Statues.</p>
       </div>
     </section>
 
@@ -672,7 +719,7 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
             <p class="eyebrow">3 · Useful extras</p>
             <h2 class="h-section h-section--sm" id="extras-title">Little things that help</h2>
           </div>
-          <ul class="inline-list inline-list--wide"><li>Laundry service</li><li>In-room massage</li><li>Karaoke</li><li>Tour guide</li><li>Kitchen and griller use</li></ul>
+          <ul class="inline-list inline-list--wide"><li>Tour guide</li><li>Kitchen and griller use</li></ul>
           <p class="note">Additional charges apply. Ask the resort for current rates.</p>
         </div>
       </div>
@@ -728,7 +775,7 @@ dining = intro('Dining', 'A table for your island stay', 'From everyday meals to
         <div class="cards cards--3">
 {card(old('dining-veranda-night', 'Timber dining tables along tall glass doors on the café veranda in the evening', '(min-width: 900px) 30vw, 92vw', '40% 50%'), 'Meal packages', 'Ask about meal packages for your stay and the arrangements available for your group.')}
 {card(old('bamboo-raft', 'The covered bamboo raft with a long bamboo table on turquoise water', '(min-width: 900px) 30vw, 92vw', '50% 45%'), 'Boodle fight dining', 'Gather around a shared boodle fight setup and make a meal part of the occasion. It can also be set up on the bamboo raft.')}
-{card(old('bonfire-night', 'The resort bonfire blazing at night with a lit cottage behind', '(min-width: 900px) 30vw, 92vw', '50% 60%'), 'Bonfire menu packages', 'Explore the resort’s bonfire menu packages for another way to spend an evening together.')}
+{card(pic('bonfire-smores', 'Marshmallows toasting on skewers over a campfire at night', '(min-width: 900px) 30vw, 92vw', '55% 50%'), 'Bonfire menu packages', 'Explore the resort’s bonfire menu packages for another way to spend an evening together. Photo for illustration.')}
         </div>
         <div class="actions actions--center">
           <a class="btn btn--teal" href="contact.html">Ask about dining packages</a>
@@ -777,11 +824,26 @@ groups = intro('Gatherings &amp; Events', 'An island setting for getting togethe
       </div>
     </section>
 
+    <section class="section section--linen" aria-labelledby="team-title">
+      <div class="wrap">
+        <div class="feature feature--flip">
+          <figure class="feature__media feature__media--wide" data-reveal>{pic('main-palms', 'The resort’s main building framed by coconut palms, with the pool at its edge', '(min-width: 900px) 56vw, 92vw', '50% 55%')}</figure>
+          <div class="feature__text" data-reveal>
+            <p class="eyebrow">Teams &amp; companies</p>
+            <h2 class="h-section" id="team-title">Where teams grow beyond the workplace</h2>
+            <p>Bring your team together for team-building activities, leadership seminars, company outings and corporate retreats in a beachfront setting, with conference facilities, event spaces, island dining and island hopping all in one place.</p>
+            <p>Packages can be customised around your group size, preferred activities, accommodation, meals, length of stay and budget.</p>
+            <a class="btn btn--teal" href="{WA_EVT}" target="_blank" rel="noopener">Plan a team visit<span class="visually-hidden"> (opens WhatsApp in a new tab)</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-label="Group options">
       <div class="wrap">
         <div class="cards cards--3">
 {card(old('pool-grounds-day', 'The pool in daylight with the palm-shaded lawn beyond', '(min-width: 900px) 30vw, 92vw', '50% 82%'), 'Day visits', 'Spend the day enjoying the beach, pool, and selected resort amenities, 8 AM to 5 PM. Day tours are subject to availability.')}
-{card(pic('lobby-lounge', 'The lobby lounge with a leaf-pattern mural and dark sofas', '(min-width: 900px) 30vw, 92vw', '50% 55%'), 'Group packages', 'Packages can be customised around your group size, activities, accommodation, meals, length of stay and budget.')}
+{card(pic('lobby-lounge', 'The lobby lounge with a leaf-pattern mural and dark sofas', '(min-width: 900px) 30vw, 92vw', '50% 55%'), 'Group packages', 'Ask the team about packages for reunions, celebrations and other group stays.')}
 {card(pic('beach-palms', 'Palms shading the sand in front of the resort buildings', '(min-width: 900px) 30vw, 92vw', '50% 55%'), 'Exclusive stays', 'Planning something for your whole group? Ask about exclusive-stay arrangements, which are separate from venue hire.')}
         </div>
         <p class="note center">Group stays pair well with <a href="rooms.html">the rooms</a>, <a href="dining.html">dining packages</a> and the resort’s <a href="getting-here.html#van">van</a> and <a href="activities.html#boats">boats</a>.</p>
@@ -795,18 +857,21 @@ page('groups.html', 'groups.html', 'Gatherings & Events | Islas Moriones Beach R
 
 # =====================================================================================  GALLERY
 G = [  # (category, id, caption, alt, wide?)
-    ('resort', 'tower-wide', 'The beachfront', 'The lifeguard tower and resort flags on the beach', 1),
+    ('resort', 'tower-wide', 'The beachfront', 'The lifeguard tower and resort flags on the beach', 0),
     ('stays', 'poolsuite-room', 'Pool Suite Room', 'Queen bed, sofa and kitchen in the Pool Suite Room', 0),
     ('dining', 'skylight', 'Skylight Dining', 'Tables beneath the glass-roofed Skylight Dining pavilion', 0),
     ('gatherings', 'genesis-hall', 'The Genesis Events Place', 'Long tables beneath draped fabric inside The Genesis', 0),
     ('experiences', 'kayak-clear', 'Crystal-clear kayak', 'A crystal-clear kayak on calm water', 0),
     ('resort', 'dusk-pool', 'The pool at dusk', 'The pool beside the main building at dusk', 0),
-    ('stays', 'kubo-exterior', 'The Luxury Kubo', 'The thatched Luxury Kubo and veranda', 0),
+    ('stays', 'kubo-exterior-old', 'The Luxury Kubo', 'The thatched Luxury Kubo and veranda', 0),
     ('experiences', 'boat-longinus', 'M/V St. Longinus', 'The resort’s boat St. Longinus in clear water', 1),
+    ('stays', 'tents-campsite', 'Tent stays on the campsite', 'Tents on the lawn under coconut palms', 0),
     ('stays', 'tent', 'Tent stay', 'A tent on the lawn under coconut palms', 0),
+    ('experiences', 'kayak-float', 'Crystal-clear kayak', 'A swimmer beside a transparent kayak, seen from above', 0),
     ('resort', 'main-building', 'The main building', 'The white main building with its gabled roof', 0),
     ('stays', 'room-deluxe', 'Deluxe Room', 'A queen bed against a red feature wall', 0),
     ('gatherings', 'genesis-front', 'The Genesis from the lawn', 'Cocktail tables on the lawn in front of The Genesis', 0),
+    ('resort', 'beach-loungers', 'Sun loungers on the beach', 'Wicker loungers in the shade on the beach', 1),
     ('resort', 'beach-palms', 'Palms along the shore', 'Palms shading the sand in front of the resort', 1),
     ('stays', 'poolsuite-loft', 'Pool Suite Room, loft view', 'Looking down from the loft over the kitchen', 0),
     ('experiences', 'boat-omon', 'M/V Omon Express', 'The resort’s big outrigger boat in shallow water', 0),
@@ -827,7 +892,7 @@ G = [  # (category, id, caption, alt, wide?)
     ('stays', 'kubo-living', 'Luxury Kubo lounge', 'A white sofa beside glass doors', 0),
     ('resort', 'tower-storm', 'Before the rain', 'The lifeguard tower under dark storm clouds', 0),
     ('stays', 'poolsuite-bath', 'Pool Suite bathroom', 'A bathroom with a glass shower', 0),
-    ('experiences', 'bikes', 'Mountain bikes', 'Two mountain bikes on the rocky shore', 0),
+    ('experiences', 'bikes-crop', 'Mountain bikes', 'Two mountain bikes on the rocky shore', 0),
     ('stays', 'room-single', 'Single Standard Room', 'A single bed beside a teal wall', 0),
     ('experiences', 'ungab-arch', 'Ungab Rock Formation (island hopping, not resort grounds)', 'A rock arch above a cove', 0),
     ('experiences', 'sandbar-aerial', 'Palad Sandbar (island hopping, not resort grounds)', 'A white sandbar in turquoise water', 1),
@@ -840,8 +905,12 @@ FILTERS = [('all', 'All'), ('resort', 'The Resort'), ('stays', 'Stays'), ('dinin
 fbtn = '\n'.join(f'          <button type="button" class="chip{" is-active" if k == "all" else ""}" data-gallery-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}">{t}</button>' for k, t in FILTERS)
 gitems = []
 for cat, jid, cap, alt, wide in G:
-    src, w, h = full(jid)
-    gitems.append(f'          <li data-cat="{cat}" class="g{" g--wide" if wide else ""}"><button type="button" data-full="{src}" data-w="{w}" data-h="{h}" data-caption="{html.escape(cap, quote=True)}" aria-label="Open photo: {html.escape(cap, quote=True)}">{pic(jid, alt, "(min-width: 900px) 24vw, (min-width: 600px) 32vw, 46vw", "50% 55%")}</button></li>')
+    gs = "(min-width: 900px) 24vw, (min-width: 600px) 32vw, 46vw"
+    if jid.endswith('-old'):
+        base = jid[:-4]; widths, w, h = OLD[base]; src = f'assets/img/{base}-{widths[-1]}.jpg'; img = old(base, alt, gs)
+    else:
+        src, w, h = full(jid); img = pic(jid, alt, gs)
+    gitems.append(f'          <li data-cat="{cat}" class="g{" g--wide" if wide else ""}"><button type="button" data-full="{src}" data-w="{w}" data-h="{h}" data-caption="{html.escape(cap, quote=True)}" aria-label="Open photo: {html.escape(cap, quote=True)}">{img}</button></li>')
 gallery = intro('Gallery', 'Explore Islas Moriones', 'A closer look at the places, spaces, and experiences that make up a stay on Maniwaya.') + f'''
     <section class="section section--tight" aria-label="Photo gallery">
       <div class="wrap">

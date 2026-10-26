@@ -410,35 +410,59 @@
     update();
   }
 
-  /* ---------- Opening film: muted loop with a visible pause/play control ---------- */
+  /* ---------- Opening film: muted autoplay loop, pause/play, sound and volume.
+     Controls appear on load, tap, mouse movement or focus, then fade after 5 seconds. ---------- */
   function initFilm() {
     var video = $('[data-film]');
     var btn = $('[data-film-toggle]');
+    var mute = $('[data-film-mute]');
+    var vol = $('[data-film-volume]');
+    var box = $('[data-film-controls]');
     if (!video || !btn) return;
-    function sync() {
-      var paused = video.paused;
-      btn.setAttribute('aria-pressed', String(paused));
-      btn.setAttribute('aria-label', paused ? 'Play the film' : 'Pause the film');
-    }
-    // Respect reduced motion and data saving: keep the poster frame until the visitor presses play.
+    var frame = video.parentNode;
     var saveData = navigator.connection && navigator.connection.saveData;
+    var userPaused = false, hideTimer;
+    video.muted = true;
+    function play() { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+    function sync() {
+      btn.setAttribute('aria-pressed', String(video.paused));
+      btn.setAttribute('aria-label', video.paused ? 'Play the film' : 'Pause the film');
+      if (mute) {
+        var off = video.muted || video.volume === 0;
+        mute.setAttribute('aria-pressed', String(off));
+        mute.setAttribute('aria-label', off ? 'Turn sound on' : 'Turn sound off');
+      }
+    }
+    function show() {
+      if (!box) return;
+      box.classList.add('is-visible');
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(function () { if (!box.contains(document.activeElement)) box.classList.remove('is-visible'); }, 5000);
+    }
     if (reduceMotion() || saveData) { video.removeAttribute('autoplay'); video.pause(); }
-    btn.addEventListener('click', function () {
-      if (video.paused) { var p = video.play(); if (p && p.catch) p.catch(function () {}); } else video.pause();
+    btn.addEventListener('click', function () { if (video.paused) { userPaused = false; play(); } else { userPaused = true; video.pause(); } show(); });
+    if (mute) mute.addEventListener('click', function () {
+      video.muted = !video.muted;
+      if (!video.muted && video.volume === 0) { video.volume = 0.6; if (vol) vol.value = 0.6; }
+      sync(); show();
     });
-    video.addEventListener('play', sync);
-    video.addEventListener('pause', sync);
+    if (vol) {
+      video.volume = +vol.value;
+      vol.addEventListener('input', function () { video.volume = +vol.value; video.muted = +vol.value === 0; sync(); show(); });
+    }
+    ['play', 'pause', 'volumechange'].forEach(function (ev) { video.addEventListener(ev, sync); });
+    frame.addEventListener('pointermove', show);
+    frame.addEventListener('click', show);
+    frame.addEventListener('touchstart', show, { passive: true });
+    if (box) { box.addEventListener('focusin', show); box.addEventListener('focusout', show); }
     reduceMotionQuery.addEventListener('change', function () { if (reduceMotion()) video.pause(); });
-    // Pause while the film is off screen to save battery.
     if ('IntersectionObserver' in window) {
-      var userPaused = false;
-      btn.addEventListener('click', function () { userPaused = !video.paused ? false : true; });
       new IntersectionObserver(function (en) {
-        if (en[0].isIntersecting) { if (!userPaused && !reduceMotion() && !saveData && video.paused) { var p = video.play(); if (p && p.catch) p.catch(function () {}); } }
+        if (en[0].isIntersecting) { if (!userPaused && !reduceMotion() && !saveData && video.paused) play(); }
         else if (!video.paused) video.pause();
       }, { threshold: 0.15 }).observe(video);
     }
-    sync();
+    sync(); show();
   }
 
   function initYear() { var y = $('[data-year]'); if (y) y.textContent = String(new Date().getFullYear()); }

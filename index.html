@@ -23,8 +23,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
-  <link rel="stylesheet" href="assets/css/styles.css?v=5.1">
-  <script src="assets/js/main.js?v=5.0" defer></script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=5.6">
+  <script src="assets/js/main.js?v=5.6" defer></script>
   <link rel="canonical" href="https://lendezstudio.github.io/Islas-Moriones/">
 </head>
 <body class="home">
@@ -77,10 +77,17 @@
         <video class="film__video" autoplay muted loop playsinline preload="auto" poster="assets/video/islas-moriones-hero-poster.jpg" aria-label="Aerial and beach views of Islas Moriones on Maniwaya Island" data-film>
           <source src="assets/video/islas-moriones-hero.mp4" type="video/mp4">
         </video>
-        <button class="film__toggle" type="button" data-film-toggle aria-pressed="false" aria-label="Pause the film">
-          <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
-          <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5l11 6.5-11 6.5z"/></svg>
-        </button>
+        <div class="film__controls" data-film-controls>
+          <button class="film__btn" type="button" data-film-toggle aria-pressed="false" aria-label="Pause the film">
+            <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
+            <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5l11 6.5-11 6.5z"/></svg>
+          </button>
+          <button class="film__btn" type="button" data-film-mute aria-pressed="true" aria-label="Turn sound on">
+            <svg class="i-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4zM17 9l4 6M21 9l-4 6"/></svg>
+            <svg class="i-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4zM16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+          </button>
+          <label class="film__vol"><span class="visually-hidden">Film volume</span><input type="range" min="0" max="1" step="0.05" value="0.6" data-film-volume></label>
+        </div>
       </div>
     </section>
 
@@ -97,6 +104,28 @@
       </div>
     </section>
 
+    <section class="section section--linen" aria-labelledby="glance-title">
+      <div class="wrap">
+        <div class="feature">
+          <figure class="feature__media feature__media--wide" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/resort-sign-800.webp 800w, assets/img/v5/resort-sign-1600.webp 1600w" sizes="(min-width: 900px) 56vw, 92vw"><img src="assets/img/v5/resort-sign-800.jpg" srcset="assets/img/v5/resort-sign-800.jpg 800w, assets/img/v5/resort-sign-1600.jpg 1600w" sizes="(min-width: 900px) 56vw, 92vw" width="1600" height="901" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="The Islas Moriones Beach Resort sign on the sandy grounds, palms and the main building behind"></picture></figure>
+          <div class="feature__text" data-reveal>
+            <p class="eyebrow">The resort at a glance</p>
+            <h2 class="h-section" id="glance-title">Everything in one island getaway</h2>
+            <p>A beachfront resort on Maniwaya Island, with places to stay, eat, gather and unwind within a few steps of each other.</p>
+            <ul class="glance">
+              <li><strong>16</strong> air-conditioned rooms</li>
+              <li>Outdoor swimming pool</li>
+              <li>Spacious camping grounds</li>
+              <li>Restaurant and bar</li>
+              <li>The Genesis Events Place and conference facilities</li>
+              <li>Recreational spaces</li>
+              <li>Wi-Fi and 24-hour electricity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--tight" aria-labelledby="closer-title">
       <div class="wrap">
         <header class="section-head center">
@@ -104,9 +133,9 @@
           <p>Explore the shoreline, pool, and places to spend time together at Islas Moriones.</p>
         </header>
         <div class="mosaic4">
-          <figure class="m4 m4--a" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/tower-wide-800.webp 800w, assets/img/v5/tower-wide-1424.webp 1424w" sizes="(min-width: 900px) 58vw, 92vw"><img src="assets/img/v5/tower-wide-800.jpg" srcset="assets/img/v5/tower-wide-800.jpg 800w, assets/img/v5/tower-wide-1424.jpg 1424w" sizes="(min-width: 900px) 58vw, 92vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 60%" alt="The white lifeguard tower and resort flags on the sandy beach beside calm blue water"></picture><figcaption>The beachfront</figcaption></figure>
+          <figure class="m4 m4--a" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/tower-wide-800.webp 800w, assets/img/v5/tower-wide-1424.webp 1424w" sizes="(min-width: 900px) 58vw, 92vw"><img src="assets/img/v5/tower-wide-800.jpg" srcset="assets/img/v5/tower-wide-800.jpg 800w, assets/img/v5/tower-wide-1424.jpg 1424w" sizes="(min-width: 900px) 58vw, 92vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 80%" alt="The white lifeguard tower and resort flags on the sandy beach beside calm blue water"></picture><figcaption>The beachfront</figcaption></figure>
           <figure class="m4 m4--b" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/dusk-pool-640.webp 640w, assets/img/v5/dusk-pool-1215.webp 1215w" sizes="(min-width: 900px) 30vw, 46vw"><img src="assets/img/v5/dusk-pool-640.jpg" srcset="assets/img/v5/dusk-pool-640.jpg 640w, assets/img/v5/dusk-pool-1215.jpg 1215w" sizes="(min-width: 900px) 30vw, 46vw" width="1215" height="1600" loading="lazy" decoding="async" style="--pos: 50% 62%" alt="The pool glowing turquoise beside the two-storey main building at dusk"></picture><figcaption>The pool at dusk</figcaption></figure>
-          <figure class="m4 m4--c" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/beach-palms-800.webp 800w, assets/img/v5/beach-palms-1424.webp 1424w" sizes="(min-width: 900px) 30vw, 46vw"><img src="assets/img/v5/beach-palms-800.jpg" srcset="assets/img/v5/beach-palms-800.jpg 800w, assets/img/v5/beach-palms-1424.jpg 1424w" sizes="(min-width: 900px) 30vw, 46vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="Palms shading the sand in front of the resort buildings"></picture><figcaption>Palms along the shore</figcaption></figure>
+          <figure class="m4 m4--c" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/beach-loungers-800.webp 800w, assets/img/v5/beach-loungers-1424.webp 1424w" sizes="(min-width: 900px) 30vw, 46vw"><img src="assets/img/v5/beach-loungers-800.jpg" srcset="assets/img/v5/beach-loungers-800.jpg 800w, assets/img/v5/beach-loungers-1424.jpg 1424w" sizes="(min-width: 900px) 30vw, 46vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 62%" alt="Two wicker sun loungers in the shade of a tree on the white-sand beach, the lifeguard tower and a resort boat beyond"></picture><figcaption>Shade on the sand</figcaption></figure>
           <figure class="m4 m4--d" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/main-building-640.webp 640w, assets/img/v5/main-building-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 92vw"><img src="assets/img/v5/main-building-640.jpg" srcset="assets/img/v5/main-building-640.jpg 640w, assets/img/v5/main-building-1200.jpg 1200w" sizes="(min-width: 900px) 30vw, 92vw" width="1200" height="1472" loading="lazy" decoding="async" style="--pos: 50% 45%" alt="The white main building with its tall gabled roof and balconies"></picture><figcaption>The main building</figcaption></figure>
         </div>
       </div>
@@ -125,8 +154,8 @@
           </div>
         </div>
         <div class="pair">
-          <a class="pair__item" href="rooms.html#luxury-kubo" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/kubo-exterior-640.webp 640w, assets/img/v5/kubo-exterior-1100.webp 1100w" sizes="(min-width: 700px) 46vw, 92vw"><img src="assets/img/v5/kubo-exterior-640.jpg" srcset="assets/img/v5/kubo-exterior-640.jpg 640w, assets/img/v5/kubo-exterior-1100.jpg 1100w" sizes="(min-width: 700px) 46vw, 92vw" width="1100" height="1956" loading="lazy" decoding="async" style="--pos: 50% 45%" alt="The thatched Luxury Kubo with its veranda, beside a bamboo cart on the lawn"></picture><span class="pair__label">Luxury Kubo<small>A thatched-roof stay with a loft and kitchen</small></span></a>
-          <a class="pair__item" href="rooms.html#tents" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/tent-640.webp 640w, assets/img/v5/tent-1100.webp 1100w" sizes="(min-width: 700px) 46vw, 92vw"><img src="assets/img/v5/tent-640.jpg" srcset="assets/img/v5/tent-640.jpg 640w, assets/img/v5/tent-1100.jpg 1100w" sizes="(min-width: 700px) 46vw, 92vw" width="1100" height="1955" loading="lazy" decoding="async" style="--pos: 50% 70%" alt="A dome tent pitched on the lawn beneath tall coconut palms"></picture><span class="pair__label">Tent stays<small>Camp on the grounds under the palms</small></span></a>
+          <a class="pair__item" href="rooms.html#luxury-kubo" data-reveal><img src="assets/img/kubo-exterior-560.jpg" srcset="assets/img/kubo-exterior-560.jpg 560w, assets/img/kubo-exterior-936.jpg 936w" sizes="(min-width: 700px) 46vw, 92vw" width="936" height="856" loading="lazy" decoding="async" style="--pos: 50% 50%" alt="The thatched Luxury Kubo with its white-railed veranda on the lawn under coconut palms"><span class="pair__label">Luxury Kubo<small>A thatched-roof stay with a loft and kitchen</small></span></a>
+          <a class="pair__item" href="rooms.html#tents" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/tents-campsite-800.webp 800w, assets/img/v5/tents-campsite-936.webp 936w" sizes="(min-width: 700px) 46vw, 92vw"><img src="assets/img/v5/tents-campsite-800.jpg" srcset="assets/img/v5/tents-campsite-800.jpg 800w, assets/img/v5/tents-campsite-936.jpg 936w" sizes="(min-width: 700px) 46vw, 92vw" width="936" height="878" loading="lazy" decoding="async" style="--pos: 32% 96%" alt="Tents pitched on the lawn under tall coconut palms beside a thatched cottage"></picture><span class="pair__label">Tent stays<small>Camp on the grounds under the palms</small></span></a>
         </div>
       </div>
     </section>
@@ -140,8 +169,8 @@
         </header>
         <div class="tiles">
         <figure class="tile" data-reveal>
-          <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/dusk-pool-640.webp 640w, assets/img/v5/dusk-pool-1215.webp 1215w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw"><img src="assets/img/v5/dusk-pool-640.jpg" srcset="assets/img/v5/dusk-pool-640.jpg 640w, assets/img/v5/dusk-pool-1215.jpg 1215w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="1215" height="1600" loading="lazy" decoding="async" style="--pos: 50% 70%" alt="The resort pool and main building lit at dusk"></picture></div>
-          <figcaption><span class="h-card">Swimming pool</span>The outdoor pool beside the main building.</figcaption>
+          <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/pool-loungers-640.webp 640w, assets/img/v5/pool-loungers-908.webp 908w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw"><img src="assets/img/v5/pool-loungers-640.jpg" srcset="assets/img/v5/pool-loungers-640.jpg 640w, assets/img/v5/pool-loungers-908.jpg 908w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="908" height="1613" loading="lazy" decoding="async" style="--pos: 50% 62%" alt="Sun loungers and umbrellas beside the turquoise outdoor pool, shaded by tropical trees"></picture></div>
+          <figcaption><span class="h-card">Swimming pool</span>The outdoor pool, with loungers in the shade.</figcaption>
         </figure>
         <figure class="tile" data-reveal>
           <div class="tile__media"><img src="assets/img/beach-volleyball-720.jpg" srcset="assets/img/beach-volleyball-720.jpg 720w, assets/img/beach-volleyball-1400.jpg 1400w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="1774" height="837" loading="lazy" decoding="async" style="--pos: 40% 50%" alt="A volleyball net on the resort beach beside clear water"></div>
@@ -156,8 +185,12 @@
           <figcaption><span class="h-card">Bonfire</span>The bonfire area on the lawn, for evenings outdoors.</figcaption>
         </figure>
         <figure class="tile" data-reveal>
-          <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/pingpong-darts-800.webp 800w, assets/img/v5/pingpong-darts-1424.webp 1424w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw"><img src="assets/img/v5/pingpong-darts-800.jpg" srcset="assets/img/v5/pingpong-darts-800.jpg 800w, assets/img/v5/pingpong-darts-1424.jpg 1424w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 60%" alt="A ping-pong table and dartboard in the resort’s open-sided games room"></picture></div>
-          <figcaption><span class="h-card">Ping-pong &amp; darts</span>A games room open to the breeze.</figcaption>
+          <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/pingpong-darts-800.webp 800w, assets/img/v5/pingpong-darts-1424.webp 1424w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw"><img src="assets/img/v5/pingpong-darts-800.jpg" srcset="assets/img/v5/pingpong-darts-800.jpg 800w, assets/img/v5/pingpong-darts-1424.jpg 1424w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 60%" alt="A ping-pong table in the resort’s open-sided games room"></picture></div>
+          <figcaption><span class="h-card">Ping-pong</span>A games room open to the breeze.</figcaption>
+        </figure>
+        <figure class="tile" data-reveal>
+          <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/darts-600.webp 600w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw"><img src="assets/img/v5/darts-600.jpg" srcset="assets/img/v5/darts-600.jpg 600w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="600" height="914" loading="lazy" decoding="async" style="--pos: 50% 40%" alt="A dartboard with darts on a rustic timber board"></picture></div>
+          <figcaption><span class="h-card">Darts</span>A dartboard for friendly games.</figcaption>
         </figure>
         <figure class="tile" data-reveal>
           <div class="tile__media"><picture><source type="image/webp" srcset="assets/img/v5/badminton-640.webp 640w, assets/img/v5/badminton-736.webp 736w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw"><img src="assets/img/v5/badminton-640.jpg" srcset="assets/img/v5/badminton-640.jpg 640w, assets/img/v5/badminton-736.jpg 736w" sizes="(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw" width="736" height="1104" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="Two badminton rackets and shuttlecocks resting on grass"></picture></div>
@@ -182,7 +215,7 @@
         </header>
         <div class="cards cards--3">
         <article class="card" data-reveal>
-          <figure class="card__media"><picture><source type="image/webp" srcset="assets/img/v5/kayak-clear-640.webp 640w, assets/img/v5/kayak-clear-1100.webp 1100w" sizes="(min-width: 900px) 30vw, 92vw"><img src="assets/img/v5/kayak-clear-640.jpg" srcset="assets/img/v5/kayak-clear-640.jpg 640w, assets/img/v5/kayak-clear-1100.jpg 1100w" sizes="(min-width: 900px) 30vw, 92vw" width="1100" height="1956" loading="lazy" decoding="async" style="--pos: 50% 70%" alt="View from a crystal-clear kayak, paddle across the bow, looking over calm water to a green island"></picture></figure>
+          <figure class="card__media"><picture><source type="image/webp" srcset="assets/img/v5/kayak-float-895.webp 895w" sizes="(min-width: 900px) 30vw, 92vw"><img src="assets/img/v5/kayak-float-895.jpg" srcset="assets/img/v5/kayak-float-895.jpg 895w" sizes="(min-width: 900px) 30vw, 92vw" width="895" height="895" loading="lazy" decoding="async" style="--pos: 50% 50%" alt="Seen from above, a swimmer floats beside a transparent kayak on turquoise water"></picture></figure>
           <h3 class="h-card">Crystal-clear kayaks</h3>
           <p>See the water from a different perspective. Ask the resort about availability and rental arrangements.</p>
           <a class="text-link" href="activities.html#kayaks">About the kayaks <span aria-hidden="true">→</span></a>
@@ -194,9 +227,9 @@
           <a class="text-link" href="activities.html#boats">See the boats <span aria-hidden="true">→</span></a>
         </article>
         <article class="card" data-reveal>
-          <figure class="card__media"><img src="assets/img/sunong-bato-720.jpg" srcset="assets/img/sunong-bato-720.jpg 720w, assets/img/sunong-bato-940.jpg 940w" sizes="(min-width: 900px) 30vw, 92vw" width="940" height="588" loading="lazy" decoding="async" style="--pos: 50% 50%" alt="Sunong Bato, a stacked-rock formation in clear water"></figure>
+          <figure class="card__media"><picture><source type="image/webp" srcset="assets/img/v5/sunong-bato-b-756.webp 756w" sizes="(min-width: 900px) 30vw, 92vw"><img src="assets/img/v5/sunong-bato-b-756.jpg" srcset="assets/img/v5/sunong-bato-b-756.jpg 756w" sizes="(min-width: 900px) 30vw, 92vw" width="756" height="538" loading="lazy" decoding="async" style="--pos: 50% 50%" alt="Sunong Bato, a stacked rock formation rising from clear turquoise water"></picture></figure>
           <h3 class="h-card">Island hopping</h3>
-          <p>Visit Palad Sandbar, Sunong Bato, Ungab Rock Formation and more around Maniwaya.</p>
+          <p>Visit Palad Sandbar, Sunong Bato, Ungab Rock Formation, the Century Cliff Tree and more around Maniwaya.</p>
           <a class="text-link" href="activities.html#island-hopping">Island-hopping stops <span aria-hidden="true">→</span></a>
         </article>
         </div>
@@ -228,7 +261,7 @@
             <p>Explore the resort's events venue and picture your next gathering at Islas Moriones. Share your plans with the team to discuss the space and arrangements for your group.</p>
             <a class="btn btn--sand" href="groups.html">Explore the venue</a>
           </div>
-          <figure class="events__side" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/genesis-lawn-800.webp 800w, assets/img/v5/genesis-lawn-1200.webp 1200w" sizes="(min-width: 900px) 24vw, 46vw"><img src="assets/img/v5/genesis-lawn-800.jpg" srcset="assets/img/v5/genesis-lawn-800.jpg 800w, assets/img/v5/genesis-lawn-1200.jpg 1200w" sizes="(min-width: 900px) 24vw, 46vw" width="1200" height="2134" loading="lazy" decoding="async" style="--pos: 50% 70%" alt="Cocktail tables dressed in white on the lawn in front of The Genesis"></picture></figure>
+          <figure class="events__side" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/genesis-lawn-800.webp 800w, assets/img/v5/genesis-lawn-1200.webp 1200w" sizes="(min-width: 900px) 24vw, 46vw"><img src="assets/img/v5/genesis-lawn-800.jpg" srcset="assets/img/v5/genesis-lawn-800.jpg 800w, assets/img/v5/genesis-lawn-1200.jpg 1200w" sizes="(min-width: 900px) 24vw, 46vw" width="1200" height="2134" loading="lazy" decoding="async" style="--pos: 50% 75%" alt="Cocktail tables dressed in white on the lawn in front of The Genesis"></picture></figure>
           <figure class="events__side" data-reveal><picture><source type="image/webp" srcset="assets/img/v5/genesis-tables-800.webp 800w, assets/img/v5/genesis-tables-1200.webp 1200w" sizes="(min-width: 900px) 24vw, 46vw"><img src="assets/img/v5/genesis-tables-800.jpg" srcset="assets/img/v5/genesis-tables-800.jpg 800w, assets/img/v5/genesis-tables-1200.jpg 1200w" sizes="(min-width: 900px) 24vw, 46vw" width="1200" height="1600" loading="lazy" decoding="async" style="--pos: 50% 60%" alt="Round tables with gold chairs and flowers inside The Genesis"></picture></figure>
         </div>
       </div>
@@ -246,16 +279,16 @@
       </div>
       <div class="strip__frame">
         <ul class="strip__track" data-strip tabindex="0" aria-label="Photo strip, scroll sideways for more">
-          <li><button type="button" data-lightbox="strip" data-start="s1" aria-label="Open photo: The Pool Suite Room"><picture><source type="image/webp" srcset="assets/img/v5/poolsuite-bed-800.webp 800w, assets/img/v5/poolsuite-bed-1200.webp 1200w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/poolsuite-bed-800.jpg" srcset="assets/img/v5/poolsuite-bed-800.jpg 800w, assets/img/v5/poolsuite-bed-1200.jpg 1200w" sizes="(min-width: 900px) 17vw, 44vw" width="1200" height="1600" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="A queen bed and seating area in the Pool Suite Room"></picture></button></li>
-          <li><button type="button" data-lightbox="strip" data-start="s2" aria-label="Open photo: Skylight Dining"><picture><source type="image/webp" srcset="assets/img/v5/skylight-2-800.webp 800w, assets/img/v5/skylight-2-1424.webp 1424w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/skylight-2-800.jpg" srcset="assets/img/v5/skylight-2-800.jpg 800w, assets/img/v5/skylight-2-1424.jpg 1424w" sizes="(min-width: 900px) 17vw, 44vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="Tables beneath the glass roof of Skylight Dining"></picture></button></li>
-          <li><button type="button" data-lightbox="strip" data-start="s3" aria-label="Open photo: The beach"><picture><source type="image/webp" srcset="assets/img/v5/tower-blue-640.webp 640w, assets/img/v5/tower-blue-1200.webp 1200w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/tower-blue-640.jpg" srcset="assets/img/v5/tower-blue-640.jpg 640w, assets/img/v5/tower-blue-1200.jpg 1200w" sizes="(min-width: 900px) 17vw, 44vw" width="1200" height="1472" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="The lifeguard tower on the white-sand beach under a clear sky"></picture></button></li>
-          <li><button type="button" data-lightbox="strip" data-start="s4" aria-label="Open photo: The Luxury Kubo"><picture><source type="image/webp" srcset="assets/img/v5/kubo-living-800.webp 800w, assets/img/v5/kubo-living-1200.webp 1200w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/kubo-living-800.jpg" srcset="assets/img/v5/kubo-living-800.jpg 800w, assets/img/v5/kubo-living-1200.jpg 1200w" sizes="(min-width: 900px) 17vw, 44vw" width="1200" height="1600" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="The Luxury Kubo lounge with a white sofa and glass doors"></picture></button></li>
-          <li><button type="button" data-lightbox="strip" data-start="s5" aria-label="Open photo: The Genesis Events Place"><picture><source type="image/webp" srcset="assets/img/v5/genesis-setup-800.webp 800w, assets/img/v5/genesis-setup-1200.webp 1200w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/genesis-setup-800.jpg" srcset="assets/img/v5/genesis-setup-800.jpg 800w, assets/img/v5/genesis-setup-1200.jpg 1200w" sizes="(min-width: 900px) 17vw, 44vw" width="1200" height="1600" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="Dining tables set beneath draped fabric in The Genesis"></picture></button></li>
-          <li><button type="button" data-lightbox="strip" data-start="s6" aria-label="Open photo: Crystal-clear kayak"><picture><source type="image/webp" srcset="assets/img/v5/kayak-clear-2-640.webp 640w, assets/img/v5/kayak-clear-2-1100.webp 1100w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/kayak-clear-2-640.jpg" srcset="assets/img/v5/kayak-clear-2-640.jpg 640w, assets/img/v5/kayak-clear-2-1100.jpg 1100w" sizes="(min-width: 900px) 17vw, 44vw" width="1100" height="1956" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="A crystal-clear kayak on calm water off Maniwaya"></picture></button></li>
-          <li><button type="button" data-lightbox="strip" data-start="s7" aria-label="Open photo: Suite Loft Room"><picture><source type="image/webp" srcset="assets/img/v5/room-suiteloft-800.webp 800w, assets/img/v5/room-suiteloft-1424.webp 1424w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/room-suiteloft-800.jpg" srcset="assets/img/v5/room-suiteloft-800.jpg 800w, assets/img/v5/room-suiteloft-1424.jpg 1424w" sizes="(min-width: 900px) 17vw, 44vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="A loft room with a staircase above the bed"></picture></button></li>
-          <li><button type="button" data-lightbox="strip" data-start="s8" aria-label="Open photo: Ungab Rock Formation (island hopping)"><picture><source type="image/webp" srcset="assets/img/v5/ungab-arch-640.webp 640w, assets/img/v5/ungab-arch-1100.webp 1100w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/ungab-arch-640.jpg" srcset="assets/img/v5/ungab-arch-640.jpg 640w, assets/img/v5/ungab-arch-1100.jpg 1100w" sizes="(min-width: 900px) 17vw, 44vw" width="1100" height="1956" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="A natural rock arch above a quiet cove at Ungab Rock Formation"></picture></button></li>
-          <li><button type="button" data-lightbox="strip" data-start="s9" aria-label="Open photo: The lobby lounge"><picture><source type="image/webp" srcset="assets/img/v5/lobby-lounge-800.webp 800w, assets/img/v5/lobby-lounge-1424.webp 1424w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/lobby-lounge-800.jpg" srcset="assets/img/v5/lobby-lounge-800.jpg 800w, assets/img/v5/lobby-lounge-1424.jpg 1424w" sizes="(min-width: 900px) 17vw, 44vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="The lobby lounge with leaf-pattern wall and dark sofas"></picture></button></li>
-          <li><button type="button" data-lightbox="strip" data-start="s10" aria-label="Open photo: Mountain bikes on Maniwaya"><picture><source type="image/webp" srcset="assets/img/v5/bikes-640.webp 640w, assets/img/v5/bikes-1100.webp 1100w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/bikes-640.jpg" srcset="assets/img/v5/bikes-640.jpg 640w, assets/img/v5/bikes-1100.jpg 1100w" sizes="(min-width: 900px) 17vw, 44vw" width="1100" height="1955" loading="lazy" decoding="async" style="--pos: 50% 55%" alt="Two mountain bikes on the rocky shore of Maniwaya"></picture></button></li>
+          <li><button type="button" data-lightbox="strip" data-start="s1" aria-label="Open photo: The Pool Suite Room"><picture><source type="image/webp" srcset="assets/img/v5/poolsuite-bed-800.webp 800w, assets/img/v5/poolsuite-bed-1200.webp 1200w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/poolsuite-bed-800.jpg" srcset="assets/img/v5/poolsuite-bed-800.jpg 800w, assets/img/v5/poolsuite-bed-1200.jpg 1200w" sizes="(min-width: 900px) 17vw, 44vw" width="1200" height="1600" loading="lazy" decoding="async" style="--pos: 50% 50%" alt="A queen bed and seating area in the Pool Suite Room"></picture></button></li>
+          <li><button type="button" data-lightbox="strip" data-start="s2" aria-label="Open photo: Skylight Dining"><picture><source type="image/webp" srcset="assets/img/v5/skylight-2-800.webp 800w, assets/img/v5/skylight-2-1424.webp 1424w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/skylight-2-800.jpg" srcset="assets/img/v5/skylight-2-800.jpg 800w, assets/img/v5/skylight-2-1424.jpg 1424w" sizes="(min-width: 900px) 17vw, 44vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 50%" alt="Tables beneath the glass roof of Skylight Dining"></picture></button></li>
+          <li><button type="button" data-lightbox="strip" data-start="s3" aria-label="Open photo: The beach"><picture><source type="image/webp" srcset="assets/img/v5/tower-blue-640.webp 640w, assets/img/v5/tower-blue-1200.webp 1200w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/tower-blue-640.jpg" srcset="assets/img/v5/tower-blue-640.jpg 640w, assets/img/v5/tower-blue-1200.jpg 1200w" sizes="(min-width: 900px) 17vw, 44vw" width="1200" height="1472" loading="lazy" decoding="async" style="--pos: 50% 90%" alt="The lifeguard tower on the white-sand beach under a clear sky"></picture></button></li>
+          <li><button type="button" data-lightbox="strip" data-start="s4" aria-label="Open photo: The Luxury Kubo"><picture><source type="image/webp" srcset="assets/img/v5/kubo-living-800.webp 800w, assets/img/v5/kubo-living-1200.webp 1200w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/kubo-living-800.jpg" srcset="assets/img/v5/kubo-living-800.jpg 800w, assets/img/v5/kubo-living-1200.jpg 1200w" sizes="(min-width: 900px) 17vw, 44vw" width="1200" height="1600" loading="lazy" decoding="async" style="--pos: 50% 50%" alt="The Luxury Kubo lounge with a white sofa and glass doors"></picture></button></li>
+          <li><button type="button" data-lightbox="strip" data-start="s5" aria-label="Open photo: The Genesis Events Place"><picture><source type="image/webp" srcset="assets/img/v5/genesis-setup-800.webp 800w, assets/img/v5/genesis-setup-1200.webp 1200w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/genesis-setup-800.jpg" srcset="assets/img/v5/genesis-setup-800.jpg 800w, assets/img/v5/genesis-setup-1200.jpg 1200w" sizes="(min-width: 900px) 17vw, 44vw" width="1200" height="1600" loading="lazy" decoding="async" style="--pos: 50% 50%" alt="Dining tables set beneath draped fabric in The Genesis"></picture></button></li>
+          <li><button type="button" data-lightbox="strip" data-start="s6" aria-label="Open photo: Crystal-clear kayak"><picture><source type="image/webp" srcset="assets/img/v5/kayak-clear-2-640.webp 640w, assets/img/v5/kayak-clear-2-1100.webp 1100w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/kayak-clear-2-640.jpg" srcset="assets/img/v5/kayak-clear-2-640.jpg 640w, assets/img/v5/kayak-clear-2-1100.jpg 1100w" sizes="(min-width: 900px) 17vw, 44vw" width="1100" height="1956" loading="lazy" decoding="async" style="--pos: 50% 100%" alt="A crystal-clear kayak on calm water off Maniwaya"></picture></button></li>
+          <li><button type="button" data-lightbox="strip" data-start="s7" aria-label="Open photo: Suite Loft Room"><picture><source type="image/webp" srcset="assets/img/v5/room-suiteloft-800.webp 800w, assets/img/v5/room-suiteloft-1424.webp 1424w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/room-suiteloft-800.jpg" srcset="assets/img/v5/room-suiteloft-800.jpg 800w, assets/img/v5/room-suiteloft-1424.jpg 1424w" sizes="(min-width: 900px) 17vw, 44vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 50%" alt="A loft room with a staircase above the bed"></picture></button></li>
+          <li><button type="button" data-lightbox="strip" data-start="s8" aria-label="Open photo: Ungab Rock Formation (island hopping)"><picture><source type="image/webp" srcset="assets/img/v5/ungab-arch-640.webp 640w, assets/img/v5/ungab-arch-1100.webp 1100w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/ungab-arch-640.jpg" srcset="assets/img/v5/ungab-arch-640.jpg 640w, assets/img/v5/ungab-arch-1100.jpg 1100w" sizes="(min-width: 900px) 17vw, 44vw" width="1100" height="1956" loading="lazy" decoding="async" style="--pos: 50% 70%" alt="A natural rock arch above a quiet cove at Ungab Rock Formation"></picture></button></li>
+          <li><button type="button" data-lightbox="strip" data-start="s9" aria-label="Open photo: The lobby lounge"><picture><source type="image/webp" srcset="assets/img/v5/lobby-lounge-800.webp 800w, assets/img/v5/lobby-lounge-1424.webp 1424w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/lobby-lounge-800.jpg" srcset="assets/img/v5/lobby-lounge-800.jpg 800w, assets/img/v5/lobby-lounge-1424.jpg 1424w" sizes="(min-width: 900px) 17vw, 44vw" width="1424" height="951" loading="lazy" decoding="async" style="--pos: 50% 50%" alt="The lobby lounge with leaf-pattern wall and dark sofas"></picture></button></li>
+          <li><button type="button" data-lightbox="strip" data-start="s10" aria-label="Open photo: Mountain bikes on Maniwaya"><picture><source type="image/webp" srcset="assets/img/v5/bikes-crop-800.webp 800w, assets/img/v5/bikes-crop-1400.webp 1400w" sizes="(min-width: 900px) 17vw, 44vw"><img src="assets/img/v5/bikes-crop-800.jpg" srcset="assets/img/v5/bikes-crop-800.jpg 800w, assets/img/v5/bikes-crop-1400.jpg 1400w" sizes="(min-width: 900px) 17vw, 44vw" width="1400" height="1493" loading="lazy" decoding="async" style="--pos: 50% 35%" alt="Two mountain bikes on the rocky shore of Maniwaya"></picture></button></li>
         </ul>
         <button class="strip__arrow strip__arrow--prev" type="button" data-strip-prev aria-label="Scroll photos left"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
         <button class="strip__arrow strip__arrow--next" type="button" data-strip-next aria-label="Scroll photos right"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -342,7 +375,7 @@
       <li data-id="s7" data-full="assets/img/v5/room-suiteloft-1424.jpg" data-w="1424" data-h="951" data-caption="Suite Loft Room" data-alt="A loft room with a staircase above the bed"></li>
       <li data-id="s8" data-full="assets/img/v5/ungab-arch-1100.jpg" data-w="1100" data-h="1956" data-caption="Ungab Rock Formation (island hopping)" data-alt="A natural rock arch above a quiet cove at Ungab Rock Formation"></li>
       <li data-id="s9" data-full="assets/img/v5/lobby-lounge-1424.jpg" data-w="1424" data-h="951" data-caption="The lobby lounge" data-alt="The lobby lounge with leaf-pattern wall and dark sofas"></li>
-      <li data-id="s10" data-full="assets/img/v5/bikes-1100.jpg" data-w="1100" data-h="1955" data-caption="Mountain bikes on Maniwaya" data-alt="Two mountain bikes on the rocky shore of Maniwaya"></li>
+      <li data-id="s10" data-full="assets/img/v5/bikes-crop-1400.jpg" data-w="1400" data-h="1493" data-caption="Mountain bikes on Maniwaya" data-alt="Two mountain bikes on the rocky shore of Maniwaya"></li>
     </ul>
   </div>
 

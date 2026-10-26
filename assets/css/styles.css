@@ -454,3 +454,47 @@ body.menu-open .site-header { z-index: 200; }
   .events__main { aspect-ratio: auto; min-height: 100%; }
   .events__side { align-self: end; }
 }
+
+/* Square feature photo (kayak), pair of small inset photos */
+.feature__media--square { aspect-ratio: 1; }
+.inset-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; max-width: 460px; }
+.inset-row .inset { margin: 0; max-width: none; }
+/* Included amenities: seven tiles, last row centred */
+@media (min-width: 900px) {
+  .tiles { display: flex; flex-wrap: wrap; justify-content: center; gap: 36px 24px; }
+  .tiles > .tile { flex: 0 0 calc((100% - 72px) / 4); }
+}
+@media (min-width: 600px) and (max-width: 899.98px) {
+  .tiles { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px 20px; }
+  .tiles > .tile { flex: 0 0 calc((100% - 20px) / 2); }
+}
+
+/* Brochure facility list */
+.glance { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 18px; border-top: 1px solid var(--line); }
+.glance li { padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--ink-2); font-size: .97rem; }
+.glance strong { font-family: var(--font-display); font-size: 1.25rem; font-weight: 500; margin-right: 4px; }
+@media (min-width: 600px) { .glance { grid-template-columns: 1fr 1fr; column-gap: 24px; } }
+
+/* Menu overlay: calmer type size, and it covers the page navigation row */
+.mobile-menu ol a { font-size: clamp(1.25rem, 1.05rem + 1vw, 1.6rem); padding: 10px 0; }
+body.menu-open .subnav { visibility: hidden; }
+
+/* Film controls: play/pause, sound, volume; fade out 5 s after the last interaction */
+.film__controls { position: absolute; right: 14px; bottom: 12px; display: flex; align-items: center; gap: 8px; padding: 6px; border-radius: 999px; background: rgba(20,24,22,.45); opacity: 0; pointer-events: none; transition: opacity .4s var(--ease); }
+.film__controls.is-visible, .film__controls:focus-within { opacity: 1; pointer-events: auto; }
+.film__btn { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; background: transparent; color: #fff; }
+.film__btn:hover { background: rgba(255,255,255,.15); }
+.film__btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.film__btn .i-play, .film__btn .i-sound { display: none; }
+.film__btn[data-film-toggle][aria-pressed="true"] .i-play { display: block; }
+.film__btn[data-film-toggle][aria-pressed="true"] .i-pause { display: none; }
+.film__btn[data-film-mute][aria-pressed="false"] .i-sound { display: block; }
+.film__btn[data-film-mute][aria-pressed="false"] .i-muted { display: none; }
+.film__vol { display: flex; align-items: center; padding: 0 8px 0 2px; }
+.film__vol input { width: 90px; accent-color: #fff; cursor: pointer; }
+@media (min-width: 900px) { .film__controls { right: 24px; bottom: 20px; } .film__vol input { width: 110px; } }
+@media (max-width: 479.98px) { .film__vol { display: none; } }
+@media (hover: none) { .film__vol { display: none; } }
+
+/* Kubo and tent photos are near-square: show them whole */
+.pair__item { aspect-ratio: 936 / 870; }

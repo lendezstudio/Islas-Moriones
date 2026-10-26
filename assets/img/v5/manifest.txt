@@ -28,6 +28,7 @@ room-execloft|640x785 1200x1472|viber_image_2026-10-20_17-15-20-146.jpg
 room-loftsingles|800x534 1424x951|viber_image_2026-10-20_17-06-58-304.jpg
 room-bath|640x785 1200x1472|viber_image_2026-10-20_16-44-51-697.jpg
 tent|640x1138 1100x1955|309AD28B-9FEB-4664-9C5C-4FA98A62EBED.heic
+tents-campsite|800x750 936x878|Initial Images/469518456_605136372186168_174922518552061940_n.jpg
 kayak-clear|640x1138 1100x1956|IMG_2380.HEIC
 kayak-clear-2|640x1138 1100x1956|IMG_2372.HEIC
 boat-longinus|800x534 1424x951|IMG_9169.JPG
@@ -35,12 +36,25 @@ boat-rogelius|800x534 1424x951|IMG_9170.JPG
 boat-omon|800x534 1424x951|IMG_9171.JPG
 ecart|640x908 1200x1702|RESORT PRINTABLES (2).png
 bikes|640x1138 1100x1955|IMG_1159.jpg
+bikes-crop|800x853 1400x1493|IMG_1159.jpg
+kayak-pov|800x711 1400x1245|IMG_2380.HEIC
+kayak-pov-2|800x711 1400x1245|IMG_2372.HEIC
 ungab|640x1138 1100x1956|IMG_4354.heic
 ungab-arch|640x1138 1100x1956|IMG_4355.heic
 sandbar-aerial|800x450 1080x608|image (1).png
 reef-raft|572x536|Screenshot 2025-10-02 at 8.57.18 AM.png
 maniwaya-rocks|640x1138 1100x1955|IMG_1156.jpg
 pingpong-darts|800x534 1424x951|viber_image_2026-10-20_16-40-24-808.jpg
+darts|600x914|1df6a445c2cbbc474487db571a2e7874.jpg
+kayak-float|895x895|37d7ae8d44e5e5d5804f941192a827ea.jpg
+pool-loungers|640x1137 908x1613|edited-images/brochure/pool-loungers.jpg
+main-palms|800x450 1210x681|edited-images/brochure/main-building-palms.jpg
+resort-sign|800x450 1600x901|edited-images/brochure/resort-sign.jpg
+morion-statues|540x455|edited-images/brochure/morion-statues.jpg
+century-tree-b|768x432|edited-images/brochure/century-cliff-tree.jpg
+sunong-bato-b|756x538|edited-images/brochure/sunong-bato.jpg
+beach-loungers|800x534 1424x951|viber_image_2026-10-21_08-43-10-768.jpg
+bonfire-smores|800x800|749f2544-eec8-425f-98f1-c7b7e0e02762-md.jpeg
 badminton|640x960 736x1104|69d30c820f458aa14e24c2487352050a.jpg
 genesis-hall|800x1067 1200x1600|IMG_1212.HEIC
 genesis-tables|800x1067 1200x1600|IMG_1213.HEIC
