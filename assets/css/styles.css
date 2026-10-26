@@ -638,3 +638,10 @@ body.menu-open .subnav { visibility: hidden; }
 /* Amenities slideshow: photos only, no captions */
 .slider .slide-item figcaption { display: none; }
 .slider__track { padding-bottom: 24px; }
+
+/* Gatherings venue: main photo fills both rows so all photos end on the same line */
+@media (min-width: 900px) {
+  .venue { align-items: stretch; }
+  .venue__a { aspect-ratio: auto; min-height: 100%; }
+  .venue__b, .venue__c { aspect-ratio: 4 / 5; }
+}
