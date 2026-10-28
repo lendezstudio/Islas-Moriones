@@ -287,8 +287,8 @@ def closer_slides():
 
 home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from the air and on the beach">
       <div class="film__frame">
-        <video class="film__video" autoplay muted loop playsinline preload="auto" poster="assets/video/islas-moriones-hero-poster.jpg?v=2" aria-label="Aerial and beach views of Islas Moriones on Maniwaya Island" data-film>
-          <source src="assets/video/islas-moriones-hero.mp4?v=4" type="video/mp4">
+        <video class="film__video" autoplay muted loop playsinline preload="auto" poster="assets/video/islas-moriones-hero-poster.jpg?v=3" aria-label="Aerial and beach views of Islas Moriones on Maniwaya Island" data-film>
+          <source src="assets/video/islas-moriones-hero.mp4?v=5" type="video/mp4">
         </video>
         <div class="film__controls" data-film-controls>
           <button class="film__btn" type="button" data-film-toggle aria-pressed="false" aria-label="Pause the film">
