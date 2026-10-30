@@ -775,7 +775,7 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
 {stop(pic('sunong-bato-b', 'Sunong Bato, a stacked rock formation in clear turquoise water', '(min-width: 900px) 30vw, 46vw', '50% 50%'), 'Sunong Bato', 'South-east Maniwaya', 'A stacked-rock formation above clear water.')}
 {stop(pic('ungab-arch', 'A natural rock arch above a quiet cove', '(min-width: 900px) 30vw, 46vw', '50% 50%'), 'Ungab Rock Formation', 'Mompong Island', 'Limestone arches around a sheltered cove.')}
 {stop(pic('reef-raft', 'A floating bamboo raft with a canopy and resort flags', '(min-width: 900px) 30vw, 46vw', '50% 55%'), 'Morion Reef Raft', 'Off the west coast', 'A floating raft above the Morion Reef snorkelling area.')}
-{stop(pic('century-tree-b', 'A lone tree on a grassy clifftop above bright blue sea', '(min-width: 900px) 30vw, 46vw', '50% 55%'), 'Century Cliff Tree', 'South-east Maniwaya', 'A lone tree on a clifftop above the sea.')}
+{stop(pic('sea-rocks', 'A lone tree on a rocky limestone cliff above clear turquoise water', '(min-width: 900px) 30vw, 46vw', '45% 50%'), 'Century Cliff Tree', 'South-east Maniwaya', 'A lone tree on a clifftop above the sea.')}
 {stop(pic('morion-statues', 'Statues of Morion warriors beside white columns under a blue sky', '(min-width: 900px) 30vw, 46vw', '50% 50%'), 'Morion Statues', 'Island-hopping stop', 'Statues of Marinduque’s Morion warriors.')}
         </div>
       </div>
