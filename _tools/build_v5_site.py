@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '8.5'
+V = '8.6'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -66,7 +66,7 @@ def old(jid, alt, sizes='100vw', pos='50% 50%'):
             f'loading="lazy" decoding="async" style="--pos: {pos}" alt="{html.escape(alt, quote=True)}">')
 
 FOCUS = {  # subject positions for photos whose subject sits off-centre
-    'maniwaya-aerial': '45% 55%', 'sea-rocks': '40% 60%', 'snorkel2': '55% 50%', 'snorkel3': '55% 50%', 'kubo-ext2': '50% 55%', 'deck-table': '50% 38%',
+    'maniwaya-aerial': '45% 55%', 'sea-rocks': '40% 60%', 'snorkel2': '55% 50%', 'snorkel3': '55% 50%', 'kubo-ext2': '50% 55%', 'rock-cove': '50% 50%', 'vball': '50% 62%', 'pingpong2': '60% 72%', 'darts2': '50% 50%', 'deck-table': '50% 38%',
     'lobby-lounge': '50% 88%', 'maniwaya-cove': '0% 50%', 'beach-loungers': '50% 82%', 'sandbar-boat': '55% 70%',
     'tower-wide': '50% 92%', 'tower-blue': '50% 90%', 'tower-storm': '50% 85%', 'ecart': '50% 100%',
     'bikes-crop': '50% 35%', 'bikes': '50% 100%', 'kayak-pov': '50% 55%', 'kayak-pov-2': '40% 45%', 'beach-loungers': '50% 62%', 'kayak-clear': '50% 100%', 'kayak-clear-2': '50% 100%', 'tents-campsite': '32% 96%',
@@ -258,11 +258,11 @@ def card(img, title, text, href=None, link=None, extra=''):
 # =====================================================================================  HOME
 INCLUDED = [  # (image html, title, caption) all from the resort's inclusion list
     (lambda s: pic('pool-loungers', 'Sun loungers and umbrellas beside the turquoise outdoor pool, shaded by tropical trees', s, '50% 62%'), 'Swimming pool', 'The outdoor pool, with loungers in the shade.'),
-    (lambda s: pic('biker', 'A rider in a helmet on a mountain bike, stopped on a grassy hilltop under a clear sky', s, '45% 45%'), 'Mountain biking', 'Explore the island on two wheels.'),
+    (lambda s: pic('vball', 'A volleyball resting on soft beach sand in warm sunlight', s, '50% 62%'), 'Beach volleyball', 'A net on the sand, a few steps from the water.'),
     (lambda s: old('bamboo-raft', 'The covered bamboo raft with a long table on turquoise water', s, '50% 45%'), 'Bamboo raft', 'Float off the shore on the resort’s bamboo raft.'),
     (lambda s: pic('bonfire-smores', 'Marshmallows toasting on skewers over a campfire at night', s, '55% 50%'), 'Bonfire', 'Evenings around the fire.'),
-    (lambda s: pic('pingpong-darts', 'A ping-pong table in the resort’s open-sided games room', s, '50% 60%'), 'Ping-pong', 'A games room open to the breeze.'),
-    (lambda s: pic('darts', 'A dartboard with darts on a rustic timber board', s, '50% 40%'), 'Darts', 'A dartboard for friendly games.'),
+    (lambda s: pic('pingpong2', 'A table-tennis paddle and ball resting by the net on a teal table, striped with shadow', s, '60% 72%'), 'Ping-pong', 'A games room open to the breeze.'),
+    (lambda s: pic('darts2', 'Two friends pulling darts from a dartboard on the wall', s, '50% 50%'), 'Darts', 'A dartboard for friendly games.'),
     (lambda s: pic('badminton', 'Two badminton rackets and shuttlecocks resting on grass', s, '50% 55%'), 'Badminton', 'Rackets for a game on the lawn.'),
 ]
 def included_grid(sizes='(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw'):
@@ -486,7 +486,7 @@ STRIP = [
     ('genesis-setup', 'The Genesis Events Place', 'Dining tables set beneath draped fabric in The Genesis'),
     ('kayak-clear-2', 'Crystal-clear kayak', 'A crystal-clear kayak on calm water off Maniwaya'),
     ('room-suiteloft', 'Suite Loft Room', 'A loft room with a staircase above the bed'),
-    ('ungab-arch', 'Ungab Rock Formation (island hopping)', 'A natural rock arch above a quiet cove at Ungab Rock Formation'),
+    ('rock-cove', 'Rock formation (island hopping)', 'Aerial view of rock formations and outrigger boats in a turquoise cove'),
     ('lobby-lounge', 'The lobby lounge', 'The lobby lounge with leaf-pattern wall and dark sofas'),
     ('bikes-crop', 'Mountain bikes on Maniwaya', 'Two mountain bikes on the rocky shore of Maniwaya'),
 ]
@@ -507,13 +507,21 @@ page('index.html', 'index.html', 'Islas Moriones Beach Resort | Maniwaya Island,
 
 # =====================================================================================  STAY
 ps_set = lb_set('poolsuite', [
-    ('poolsuite-room', 'Pool Suite Room', 'Queen bed, sofa and kitchen in the Pool Suite Room'),
-    ('poolsuite-bed', 'Pool Suite Room, bedroom', 'The queen bed and bench in the Pool Suite Room'),
-    ('poolsuite-bar', 'Pool Suite Room, breakfast bar', 'A timber breakfast bar with stools and a kitchen'),
-    ('poolsuite-pantry', 'Pool Suite Room, kitchen', 'Open shelves, kettle and refrigerator in the kitchen'),
-    ('poolsuite-loft', 'Pool Suite Room, view from the loft', 'Looking down from the loft over the kitchen'),
-    ('poolsuite-family', 'Pool Suite Room, beds upstairs', 'Double beds on the upper level of the Pool Suite'),
-    ('poolsuite-bath', 'Pool Suite Room, bathroom', 'A bathroom with a glass shower and stone basin'),
+    ('ps-034', 'Pool Suite Room, bedroom and lounge', 'The queen bed, sofa and breakfast bar under a timber ceiling'),
+    ('ps-026', 'Pool Suite Room, queen bed', 'A queen bed with a padded bench at its foot'),
+    ('ps-027', 'Pool Suite Room, the loft above the bedroom', 'The bedroom with the loft gallery above'),
+    ('ps-033', 'Pool Suite Room, kitchen and breakfast bar', 'A kitchen with a hob and a long timber breakfast bar'),
+    ('ps-028', 'Pool Suite Room, kitchen', 'A gas hob and range hood beside a garden window'),
+    ('ps-025', 'Pool Suite Room, kitchen sink', 'A sink and dish rack below a garden window'),
+    ('ps-030', 'Pool Suite Room, pantry', 'Open shelves with cups, a kettle and a refrigerator'),
+    ('ps-029', 'Pool Suite Room, desk and clothes rack', 'A small desk and an open metal clothes rack'),
+    ('ps-024', 'Pool Suite Room, bed by the balcony doors', 'A bed beside glass doors to the balcony'),
+    ('ps-032', 'Pool Suite Room, view from the loft', 'Looking down from the loft over the kitchen'),
+    ('ps-021', 'Pool Suite Room, beds upstairs', 'Beds and a sofa on the upper level'),
+    ('ps-022', 'Pool Suite Room, beds upstairs', 'Double beds on the upper level beside the stair rail'),
+    ('ps-023', 'Pool Suite Room, upper level', 'Beds below louvred windows on the upper level'),
+    ('ps-020', 'Pool Suite Room, bathroom', 'A glass shower, toilet and stone basin'),
+    ('ps-031', 'Pool Suite Room, bathroom', 'A glass shower, toilet and basin'),
 ])
 kubo_set = lb_set('kubo', [
     ('kubo-ext2', 'The Luxury Kubo', 'The thatched Luxury Kubo and its veranda'),
@@ -538,24 +546,34 @@ room_sets = {
     'single': ('Single Standard Room', [
         ('r-single-1', 'Single Standard Room, bedroom', 'Single Standard Room, bedroom'),
         ('r-single-2', 'Single Standard Room, another Single Standard Room', 'Single Standard Room, another Single Standard Room'),
+        ('r-single-3', 'Single Standard Room, another Single Standard Room', 'Single Standard Room, another Single Standard Room'),
         ('r-single-bath', 'Single Standard Room, bathroom', 'Single Standard Room, bathroom'),
+        ('r-single-bath2', 'Single Standard Room, bathroom', 'Single Standard Room, bathroom'),
+        ('r-single-bath3', 'Single Standard Room, bathroom', 'Single Standard Room, bathroom'),
     ]),
     'deluxe': ('Deluxe Room', [
         ('r-deluxe-1', 'Deluxe Room, bedroom', 'Deluxe Room, bedroom'),
         ('r-deluxe-2', 'Deluxe Room, bed and balcony curtains', 'Deluxe Room, bed and balcony curtains'),
         ('r-deluxe-3', 'Deluxe Room, another Deluxe Room', 'Deluxe Room, another Deluxe Room'),
+        ('r-deluxe-4', 'Deluxe Room, another Deluxe Room', 'Deluxe Room, another Deluxe Room'),
         ('r-deluxe-bath', 'Deluxe Room, bathroom', 'Deluxe Room, bathroom'),
+        ('r-deluxe-bath2', 'Deluxe Room, bathroom', 'Deluxe Room, bathroom'),
     ]),
     'superior': ('Superior Room', [
         ('r-superior-1', 'Superior Room, bedroom', 'Superior Room, bedroom'),
         ('r-superior-2', 'Superior Room, another Superior Room', 'Superior Room, another Superior Room'),
         ('r-superior-3', 'Superior Room, beds', 'Superior Room, beds'),
+        ('r-superior-4', 'Superior Room, beds', 'Superior Room, beds'),
         ('r-superior-bath', 'Superior Room, bathroom', 'Superior Room, bathroom'),
+        ('r-superior-bath2', 'Superior Room, bathroom', 'Superior Room, bathroom'),
+        ('r-superior-bath3', 'Superior Room, bathroom', 'Superior Room, bathroom'),
     ]),
     'suite': ('Suite Room', [
         ('r-suite-1', 'Suite Room, bedroom', 'Suite Room, bedroom'),
         ('r-suite-2', 'Suite Room, another Suite Room', 'Suite Room, another Suite Room'),
         ('r-suite-bath', 'Suite Room, bathroom', 'Suite Room, bathroom'),
+        ('r-suite-bath2', 'Suite Room, bathroom', 'Suite Room, bathroom'),
+        ('r-suite-bath3', 'Suite Room, bathroom', 'Suite Room, bathroom'),
     ]),
     'suiteloft': ('Suite Loft Room', [
         ('r-suiteloft-1', 'Suite Loft Room, bedroom', 'Suite Loft Room, bedroom'),
@@ -563,13 +581,24 @@ room_sets = {
         ('r-suiteloft-3', 'Suite Loft Room, another Suite Loft Room', 'Suite Loft Room, another Suite Loft Room'),
         ('r-suiteloft-4', 'Suite Loft Room, seating corner', 'Suite Loft Room, seating corner'),
         ('r-loftbeds', 'Suite Loft Room, single beds in the loft', 'Suite Loft Room, single beds in the loft'),
+        ('r-suiteloft-5', 'Suite Loft Room, bedroom', 'Suite Loft Room, bedroom'),
+        ('r-suiteloft-6', 'Suite Loft Room, bedroom', 'Suite Loft Room, bedroom'),
+        ('r-suiteloft-7', 'Suite Loft Room, bedroom', 'Suite Loft Room, bedroom'),
+        ('r-suiteloft-8', 'Suite Loft Room, stairs to the loft', 'Suite Loft Room, stairs to the loft'),
+        ('r-suiteloft-9', 'Suite Loft Room, bedroom', 'Suite Loft Room, bedroom'),
+        ('r-suiteloft-10', 'Suite Loft Room, bedroom', 'Suite Loft Room, bedroom'),
+        ('r-suiteloft-11', 'Suite Loft Room, bedroom', 'Suite Loft Room, bedroom'),
         ('r-suiteloft-bath', 'Suite Loft Room, bathroom', 'Suite Loft Room, bathroom'),
+        ('r-suiteloft-bath2', 'Suite Loft Room, bathroom', 'Suite Loft Room, bathroom'),
+        ('r-suiteloft-bath3', 'Suite Loft Room, bathroom', 'Suite Loft Room, bathroom'),
     ]),
     'execloft': ('Executive Loft Room', [
         ('r-exec-2', 'Executive Loft Room, bedroom', 'Executive Loft Room, bedroom'),
         ('r-exec-1', 'Executive Loft Room, stairs to the loft', 'Executive Loft Room, stairs to the loft'),
         ('r-exec-3', 'Executive Loft Room, the loft', 'Executive Loft Room, the loft'),
+        ('r-exec-4', 'Executive Loft Room, bedroom', 'Executive Loft Room, bedroom'),
         ('r-exec-bath', 'Executive Loft Room, bathroom', 'Executive Loft Room, bathroom'),
+        ('r-exec-bath2', 'Executive Loft Room, bathroom', 'Executive Loft Room, bathroom'),
     ]),
 }
 rooms_lb = ''.join(lb_set('room-' + k, v[1]) for k, v in room_sets.items())
@@ -605,7 +634,7 @@ stay = intro('Stay', 'Your stay on Maniwaya', 'Explore the accommodations at Isl
             </dl>
             <div class="actions">
               <a class="btn btn--teal" href="{BOOK}" target="_blank" rel="noopener">Check Availability{BOOKTAB}</a>
-              {gallery_btn('poolsuite', 7)}
+              {gallery_btn('poolsuite', 15)}
             </div>
           </div>
         </div>
@@ -662,7 +691,7 @@ stay = intro('Stay', 'Your stay on Maniwaya', 'Explore the accommodations at Isl
     <section class="section" id="tents" aria-labelledby="tents-title">
       <div class="wrap">
         <div class="feature">
-          <div class="feature__stack" data-reveal><figure class="feature__media">{pic('tents-campsite', 'Tents pitched on the resort lawn under tall coconut palms, beside a thatched cottage', '(min-width: 900px) 52vw, 92vw', '32% 96%')}</figure><figure class="feature__media">{pic('tent', 'A dome tent beneath tall coconut palms', '(min-width: 900px) 52vw, 92vw', '50% 78%')}</figure></div>
+          <div class="feature__stack" data-reveal><figure class="feature__media">{pic('tents-campsite', 'Tents pitched on the resort lawn under tall coconut palms, beside a thatched cottage', '(min-width: 900px) 52vw, 92vw', '32% 96%')}</figure><div class="feature__duo"><figure class="feature__media">{pic('tent', 'A dome tent beneath tall coconut palms', '(min-width: 900px) 26vw, 46vw', '50% 78%')}</figure><figure class="feature__media">{pic('tents-bamboo', 'Dome tents on the campsite beside a bamboo sitting platform under coconut palms', '(min-width: 900px) 26vw, 46vw', '50% 55%')}</figure></div></div>
           <div class="feature__text" data-reveal>
             <p class="eyebrow">Tent stays</p>
             <h2 class="h-section" id="tents-title">A different way to stay</h2>
@@ -936,6 +965,7 @@ G = [  # (category, id, caption, alt, wide?)
     ('experiences', 'boat-longinus', 'M/V St. Longinus', 'The resort’s boat St. Longinus in clear water', 1),
     ('stays', 'tents-campsite', 'Tent stays on the campsite', 'Tents on the lawn under coconut palms', 0),
     ('stays', 'tent', 'Tent stay', 'A tent on the lawn under coconut palms', 0),
+    ('stays', 'tents-bamboo', 'Campsite', 'Tents beside a bamboo platform under palms', 0),
     ('experiences', 'kayak-sign', 'Crystal-clear kayak', 'A clear kayak beside the resort sign', 0),
     ('dining', 'deck-table', 'Dining on the deck', 'A wicker dining table on the timber deck', 0),
     ('experiences', 'kayak-float', 'Crystal-clear kayak', 'A swimmer beside a transparent kayak, seen from above', 0),
@@ -951,7 +981,9 @@ G = [  # (category, id, caption, alt, wide?)
     ('resort', 'tower-blue', 'The lifeguard tower', 'The white lifeguard tower against a deep blue sky', 0),
     ('gatherings', 'genesis-tables', 'Round-table setup', 'Round tables with gold chairs inside The Genesis', 0),
     ('stays', 'kubo-loftbeds', 'Luxury Kubo, loft beds', 'Four single beds in the timber loft', 0),
-    ('experiences', 'pingpong-darts', 'Games room', 'A ping-pong table and dartboard', 0),
+    ('experiences', 'pingpong2', 'Table tennis', 'A table-tennis paddle and ball by the net', 0),
+    ('experiences', 'vball', 'Beach volleyball', 'A volleyball on the sand', 0),
+    ('experiences', 'darts2', 'Darts', 'Friends pulling darts from a dartboard', 0),
     ('resort', 'lobby-lounge', 'The lobby lounge', 'A lounge with a leaf-pattern mural', 1),
     ('stays', 'poolsuite-family', 'Pool Suite Room, upstairs', 'Double beds on the upper level', 0),
     ('experiences', 'ecart', 'E-cart land tour', 'An electric cart on the seawall', 0),

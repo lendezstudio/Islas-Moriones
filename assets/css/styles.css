@@ -634,6 +634,7 @@ body.menu-open .subnav { visibility: hidden; }
 
 /* Two equal tent photos stacked */
 .feature__stack { display: grid; gap: 14px; }
+.feature__duo { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
 /* Amenities slideshow: photos only, no captions */
 .slider .slide-item figcaption { display: none; }

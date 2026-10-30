@@ -37,6 +37,46 @@ boat-omon|800x534 1424x951|IMG_9171.JPG
 ecart|640x908 1200x1702|RESORT PRINTABLES (2).png
 bikes|640x1138 1100x1955|IMG_1159.jpg
 biker|640x853 1100x1467|Initial Images/Activities/pexels-enrico-musitelli-1035698384-34377533.jpg
+vball|640x994 1100x1709|Initial Images/Pexels/pexels-helder-pereira-326724210-33490287.jpg
+pingpong2|640x896 1100x1540|Initial Images/Pexels/pexels-haydar-acer-1111927873-33063727.jpg
+darts2|800x762 1200x1143|Initial Images/Pexels/pexels-kevin-malik-8763232.jpg
+tents-bamboo|259x194|Assets from Client/October 30, 2026/images (2).jpg
+r-single-3|640x785 1100x1349|Assets from Client/October 30, 2026/room 4.jpg
+r-single-bath2|640x785 1100x1349|Assets from Client/October 30, 2026/room 4 cr.jpg
+r-single-bath3|640x785 1100x1349|Assets from Client/October 30, 2026/room 6 cr.jpg
+r-superior-4|800x534 1424x951|Assets from Client/October 30, 2026/room 5 (1).jpg
+r-superior-bath2|640x785 1100x1349|Assets from Client/October 30, 2026/room 5 cr (1).jpg
+r-superior-bath3|640x785 1100x1349|Assets from Client/October 30, 2026/room 2 cr.jpg
+r-suite-bath2|640x785 1100x1349|Assets from Client/October 30, 2026/room 1 cr (1).jpg
+r-suite-bath3|640x785 1100x1349|Assets from Client/October 30, 2026/room 8 cr.jpg
+r-deluxe-4|640x785 1100x1349|Assets from Client/October 30, 2026/room 28 deluxe (1).jpg
+r-deluxe-bath2|640x785 1100x1349|Assets from Client/October 30, 2026/room 28, cr.jpg
+r-suiteloft-5|800x534 1424x951|Assets from Client/October 30, 2026/room 25 suite loft.jpg
+r-suiteloft-6|800x534 1424x951|Assets from Client/October 30, 2026/room 25 suite loft (1).jpg
+r-suiteloft-7|800x534 1424x951|Assets from Client/October 30, 2026/room 26.jpg
+r-suiteloft-8|640x785 1100x1349|Assets from Client/October 30, 2026/room 26 (1).jpg
+r-suiteloft-9|640x785 1100x1349|Assets from Client/October 30, 2026/room 26 suite loft (1).jpg
+r-suiteloft-10|640x785 1100x1349|Assets from Client/October 30, 2026/room 26, suite loft.jpg
+r-suiteloft-11|800x534 1424x951|Assets from Client/October 30, 2026/room 26, suite loft (1).jpg
+r-suiteloft-bath2|640x785 1100x1349|Assets from Client/October 30, 2026/room 25 cr.jpg
+r-suiteloft-bath3|640x785 1100x1349|Assets from Client/October 30, 2026/room 26 cr.jpg
+r-exec-4|800x534 1424x951|Assets from Client/October 30, 2026/room 27 executive loft (1).jpg
+r-exec-bath2|640x785 1100x1349|Assets from Client/October 30, 2026/room 27 cr (1).jpg
+ps-020|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (1).HEIC
+ps-021|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (10).HEIC
+ps-022|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (11).HEIC
+ps-023|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (12).HEIC
+ps-024|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (13).HEIC
+ps-025|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (2).HEIC
+ps-026|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (3).HEIC
+ps-027|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (4).HEIC
+ps-028|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (5).HEIC
+ps-029|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (6).HEIC
+ps-030|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (7).HEIC
+ps-031|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (8).HEIC
+ps-032|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (9).HEIC
+ps-033|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room.HEIC
+ps-034|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room.HEIC.HEIC
 bikes-crop|800x853 1400x1493|IMG_1159.jpg
 kayak-pov|800x711 1400x1245|IMG_2380.HEIC
 kayak-pov-2|800x711 1400x1245|IMG_2372.HEIC
