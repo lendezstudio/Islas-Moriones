@@ -77,6 +77,8 @@ ps-031|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (8
 ps-032|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room (9).HEIC
 ps-033|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room.HEIC
 ps-034|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room.HEIC.HEIC
+lobby2|800x534 1424x951|Assets from Client/October 30, 2026/lobby.jpg
+reef-raft2|572x536|Assets from Client/October 30, 2026/MORION REEF RAFT.png
 bikes-crop|800x853 1400x1493|IMG_1159.jpg
 kayak-pov|800x711 1400x1245|IMG_2380.HEIC
 kayak-pov-2|800x711 1400x1245|IMG_2372.HEIC

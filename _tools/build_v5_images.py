@@ -105,6 +105,8 @@ JOBS = [
     ('ps-032', 'Assets from Client/October 30, 2026/pool suite room (9).HEIC', None, (800, 1200)),
     ('ps-033', 'Assets from Client/October 30, 2026/pool suite room.HEIC', None, (800, 1200)),
     ('ps-034', 'Assets from Client/October 30, 2026/pool suite room.HEIC.HEIC', None, (800, 1200)),
+    ('lobby2', 'Assets from Client/October 30, 2026/lobby.jpg', MARK_L, (800, 1424)),
+    ('reef-raft2', 'Assets from Client/October 30, 2026/MORION REEF RAFT.png', None, (572,)),
     ('bikes-crop',       'IMG_1159.jpg', (0, .40, 1, 1), (800, 1400)),
     ('kayak-pov',        'IMG_2380.HEIC', (0, .50, 1, 1), (800, 1400)),
     ('kayak-pov-2',      'IMG_2372.HEIC', (0, .50, 1, 1), (800, 1400)),

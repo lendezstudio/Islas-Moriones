@@ -67,7 +67,7 @@ def old(jid, alt, sizes='100vw', pos='50% 50%'):
 
 FOCUS = {  # subject positions for photos whose subject sits off-centre
     'maniwaya-aerial': '45% 55%', 'sea-rocks': '40% 60%', 'snorkel2': '55% 50%', 'snorkel3': '55% 50%', 'kubo-ext2': '50% 55%', 'rock-cove': '50% 50%', 'vball': '50% 62%', 'pingpong2': '60% 72%', 'darts2': '50% 50%', 'deck-table': '50% 38%',
-    'lobby-lounge': '50% 88%', 'maniwaya-cove': '0% 50%', 'beach-loungers': '50% 82%', 'sandbar-boat': '55% 70%',
+    'lobby-lounge': '50% 88%', 'lobby2': '50% 70%', 'maniwaya-cove': '0% 50%', 'beach-loungers': '50% 82%', 'sandbar-boat': '55% 70%',
     'tower-wide': '50% 92%', 'tower-blue': '50% 90%', 'tower-storm': '50% 85%', 'ecart': '50% 100%',
     'bikes-crop': '50% 35%', 'bikes': '50% 100%', 'kayak-pov': '50% 55%', 'kayak-pov-2': '40% 45%', 'beach-loungers': '50% 62%', 'kayak-clear': '50% 100%', 'kayak-clear-2': '50% 100%', 'tents-campsite': '32% 96%',
     'tent': '50% 78%', 'ungab-arch': '50% 70%', 'main-building': '50% 45%', 'genesis-front': '50% 70%',
@@ -487,7 +487,7 @@ STRIP = [
     ('kayak-clear-2', 'Crystal-clear kayak', 'A crystal-clear kayak on calm water off Maniwaya'),
     ('room-suiteloft', 'Suite Loft Room', 'A loft room with a staircase above the bed'),
     ('rock-cove', 'Rock formation (island hopping)', 'Aerial view of rock formations and outrigger boats in a turquoise cove'),
-    ('lobby-lounge', 'The lobby lounge', 'The lobby lounge with leaf-pattern wall and dark sofas'),
+    ('lobby2', 'The lobby lounge', 'The lobby lounge with leaf-pattern wall and dark sofas'),
     ('bikes-crop', 'Mountain bikes on Maniwaya', 'Two mountain bikes on the rocky shore of Maniwaya'),
 ]
 items = []
@@ -525,8 +525,9 @@ ps_set = lb_set('poolsuite', [
 ])
 kubo_set = lb_set('kubo', [
     ('kubo-ext2', 'The Luxury Kubo', 'The thatched Luxury Kubo and its veranda'),
-    ('kubo-living', 'Luxury Kubo, lounge', 'A white sofa beside glass doors'),
-    ('kubo-bedroom', 'Luxury Kubo, bedroom', 'A queen bed under window blinds'),
+    ('kubo-living2', 'Luxury Kubo, living area', 'A kitchenette, armchair and glass doors, the bedroom beyond'),
+    ('kubo-lounge2', 'Luxury Kubo, lounge', 'A white sofa, TV and glass doors to the garden'),
+    ('kubo-bed2', 'Luxury Kubo, bedroom', 'A queen bed under window blinds'),
     ('kubo-loftbeds', 'Luxury Kubo, loft beds', 'Four single beds in the timber loft'),
     ('kubo-bath', 'Luxury Kubo, bathroom', 'A glass shower and toilet'),
 ])
@@ -662,7 +663,7 @@ stay = intro('Stay', 'Your stay on Maniwaya', 'Explore the accommodations at Isl
             </div>
             <div class="actions">
               <a class="btn btn--teal" href="{BOOK}" target="_blank" rel="noopener">Check Availability{BOOKTAB}</a>
-              {gallery_btn('kubo', 5)}
+              {gallery_btn('kubo', 6)}
             </div>
           </div>
         </div>
@@ -803,7 +804,7 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
 {stop(pic('sandbar-aerial', 'Aerial view of a white sandbar in turquoise water with outrigger boats', '(min-width: 900px) 30vw, 46vw', '50% 50%'), 'Palad Sandbar', 'Offshore', 'A natural sandbar that fully appears at low tide.')}
 {stop(pic('sunong-bato-b', 'Sunong Bato, a stacked rock formation in clear turquoise water', '(min-width: 900px) 30vw, 46vw', '50% 50%'), 'Sunong Bato', 'South-east Maniwaya', 'A stacked-rock formation above clear water.')}
 {stop(pic('ungab-arch', 'A natural rock arch above a quiet cove', '(min-width: 900px) 30vw, 46vw', '50% 50%'), 'Ungab Rock Formation', 'Mompong Island', 'Limestone arches around a sheltered cove.')}
-{stop(pic('reef-raft', 'A floating bamboo raft with a canopy and resort flags', '(min-width: 900px) 30vw, 46vw', '50% 55%'), 'Morion Reef Raft', 'Off the west coast', 'A floating raft above the Morion Reef snorkelling area.')}
+{stop(pic('reef-raft2', 'A floating bamboo raft with a canopy and resort flags', '(min-width: 900px) 30vw, 46vw', '50% 55%'), 'Morion Reef Raft', 'Off the west coast', 'A floating raft above the Morion Reef snorkelling area.')}
 {stop(pic('sea-rocks', 'A lone tree on a rocky limestone cliff above clear turquoise water', '(min-width: 900px) 30vw, 46vw', '45% 50%'), 'Century Cliff Tree', 'South-east Maniwaya', 'A lone tree on a clifftop above the sea.')}
 {stop(pic('morion-statues', 'Statues of Morion warriors beside white columns under a blue sky', '(min-width: 900px) 30vw, 46vw', '50% 50%'), 'Morion Statues', 'Island-hopping stop', 'Statues of Marinduque’s Morion warriors.')}
         </div>
@@ -941,7 +942,7 @@ groups = intro('Gatherings &amp; Events', 'An island setting for getting togethe
       <div class="wrap">
         <div class="cards cards--3">
 {card(old('pool-grounds-day', 'The pool in daylight with the palm-shaded lawn beyond', '(min-width: 900px) 30vw, 92vw', '50% 82%'), 'Day visits', 'Spend the day enjoying the beach, pool, and selected resort amenities, 8 AM to 5 PM. Day tours are subject to availability.')}
-{card(pic('lobby-lounge', 'The lobby lounge with a leaf-pattern mural and dark sofas', '(min-width: 900px) 30vw, 92vw', '50% 55%'), 'Group packages', 'Ask the team about packages for reunions, celebrations and other group stays.')}
+{card(pic('lobby2', 'The lobby lounge with a leaf-pattern mural and dark sofas', '(min-width: 900px) 30vw, 92vw', '50% 55%'), 'Group packages', 'Ask the team about packages for reunions, celebrations and other group stays.')}
 {card(pic('beach-palms', 'Palms shading the sand in front of the resort buildings', '(min-width: 900px) 30vw, 92vw', '50% 55%'), 'Exclusive stays', 'Planning something for your whole group? Ask about exclusive-stay arrangements, which are separate from venue hire.')}
         </div>
         <p class="note center">Group stays pair well with <a href="rooms.html">the rooms</a>, <a href="dining.html">dining packages</a> and the resort’s <a href="getting-here.html#van">van</a> and <a href="activities.html#boats">boats</a>.</p>
@@ -984,7 +985,7 @@ G = [  # (category, id, caption, alt, wide?)
     ('experiences', 'pingpong2', 'Table tennis', 'A table-tennis paddle and ball by the net', 0),
     ('experiences', 'vball', 'Beach volleyball', 'A volleyball on the sand', 0),
     ('experiences', 'darts2', 'Darts', 'Friends pulling darts from a dartboard', 0),
-    ('resort', 'lobby-lounge', 'The lobby lounge', 'A lounge with a leaf-pattern mural', 1),
+    ('resort', 'lobby2', 'The lobby lounge', 'A lounge with a leaf-pattern mural', 1),
     ('stays', 'poolsuite-family', 'Pool Suite Room, upstairs', 'Double beds on the upper level', 0),
     ('experiences', 'ecart', 'E-cart land tour', 'An electric cart on the seawall', 0),
     ('stays', 'room-superior', 'Superior Room', 'Two beds against a yellow wall', 0),
