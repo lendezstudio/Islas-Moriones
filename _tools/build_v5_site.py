@@ -778,7 +778,7 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
         </div>
 
         <div class="cards cards--3 cards--spaced">
-{card(pic('biker', 'A rider in a helmet on a mountain bike on a grassy hilltop', '(min-width: 900px) 30vw, 92vw', '45% 45%'), 'Mountain bikes', 'Ride Maniwaya at your own pace. A tour guide can be arranged.')}
+{card(pic('biker', 'A rider in a helmet on a mountain bike on a grassy hilltop', '(min-width: 900px) 30vw, 92vw', '50% 15%'), 'Mountain bikes', 'Ride Maniwaya at your own pace. A tour guide can be arranged.')}
 {card(pic('ecart', 'An open-sided white electric cart parked on a seawall', '(min-width: 900px) 30vw, 92vw', '50% 100%'), 'Land tour by e-cart', 'See more of Maniwaya on a land tour by electric cart.')}
 {card(old('exp-snorkel', 'A snorkeller swimming through clear blue water', '(min-width: 900px) 30vw, 92vw', '50% 35%'), 'Snorkelling gear', 'Masks, snorkels and fins are available.')}
 {card(old('exp-massage', 'Hands giving a relaxing back massage to a guest lying under a white towel', '(min-width: 900px) 30vw, 92vw', '60% 50%'), 'In-room massage', 'Unwind after a day outdoors with a massage in your room.')}
