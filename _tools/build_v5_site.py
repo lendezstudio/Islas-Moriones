@@ -66,7 +66,7 @@ def old(jid, alt, sizes='100vw', pos='50% 50%'):
             f'loading="lazy" decoding="async" style="--pos: {pos}" alt="{html.escape(alt, quote=True)}">')
 
 FOCUS = {  # subject positions for photos whose subject sits off-centre
-    'maniwaya-aerial': '45% 55%', 'sea-rocks': '40% 60%', 'snorkel2': '55% 50%', 'snorkel3': '55% 50%', 'kubo-ext2': '50% 55%',
+    'maniwaya-aerial': '45% 55%', 'sea-rocks': '40% 60%', 'snorkel2': '55% 50%', 'snorkel3': '55% 50%', 'kubo-ext2': '50% 55%', 'deck-table': '50% 38%',
     'lobby-lounge': '50% 88%', 'maniwaya-cove': '0% 50%', 'beach-loungers': '50% 82%', 'sandbar-boat': '55% 70%',
     'tower-wide': '50% 92%', 'tower-blue': '50% 90%', 'tower-storm': '50% 85%', 'ecart': '50% 100%',
     'bikes-crop': '50% 35%', 'bikes': '50% 100%', 'kayak-pov': '50% 55%', 'kayak-pov-2': '40% 45%', 'beach-loungers': '50% 62%', 'kayak-clear': '50% 100%', 'kayak-clear-2': '50% 100%', 'tents-campsite': '32% 96%',
@@ -819,20 +819,6 @@ dining = intro('Dining', 'A table for your island stay', 'From everyday meals to
       </div>
     </section>
 
-    <section class="section section--linen" aria-labelledby="deck-title">
-      <div class="wrap">
-        <div class="feature feature--flip">
-          <figure class="feature__media feature__media--tall" data-reveal>{pic('deck-table', 'A long wicker dining table and chairs on a timber deck, open to the garden and coconut palms', '(min-width: 900px) 44vw, 92vw', '50% 55%')}</figure>
-          <div class="feature__text" data-reveal>
-            <p class="eyebrow">Outdoor dining</p>
-            <h2 class="h-section" id="deck-title">A table on the deck</h2>
-            <p>Long tables on the timber deck, open to the garden and the palms. Ask the team about dining outdoors during your stay.</p>
-            <a class="btn btn--line" href="contact.html">Ask about dining</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section" aria-labelledby="cafe-title">
       <div class="wrap">
         <header class="section-head section-head--split">
@@ -856,7 +842,7 @@ dining = intro('Dining', 'A table for your island stay', 'From everyday meals to
           <h2 class="h-section" id="pk-title">Make a meal part of the occasion</h2>
         </header>
         <div class="cards cards--3">
-{card(old('dining-veranda-night', 'Timber dining tables along tall glass doors on the café veranda in the evening', '(min-width: 900px) 30vw, 92vw', '40% 50%'), 'Meal packages', 'Ask about meal packages for your stay and the arrangements available for your group.')}
+{card(pic('deck-table', 'A long wicker dining table and chairs on a timber deck, open to the garden and coconut palms', '(min-width: 900px) 30vw, 92vw', '50% 38%'), 'Meal packages', 'Ask about meal packages for your stay and the arrangements available for your group.')}
 {card(old('bamboo-raft', 'The covered bamboo raft with a long bamboo table on turquoise water', '(min-width: 900px) 30vw, 92vw', '50% 45%'), 'Boodle fight dining', 'Gather around a shared boodle fight setup and make a meal part of the occasion. It can also be set up on the bamboo raft.')}
 {card(pic('bonfire-smores', 'Marshmallows toasting on skewers over a campfire at night', '(min-width: 900px) 30vw, 92vw', '55% 50%'), 'Bonfire menu packages', 'Explore the resort’s bonfire menu packages for another way to spend an evening together.')}
         </div>

@@ -123,7 +123,7 @@ JOBS = [
     ('sea-rocks', 'Assets from Client/October 30, 2026/images (3).jpg', None, (554,)),
     ('snorkel3', 'Assets from Client/October 30, 2026/pexels-thomas-balabaud-735585-6507342.jpg', None, (800, 1400)),
     ('sandbar-hop', 'image (1) (1).png', None, (800, 1080)),
-    ('deck-table', 'Assets from Client/October 30, 2026/203add1d0cc6e9e797221bf8adcd6392bb06b5e0.jpg', None, (705,)),
+    ('deck-table', 'Assets from Client/October 30, 2026/203add1d0cc6e9e797221bf8adcd6392bb06b5e0.jpg', (0, 0, 1, .76), (705,)),
     ('badminton',        '69d30c820f458aa14e24c2487352050a.jpg', None, (640, 736)),
     # The Genesis Events Place
     ('genesis-hall',     'IMG_1212.HEIC', None, (800, 1200)),

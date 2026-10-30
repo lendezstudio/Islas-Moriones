@@ -93,7 +93,7 @@ snorkel2|800x450 1400x788|Assets from Client/October 30, 2026/pexels-pixabay-163
 sea-rocks|554x554|Assets from Client/October 30, 2026/images (3).jpg
 snorkel3|800x610 1400x1067|Assets from Client/October 30, 2026/pexels-thomas-balabaud-735585-6507342.jpg
 sandbar-hop|800x450 1080x608|image (1) (1).png
-deck-table|705x940|Assets from Client/October 30, 2026/203add1d0cc6e9e797221bf8adcd6392bb06b5e0.jpg
+deck-table|705x714|Assets from Client/October 30, 2026/203add1d0cc6e9e797221bf8adcd6392bb06b5e0.jpg
 badminton|640x960 736x1104|69d30c820f458aa14e24c2487352050a.jpg
 genesis-hall|800x1067 1200x1600|IMG_1212.HEIC
 genesis-tables|800x1067 1200x1600|IMG_1213.HEIC
