@@ -260,7 +260,7 @@ INCLUDED = [  # (image html, title, caption) all from the resort's inclusion lis
     (lambda s: pic('pool-loungers', 'Sun loungers and umbrellas beside the turquoise outdoor pool, shaded by tropical trees', s, '50% 62%'), 'Swimming pool', 'The outdoor pool, with loungers in the shade.'),
     (lambda s: old('beach-volleyball', 'A volleyball net on the resort beach beside clear water', s, '40% 50%'), 'Beach volleyball', 'A net on the sand, a few steps from the water.'),
     (lambda s: old('bamboo-raft', 'The covered bamboo raft with a long table on turquoise water', s, '50% 45%'), 'Bamboo raft', 'Float off the shore on the resort’s bamboo raft.'),
-    (lambda s: pic('bonfire-smores', 'Marshmallows toasting on skewers over a campfire at night', s, '55% 50%'), 'Bonfire', 'Evenings around the fire. Photo for illustration.'),
+    (lambda s: pic('bonfire-smores', 'Marshmallows toasting on skewers over a campfire at night', s, '55% 50%'), 'Bonfire', 'Evenings around the fire.'),
     (lambda s: pic('pingpong-darts', 'A ping-pong table in the resort’s open-sided games room', s, '50% 60%'), 'Ping-pong', 'A games room open to the breeze.'),
     (lambda s: pic('darts', 'A dartboard with darts on a rustic timber board', s, '50% 40%'), 'Darts', 'A dartboard for friendly games.'),
     (lambda s: pic('badminton', 'Two badminton rackets and shuttlecocks resting on grass', s, '50% 55%'), 'Badminton', 'Rackets for a game on the lawn.'),
@@ -353,7 +353,6 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
           <button class="slider__arrow slider__arrow--prev" type="button" data-slider-prev aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
           <button class="slider__arrow slider__arrow--next" type="button" data-slider-next aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
-        <p class="note center">Snorkelling photo for illustration. The aerial shows the wider Marinduque coastline.</p>
       </div>
     </section>
 
@@ -471,7 +470,6 @@ STRIPITEMS
           <div class="feature__text" data-reveal>
             <h2 class="h-section" id="journey-title">Your journey to Maniwaya</h2>
             <p>Find Islas Moriones on Maniwaya Island in Santa Cruz, Marinduque. Speak with the resort about your route and arrival arrangements before you travel.</p>
-            <p class="note">Photo for illustration.</p>
             <a class="btn btn--line" href="getting-here.html">Plan your journey</a>
           </div>
         </div>
@@ -752,10 +750,10 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
         <div class="cards cards--3 cards--spaced">
 {card(pic('bikes-crop', 'Two mountain bikes resting on the rocky shoreline of Maniwaya, waves behind', '(min-width: 900px) 30vw, 92vw'), 'Mountain bikes', 'Ride Maniwaya at your own pace. A tour guide can be arranged.')}
 {card(pic('ecart', 'An open-sided white electric cart parked on a seawall', '(min-width: 900px) 30vw, 92vw', '50% 100%'), 'Land tour by e-cart', 'See more of Maniwaya on a land tour by electric cart.')}
-{card(old('exp-snorkel', 'A snorkeller swimming through clear blue water', '(min-width: 900px) 30vw, 92vw', '50% 35%'), 'Snorkelling gear', 'Masks, snorkels and fins are available. Photo for illustration.')}
-{card(old('exp-massage', 'Hands giving a relaxing back massage to a guest lying under a white towel', '(min-width: 900px) 30vw, 92vw', '60% 50%'), 'In-room massage', 'Unwind after a day outdoors with a massage in your room. Photo for illustration.')}
-{card(old('exp-karaoke', 'A microphone lit in purple stage light', '(min-width: 900px) 30vw, 92vw', '35% 50%'), 'Karaoke', 'A night in with your group and a few favourite songs. Photo for illustration.')}
-{card(old('exp-laundry', 'Clothes being loaded into a front-loading washing machine', '(min-width: 900px) 30vw, 92vw', '45% 50%'), 'Laundry service', 'For longer stays, so you can pack light. Photo for illustration.')}
+{card(old('exp-snorkel', 'A snorkeller swimming through clear blue water', '(min-width: 900px) 30vw, 92vw', '50% 35%'), 'Snorkelling gear', 'Masks, snorkels and fins are available.')}
+{card(old('exp-massage', 'Hands giving a relaxing back massage to a guest lying under a white towel', '(min-width: 900px) 30vw, 92vw', '60% 50%'), 'In-room massage', 'Unwind after a day outdoors with a massage in your room.')}
+{card(old('exp-karaoke', 'A microphone lit in purple stage light', '(min-width: 900px) 30vw, 92vw', '35% 50%'), 'Karaoke', 'A night in with your group and a few favourite songs.')}
+{card(old('exp-laundry', 'Clothes being loaded into a front-loading washing machine', '(min-width: 900px) 30vw, 92vw', '45% 50%'), 'Laundry service', 'For longer stays, so you can pack light.')}
         </div>
       </div>
     </section>
@@ -860,7 +858,7 @@ dining = intro('Dining', 'A table for your island stay', 'From everyday meals to
         <div class="cards cards--3">
 {card(old('dining-veranda-night', 'Timber dining tables along tall glass doors on the café veranda in the evening', '(min-width: 900px) 30vw, 92vw', '40% 50%'), 'Meal packages', 'Ask about meal packages for your stay and the arrangements available for your group.')}
 {card(old('bamboo-raft', 'The covered bamboo raft with a long bamboo table on turquoise water', '(min-width: 900px) 30vw, 92vw', '50% 45%'), 'Boodle fight dining', 'Gather around a shared boodle fight setup and make a meal part of the occasion. It can also be set up on the bamboo raft.')}
-{card(pic('bonfire-smores', 'Marshmallows toasting on skewers over a campfire at night', '(min-width: 900px) 30vw, 92vw', '55% 50%'), 'Bonfire menu packages', 'Explore the resort’s bonfire menu packages for another way to spend an evening together. Photo for illustration.')}
+{card(pic('bonfire-smores', 'Marshmallows toasting on skewers over a campfire at night', '(min-width: 900px) 30vw, 92vw', '55% 50%'), 'Bonfire menu packages', 'Explore the resort’s bonfire menu packages for another way to spend an evening together.')}
         </div>
         <div class="actions actions--center">
           <a class="btn btn--teal" href="contact.html">Ask about dining packages</a>
