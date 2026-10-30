@@ -87,6 +87,43 @@ JOBS = [
     ('maniwaya-cove',    'IMG_1188.HEIC', (0, .25, .62, .53), (800, 1300)),
     ('sandbar-boat',     'Screenshot 2025-12-20 at 12.26.39 AM.png', None, (738,)),
     ('sunset-boat-beach', 'edited-images/sunset-boat.jpg', (0, .22, .68, 1), (800, 1206)),
+    # Client-labelled photos (Assets from Client/October 30, 2026)
+    ('r-single-1', 'Assets from Client/October 30, 2026/room 3 single standard.jpg', MARK_L, (800, 1424)),
+    ('r-single-2', 'Assets from Client/October 30, 2026/room 6, single standard.jpg', MARK_P, (640, 1100)),
+    ('r-single-bath', 'Assets from Client/October 30, 2026/room 3 cr.jpg', MARK_P, (640, 1100)),
+    ('r-deluxe-1', 'Assets from Client/October 30, 2026/room 23, deluxe.jpg', MARK_L, (800, 1424)),
+    ('r-deluxe-2', 'Assets from Client/October 30, 2026/23, delux.jpg', MARK_P, (640, 1100)),
+    ('r-deluxe-3', 'Assets from Client/October 30, 2026/room 28 deluxe.jpg', MARK_P, (640, 1100)),
+    ('r-deluxe-bath', 'Assets from Client/October 30, 2026/23, cr.jpg', MARK_P, (640, 1100)),
+    ('r-superior-1', 'Assets from Client/October 30, 2026/room 5 superior room.jpg', MARK_L, (800, 1424)),
+    ('r-superior-2', 'Assets from Client/October 30, 2026/room 2, superior.jpg', MARK_L, (800, 1424)),
+    ('r-superior-3', 'Assets from Client/October 30, 2026/room 5.jpg', MARK_L, (800, 1080)),
+    ('r-superior-bath', 'Assets from Client/October 30, 2026/room 5 cr.jpg', MARK_P, (640, 1100)),
+    ('r-suite-1', 'Assets from Client/October 30, 2026/room 1, suite.jpg', MARK_L, (800, 1424)),
+    ('r-suite-2', 'Assets from Client/October 30, 2026/room 8 suite room.jpg', MARK_L, (800, 1424)),
+    ('r-suite-bath', 'Assets from Client/October 30, 2026/room 1 cr.jpg', MARK_P, (640, 1100)),
+    ('r-suiteloft-1', 'Assets from Client/October 30, 2026/room 25, suite loft.jpg', MARK_L, (800, 1424)),
+    ('r-suiteloft-2', 'Assets from Client/October 30, 2026/room 24, suite loft.jpg', MARK_L, (800, 1424)),
+    ('r-suiteloft-3', 'Assets from Client/October 30, 2026/room 26 suite loft.jpg', MARK_L, (800, 1424)),
+    ('r-suiteloft-4', 'Assets from Client/October 30, 2026/suite loft 24.jpg', MARK_L, (800, 1424)),
+    ('r-loftbeds', 'Assets from Client/October 30, 2026/loft beds .jpg', MARK_L, (800, 1424)),
+    ('r-suiteloft-bath', 'Assets from Client/October 30, 2026/room 24, cr.jpg', MARK_P, (640, 1100)),
+    ('r-exec-1', 'Assets from Client/October 30, 2026/room 27, executive loft.jpg', MARK_P, (640, 1100)),
+    ('r-exec-2', 'Assets from Client/October 30, 2026/room 27 executive loft.jpg', MARK_L, (800, 1424)),
+    ('r-exec-3', 'Assets from Client/October 30, 2026/loft (every suite loft and executive).jpg', MARK_L, (800, 1424)),
+    ('r-exec-bath', 'Assets from Client/October 30, 2026/room 27 cr.jpg', MARK_P, (640, 1100)),
+    ('kubo-ext2', 'Assets from Client/October 30, 2026/20910854c5c0d67368b83fc7afb197a13e21c86f.jpg', None, (705,)),
+    ('kubo-lounge2', 'Assets from Client/October 30, 2026/KUBO.HEIC', None, (800, 1200)),
+    ('kubo-bed2', 'Assets from Client/October 30, 2026/KUBO.JPG', None, (800, 1080)),
+    ('kubo-living2', 'Assets from Client/October 30, 2026/KUBO (1).JPG', None, (800, 1071)),
+    ('kayak-sign', 'Assets from Client/October 30, 2026/526872481.jpg', None, (576,)),
+    ('maniwaya-aerial', 'Assets from Client/October 30, 2026/Marinduque-1-edited-scaled.jpg', None, (800, 1600)),
+    ('rock-cove', 'Assets from Client/October 30, 2026/rock-formation.jpg', None, (800, 1200)),
+    ('snorkel2', 'Assets from Client/October 30, 2026/pexels-pixabay-163313.jpg', None, (800, 1400)),
+    ('sea-rocks', 'Assets from Client/October 30, 2026/images (3).jpg', None, (554,)),
+    ('snorkel3', 'Assets from Client/October 30, 2026/pexels-thomas-balabaud-735585-6507342.jpg', None, (800, 1400)),
+    ('sandbar-hop', 'image (1) (1).png', None, (800, 1080)),
+    ('deck-table', 'Assets from Client/October 30, 2026/203add1d0cc6e9e797221bf8adcd6392bb06b5e0.jpg', None, (705,)),
     ('badminton',        '69d30c820f458aa14e24c2487352050a.jpg', None, (640, 736)),
     # The Genesis Events Place
     ('genesis-hall',     'IMG_1212.HEIC', None, (800, 1200)),
@@ -101,7 +138,7 @@ JOBS = [
 ]
 
 def load(name):
-    path = os.path.join(ROOT, name) if ('/' in name) else os.path.join(NEW, name)
+    path = os.path.join(ROOT, *name.split('/')) if ('/' in name) else os.path.join(NEW, name)
     if not os.path.exists(path):  # some filenames contain a narrow no-break space
         key = name.replace(' ', '').lower()
         match = [f for f in os.listdir(NEW) if f.replace(' ', '').replace(' ', '').lower() == key]

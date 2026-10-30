@@ -457,7 +457,7 @@ body.menu-open .site-header { z-index: 200; }
 
 /* Square feature photo (kayak), pair of small inset photos */
 .feature__media--square { aspect-ratio: 1; }
-.inset-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; max-width: 460px; }
+.inset-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; max-width: 560px; }
 .inset-row .inset { margin: 0; max-width: none; }
 /* Included amenities: seven tiles, last row centred */
 @media (min-width: 900px) {

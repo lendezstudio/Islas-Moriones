@@ -20,7 +20,7 @@ for i, name in enumerate(files, 1):
             im = ImageOps.exif_transpose(im)
         w, h = im.size
         im = im.convert('RGB')
-        im.thumbnail((1600, 1600))
+        im.thumbnail((520, 520))
         im.save(os.path.join(out, pid + '.jpg'), quality=85)
         rows.append(f"{pid}|{w}x{h}|{name}")
     except Exception as e:

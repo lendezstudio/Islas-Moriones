@@ -58,6 +58,42 @@ bonfire-smores|800x800|749f2544-eec8-425f-98f1-c7b7e0e02762-md.jpeg
 maniwaya-cove|800x642 1300x1043|IMG_1188.HEIC
 sandbar-boat|738x868|Screenshot 2025-12-20 at 12.26.39 AM.png
 sunset-boat-beach|800x433 1206x653|edited-images/sunset-boat.jpg
+r-single-1|800x534 1424x951|Assets from Client/October 30, 2026/room 3 single standard.jpg
+r-single-2|640x785 1100x1349|Assets from Client/October 30, 2026/room 6, single standard.jpg
+r-single-bath|640x785 1100x1349|Assets from Client/October 30, 2026/room 3 cr.jpg
+r-deluxe-1|800x534 1424x951|Assets from Client/October 30, 2026/room 23, deluxe.jpg
+r-deluxe-2|640x785 1100x1349|Assets from Client/October 30, 2026/23, delux.jpg
+r-deluxe-3|640x785 1100x1349|Assets from Client/October 30, 2026/room 28 deluxe.jpg
+r-deluxe-bath|640x785 1100x1349|Assets from Client/October 30, 2026/23, cr.jpg
+r-superior-1|800x534 1424x951|Assets from Client/October 30, 2026/room 5 superior room.jpg
+r-superior-2|800x534 1424x951|Assets from Client/October 30, 2026/room 2, superior.jpg
+r-superior-3|800x521 1080x703|Assets from Client/October 30, 2026/room 5.jpg
+r-superior-bath|640x785 1100x1349|Assets from Client/October 30, 2026/room 5 cr.jpg
+r-suite-1|800x534 1424x951|Assets from Client/October 30, 2026/room 1, suite.jpg
+r-suite-2|800x534 1424x951|Assets from Client/October 30, 2026/room 8 suite room.jpg
+r-suite-bath|640x785 1100x1349|Assets from Client/October 30, 2026/room 1 cr.jpg
+r-suiteloft-1|800x534 1424x951|Assets from Client/October 30, 2026/room 25, suite loft.jpg
+r-suiteloft-2|800x534 1424x951|Assets from Client/October 30, 2026/room 24, suite loft.jpg
+r-suiteloft-3|800x534 1424x951|Assets from Client/October 30, 2026/room 26 suite loft.jpg
+r-suiteloft-4|800x534 1424x951|Assets from Client/October 30, 2026/suite loft 24.jpg
+r-loftbeds|800x534 1424x951|Assets from Client/October 30, 2026/loft beds .jpg
+r-suiteloft-bath|640x785 1100x1349|Assets from Client/October 30, 2026/room 24, cr.jpg
+r-exec-1|640x785 1100x1349|Assets from Client/October 30, 2026/room 27, executive loft.jpg
+r-exec-2|800x534 1424x951|Assets from Client/October 30, 2026/room 27 executive loft.jpg
+r-exec-3|800x534 1424x951|Assets from Client/October 30, 2026/loft (every suite loft and executive).jpg
+r-exec-bath|640x785 1100x1349|Assets from Client/October 30, 2026/room 27 cr.jpg
+kubo-ext2|705x940|Assets from Client/October 30, 2026/20910854c5c0d67368b83fc7afb197a13e21c86f.jpg
+kubo-lounge2|800x1067 1200x1600|Assets from Client/October 30, 2026/KUBO.HEIC
+kubo-bed2|800x594 1080x802|Assets from Client/October 30, 2026/KUBO.JPG
+kubo-living2|800x598 1071x800|Assets from Client/October 30, 2026/KUBO (1).JPG
+kayak-sign|576x768|Assets from Client/October 30, 2026/526872481.jpg
+maniwaya-aerial|800x800 1600x1600|Assets from Client/October 30, 2026/Marinduque-1-edited-scaled.jpg
+rock-cove|800x719 1200x1079|Assets from Client/October 30, 2026/rock-formation.jpg
+snorkel2|800x450 1400x788|Assets from Client/October 30, 2026/pexels-pixabay-163313.jpg
+sea-rocks|554x554|Assets from Client/October 30, 2026/images (3).jpg
+snorkel3|800x610 1400x1067|Assets from Client/October 30, 2026/pexels-thomas-balabaud-735585-6507342.jpg
+sandbar-hop|800x450 1080x608|image (1) (1).png
+deck-table|705x940|Assets from Client/October 30, 2026/203add1d0cc6e9e797221bf8adcd6392bb06b5e0.jpg
 badminton|640x960 736x1104|69d30c820f458aa14e24c2487352050a.jpg
 genesis-hall|800x1067 1200x1600|IMG_1212.HEIC
 genesis-tables|800x1067 1200x1600|IMG_1213.HEIC

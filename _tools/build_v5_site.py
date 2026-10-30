@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '8.3'
+V = '8.4'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -66,6 +66,7 @@ def old(jid, alt, sizes='100vw', pos='50% 50%'):
             f'loading="lazy" decoding="async" style="--pos: {pos}" alt="{html.escape(alt, quote=True)}">')
 
 FOCUS = {  # subject positions for photos whose subject sits off-centre
+    'maniwaya-aerial': '45% 55%', 'sea-rocks': '40% 60%', 'snorkel2': '55% 50%', 'snorkel3': '55% 50%', 'kubo-ext2': '50% 55%',
     'lobby-lounge': '50% 88%', 'maniwaya-cove': '0% 50%', 'beach-loungers': '50% 82%', 'sandbar-boat': '55% 70%',
     'tower-wide': '50% 92%', 'tower-blue': '50% 90%', 'tower-storm': '50% 85%', 'ecart': '50% 100%',
     'bikes-crop': '50% 35%', 'bikes': '50% 100%', 'kayak-pov': '50% 55%', 'kayak-pov-2': '40% 45%', 'beach-loungers': '50% 62%', 'kayak-clear': '50% 100%', 'kayak-clear-2': '50% 100%', 'tents-campsite': '32% 96%',
@@ -274,13 +275,13 @@ def included_grid(sizes='(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw'
 
 
 CLOSER = [  # resort photographs, no overlaid text
-    ('maniwaya-cove', 'Maniwaya shoreline', 'A small sandy cove below the Maniwaya sign on the rocks, waves washing onto the beach'),
+    ('maniwaya-aerial', 'Marinduque coastline', 'Aerial view of a long white-sand beach lined with coconut palms, outrigger boats moored in the shallows'),
     ('dusk-pool', 'The pool at dusk', 'The pool glowing turquoise beside the two-storey main building at dusk'),
     ('beach-loungers', 'Shade on the sand', 'Wicker sun loungers in the shade of a tree on the beach, the lifeguard tower beyond'),
     ('sandbar-boat', 'Palad Sandbar', 'Aerial view of an outrigger boat moored at the tip of a long white sandbar in turquoise water'),
-    ('beach-palms', 'Palms along the shore', 'Palms shading the sand in front of the resort buildings'),
+    ('sea-rocks', 'Rocky shoreline', 'Limestone rocks and a lone tree above clear turquoise water'),
     ('tower-blue', 'The lifeguard tower', 'The lifeguard tower on white sand under a deep blue sky'),
-    ('lobby-lounge', 'The lobby lounge', 'The lobby lounge with a leaf-pattern mural and dark sofas'),
+    ('snorkel3', 'Snorkelling', 'A snorkeller in fins swimming through deep blue water'),
 ]
 def closer_slides():
     return '\n'.join(f'''            <li class="slide-item" aria-roledescription="slide" aria-label="{t}"><figure class="tile"><div class="tile__media">{pic(j, alt, "(min-width: 600px) 300px, 68vw")}</div></figure></li>''' for j, t, alt in CLOSER)
@@ -343,7 +344,7 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
       <div class="wrap">
         <header class="section-head center">
           <h2 class="h-section" id="closer-title">A closer look at island life</h2>
-          <p>Explore the shoreline, pool, and places to spend time together at Islas Moriones.</p>
+          <p>Explore the shoreline, the sea and island life around Islas Moriones.</p>
         </header>
         <div class="slider slider--plain" data-slider aria-roledescription="carousel" aria-label="Photographs of the resort">
           <ul class="slider__track" data-slider-track tabindex="0">
@@ -352,6 +353,7 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
           <button class="slider__arrow slider__arrow--prev" type="button" data-slider-prev aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
           <button class="slider__arrow slider__arrow--next" type="button" data-slider-next aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
+        <p class="note center">Snorkelling photo for illustration. The aerial shows the wider Marinduque coastline.</p>
       </div>
     </section>
 
@@ -368,7 +370,7 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
           </div>
         </div>
         <div class="pair">
-          <a class="pair__item" href="rooms.html#luxury-kubo" data-reveal>{old('kubo-exterior', 'The thatched Luxury Kubo with its white-railed veranda on the lawn under coconut palms', '(min-width: 700px) 46vw, 92vw', '50% 50%')}<span class="pair__label">Luxury Kubo<small>A thatched-roof stay with a loft and kitchen</small></span></a>
+          <a class="pair__item" href="rooms.html#luxury-kubo" data-reveal>{pic('kubo-ext2', 'The thatched Luxury Kubo with its white-railed veranda under coconut palms', '(min-width: 700px) 46vw, 92vw', '50% 55%')}<span class="pair__label">Luxury Kubo<small>A thatched-roof stay with a loft and kitchen</small></span></a>
           <a class="pair__item" href="rooms.html#tents" data-reveal>{pic('tents-campsite', 'Tents pitched on the lawn under tall coconut palms beside a thatched cottage', '(min-width: 700px) 46vw, 92vw', '32% 96%')}<span class="pair__label">Tent stays<small>Camp on the grounds under the palms</small></span></a>
         </div>
       </div>
@@ -407,7 +409,7 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
         <div class="cards cards--3">
 {card(pic('kayak-float', 'Seen from above, a swimmer floats beside a transparent kayak on turquoise water', '(min-width: 900px) 30vw, 92vw', '50% 50%'), 'Crystal-clear kayaks', 'See the water from a different perspective. Ask the resort about availability and rental arrangements.', 'activities.html#kayaks', 'About the kayaks')}
 {card(pic('boat-longinus', 'The resort’s outrigger boat St. Longinus moored in clear shallow water', '(min-width: 900px) 30vw, 92vw', '50% 55%'), 'Boat rentals', 'Plan time on the water with the resort’s boats, from a small boat for six to a big boat for twenty-five.', 'activities.html#boats', 'See the boats')}
-{card(pic('sunong-bato-b', 'Sunong Bato, a stacked rock formation rising from clear turquoise water', '(min-width: 900px) 30vw, 92vw', '50% 50%'), 'Island hopping', 'Visit Palad Sandbar, Sunong Bato, Ungab Rock Formation, the Century Cliff Tree and more around Maniwaya.', 'activities.html#island-hopping', 'Island-hopping stops')}
+{card(pic('sandbar-hop', 'Aerial view of outrigger boats anchored around a white sandbar in turquoise water', '(min-width: 900px) 30vw, 92vw', '50% 55%'), 'Island hopping', 'Visit Palad Sandbar, Sunong Bato, Ungab Rock Formation, the Century Cliff Tree and more around Maniwaya.', 'activities.html#island-hopping', 'Island-hopping stops')}
         </div>
       </div>
     </section>
@@ -465,10 +467,11 @@ STRIPITEMS
     <section class="section section--linen" aria-labelledby="journey-title">
       <div class="wrap">
         <div class="feature">
-          <figure class="feature__media feature__media--wide" data-reveal>{pic('boat-omon', 'The resort’s big outrigger boat Omon Express in shallow water off Maniwaya', '(min-width: 900px) 56vw, 92vw', '50% 55%')}</figure>
+          <figure class="feature__media feature__media--wide" data-reveal>{pic('snorkel2', 'A snorkeller diving down through clear blue water in a trail of bubbles', '(min-width: 900px) 56vw, 92vw', '55% 50%')}</figure>
           <div class="feature__text" data-reveal>
             <h2 class="h-section" id="journey-title">Your journey to Maniwaya</h2>
             <p>Find Islas Moriones on Maniwaya Island in Santa Cruz, Marinduque. Speak with the resort about your route and arrival arrangements before you travel.</p>
+            <p class="note">Photo for illustration.</p>
             <a class="btn btn--line" href="getting-here.html">Plan your journey</a>
           </div>
         </div>
@@ -515,7 +518,7 @@ ps_set = lb_set('poolsuite', [
     ('poolsuite-bath', 'Pool Suite Room, bathroom', 'A bathroom with a glass shower and stone basin'),
 ])
 kubo_set = lb_set('kubo', [
-    ('kubo-exterior', 'The Luxury Kubo', 'The thatched Luxury Kubo and its veranda'),
+    ('kubo-ext2', 'The Luxury Kubo', 'The thatched Luxury Kubo and its veranda'),
     ('kubo-living', 'Luxury Kubo, lounge', 'A white sofa beside glass doors'),
     ('kubo-bedroom', 'Luxury Kubo, bedroom', 'A queen bed under window blinds'),
     ('kubo-loftbeds', 'Luxury Kubo, loft beds', 'Four single beds in the timber loft'),
@@ -525,18 +528,60 @@ def gallery_btn(setname, count):
     return f'<button class="btn btn--line btn--sm" type="button" data-lightbox="{setname}">View {count} photos</button>'
 
 ROOMS = [
-    ('Single Standard Room', pic('room-single', 'Single Standard Room: a single bed beside a teal accent wall', '(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw', '40% 55%'), ['1–2 guests', '10 sqm', 'Ground floor, main building'], 'One single bed'),
+    ('Single Standard Room', pic('r-single-1', 'Single Standard Room: a single bed made up with white linen', '(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw', '50% 55%'), ['1–2 guests', '10 sqm', 'Ground floor, main building'], 'One single bed'),
     ('Double Standard Room', old('room-double-standard', 'Double Standard Room: a timber-framed bed with white pillows', '(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw', '60% 55%'), ['2 guests', '15 sqm', 'Ground floor, main building'], None),
-    ('Deluxe Room', pic('room-deluxe', 'Deluxe Room: a queen bed against a red feature wall, with sheer curtains to the balcony', '(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw', '50% 60%'), ['2–3 guests', '30 sqm', 'Second floor, balcony, sea view'], 'One queen bed and one pull-out single bed'),
-    ('Superior Room', pic('room-superior', 'Superior Room: two beds against a yellow feature wall', '(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw', '50% 60%'), ['4 guests', '25 sqm', 'Ground floor, main building'], 'Two twin beds'),
-    ('Suite Room', old('room-suite', 'Suite Room: two twin beds and a single bed under bright windows', '(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw', '50% 60%'), ['5–6 guests', '36 sqm', 'Ground floor, main building'], 'Two twin beds plus one single, or plus two pull-out singles, depending on the room'),
-    ('Suite Loft Room', pic('room-suiteloft', 'Suite Loft Room: a bed beneath a timber staircase to the loft, teal accent wall', '(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw', '50% 60%'), ['5–6 guests', '50 sqm', 'Second floor, balcony, sea view'], 'One king bed and three single loft beds'),
-    ('Executive Loft Room', pic('room-execloft', 'Executive Loft Room: two beds below a staircase to the loft, teal accent wall', '(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw', '50% 60%'), ['5–7 guests', '50 sqm', 'Second floor, balcony, sea view'], 'Two twin beds and three single loft beds'),
+    ('Deluxe Room', pic('r-deluxe-1', 'Deluxe Room: a queen bed against a red feature wall', '(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw', '50% 55%'), ['2–3 guests', '30 sqm', 'Second floor, balcony, sea view'], 'One queen bed and one pull-out single bed'),
+    ('Superior Room', pic('r-superior-1', 'Superior Room: two beds against a yellow feature wall', '(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw', '50% 55%'), ['4 guests', '25 sqm', 'Ground floor, main building'], 'Two twin beds'),
+    ('Suite Room', pic('r-suite-1', 'Suite Room: twin beds and a single bed under bright windows', '(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw', '50% 55%'), ['5–6 guests', '36 sqm', 'Ground floor, main building'], 'Two twin beds plus one single, or plus two pull-out singles, depending on the room'),
+    ('Suite Loft Room', pic('r-suiteloft-1', 'Suite Loft Room: a king bed beneath the timber staircase to the loft', '(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw', '50% 55%'), ['5–6 guests', '50 sqm', 'Second floor, balcony, sea view'], 'One king bed and three single loft beds'),
+    ('Executive Loft Room', pic('r-exec-2', 'Executive Loft Room: two beds below the staircase to the loft', '(min-width: 900px) 30vw, (min-width: 600px) 46vw, 92vw', '50% 55%'), ['5–7 guests', '50 sqm', 'Second floor, balcony, sea view'], 'Two twin beds and three single loft beds'),
 ]
+room_sets = {
+    'single': ('Single Standard Room', [
+        ('r-single-1', 'Single Standard Room, bedroom', 'Single Standard Room, bedroom'),
+        ('r-single-2', 'Single Standard Room, another Single Standard Room', 'Single Standard Room, another Single Standard Room'),
+        ('r-single-bath', 'Single Standard Room, bathroom', 'Single Standard Room, bathroom'),
+    ]),
+    'deluxe': ('Deluxe Room', [
+        ('r-deluxe-1', 'Deluxe Room, bedroom', 'Deluxe Room, bedroom'),
+        ('r-deluxe-2', 'Deluxe Room, bed and balcony curtains', 'Deluxe Room, bed and balcony curtains'),
+        ('r-deluxe-3', 'Deluxe Room, another Deluxe Room', 'Deluxe Room, another Deluxe Room'),
+        ('r-deluxe-bath', 'Deluxe Room, bathroom', 'Deluxe Room, bathroom'),
+    ]),
+    'superior': ('Superior Room', [
+        ('r-superior-1', 'Superior Room, bedroom', 'Superior Room, bedroom'),
+        ('r-superior-2', 'Superior Room, another Superior Room', 'Superior Room, another Superior Room'),
+        ('r-superior-3', 'Superior Room, beds', 'Superior Room, beds'),
+        ('r-superior-bath', 'Superior Room, bathroom', 'Superior Room, bathroom'),
+    ]),
+    'suite': ('Suite Room', [
+        ('r-suite-1', 'Suite Room, bedroom', 'Suite Room, bedroom'),
+        ('r-suite-2', 'Suite Room, another Suite Room', 'Suite Room, another Suite Room'),
+        ('r-suite-bath', 'Suite Room, bathroom', 'Suite Room, bathroom'),
+    ]),
+    'suiteloft': ('Suite Loft Room', [
+        ('r-suiteloft-1', 'Suite Loft Room, bedroom', 'Suite Loft Room, bedroom'),
+        ('r-suiteloft-2', 'Suite Loft Room, another Suite Loft Room', 'Suite Loft Room, another Suite Loft Room'),
+        ('r-suiteloft-3', 'Suite Loft Room, another Suite Loft Room', 'Suite Loft Room, another Suite Loft Room'),
+        ('r-suiteloft-4', 'Suite Loft Room, seating corner', 'Suite Loft Room, seating corner'),
+        ('r-loftbeds', 'Suite Loft Room, single beds in the loft', 'Suite Loft Room, single beds in the loft'),
+        ('r-suiteloft-bath', 'Suite Loft Room, bathroom', 'Suite Loft Room, bathroom'),
+    ]),
+    'execloft': ('Executive Loft Room', [
+        ('r-exec-2', 'Executive Loft Room, bedroom', 'Executive Loft Room, bedroom'),
+        ('r-exec-1', 'Executive Loft Room, stairs to the loft', 'Executive Loft Room, stairs to the loft'),
+        ('r-exec-3', 'Executive Loft Room, the loft', 'Executive Loft Room, the loft'),
+        ('r-exec-bath', 'Executive Loft Room, bathroom', 'Executive Loft Room, bathroom'),
+    ]),
+}
+rooms_lb = ''.join(lb_set('room-' + k, v[1]) for k, v in room_sets.items())
+set_for = {v[0]: ('room-' + k, len(v[1])) for k, v in room_sets.items()}
 room_cards = []
 for name, img, facts, beds in ROOMS:
     f = ''.join(f'<li>{x}</li>' for x in facts)
     b = f'\n          <p>{beds}</p>' if beds else ''
+    if name in set_for:
+        b += '\n          ' + gallery_btn(*set_for[name])
     room_cards.append(f'''        <article class="card card--room" data-reveal>
           <figure class="card__media">{img}</figure>
           <h3 class="h-card">{name}</h3>
@@ -572,7 +617,7 @@ stay = intro('Stay', 'Your stay on Maniwaya', 'Explore the accommodations at Isl
     <section class="section" id="luxury-kubo" aria-labelledby="kubo-title">
       <div class="wrap">
         <div class="feature feature--flip">
-          <figure class="feature__media feature__media--tall" data-reveal>{pic('kubo-exterior', 'The thatched Luxury Kubo with a white-railed veranda, a bamboo cart on the lawn in front', '(min-width: 900px) 44vw, 92vw', '50% 40%')}</figure>
+          <figure class="feature__media feature__media--tall" data-reveal>{pic('kubo-ext2', 'The thatched Luxury Kubo with a white-railed veranda under coconut palms', '(min-width: 900px) 44vw, 92vw', '50% 55%')}</figure>
           <div class="feature__text" data-reveal>
             <p class="eyebrow">Campsite area</p>
             <h2 class="h-section" id="kubo-title">Luxury Kubo</h2>
@@ -639,7 +684,7 @@ stay = intro('Stay', 'Your stay on Maniwaya', 'Explore the accommodations at Isl
 {closing('Ready to choose your room?', 'See current rates and availability on the booking page, or message the resort about tent stays and group arrangements.')}'''
 page('rooms.html', 'rooms.html', 'Stay | Islas Moriones Beach Resort',
      'Accommodations at Islas Moriones on Maniwaya Island: the Pool Suite Room, the Luxury Kubo, rooms in the main building and tent stays.',
-     stay, sets=ps_set + kubo_set)
+     stay, sets=ps_set + kubo_set + rooms_lb)
 
 # =====================================================================================  EXPERIENCES
 def stop(img, name, where, text):
@@ -686,6 +731,7 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
             <div class="inset-row">
               <figure class="inset">{pic('kayak-pov', 'Inside a crystal-clear kayak on calm water off Maniwaya, paddle and life vest in view', '(min-width: 900px) 16vw, 44vw')}</figure>
               <figure class="inset">{pic('kayak-pov-2', 'Looking through the transparent hull of a clear kayak to the green water below', '(min-width: 900px) 16vw, 44vw')}</figure>
+              <figure class="inset">{pic('kayak-sign', 'A crystal-clear kayak on the sand beside the Islas Moriones sign', '(min-width: 900px) 12vw, 30vw', '50% 62%')}</figure>
             </div>
           </div>
         </div>
@@ -769,6 +815,20 @@ dining = intro('Dining', 'A table for your island stay', 'From everyday meals to
             <p class="eyebrow">New</p>
             <h2 class="h-section" id="sky-title">Skylight Dining</h2>
             <p>The resort’s newest dining space: a pavilion with a glass roof beside the main building, with long tables under the palms. Explore it during your stay.</p>
+            <a class="btn btn--line" href="contact.html">Ask about dining</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--linen" aria-labelledby="deck-title">
+      <div class="wrap">
+        <div class="feature feature--flip">
+          <figure class="feature__media feature__media--tall" data-reveal>{pic('deck-table', 'A long wicker dining table and chairs on a timber deck, open to the garden and coconut palms', '(min-width: 900px) 44vw, 92vw', '50% 55%')}</figure>
+          <div class="feature__text" data-reveal>
+            <p class="eyebrow">Outdoor dining</p>
+            <h2 class="h-section" id="deck-title">A table on the deck</h2>
+            <p>Long tables on the timber deck, open to the garden and the palms. Ask the team about dining outdoors during your stay.</p>
             <a class="btn btn--line" href="contact.html">Ask about dining</a>
           </div>
         </div>
@@ -888,10 +948,12 @@ G = [  # (category, id, caption, alt, wide?)
     ('gatherings', 'genesis-hall', 'The Genesis Events Place', 'Long tables beneath draped fabric inside The Genesis', 0),
     ('experiences', 'kayak-clear', 'Crystal-clear kayak', 'A crystal-clear kayak on calm water', 0),
     ('resort', 'dusk-pool', 'The pool at dusk', 'The pool beside the main building at dusk', 0),
-    ('stays', 'kubo-exterior-old', 'The Luxury Kubo', 'The thatched Luxury Kubo and veranda', 0),
+    ('stays', 'kubo-ext2', 'The Luxury Kubo', 'The thatched Luxury Kubo and veranda', 0),
     ('experiences', 'boat-longinus', 'M/V St. Longinus', 'The resort’s boat St. Longinus in clear water', 1),
     ('stays', 'tents-campsite', 'Tent stays on the campsite', 'Tents on the lawn under coconut palms', 0),
     ('stays', 'tent', 'Tent stay', 'A tent on the lawn under coconut palms', 0),
+    ('experiences', 'kayak-sign', 'Crystal-clear kayak', 'A clear kayak beside the resort sign', 0),
+    ('dining', 'deck-table', 'Dining on the deck', 'A wicker dining table on the timber deck', 0),
     ('experiences', 'kayak-float', 'Crystal-clear kayak', 'A swimmer beside a transparent kayak, seen from above', 0),
     ('resort', 'main-building', 'The main building', 'The white main building with its gabled roof', 0),
     ('stays', 'room-deluxe', 'Deluxe Room', 'A queen bed against a red feature wall', 0),
