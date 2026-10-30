@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '8.4'
+V = '8.5'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -258,7 +258,7 @@ def card(img, title, text, href=None, link=None, extra=''):
 # =====================================================================================  HOME
 INCLUDED = [  # (image html, title, caption) all from the resort's inclusion list
     (lambda s: pic('pool-loungers', 'Sun loungers and umbrellas beside the turquoise outdoor pool, shaded by tropical trees', s, '50% 62%'), 'Swimming pool', 'The outdoor pool, with loungers in the shade.'),
-    (lambda s: old('beach-volleyball', 'A volleyball net on the resort beach beside clear water', s, '40% 50%'), 'Beach volleyball', 'A net on the sand, a few steps from the water.'),
+    (lambda s: pic('biker', 'A rider in a helmet on a mountain bike, stopped on a grassy hilltop under a clear sky', s, '45% 45%'), 'Mountain biking', 'Explore the island on two wheels.'),
     (lambda s: old('bamboo-raft', 'The covered bamboo raft with a long table on turquoise water', s, '50% 45%'), 'Bamboo raft', 'Float off the shore on the resort’s bamboo raft.'),
     (lambda s: pic('bonfire-smores', 'Marshmallows toasting on skewers over a campfire at night', s, '55% 50%'), 'Bonfire', 'Evenings around the fire.'),
     (lambda s: pic('pingpong-darts', 'A ping-pong table in the resort’s open-sided games room', s, '50% 60%'), 'Ping-pong', 'A games room open to the breeze.'),
@@ -748,7 +748,7 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
         </div>
 
         <div class="cards cards--3 cards--spaced">
-{card(pic('bikes-crop', 'Two mountain bikes resting on the rocky shoreline of Maniwaya, waves behind', '(min-width: 900px) 30vw, 92vw'), 'Mountain bikes', 'Ride Maniwaya at your own pace. A tour guide can be arranged.')}
+{card(pic('bikes-crop', 'Two mountain bikes resting on the rocky shoreline of Maniwaya, waves behind', '(min-width: 900px) 15vw, 46vw') + pic('biker', 'A rider in a helmet on a mountain bike on a grassy hilltop', '(min-width: 900px) 15vw, 46vw', '45% 40%'), 'Mountain bikes', 'Ride Maniwaya at your own pace. A tour guide can be arranged.')}
 {card(pic('ecart', 'An open-sided white electric cart parked on a seawall', '(min-width: 900px) 30vw, 92vw', '50% 100%'), 'Land tour by e-cart', 'See more of Maniwaya on a land tour by electric cart.')}
 {card(old('exp-snorkel', 'A snorkeller swimming through clear blue water', '(min-width: 900px) 30vw, 92vw', '50% 35%'), 'Snorkelling gear', 'Masks, snorkels and fins are available.')}
 {card(old('exp-massage', 'Hands giving a relaxing back massage to a guest lying under a white towel', '(min-width: 900px) 30vw, 92vw', '60% 50%'), 'In-room massage', 'Unwind after a day outdoors with a massage in your room.')}

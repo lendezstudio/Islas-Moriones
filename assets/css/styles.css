@@ -696,3 +696,7 @@ body.menu-open .subnav { visibility: hidden; }
 .section--sandbg dd, .section--sandbg2 dd, .section--sandbg3 dd, .section--sandbg5 dd, .section--sandbg6 dd { color: var(--ink) !important; }
 .section--sandbg .eyebrow, .section--sandbg2 .eyebrow, .section--sandbg3 .eyebrow, .section--sandbg5 .eyebrow, .section--sandbg6 .eyebrow { color: var(--deep-teal-2) !important; font-weight: 700; }
 .section--sandbg .spec > div, .section--sandbg2 .spec > div, .section--sandbg5 .spec > div, .section--sandbg2 .spec, .section--sandbg5 .spec { border-color: rgba(41,45,41,.22); }
+
+/* Card with two photos side by side (Mountain bikes) */
+.card__media:has(> picture + picture) { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: none; }
+.card__media:has(> picture + picture) > picture { display: block; height: 100%; overflow: hidden; min-width: 0; }

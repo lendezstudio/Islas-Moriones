@@ -64,6 +64,7 @@ JOBS = [
     ('boat-omon',        'IMG_9171.JPG', MARK_L, (800, 1424)),
     ('ecart',            'RESORT PRINTABLES (2).png', None, (640, 1200)),
     ('bikes',            'IMG_1159.jpg', None, (640, 1100)),
+    ('biker', 'Initial Images/Activities/pexels-enrico-musitelli-1035698384-34377533.jpg', None, (640, 1100)),
     ('bikes-crop',       'IMG_1159.jpg', (0, .40, 1, 1), (800, 1400)),
     ('kayak-pov',        'IMG_2380.HEIC', (0, .50, 1, 1), (800, 1400)),
     ('kayak-pov-2',      'IMG_2372.HEIC', (0, .50, 1, 1), (800, 1400)),
