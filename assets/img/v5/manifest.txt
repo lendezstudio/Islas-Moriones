@@ -79,6 +79,65 @@ ps-033|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room.HE
 ps-034|800x1067 1200x1600|Assets from Client/October 30, 2026/pool suite room.HEIC.HEIC
 lobby2|800x534 1424x951|Assets from Client/October 30, 2026/lobby.jpg
 reef-raft2|572x536|Assets from Client/October 30, 2026/MORION REEF RAFT.png
+e-sandbar-people|800x596 1400x1043|Assets from Client/November 1, 2026/Enhanced Photo/Aerial sandbar with turquoise waters-8.png
+e-vball|800x600 1400x1050|Assets from Client/November 1, 2026/Enhanced Photo/Beach volleyball by the outrigger boat-4.png
+e-pavilion|640x841 1094x1438|Assets from Client/November 1, 2026/Enhanced Photo/Cloudy garden pavilion cocktail setup-16.png
+e-room-blue|640x842 1093x1438|Assets from Client/November 1, 2026/Enhanced Photo/Compact blue accent-wall room-8.png
+e-beach-dining|800x360 1400x630|Assets from Client/November 1, 2026/Enhanced Photo/Dusk beach dining under string lights-10.png
+e-pool-elevated|800x600 1400x1050|Assets from Client/November 1, 2026/Enhanced Photo/Elevated resort pool with palms and people-2.png
+e-fire|800x448 1400x784|Assets from Client/November 1, 2026/Enhanced Photo/Fire Performer with Curved Light Trails-1.png
+e-sunset-coast|800x432 1400x757|Assets from Client/November 1, 2026/Enhanced Photo/Golden Sunset Over Rocky Coast-6.png
+e-statues|800x673 1367x1150|Assets from Client/November 1, 2026/Enhanced Photo/Historic plaza with statues and palms-4.png
+e-pool-night|640x853 1086x1448|Assets from Client/November 1, 2026/Enhanced Photo/Illuminated resort pool beneath a dark sky-13.png
+e-room-loft|800x600 1400x1050|Assets from Client/November 1, 2026/Enhanced Photo/Loft room with twin wooden beds-4.png
+e-pool-pergola|640x1260 894x1760|Assets from Client/November 1, 2026/Enhanced Photo/Nighttime resort pool behind pergola beams-3.png
+e-palad|800x663 1378x1142|Assets from Client/November 1, 2026/Enhanced Photo/Palad Sandbar Under Open Skies-2.png
+e-vball-wide|800x350 1400x612|Assets from Client/November 1, 2026/Enhanced Photo/Panoramic beach volleyball by the shore-11.png
+e-wedding-aisle|640x753 1100x1295|Assets from Client/November 1, 2026/Enhanced Photo/Peach sunset beach wedding aisle-7.png
+e-room-red|640x849 1089x1445|Assets from Client/November 1, 2026/Enhanced Photo/Refreshed red-accent resort bedroom-6.png
+e-room-family|800x597 1400x1044|Assets from Client/November 1, 2026/Enhanced Photo/Resort family room with multiple beds-10.png
+e-loungers|800x600 1400x1050|Assets from Client/November 1, 2026/Enhanced Photo/Resort poolside loungers and palms-5.png
+e-room-two|800x586 1400x1025|Assets from Client/November 1, 2026/Enhanced Photo/Resort room with two neatly made beds-5.png
+e-sandbar-aerial|640x960 1024x1536|Assets from Client/November 1, 2026/Enhanced Photo/Restored aerial view of a tropical sandbar-7.png
+e-cliff-tree|640x853 1086x1448|Assets from Client/November 1, 2026/Enhanced Photo/Restored cliffside tree by the sea-8.png
+e-kubo-palms|640x853 1086x1448|Assets from Client/November 1, 2026/Enhanced Photo/Restored cottage under swaying palms-12.png
+e-room-three|800x589 1400x1030|Assets from Client/November 1, 2026/Enhanced Photo/Restored resort bedroom with three beds-9.png
+e-kubo-cart|640x853 1086x1448|Assets from Client/November 1, 2026/Enhanced Photo/Restored thatched cottage among palms-10.png
+e-sunglasses|640x853 1086x1448|Assets from Client/November 1, 2026/Enhanced Photo/Sunglasses, lifeguard tower, and ocean view-1.png
+e-pool-bikes|800x600 1400x1049|Assets from Client/November 1, 2026/Enhanced Photo/Sunlit courtyard pool with bicycles-12.png
+e-sunset-rocks|800x442 1400x773|Assets from Client/November 1, 2026/Enhanced Photo/Sunset over Marinduque’s coastal rocks-9.png
+e-room-teal|800x591 1400x1034|Assets from Client/November 1, 2026/Enhanced Photo/Teal resort bedroom with trundle bed-11.png
+e-vans|800x563 1400x985|Assets from Client/November 1, 2026/Enhanced Photo/Two white vans with blurred plates-3.png
+e-ungab|800x672 1368x1149|Assets from Client/November 1, 2026/Enhanced Photo/Ungab Rock Arch by Calm Waters-3.png
+e-boat-beach|640x794 1080x1340|Assets from Client/November 1, 2026/Enhanced Photo/WhatsApp Image 2026-10-31 at 6.34.44 AM (1).jpeg
+e-boat-water|640x853 1100x1467|Assets from Client/November 1, 2026/Enhanced Photo/WhatsApp Image 2026-10-31 at 6.34.44 AM.jpeg
+e-resort-path|800x600 1400x1050|Assets from Client/November 1, 2026/Enhanced Photo/White Resort by the Palm-Lined Pool-6.png
+e-resort-pool|800x600 1400x1050|Assets from Client/November 1, 2026/Enhanced Photo/White resort beside a palm-lined pool-9.png
+e-ecart-roses|640x843 1093x1439|Assets from Client/November 1, 2026/Enhanced Photo/White resort shuttle cart with yellow roses-14.png
+e-kayak|800x533 1400x933|Assets from Client/November 1, 2026/Enhanced Photo/Woman paddling a transparent kayak-5.png
+e-room-yellow|800x598 1400x1046|Assets from Client/November 1, 2026/Enhanced Photo/Yellow-green resort room with twin beds-7.png
+e-beach-tower|800x600 1400x1050|Assets from Client/November 1, 2026/Enhanced Photo/Tropical beach resort with mountain views.png
+e-pool-night-c|800x683 1086x927|Assets from Client/November 1, 2026/Enhanced Photo/Illuminated resort pool beneath a dark sky-13.png
+e-kubo-cart-c|640x1066 869x1448|Assets from Client/November 1, 2026/Enhanced Photo/Restored thatched cottage among palms-10.png
+e-kayak-lake|800x533 1400x933|Assets from Client/November 1, 2026/Enhanced Photo/Woman kayaking across a sunlit mountain lake-11.png
+e-beach-tower-p|640x853 1086x1448|Assets from Client/November 1, 2026/Enhanced Photo/Tropical loungers overlooking sea and mountains.png
+e-dusk|800x595 1400x1042|Assets from Client/November 1, 2026/Enhanced Photo/Islas Moriones Beach Resort at Dusk-4.png
+e-morion-bust|640x838 877x1148|Assets from Client/November 1, 2026/Enhanced Photo/Morion warrior bust beneath the reef-8.png
+e-octopus|800x800 1254x1254|Assets from Client/November 1, 2026/Enhanced Photo/Blue-ringed octopus in seagrass-2.png
+e-dog|800x800 1254x1254|Assets from Client/November 1, 2026/Enhanced Photo/Bulldog on a sandy resort path-1.png
+e-entrance|800x450 1400x788|Assets from Client/November 1, 2026/Enhanced Photo/Islas Moriones Beach Resort Entrance-6.png
+e-sign|800x600 1400x1050|Assets from Client/November 1, 2026/Enhanced Photo/Islas Moriones Beach Resort Sign-7.png
+e-sand-morion|640x853 1086x1448|Assets from Client/November 1, 2026/Enhanced Photo/Morion warrior sand sculpture by the beach-11.png
+e-tent-lime|800x800 1254x1254|Assets from Client/November 1, 2026/Enhanced Photo/Restored lime green tent in palm garden-3.png
+e-turtle|800x800 1254x1254|Assets from Client/November 1, 2026/Enhanced Photo/Sea turtle on moonlit sand-10.png
+e-tent-teal|800x800 1254x1254|Assets from Client/November 1, 2026/Enhanced Photo/Turquoise Tent Among Coconut Palms-9.png
+e-pool-night2|800x600 1400x1050|Assets from Client/November 1, 2026/Enhanced Photo/White resort pool at night-5.png
+e-seastars|800x800 1254x1254|Assets from Client/November 1, 2026/Enhanced Photo/Orange and blue sea stars on reef-1.png
+e-warrior-l|867x649|Assets from Client/November 1, 2026/Enhanced Photo/Underwater Warrior Statue Amid Colorful Corals.png
+e-warrior-p|652x871|Assets from Client/November 1, 2026/Enhanced Photo/Morion Reef Warrior Beneath Blue Waters.png
+e-warrior-w|900x507 1400x788|Assets from Client/November 1, 2026/Enhanced Photo/Underwater Warrior Statue Amid Colorful Corals.png
+e-tidepool-p|640x853 1086x1448|Assets from Client/November 1, 2026/Enhanced Photo/Golden-hour rocks above a turquoise tidal pool.png
+cafe-logo|480x476|Assets from Client/November 1, 2026/WhatsApp Image 2026-10-31 at 6.34.46 AM (2).jpeg
 bikes-crop|800x853 1400x1493|IMG_1159.jpg
 kayak-pov|800x711 1400x1245|IMG_2380.HEIC
 kayak-pov-2|800x711 1400x1245|IMG_2372.HEIC

@@ -701,3 +701,26 @@ body.menu-open .subnav { visibility: hidden; }
 /* Card with two photos side by side (Mountain bikes) */
 .card__media:has(> picture + picture) { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: none; }
 .card__media:has(> picture + picture) > picture { display: block; height: 100%; overflow: hidden; min-width: 0; }
+
+/* Easter Sunday Café logo beside the menu heading */
+.cafe-head { display: flex; align-items: center; gap: 20px; }
+.cafe-logo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+@media (max-width: 600px) { .cafe-logo { width: 72px; height: 72px; } }
+
+/* Slides with a tall alternative: the frame's shape picks the photo */
+.tile__media.has-alt { container-type: size; }
+.has-alt .v-land, .has-alt .v-port { display: block; width: 100%; height: 100%; }
+.has-alt .v-land picture, .has-alt .v-port picture { height: 100%; }
+.has-alt .v-port { display: none; }
+@container (orientation: portrait) {
+  .has-alt .v-land { display: none; }
+  .has-alt .v-port { display: block; }
+}
+
+/* Wedding photos: use the full text-column width */
+.inset-row--wide { max-width: none; gap: 12px; }
+.inset-row--wide .inset { aspect-ratio: 4 / 3.4; }
+
+/* Pet policy photo */
+.pets__photo { margin: 0 0 20px; overflow: hidden; }
+.pets__photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 65%; }

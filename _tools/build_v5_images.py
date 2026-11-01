@@ -107,6 +107,66 @@ JOBS = [
     ('ps-034', 'Assets from Client/October 30, 2026/pool suite room.HEIC.HEIC', None, (800, 1200)),
     ('lobby2', 'Assets from Client/October 30, 2026/lobby.jpg', MARK_L, (800, 1424)),
     ('reef-raft2', 'Assets from Client/October 30, 2026/MORION REEF RAFT.png', None, (572,)),
+    # Client-enhanced photos (Assets from Client/November 1, 2026)
+    ('e-sandbar-people', 'Assets from Client/November 1, 2026/Enhanced Photo/Aerial sandbar with turquoise waters-8.png', None, (800, 1400)),
+    ('e-vball', 'Assets from Client/November 1, 2026/Enhanced Photo/Beach volleyball by the outrigger boat-4.png', None, (800, 1400)),
+    ('e-pavilion', 'Assets from Client/November 1, 2026/Enhanced Photo/Cloudy garden pavilion cocktail setup-16.png', None, (640, 1100)),
+    ('e-room-blue', 'Assets from Client/November 1, 2026/Enhanced Photo/Compact blue accent-wall room-8.png', None, (640, 1100)),
+    ('e-beach-dining', 'Assets from Client/November 1, 2026/Enhanced Photo/Dusk beach dining under string lights-10.png', None, (800, 1400)),
+    ('e-pool-elevated', 'Assets from Client/November 1, 2026/Enhanced Photo/Elevated resort pool with palms and people-2.png', None, (800, 1400)),
+    ('e-fire', 'Assets from Client/November 1, 2026/Enhanced Photo/Fire Performer with Curved Light Trails-1.png', None, (800, 1400)),
+    ('e-sunset-coast', 'Assets from Client/November 1, 2026/Enhanced Photo/Golden Sunset Over Rocky Coast-6.png', None, (800, 1400)),
+    ('e-statues', 'Assets from Client/November 1, 2026/Enhanced Photo/Historic plaza with statues and palms-4.png', None, (800, 1400)),
+    ('e-pool-night', 'Assets from Client/November 1, 2026/Enhanced Photo/Illuminated resort pool beneath a dark sky-13.png', None, (640, 1100)),
+    ('e-room-loft', 'Assets from Client/November 1, 2026/Enhanced Photo/Loft room with twin wooden beds-4.png', None, (800, 1400)),
+    ('e-pool-pergola', 'Assets from Client/November 1, 2026/Enhanced Photo/Nighttime resort pool behind pergola beams-3.png', None, (640, 1100)),
+    ('e-palad', 'Assets from Client/November 1, 2026/Enhanced Photo/Palad Sandbar Under Open Skies-2.png', None, (800, 1400)),
+    ('e-vball-wide', 'Assets from Client/November 1, 2026/Enhanced Photo/Panoramic beach volleyball by the shore-11.png', None, (800, 1400)),
+    ('e-wedding-aisle', 'Assets from Client/November 1, 2026/Enhanced Photo/Peach sunset beach wedding aisle-7.png', None, (640, 1100)),
+    ('e-room-red', 'Assets from Client/November 1, 2026/Enhanced Photo/Refreshed red-accent resort bedroom-6.png', None, (640, 1100)),
+    ('e-room-family', 'Assets from Client/November 1, 2026/Enhanced Photo/Resort family room with multiple beds-10.png', None, (800, 1400)),
+    ('e-loungers', 'Assets from Client/November 1, 2026/Enhanced Photo/Resort poolside loungers and palms-5.png', None, (800, 1400)),
+    ('e-room-two', 'Assets from Client/November 1, 2026/Enhanced Photo/Resort room with two neatly made beds-5.png', None, (800, 1400)),
+    ('e-sandbar-aerial', 'Assets from Client/November 1, 2026/Enhanced Photo/Restored aerial view of a tropical sandbar-7.png', None, (640, 1100)),
+    ('e-cliff-tree', 'Assets from Client/November 1, 2026/Enhanced Photo/Restored cliffside tree by the sea-8.png', None, (640, 1100)),
+    ('e-kubo-palms', 'Assets from Client/November 1, 2026/Enhanced Photo/Restored cottage under swaying palms-12.png', None, (640, 1100)),
+    ('e-room-three', 'Assets from Client/November 1, 2026/Enhanced Photo/Restored resort bedroom with three beds-9.png', None, (800, 1400)),
+    ('e-kubo-cart', 'Assets from Client/November 1, 2026/Enhanced Photo/Restored thatched cottage among palms-10.png', None, (640, 1100)),
+    ('e-sunglasses', 'Assets from Client/November 1, 2026/Enhanced Photo/Sunglasses, lifeguard tower, and ocean view-1.png', None, (640, 1100)),
+    ('e-pool-bikes', 'Assets from Client/November 1, 2026/Enhanced Photo/Sunlit courtyard pool with bicycles-12.png', None, (800, 1400)),
+    ('e-sunset-rocks', 'Assets from Client/November 1, 2026/Enhanced Photo/Sunset over Marinduque’s coastal rocks-9.png', None, (800, 1400)),
+    ('e-room-teal', 'Assets from Client/November 1, 2026/Enhanced Photo/Teal resort bedroom with trundle bed-11.png', None, (800, 1400)),
+    ('e-vans', 'Assets from Client/November 1, 2026/Enhanced Photo/Two white vans with blurred plates-3.png', None, (800, 1400)),
+    ('e-ungab', 'Assets from Client/November 1, 2026/Enhanced Photo/Ungab Rock Arch by Calm Waters-3.png', None, (800, 1400)),
+    ('e-boat-beach', 'Assets from Client/November 1, 2026/Enhanced Photo/WhatsApp Image 2026-10-31 at 6.34.44 AM (1).jpeg', None, (640, 1100)),
+    ('e-boat-water', 'Assets from Client/November 1, 2026/Enhanced Photo/WhatsApp Image 2026-10-31 at 6.34.44 AM.jpeg', None, (640, 1100)),
+    ('e-resort-path', 'Assets from Client/November 1, 2026/Enhanced Photo/White Resort by the Palm-Lined Pool-6.png', None, (800, 1400)),
+    ('e-resort-pool', 'Assets from Client/November 1, 2026/Enhanced Photo/White resort beside a palm-lined pool-9.png', None, (800, 1400)),
+    ('e-ecart-roses', 'Assets from Client/November 1, 2026/Enhanced Photo/White resort shuttle cart with yellow roses-14.png', None, (640, 1100)),
+    ('e-kayak', 'Assets from Client/November 1, 2026/Enhanced Photo/Woman paddling a transparent kayak-5.png', None, (800, 1400)),
+    ('e-room-yellow', 'Assets from Client/November 1, 2026/Enhanced Photo/Yellow-green resort room with twin beds-7.png', None, (800, 1400)),
+    ('e-beach-tower', 'Assets from Client/November 1, 2026/Enhanced Photo/Tropical beach resort with mountain views.png', None, (800, 1400)),
+    ('e-pool-night-c', 'Assets from Client/November 1, 2026/Enhanced Photo/Illuminated resort pool beneath a dark sky-13.png', (0, 0, 1, .64), (800, 1086)),
+    ('e-kubo-cart-c', 'Assets from Client/November 1, 2026/Enhanced Photo/Restored thatched cottage among palms-10.png', (0, 0, .80, 1), (640, 869)),
+    ('e-kayak-lake', 'Assets from Client/November 1, 2026/Enhanced Photo/Woman kayaking across a sunlit mountain lake-11.png', None, (800, 1400)),
+    ('e-beach-tower-p', 'Assets from Client/November 1, 2026/Enhanced Photo/Tropical loungers overlooking sea and mountains.png', None, (640, 1086)),
+    ('e-dusk', 'Assets from Client/November 1, 2026/Enhanced Photo/Islas Moriones Beach Resort at Dusk-4.png', None, (800, 1400)),
+    ('e-morion-bust', 'Assets from Client/November 1, 2026/Enhanced Photo/Morion warrior bust beneath the reef-8.png', (.36, 0, 1, 1), (640, 877)),
+    ('e-octopus', 'Assets from Client/November 1, 2026/Enhanced Photo/Blue-ringed octopus in seagrass-2.png', None, (800, 1254)),
+    ('e-dog', 'Assets from Client/November 1, 2026/Enhanced Photo/Bulldog on a sandy resort path-1.png', None, (800, 1254)),
+    ('e-entrance', 'Assets from Client/November 1, 2026/Enhanced Photo/Islas Moriones Beach Resort Entrance-6.png', None, (800, 1400)),
+    ('e-sign', 'Assets from Client/November 1, 2026/Enhanced Photo/Islas Moriones Beach Resort Sign-7.png', None, (800, 1400)),
+    ('e-sand-morion', 'Assets from Client/November 1, 2026/Enhanced Photo/Morion warrior sand sculpture by the beach-11.png', None, (640, 1086)),
+    ('e-tent-lime', 'Assets from Client/November 1, 2026/Enhanced Photo/Restored lime green tent in palm garden-3.png', None, (800, 1254)),
+    ('e-turtle', 'Assets from Client/November 1, 2026/Enhanced Photo/Sea turtle on moonlit sand-10.png', None, (800, 1254)),
+    ('e-tent-teal', 'Assets from Client/November 1, 2026/Enhanced Photo/Turquoise Tent Among Coconut Palms-9.png', None, (800, 1254)),
+    ('e-pool-night2', 'Assets from Client/November 1, 2026/Enhanced Photo/White resort pool at night-5.png', None, (800, 1400)),
+    ('e-seastars', 'Assets from Client/November 1, 2026/Enhanced Photo/Orange and blue sea stars on reef-1.png', None, (800, 1254)),
+    ('e-warrior-l', 'Assets from Client/November 1, 2026/Enhanced Photo/Underwater Warrior Statue Amid Colorful Corals.png', (.481, .17, 1, .861), (867,)),
+    ('e-warrior-p', 'Assets from Client/November 1, 2026/Enhanced Photo/Morion Reef Warrior Beneath Blue Waters.png', (.40, .262, 1, .863), (652,)),
+    ('e-warrior-w', 'Assets from Client/November 1, 2026/Enhanced Photo/Underwater Warrior Statue Amid Colorful Corals.png', None, (900, 1400)),
+    ('e-tidepool-p', 'Assets from Client/November 1, 2026/Enhanced Photo/Golden-hour rocks above a turquoise tidal pool.png', None, (640, 1086)),
+    ('cafe-logo', 'Assets from Client/November 1, 2026/WhatsApp Image 2026-10-31 at 6.34.46 AM (2).jpeg', None, (480,)),
     ('bikes-crop',       'IMG_1159.jpg', (0, .40, 1, 1), (800, 1400)),
     ('kayak-pov',        'IMG_2380.HEIC', (0, .50, 1, 1), (800, 1400)),
     ('kayak-pov-2',      'IMG_2372.HEIC', (0, .50, 1, 1), (800, 1400)),
@@ -193,7 +253,18 @@ def load(name):
     return ImageOps.exif_transpose(Image.open(path)).convert('RGB')
 
 manifest = []
+PREV = {}
+if os.path.exists(os.path.join(OUT, 'manifest.txt')):
+    for line in open(os.path.join(OUT, 'manifest.txt'), encoding='utf-8').read().splitlines():
+        parts = line.split('|')
+        if len(parts) == 3:
+            PREV[parts[0]] = (parts[1], parts[2])
 for jid, src, crop, widths in JOBS:
+    # Skip jobs already built from the same source (a changed crop needs a new id)
+    done = PREV.get(jid)
+    if done and done[1] == src and all(os.path.exists(os.path.join(OUT, f'{jid}-{s.split("x")[0]}.webp')) for s in done[0].split()):
+        manifest.append(f'{jid}|{done[0]}|{src}')
+        continue
     im = load(src)
     W, H = im.size
     if crop:
