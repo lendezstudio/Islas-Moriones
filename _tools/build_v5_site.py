@@ -1076,7 +1076,6 @@ G = [  # (category, id, caption, alt, wide?)
     ('gatherings', 'genesis-hall', 'The Genesis Events Place', 'Long tables beneath draped fabric inside The Genesis', 0),
     ('experiences', 'kayak-clear', 'Crystal-clear kayak', 'A crystal-clear kayak on calm water', 0),
     ('resort', 'dusk-pool', 'The pool at dusk', 'The pool beside the main building at dusk', 0),
-    ('stays', 'kubo-ext2', 'The Luxury Kubo', 'The thatched Luxury Kubo and veranda', 0),
     ('experiences', 'boat-longinus', 'M/V St. Longinus', 'The resort’s boat St. Longinus in clear water', 1),
     ('stays', 'tents-campsite', 'Tent stays on the campsite', 'Tents on the lawn under coconut palms', 0),
     ('stays', 'tent', 'Tent stay', 'A tent on the lawn under coconut palms', 0),
