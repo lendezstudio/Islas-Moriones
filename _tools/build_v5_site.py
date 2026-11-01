@@ -66,7 +66,7 @@ def old(jid, alt, sizes='100vw', pos='50% 50%'):
             f'loading="lazy" decoding="async" style="--pos: {pos}" alt="{html.escape(alt, quote=True)}">')
 
 FOCUS = {  # subject positions for photos whose subject sits off-centre
-    'maniwaya-aerial': '45% 55%', 'sea-rocks': '40% 60%', 'snorkel2': '55% 50%', 'snorkel3': '55% 50%', 'kubo-ext2': '50% 55%', 'e-sand-morion': '50% 70%', 'e-tidepool-p': '50% 55%', 'e-warrior-w': '100% 50%', 'e-warrior-p': '50% 50%', 'e-morion-bust': '50% 50%', 'e-kayak-lake': '53% 55%', 'e-pool-night-c': '42% 40%', 'e-sunglasses': '50% 22%', 'e-pool-bikes': '50% 55%', 'e-beach-tower': '52% 62%', 'e-beach-tower-p': '50% 60%', 'rock-cove': '50% 50%', 'vball': '50% 62%', 'pingpong2': '60% 72%', 'darts2': '50% 50%', 'deck-table': '50% 38%',
+    'maniwaya-aerial': '45% 55%', 'sea-rocks': '40% 60%', 'snorkel2': '55% 50%', 'snorkel3': '55% 50%', 'kubo-ext2': '50% 55%', 'e-tent-lime': '50% 100%', 'e-tent-teal': '50% 100%', 'e-sand-morion': '50% 70%', 'e-tidepool-p': '50% 55%', 'e-warrior-w': '100% 50%', 'e-warrior-p': '50% 50%', 'e-morion-bust': '50% 50%', 'e-kayak-lake': '53% 55%', 'e-pool-night-c': '42% 40%', 'e-sunglasses': '50% 22%', 'e-pool-bikes': '50% 55%', 'e-beach-tower': '52% 62%', 'e-beach-tower-p': '50% 60%', 'rock-cove': '50% 50%', 'vball': '50% 62%', 'pingpong2': '60% 72%', 'darts2': '50% 50%', 'deck-table': '50% 38%',
     'lobby-lounge': '50% 88%', 'lobby2': '50% 70%', 'maniwaya-cove': '0% 50%', 'beach-loungers': '50% 82%', 'sandbar-boat': '55% 70%',
     'tower-wide': '50% 92%', 'tower-blue': '50% 90%', 'tower-storm': '50% 85%', 'ecart': '50% 100%',
     'bikes-crop': '50% 35%', 'bikes': '50% 100%', 'kayak-pov': '50% 55%', 'kayak-pov-2': '40% 45%', 'beach-loungers': '50% 62%', 'kayak-clear': '50% 100%', 'kayak-clear-2': '50% 100%', 'tents-campsite': '32% 96%',
@@ -712,7 +712,7 @@ stay = intro('Stay', 'Your stay on Maniwaya', 'Explore the accommodations at Isl
     <section class="section" id="tents" aria-labelledby="tents-title">
       <div class="wrap">
         <div class="feature">
-          <div class="feature__stack" data-reveal><figure class="feature__media">{pic('tents-campsite', 'Tents pitched on the resort lawn under tall coconut palms, beside a thatched cottage', '(min-width: 900px) 52vw, 92vw', '32% 96%')}</figure><div class="feature__duo"><figure class="feature__media">{pic('e-tent-teal', 'A turquoise and white dome tent pitched on the lawn under coconut palms', '(min-width: 900px) 26vw, 46vw', '50% 62%')}</figure><figure class="feature__media">{pic('e-tent-lime', 'A lime-green dome tent on the grass in the palm garden', '(min-width: 900px) 26vw, 46vw', '50% 62%')}</figure></div></div>
+          <div class="feature__stack" data-reveal><figure class="feature__media">{pic('tents-campsite', 'Tents pitched on the resort lawn under tall coconut palms, beside a thatched cottage', '(min-width: 900px) 52vw, 92vw', '32% 96%')}</figure><div class="feature__duo"><figure class="feature__media">{pic('e-tent-teal', 'A turquoise and white dome tent pitched on the lawn under coconut palms', '(min-width: 900px) 26vw, 46vw', '50% 100%')}</figure><figure class="feature__media">{pic('e-tent-lime', 'A lime-green dome tent on the grass in the palm garden', '(min-width: 900px) 26vw, 46vw', '50% 100%')}</figure></div></div>
           <div class="feature__text" data-reveal>
             <p class="eyebrow">Tent stays</p>
             <h2 class="h-section" id="tents-title">A different way to stay</h2>
@@ -1036,7 +1036,6 @@ G = [  # (category, id, caption, alt, wide?)
     ('experiences', 'e-octopus', 'Blue-ringed octopus', 'A blue-ringed octopus among seagrass', 0),
     ('experiences', 'e-sand-morion', 'A Morion in the sand', 'A sandcastle carved as a Morion warrior by the volleyball net', 0),
     ('resort', 'e-resort-pool', 'The pool and main building', 'The white main building beside the palm-lined pool', 0),
-    ('resort', 'e-pool-elevated', 'The pool from above', 'The pool, palms and guests seen from the balcony', 0),
     ('resort', 'e-pool-night', 'The pool at night', 'The lit pool beneath the main building after dark', 0),
     ('resort', 'e-resort-path', 'The garden path', 'A path beside the palm-lined pool', 0),
     ('resort', 'e-pool-bikes', 'Poolside', 'Bicycles by the sunlit pool deck', 0),
