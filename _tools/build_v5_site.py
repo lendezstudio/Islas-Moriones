@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '9.7'
+V = '9.8'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -339,7 +339,7 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
       <div class="wrap">
         <div class="feature">
           <div class="glance-photos" data-reveal>
-            <figure class="feature__media">{pic('e-dusk', 'The Islas Moriones sign at dusk, the lit main building and palms behind', '(min-width: 900px) 46vw, 92vw', '95% 50%')}</figure>
+            <figure class="feature__media">{pic('e-dusk', 'The Islas Moriones sign at dusk, the lit main building and palms behind', '(min-width: 900px) 46vw, 92vw', '60% 50%')}</figure>
           </div>
           <div class="feature__text" data-reveal>
             <p class="eyebrow">The resort at a glance</p>

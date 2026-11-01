@@ -732,19 +732,11 @@ body.menu-open .subnav { visibility: hidden; }
 /* Dive centre band under the marine life cards */
 .dive-band { margin-top: clamp(28px, 4vw, 44px); }
 
-/* Resort at a glance: two stacked photos that match the list's height */
-.glance-photos { display: grid; gap: 14px; }
-.glance-photos .feature__media { aspect-ratio: 3 / 2; }
+/* Resort at a glance: one photo at its natural shape, centred beside the list */
+.glance-photos { display: grid; }
+.glance-photos .feature__media { aspect-ratio: 4 / 3; }
 @media (min-width: 900px) {
-  .feature:has(> .glance-photos) { align-items: stretch; }
-  .glance-photos { grid-auto-rows: 1fr; }
-  .glance-photos .feature__media { aspect-ratio: auto; height: 100%; min-height: 220px; }
-  .glance-photos picture { height: 100%; }
-}
-@media (min-width: 900px) {
-  .glance-photos .feature__media { position: relative; min-height: 0; }
-  .glance-photos picture { position: absolute; inset: 0; }
-  .glance-photos img { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .feature:has(> .glance-photos) { align-items: center; }
 }
 
 .shells { margin-top: clamp(36px, 5vw, 64px); }
