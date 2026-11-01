@@ -1043,7 +1043,6 @@ G = [  # (category, id, caption, alt, wide?)
     ('resort', 'e-loungers', 'Pool loungers', 'White sun loungers beside the pool', 0),
     ('resort', 'e-sunglasses', 'Beach days', 'Sunglasses on a lounger, the lifeguard tower beyond', 0),
     ('resort', 'e-vball-wide', 'The beachfront', 'The volleyball net on the beach beneath shady trees', 1),
-    ('resort', 'e-tidepool-p', 'Golden hour on the rocks', 'Golden-hour rocks above a turquoise tidal pool', 0),
     ('resort', 'e-sunset-coast', 'Sunset on the coast', 'A golden sunset over the rocky coastline', 1),
     ('stays', 'e-room-blue', 'Single Standard Room', 'A single bed against a blue accent wall', 0),
     ('stays', 'e-room-red', 'Deluxe Room', 'A queen bed against a red feature wall', 0),
