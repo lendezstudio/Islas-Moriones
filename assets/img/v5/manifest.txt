@@ -137,6 +137,17 @@ e-warrior-l|867x649|Assets from Client/November 1, 2026/Enhanced Photo/Underwate
 e-warrior-p|652x871|Assets from Client/November 1, 2026/Enhanced Photo/Morion Reef Warrior Beneath Blue Waters.png
 e-warrior-w|900x507 1400x788|Assets from Client/November 1, 2026/Enhanced Photo/Underwater Warrior Statue Amid Colorful Corals.png
 e-tidepool-p|640x853 1086x1448|Assets from Client/November 1, 2026/Enhanced Photo/Golden-hour rocks above a turquoise tidal pool.png
+e-campsite|640x960 1024x1536|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Sunny Campsite Beneath Coconut Palms-2.png
+e-sanddollars|640x960 1024x1536|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Five Sand Dollars Over Turquoise Water.png
+e-pickleball|800x533 1400x933|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Aerial garden pickleball court-1.png
+e-tt-w|800x533 1400x933|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Tropical Table Tennis by the Sea-4.png
+e-tt-p|640x960 1024x1536|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Tropical table tennis by the sea-3.png
+e-bikes-w|800x533 1400x933|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Mountain Bikes Among Coconut Palms-2.png
+e-bikes-p|640x960 1024x1536|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Mountain Bikes Beneath Coconut Palms-1.png
+e-sanddollars-w|640x480 1024x768|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Five Sand Dollars Over Turquoise Water.png
+e-rock-w|800x533 1400x933|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Pitted Coastal Rock at Golden Sunset-2 (1).png
+e-rock-p|640x960 1024x1536|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Pitted Rock and Golden Sunset-1 (1).png
+e-campsite-bamboo|800x533 1400x933|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Sunlit bamboo campsite by the palms-1.png
 cafe-logo|480x476|Assets from Client/November 1, 2026/WhatsApp Image 2026-10-31 at 6.34.46 AM (2).jpeg
 bikes-crop|800x853 1400x1493|IMG_1159.jpg
 kayak-pov|800x711 1400x1245|IMG_2380.HEIC
