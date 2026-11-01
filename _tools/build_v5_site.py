@@ -66,7 +66,7 @@ def old(jid, alt, sizes='100vw', pos='50% 50%'):
             f'loading="lazy" decoding="async" style="--pos: {pos}" alt="{html.escape(alt, quote=True)}">')
 
 FOCUS = {  # subject positions for photos whose subject sits off-centre
-    'maniwaya-aerial': '45% 55%', 'sea-rocks': '40% 60%', 'snorkel2': '55% 50%', 'snorkel3': '55% 50%', 'kubo-ext2': '50% 55%', 'e-tidepool-p': '50% 55%', 'e-warrior-w': '100% 50%', 'e-warrior-p': '50% 50%', 'e-morion-bust': '50% 50%', 'e-kayak-lake': '53% 55%', 'e-pool-night-c': '42% 40%', 'e-sunglasses': '50% 22%', 'e-pool-bikes': '50% 55%', 'e-beach-tower': '52% 62%', 'e-beach-tower-p': '50% 60%', 'rock-cove': '50% 50%', 'vball': '50% 62%', 'pingpong2': '60% 72%', 'darts2': '50% 50%', 'deck-table': '50% 38%',
+    'maniwaya-aerial': '45% 55%', 'sea-rocks': '40% 60%', 'snorkel2': '55% 50%', 'snorkel3': '55% 50%', 'kubo-ext2': '50% 55%', 'e-sand-morion': '50% 70%', 'e-tidepool-p': '50% 55%', 'e-warrior-w': '100% 50%', 'e-warrior-p': '50% 50%', 'e-morion-bust': '50% 50%', 'e-kayak-lake': '53% 55%', 'e-pool-night-c': '42% 40%', 'e-sunglasses': '50% 22%', 'e-pool-bikes': '50% 55%', 'e-beach-tower': '52% 62%', 'e-beach-tower-p': '50% 60%', 'rock-cove': '50% 50%', 'vball': '50% 62%', 'pingpong2': '60% 72%', 'darts2': '50% 50%', 'deck-table': '50% 38%',
     'lobby-lounge': '50% 88%', 'lobby2': '50% 70%', 'maniwaya-cove': '0% 50%', 'beach-loungers': '50% 82%', 'sandbar-boat': '55% 70%',
     'tower-wide': '50% 92%', 'tower-blue': '50% 90%', 'tower-storm': '50% 85%', 'ecart': '50% 100%',
     'bikes-crop': '50% 35%', 'bikes': '50% 100%', 'kayak-pov': '50% 55%', 'kayak-pov-2': '40% 45%', 'beach-loungers': '50% 62%', 'kayak-clear': '50% 100%', 'kayak-clear-2': '50% 100%', 'tents-campsite': '32% 96%',
@@ -1024,7 +1024,6 @@ page('groups.html', 'groups.html', 'Gatherings & Events | Islas Moriones Beach R
 
 # =====================================================================================  GALLERY
 G = [  # (category, id, caption, alt, wide?)
-    ('resort', 'e-entrance', 'The resort entrance', 'The Islas Moriones sign on the sandy path, palms and the pool beyond', 1),
     ('resort', 'e-sign', 'Welcome to Islas Moriones', 'The wooden resort sign in the garden', 0),
     ('resort', 'e-pool-night2', 'The pool at night', 'The white main building and lit pool after dark', 0),
     ('resort', 'e-dusk', 'The resort at dusk', 'The resort sign and lit main building at dusk', 0),
@@ -1032,7 +1031,7 @@ G = [  # (category, id, caption, alt, wide?)
     ('stays', 'e-tent-teal', 'Tent stays', 'A turquoise dome tent under coconut palms', 0),
     ('stays', 'e-tent-lime', 'Tent stays', 'A lime-green dome tent in the palm garden', 0),
     ('experiences', 'e-seastars', 'Sea stars', 'Orange and blue sea stars on the reef', 0),
-    ('experiences', 'e-morion-bust', 'The Morion bust beneath the reef', 'A Morion warrior bust among coral on the seabed', 0),
+    ('experiences', 'e-warrior-w', 'The Morion warrior beneath the reef', 'A Morion warrior bust among coral on the seabed', 0),
     ('experiences', 'e-turtle', 'Sea turtle', 'A sea turtle on the sand at night', 0),
     ('experiences', 'e-octopus', 'Blue-ringed octopus', 'A blue-ringed octopus among seagrass', 0),
     ('experiences', 'e-sand-morion', 'A Morion in the sand', 'A sandcastle carved as a Morion warrior by the volleyball net', 0),
