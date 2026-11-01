@@ -737,7 +737,7 @@ body.menu-open .subnav { visibility: hidden; }
 .glance-photos .feature__media { aspect-ratio: 3 / 2; }
 @media (min-width: 900px) {
   .feature:has(> .glance-photos) { align-items: stretch; }
-  .glance-photos { grid-template-rows: 1fr 1fr; }
+  .glance-photos { grid-auto-rows: 1fr; }
   .glance-photos .feature__media { aspect-ratio: auto; height: 100%; min-height: 220px; }
   .glance-photos picture { height: 100%; }
 }
