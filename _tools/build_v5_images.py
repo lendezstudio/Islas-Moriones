@@ -16,6 +16,7 @@ os.makedirs(OUT, exist_ok=True); os.makedirs(CLEAN, exist_ok=True)
 
 MARK_L = (0, 0, 1, .89)   # landscape staff photo: trim the bottom strip holding the phone mark
 MARK_P = (0, 0, 1, .92)   # portrait staff photo
+N2 = 'Assets from Client/November 2, 2026/Enhanced Photo'
 
 # id, source file, crop, output widths
 JOBS = [
@@ -176,6 +177,13 @@ JOBS = [
     ('e-sanddollars-w', 'Assets from Client/November 1, 2026/Enhanced Photo/10PM/Five Sand Dollars Over Turquoise Water.png', (0, .35, 1, .85), (640, 1024)),
     ('e-rock-w', 'Assets from Client/November 1, 2026/Enhanced Photo/10PM/Pitted Coastal Rock at Golden Sunset-2 (1).png', None, (800, 1400)),
     ('e-rock-p', 'Assets from Client/November 1, 2026/Enhanced Photo/10PM/Pitted Rock and Golden Sunset-1 (1).png', None, (640, 1024)),
+    ('tents-campsite-full', 'Initial Images/469518456_605136372186168_174922518552061940_n.jpg', None, (1400,)),
+    ('darts2-full', 'Initial Images/Pexels/pexels-kevin-malik-8763232.jpg', None, (1400,)),
+    ('e-morion-bust-full', 'Assets from Client/November 1, 2026/Enhanced Photo/Morion warrior bust beneath the reef-8.png', None, (1400,)),
+    ('e-warrior-p-full', 'Assets from Client/November 1, 2026/Enhanced Photo/Morion Reef Warrior Beneath Blue Waters.png', None, (1400,)),
+    ('maniwaya-cove-full', 'IMG_1188.HEIC', None, (1400,)),
+    ('sunset-boat-beach-full', 'edited-images/sunset-boat.jpg', None, (1400,)),
+    ('deck-table-full', 'Assets from Client/October 30, 2026/203add1d0cc6e9e797221bf8adcd6392bb06b5e0.jpg', None, (1400,)),
     ('e-campsite-bamboo', 'Assets from Client/November 1, 2026/Enhanced Photo/10PM/Sunlit bamboo campsite by the palms-1.png', None, (800, 1400)),
     ('cafe-logo', 'Assets from Client/November 1, 2026/WhatsApp Image 2026-10-31 at 6.34.46 AM (2).jpeg', None, (480,)),
     ('bikes-crop',       'IMG_1159.jpg', (0, .40, 1, 1), (800, 1400)),
@@ -249,6 +257,36 @@ JOBS = [
     # Dining
     ('skylight',         'viber_image_2026-10-20_16-40-23-113.jpg', MARK_L, (800, 1424)),
     ('skylight-2',       'viber_image_2026-10-20_16-40-23-429.jpg', MARK_L, (800, 1424)),
+    # November 2 client photos
+    ('n-beach-sports', f'{N2}/02_beach_and_water_sports_full_original_ratio.jpg', None, (800, 1400)),
+    ('n-breakfast', f'{N2}/01_beachfront_breakfast_full_original_ratio.jpg', None, (640, 1200)),
+    ('n-breakfast-brand', f'{N2}/03_resort_breakfast_and_branding_portrait.jpg', None, (640, 1024)),
+    ('n-boodle-p', f'{N2}/04_boodle_feast_portrait.jpg', None, (640, 1024)),
+    ('n-seafood-p', f'{N2}/03_seafood_feast_portrait.jpg', None, (640, 1024)),
+    ('n-watermelon-p', f'{N2}/05_watermelon_beach_portrait.jpg', None, (640, 1024)),
+    ('n-longtable', f'{N2}/05_outdoor_dining_portrait.jpg', None, (640, 1024)),
+    ('n-dive-shop', f'{N2}/ChatGPT Image Nov 2, 2026, 01_55_26 PM-9.png', None, (800, 1448)),
+    ('n-dive-gear', f'{N2}/ChatGPT Image Nov 2, 2026, 01_55_19 PM-5.png', None, (800, 1448)),
+    ('n-hall-floral', f'{N2}/04_event_hall_floral_tables_full_original_ratio.jpg', None, (640, 1200)),
+    ('n-hall-round', f'{N2}/01_event_hall_landscape.jpg', None, (800, 1400)),
+    ('n-celebrate-w', f'{N2}/ChatGPT Image Nov 2, 2026, 01_55_12 PM-1.png', None, (800, 1448)),
+    ('n-celebrate-p', f'{N2}/ChatGPT Image Nov 2, 2026, 01_55_15 PM-2.png', None, (640, 1122)),
+    ('n-cake', f'{N2}/ChatGPT Image Nov 2, 2026, 01_55_17 PM-3.png', None, (800, 1448)),
+    ('n-coconut', f'{N2}/WhatsApp Image 2026-11-02 at 8.47.23 AM (2).jpeg', None, (800, 1400)),
+    ('n-tower-sunset-w', f'{N2}/ChatGPT Image Nov 2, 2026, 01_16_26 PM-4.png', None, (800, 1400)),
+    ('n-tower-sunset-p', f'{N2}/ChatGPT Image Nov 2, 2026, 01_16_25 PM-3.png', None, (640, 1122)),
+    ('n-sunset-sea', f'{N2}/03_sunset_landscape.jpg', None, (800, 1400)),
+    ('n-sandbar', f'{N2}/02_sandbar_landscape.jpg', None, (800, 1400)),
+    ('n-rock-arch', f'{N2}/02_rock_arch_landscape.jpg', None, (800, 1400)),
+    ('n-beach-sports-p', f'{N2}/02_beach_and_water_sports_full_original_ratio.jpg', None, (640, 1200)),
+    ('n-kayak-w', f'{N2}/ChatGPT Image Nov 2, 2026, 01_16_40 PM-10.png', None, (800, 1400)),
+    ('n-kayak-p', f'{N2}/ChatGPT Image Nov 2, 2026, 01_16_38 PM-9.png', None, (640, 1122)),
+    ('n-dive-shop-p', f'{N2}/ChatGPT Image Nov 2, 2026, 01_55_27 PM-10.png', None, (640, 1122)),
+    ('kubo-bed3', 'IMG_2174.HEIC', None, (800, 1200)),
+    ('r-exec-5', 'viber_image_2026-10-20_17-16-02-324.jpg', MARK_L, (800, 1424)),
+    ('n-rocky-coast', f'{N2}/05_rocky_coast_landscape.jpg', None, (800, 1400)),
+    ('n-picnic', f'{N2}/ChatGPT Image Nov 2, 2026, 01_50_32 PM-2.png', None, (800, 1400)),
+    ('n-palm-lawn', f'{N2}/ChatGPT Image Nov 2, 2026, 01_50_38 PM-6.png', None, (800, 1400)),
 ]
 
 def load(name):

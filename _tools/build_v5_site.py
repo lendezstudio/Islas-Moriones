@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '9.8'
+V = '11.6'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -66,19 +66,31 @@ def old(jid, alt, sizes='100vw', pos='50% 50%'):
             f'loading="lazy" decoding="async" style="--pos: {pos}" alt="{html.escape(alt, quote=True)}">')
 
 FOCUS = {  # subject positions for photos whose subject sits off-centre
-    'maniwaya-aerial': '45% 55%', 'sea-rocks': '40% 60%', 'snorkel2': '55% 50%', 'snorkel3': '55% 50%', 'kubo-ext2': '50% 55%', 'e-palad': '45% 70%', 'e-tent-lime': '50% 100%', 'e-tent-teal': '50% 100%', 'e-sand-morion': '50% 70%', 'e-tidepool-p': '50% 55%', 'e-warrior-w': '100% 50%', 'e-warrior-p': '50% 50%', 'e-morion-bust': '50% 50%', 'e-kayak-lake': '53% 55%', 'e-pool-night-c': '42% 40%', 'e-sunglasses': '50% 22%', 'e-pool-bikes': '50% 55%', 'e-beach-tower': '52% 62%', 'e-beach-tower-p': '50% 60%', 'rock-cove': '50% 50%', 'vball': '50% 62%', 'pingpong2': '60% 72%', 'darts2': '50% 50%', 'deck-table': '50% 38%',
+    'maniwaya-aerial': '45% 55%', 'sea-rocks': '40% 60%', 'snorkel2': '55% 50%', 'snorkel3': '55% 50%', 'kubo-ext2': '50% 55%', 'e-palad': '45% 70%', 'e-tent-lime': '50% 100%', 'e-tent-teal': '50% 100%', 'e-sand-morion': '50% 70%', 'e-tidepool-p': '50% 55%', 'e-warrior-w': '100% 50%', 'e-warrior-p': '50% 50%', 'e-morion-bust': '50% 50%', 'e-kayak-lake': '53% 55%', 'e-pool-night-c': '42% 40%', 'e-sunglasses': '50% 20%', 'e-pool-bikes': '50% 55%', 'e-beach-tower': '52% 62%', 'e-beach-tower-p': '50% 60%', 'rock-cove': '50% 50%', 'vball': '50% 62%', 'pingpong2': '60% 72%', 'darts2': '50% 50%', 'deck-table': '50% 38%',
     'lobby-lounge': '50% 88%', 'lobby2': '50% 70%', 'maniwaya-cove': '0% 50%', 'beach-loungers': '50% 82%', 'sandbar-boat': '55% 70%',
     'tower-wide': '50% 92%', 'tower-blue': '50% 90%', 'tower-storm': '50% 38%', 'ecart': '50% 100%',
     'bikes-crop': '50% 35%', 'e-bikes-w': '60% 75%', 'e-bikes-p': '50% 90%', 'e-rock-w': '40% 50%', 'e-rock-p': '50% 65%', 'e-sanddollars-w': '50% 50%', 'e-sanddollars': '50% 64%', 'bikes': '50% 100%', 'kayak-pov': '50% 55%', 'kayak-pov-2': '40% 45%', 'beach-loungers': '50% 62%', 'kayak-clear': '50% 100%', 'kayak-clear-2': '50% 100%', 'tents-campsite': '32% 96%',
     'tent': '50% 78%', 'ungab-arch': '50% 70%', 'main-building': '50% 45%', 'genesis-front': '50% 70%',
+    'n-coconut': '58% 20%', 'n-tower-sunset-w': '62% 55%', 'n-tower-sunset-p': '50% 55%', 'n-beach-sports': '50% 50%', 'n-beach-sports-p': '8% 50%', 'n-kayak-w': '45% 60%', 'n-kayak-p': '50% 60%', 'n-dive-shop-p': '50% 60%',
+    'n-boodle-p': '50% 50%', 'n-celebrate-w': '50% 70%', 'n-celebrate-p': '50% 75%', 'n-cake': '50% 55%', 'n-dive-shop': '50% 60%', 'n-dive-gear': '50% 65%', 'n-hall-floral': '50% 70%',
+    'e-tt-w': '50% 75%', 'badminton': '50% 55%', 'e-cliff-tree': '50% 45%', 'bonfire-smores': '42% 50%', 'e-loungers': '50% 60%', 'old:bamboo-raft': '50% 45%', 'e-boat-water': '50% 62%', 'poolsuite-bed': '50% 60%', 'e-sandbar-people': '50% 55%', 'e-vball': '45% 55%', 'darts2-full': '50% 50%',
     'genesis-lawn': '50% 75%', 'palms-sky': '50% 40%', 'maniwaya-rocks': '50% 70%', 'kubo-exterior': '50% 50%',
 }
 
+LB_FULL = {'tents-campsite': 'tents-campsite-full', 'darts2': 'darts2-full', 'e-pool-night-c': 'e-pool-night', 'e-kubo-cart-c': 'e-kubo-cart', 'e-morion-bust': 'e-morion-bust-full', 'e-warrior-l': 'e-warrior-w', 'e-warrior-p': 'e-warrior-p-full', 'e-sanddollars-w': 'e-sanddollars', 'bikes-crop': 'bikes', 'kayak-pov': 'kayak-clear', 'kayak-pov-2': 'kayak-clear-2', 'maniwaya-cove': 'maniwaya-cove-full', 'sunset-boat-beach': 'sunset-boat-beach-full', 'deck-table': 'deck-table-full'}  # cropped page images open uncropped in the lightbox
 def full(jid):
     """Largest file for the lightbox."""
+    jid = LB_FULL.get(jid, jid)
     if jid in SIZES:
         w, h = SIZES[jid][-1]; return f'assets/img/v5/{jid}-{w}.jpg', w, h
     widths, w, h = OLD[jid]; return f'assets/img/{jid}-{widths[-1]}.jpg', w, h
+
+def ratio(jid):
+    """Width / height of a derivative, so a slide can show the whole photo at its own shape."""
+    w, h = SIZES[jid][-1] if jid in SIZES else OLD[jid][1:]
+    return w / h
+def slide(media, ar, label, inner_cls='tile__media'):
+    return f'<li class="slide-item" style="--ar: {ar:.4f}" aria-roledescription="slide" aria-label="{label}"><figure class="tile"><div class="{inner_cls}">{media}</div></figure></li>'
 
 # ---------- shared layout ----------
 NAV = [('rooms.html', 'Stay'), ('activities.html', 'Experiences'), ('dining.html', 'Dining'),
@@ -224,9 +236,11 @@ def page(fname, cur, title, desc, main, sets='', preload='', canonical=None, ext
             + (f'\n  <div hidden>\n{sets}  </div>\n' if sets else '') + '\n' + LIGHTBOX + '</body>\n</html>\n')
     wr(fname, h + body)
 
-def intro(eyebrow, h1, text, extra=''):
+BACK = '''      <div class="wrap"><a class="back-link" href="index.html" data-back><span aria-hidden="true">←</span> Back</a></div>
+'''
+def intro(eyebrow, h1, text, extra='', back=False):  # back: sub pages only, not the main menu pages
     return f'''    <section class="page-intro" aria-labelledby="page-title">
-      <div class="prose center">
+{BACK if back else ''}      <div class="prose center">
         <p class="eyebrow">{eyebrow}</p>
         <h1 class="h-display" id="page-title">{h1}</h1>
         <p class="lead">{text}</p>{extra}
@@ -256,27 +270,26 @@ def card(img, title, text, href=None, link=None, extra=''):
         </article>'''
 
 # =====================================================================================  HOME
-INCLUDED = [  # (image html, title, caption) all from the resort's inclusion list
-    (lambda s: pic('e-loungers', 'White sun loungers beside the turquoise pool, shaded by palms', s, '50% 60%'), 'Swimming pool', 'The outdoor pool, with loungers in the shade.'),
-    (lambda s: pic('bonfire-smores', 'Marshmallows toasting on skewers over a crackling bonfire at night', s, '42% 50%'), 'Bonfire', 'Toast marshmallows around the fire.'),
-    (lambda s: pic('e-pickleball', 'Aerial view of the green pickleball court and net, framed by garden beds and trees', s, '50% 50%'), 'Pickleball', 'A pickleball court, coming soon.'),
-    (lambda s: old('bamboo-raft', 'The covered bamboo raft with a long table on turquoise water', s, '50% 45%'), 'Bamboo raft', 'Float off the shore on the resort’s bamboo raft.'),
-    (lambda s: pic('e-fire', 'A fire dancer spinning flames on the sand at night while guests watch from long tables', s, '50% 50%'), 'Fire show', 'Evenings by the fire on the sand.'),
-    (lambda s: f'<span class="v-land">{pic("e-tt-w", "Two table-tennis paddles and a ball on a blue table by the net, palms and the beach behind", s, "50% 78%")}</span><span class="v-port">{pic("e-tt-p", "Two table-tennis paddles and a ball on a blue table by the net, palms and the beach behind", s, "45% 80%")}</span>', 'Ping-pong', 'Table tennis in the shade of the palms.'),
-    (lambda s: pic('darts2', 'Two friends pulling darts from a dartboard on the wall', s, '50% 50%'), 'Darts', 'A dartboard for friendly games.'),
-    (lambda s: pic('badminton', 'Two badminton rackets and shuttlecocks resting on grass', s, '50% 55%'), 'Badminton', 'Rackets for a game on the lawn.'),
-    (lambda s: pic('vball', 'A volleyball resting on soft beach sand in warm sunlight', s, '50% 62%'), 'Beach volleyball', 'A net on the sand, a few steps from the water.'),
+INCLUDED = [  # (photo id, alt, title, caption) all from the resort's inclusion list; whole photo, natural shape
+    ('e-loungers', 'White sun loungers beside the turquoise pool, shaded by palms', 'Swimming pool', 'The outdoor pool, with loungers in the shade.'),
+    ('bonfire-smores', 'Marshmallows toasting on skewers over a crackling bonfire at night', 'Bonfire', 'Toast marshmallows around the fire.'),
+    ('e-pickleball', 'Aerial view of the green pickleball court and net, framed by garden beds and trees', 'Pickleball', 'A pickleball court, coming soon.'),
+    ('old:bamboo-raft', 'The covered bamboo raft with a long table on turquoise water', 'Bamboo raft', 'Float off the shore on the resort’s bamboo raft.'),
+    ('e-fire', 'A fire dancer spinning flames on the sand at night while guests watch from long tables', 'Fire show', 'Evenings by the fire on the sand.'),
+    ('e-tt-w', 'Two table-tennis paddles and a ball on a blue table by the net, palms and the beach behind', 'Ping-pong', 'Table tennis in the shade of the palms.'),
+    ('darts2-full', 'Two friends pulling darts from a dartboard on the wall', 'Darts', 'A dartboard for friendly games.'),
+    ('badminton', 'Two badminton rackets and shuttlecocks resting on grass', 'Badminton', 'Rackets for a game on the lawn.'),
+    ('e-vball', 'The volleyball net on the white-sand beach beside the lifeguard tower, an outrigger boat in the water beyond', 'Beach volleyball', 'A net on the sand, a few steps from the water.'),
 ]
-def included_grid(sizes='(min-width: 900px) 30vw, (min-width: 600px) 46vw, 82vw'):
+def included_grid(sizes='(min-width: 600px) 46vw, 84vw'):
     out = []
-    for f, t, c in INCLUDED:
-        label = t.replace('&amp;', 'and')
-        media = f(sizes)
-        cls = 'tile__media has-alt' if 'v-land' in media else 'tile__media'  # landscape/portrait pair swaps with the frame shape
-        out.append(f'''            <li class="slide-item" aria-roledescription="slide" aria-label="{label}"><figure class="tile">
-              <div class="{cls}">{media}</div>            </figure></li>''')
+    for jid, alt, t, c in INCLUDED:
+        if jid.startswith('old:'):
+            media, ar = old(jid[4:], alt, sizes), ratio(jid[4:])
+        else:
+            media, ar = pic(jid, alt, sizes), ratio(jid)
+        out.append('            ' + slide(media, ar, t.replace('&amp;', 'and')))
     return '\n'.join(out)
-
 
 CLOSER = [  # resort photographs, no overlaid text
     ('maniwaya-aerial', 'Marinduque coastline', 'Aerial view of a long white-sand beach lined with coconut palms, outrigger boats moored in the shallows'),
@@ -284,24 +297,16 @@ CLOSER = [  # resort photographs, no overlaid text
     ('e-beach-tower', 'Shade on the sand', 'Wicker sun loungers in the shade of a tree on the beach, the lifeguard tower and mountains beyond'),
     ('sandbar-boat', 'Palad Sandbar', 'Aerial view of an outrigger boat moored at the tip of a long white sandbar in turquoise water'),
     ('e-cliff-tree', 'Century Cliff Tree', 'A lone wind-shaped tree on a grassy clifftop above the blue sea'),
-    ('e-pool-night-c', 'The pool at night', 'The lit pool glowing turquoise beneath the main building after dark'),
-    ('e-sandbar-aerial', 'Sandbar from above', 'Aerial view of outrigger boats moored along a white sandbar in turquoise water'),
+    ('e-pool-night2', 'The pool at night', 'The white main building and its lit pool after dark, palms in the courtyard'),
+    ('e-sandbar-people', 'Sandbar from above', 'Aerial view of visitors walking along a white sandbar in turquoise water, boats moored off its tip'),
     ('e-pool-bikes', 'The pool and palms', 'The sunlit pool deck with bicycles beside the white resort buildings and palms'),
-    ('e-sunglasses', 'Beach days', 'Sunglasses on a sun lounger, the lifeguard tower and the sea beyond'),
+    ('e-sunglasses', 'Beach days', 'The white lifeguard tower and volleyball net on the sand, outrigger boats in the calm blue sea beyond'),
     ('e-kayak-lake', 'Crystal-clear kayak', 'A guest in a sun hat paddling a transparent kayak, mountains on the horizon'),
     ('e-sunset-coast', 'Sunset on the coast', 'A golden sunset over the rocky coastline'),
 ]
-PORTRAIT_ALT = {'e-beach-tower': 'e-beach-tower-p', 'e-warrior-w': 'e-warrior-p', 'e-sunset-coast': 'e-tidepool-p'}  # tall version shown when the slide frame is portrait
 def closer_slides():
-    out = []
-    for j, t, alt in CLOSER:
-        sz = "(min-width: 600px) 300px, 68vw"
-        if j in PORTRAIT_ALT:
-            media = f'<div class="tile__media has-alt"><span class="v-land">{pic(j, alt, sz)}</span><span class="v-port">{pic(PORTRAIT_ALT[j], alt, sz)}</span></div>'
-        else:
-            media = f'<div class="tile__media">{pic(j, alt, sz)}</div>'
-        out.append(f'''            <li class="slide-item" aria-roledescription="slide" aria-label="{t}"><figure class="tile">{media}</figure></li>''')
-    return '\n'.join(out)
+    sz = "(min-width: 600px) 46vw, 84vw"
+    return '\n'.join('            ' + slide(pic(j, alt, sz), ratio(j), t) for j, t, alt in CLOSER)
 
 home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from the air and on the beach">
       <div class="film__frame">
@@ -327,7 +332,9 @@ home = f'''    <section class="film flow-hero" aria-label="Islas Moriones from t
         <p class="eyebrow">Maniwaya Island, Marinduque</p>
         <h1 class="h-display" id="resort-title">Islas Moriones Beach Resort</h1>
         <p class="h-sub">Island days, shared your way.</p>
-        <p>On Maniwaya Island, Islas Moriones brings together places to stay, time by the water, and meals worth gathering for. Settle into a room, explore a tent stay, or make space for a few days with your favourite people.</p>
+        <p>On Maniwaya Island, Islas Moriones is where island escapes, seaside moments, and good food come together.</p>
+        <p>Whether you’re settling into a cozy room, trying out a tent stay, spending lazy days by the water, or sharing a few unforgettable days with your favorite people, there’s a little something here for every kind of getaway.</p>
+        <p>Come for the island, stay for the memories.</p>
         <div class="actions actions--center">
           <a class="btn btn--teal" href="rooms.html">Explore the stays</a>
           <a class="btn btn--line" href="gallery.html">View the gallery</a>
@@ -503,26 +510,23 @@ STRIPITEMS
 
 STRIP = [
     ('poolsuite-bed', 'The Pool Suite Room', 'A queen bed and seating area in the Pool Suite Room'),
-    ('skylight-2', 'Skylight Dining', 'Tables beneath the glass roof of Skylight Dining'),
-    ('tower-blue', 'The beach', 'The lifeguard tower on the white-sand beach under a clear sky'),
-    ('kubo-living', 'The Luxury Kubo', 'The Luxury Kubo lounge with a white sofa and glass doors'),
+    ('n-dive-shop', 'Seagrass 200 Dive Centre', 'The glass shopfront of Seagrass 200 Dive Centre under a white pergola, dive gear on the terrace'),
+    ('tower-wide', 'The beach', 'The white lifeguard tower and resort flags on the beach under a clear blue sky'),
+    ('n-beach-sports', 'Jet skis on the beach', 'Jet skis pulled up on the resort beach, the white lifeguard tower and flags along the shore'),
+    ('n-coconut', 'Lazy days by the pool', 'A fresh coconut with a frangipani flower beside an open book on the pool deck'),
     ('e-palad', 'Palad Sandbar (island hopping)', 'Palad Sandbar, a long white sandbar curving into turquoise water under a blue sky'),
-    ('kayak-clear-2', 'Crystal-clear kayak', 'A crystal-clear kayak on calm water off Maniwaya'),
+    ('n-kayak-w', 'Crystal-clear kayak', 'Looking down through a crystal-clear kayak, life vests and a paddle over turquoise water, the island shore beyond'),
     ('room-suiteloft', 'Suite Loft Room', 'A loft room with a staircase above the bed'),
     ('e-rock-w', 'Sunset over the coastal rocks', 'A pitted coastal rock topped with greenery above the sea, the sun setting gold on the horizon'),
     ('e-boat-water', 'By the shore', 'A small boat moored in clear water off the beach, a resort flag on the sand'),
+    ('n-tower-sunset-w', 'Sunset on the beach', 'The lit lifeguard tower on the sand beside the volleyball net, the sky pink and orange at sunset'),
     ('e-bikes-w', 'Mountain bikes on Maniwaya', 'Two mountain bikes resting against a fallen palm trunk on the grass beneath tall coconut palms'),
     ('e-sanddollars-w', 'Shells on the shore', 'A hand holding five white sand dollars above clear turquoise water'),
 ]
-STRIP_ALT = {'e-rock-w': 'e-rock-p', 'e-bikes-w': 'e-bikes-p', 'e-sanddollars-w': 'e-sanddollars'}  # tall version shown when the slide frame is portrait
 items = []
 for i, (jid, cap, alt) in enumerate(STRIP, 1):
-    sz = "(min-width: 600px) 420px, 76vw"
-    if jid in STRIP_ALT:
-        cls, media = 'tile__media has-alt', f'<span class="v-land">{pic(jid, alt, sz)}</span><span class="v-port">{pic(STRIP_ALT[jid], alt, sz)}</span>'
-    else:
-        cls, media = 'tile__media', pic(jid, alt, sz)
-    items.append(f'          <li class="slide-item" aria-roledescription="slide" aria-label="{cap}"><figure class="tile"><div class="{cls}"><button class="slide-open" type="button" data-lightbox="strip" data-start="s{i}" aria-label="Open photo: {cap}">{media}</button></div></figure></li>')
+    media = f'<button class="slide-open" type="button" data-lightbox="strip" data-start="s{i}" aria-label="Open photo: {cap}">{pic(jid, alt, "(min-width: 600px) 46vw, 84vw")}</button>'
+    items.append('          ' + slide(media, ratio(jid), cap))
 home = home.replace('STRIPITEMS', '\n'.join(items))
 strip_set = lb_set('strip', [(j, c, a) for j, c, a in STRIP]).replace('<li data-full', '<li data-id="sX" data-full')
 n = 0
@@ -560,6 +564,7 @@ kubo_set = lb_set('kubo', [
     ('kubo-living2', 'Luxury Kubo, living area', 'A kitchenette, armchair and glass doors, the bedroom beyond'),
     ('kubo-lounge2', 'Luxury Kubo, lounge', 'A white sofa, TV and glass doors to the garden'),
     ('kubo-bed2', 'Luxury Kubo, bedroom', 'A queen bed under window blinds'),
+    ('kubo-bed3', 'Luxury Kubo, bedroom', 'The queen bed made up with fresh towels beside an armchair'),
     ('kubo-loftbeds', 'Luxury Kubo, loft beds', 'Four single beds in the timber loft'),
     ('kubo-bath', 'Luxury Kubo, bathroom', 'A glass shower and toilet'),
 ])
@@ -634,6 +639,7 @@ room_sets = {
         ('r-exec-2', 'Executive Loft Room, bedroom', 'Executive Loft Room, bedroom'),
         ('r-exec-1', 'Executive Loft Room, stairs to the loft', 'Executive Loft Room, stairs to the loft'),
         ('r-exec-3', 'Executive Loft Room, the loft', 'Executive Loft Room, the loft'),
+        ('r-exec-5', 'Executive Loft Room, the loft', 'Three single beds under the sloping loft ceiling'),
         ('r-exec-4', 'Executive Loft Room, bedroom', 'Executive Loft Room, bedroom'),
         ('r-exec-bath', 'Executive Loft Room, bathroom', 'Executive Loft Room, bathroom'),
         ('r-exec-bath2', 'Executive Loft Room, bathroom', 'Executive Loft Room, bathroom'),
@@ -700,7 +706,7 @@ stay = intro('Stay', 'Your stay on Maniwaya', 'Explore the accommodations at Isl
             </div>
             <div class="actions">
               <a class="btn btn--teal" href="{BOOK}" target="_blank" rel="noopener">Check Availability{BOOKTAB}</a>
-              {gallery_btn('kubo', 8)}
+              {gallery_btn('kubo', 9)}
             </div>
           </div>
         </div>
@@ -740,7 +746,7 @@ stay = intro('Stay', 'Your stay on Maniwaya', 'Explore the accommodations at Isl
               <div><dt>Facilities</dt><dd>Communal toilets and showers, and a charging station</dd></div>
               <div><dt>Included</dt><dd>Use of the pool, bonfire, volleyball, bamboo raft and badminton</dd></div>
             </dl>
-            <a class="btn btn--line" href="contact.html">Ask about tent stays</a>
+            <a class="btn btn--line" href="ask-tents.html">Ask about tent stays</a>
           </div>
         </div>
       </div>
@@ -801,6 +807,15 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
           </div>
         </div>
 
+        <div class="feature feature--flip jetskis" id="jet-skis">
+          <figure class="feature__media" data-reveal>{pic('n-beach-sports', 'Jet skis pulled up on the resort beach, the white lifeguard tower and flags along the shore', '(min-width: 900px) 46vw, 92vw')}</figure>
+          <div class="feature__text" data-reveal>
+            <h3 class="h-section h-section--sm">Jet skis</h3>
+            <p>Pick up the pace on the open water off Maniwaya. Ask the team about jet ski availability and arrangements for your dates.</p>
+            <a class="btn btn--line" href="ask-jet-skis.html">Ask about jet skis</a>
+          </div>
+        </div>
+
         <div class="boats" id="boats">
           <header class="section-head section-head--split">
             <h3 class="h-section h-section--sm">Boat rentals</h3>
@@ -847,13 +862,17 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
             <p>Walk the clear shallows and white sand at low tide and you can pick up shells and sand dollars along Maniwaya’s shore. Keep only empty, sun-bleached ones and leave anything still living in the water.</p>
           </div>
         </div>
-        <div class="extras-band dive-band" id="diving" data-reveal>
+        <div class="dive-photos" id="diving" data-reveal>
+          <figure class="feature__media">{pic('n-dive-shop', 'The glass shopfront of Seagrass 200 Dive Centre under a white pergola, wetsuits hanging inside and dive gear on the terrace', '(min-width: 900px) 46vw, 92vw')}</figure>
+          <figure class="feature__media">{pic('n-dive-gear', 'Scuba tanks, buoyancy vests, fins and gear boxes laid out on the terrace of the dive centre', '(min-width: 900px) 46vw, 92vw')}</figure>
+        </div>
+        <div class="extras-band dive-band" data-reveal>
           <div>
             <p class="eyebrow">Scuba diving</p>
             <h3 class="h-section h-section--sm">Seagrass 200 Dive Centre</h3>
           </div>
           <p>The resort is home to Seagrass 200 Dive Centre, a scuba diving dive shop. Ask the team about dives and arrangements during your stay.</p>
-          <a class="btn btn--teal" href="contact.html">Ask about diving</a>
+          <a class="btn btn--teal" href="ask-diving.html">Ask about diving</a>
         </div>
       </div>
     </section>
@@ -904,6 +923,7 @@ page('activities.html', 'activities.html', 'Experiences | Islas Moriones Beach R
      exp, sets=island_set)
 
 # =====================================================================================  DINING
+BA_ALT = 'A breakfast plate of garlic rice, a fried egg, dried fish and mango on a table by the beach, palms and the sea behind'
 dining = intro('Dining', 'A table for your island stay', 'From everyday meals to dining together as a group, explore the food experiences available at Islas Moriones.') + f'''
     <section class="section section--sandbg2" aria-labelledby="sky-title">
       <div class="wrap">
@@ -913,7 +933,7 @@ dining = intro('Dining', 'A table for your island stay', 'From everyday meals to
             <p class="eyebrow">New</p>
             <h2 class="h-section" id="sky-title">Skylight Dining</h2>
             <p>The resort’s newest dining space: a pavilion with a glass roof beside the main building, with long tables under the palms. Explore it during your stay.</p>
-            <a class="btn btn--line" href="contact.html">Ask about dining</a>
+            <a class="btn btn--line" href="ask-dining.html?about=Skylight%20Dining">Ask about dining</a>
           </div>
         </div>
       </div>
@@ -938,6 +958,22 @@ dining = intro('Dining', 'A table for your island stay', 'From everyday meals to
       </div>
     </section>
 
+    <section class="section section--dune" aria-labelledby="plates-title">
+      <div class="wrap">
+        <div class="venue">
+          <figure class="venue__a has-alt" data-reveal><span class="v-land">{pic('n-breakfast', BA_ALT, '(min-width: 900px) 30vw, 92vw', '50% 88%')}</span><span class="v-port">{pic('n-breakfast', BA_ALT, '(min-width: 900px) 30vw, 92vw', '50% 70%')}</span></figure>
+          <figure class="venue__b" data-reveal>{pic('n-boodle-p', 'A boodle fight spread on banana leaves: grilled fish, crab, shrimp, rice, plantains and fruit with dipping sauces', '(min-width: 900px) 24vw, 46vw')}</figure>
+          <figure class="venue__c" data-reveal>{pic('n-breakfast-brand', 'Pancakes, toast and scrambled egg beside an Islas Moriones table sign, the beach beyond', '(min-width: 900px) 24vw, 46vw')}</figure>
+          <div class="venue__text" data-reveal>
+            <p class="eyebrow">From the kitchen</p>
+            <h2 class="h-section" id="plates-title">Island plates, morning to night</h2>
+            <p>Start the day with breakfast a few steps from the sand, then gather your group around a boodle fight of grilled seafood, rice and fruit laid out on banana leaves.</p>
+            <a class="btn btn--line" href="ask-dining.html?about=Meals%20during%20my%20stay">Ask about meals</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--linen" aria-labelledby="pk-title">
       <div class="wrap">
         <header class="section-head center">
@@ -950,7 +986,7 @@ dining = intro('Dining', 'A table for your island stay', 'From everyday meals to
 {card(pic('e-beach-dining', 'Long tables set on the beach at dusk beneath string lights', '(min-width: 900px) 30vw, 92vw', '50% 55%'), 'Bonfire menu packages', 'Explore the resort’s bonfire menu packages for another way to spend an evening together.')}
         </div>
         <div class="actions actions--center">
-          <a class="btn btn--teal" href="contact.html">Ask about dining packages</a>
+          <a class="btn btn--teal" href="ask-dining.html?about=Meal%20packages">Ask about dining packages</a>
         </div>
         <p class="note center">Prefer to cook? Kitchen use, griller use and paluto can be arranged. Corkage applies to outside food and drinks.</p>
       </div>
@@ -966,12 +1002,14 @@ gen_set = lb_set('genesis', [
     ('genesis-hall', 'The Genesis Events Place set for a reception', 'Long tables beneath draped white fabric'),
     ('e-pavilion', 'The Genesis and its al fresco cocktail area', 'Cocktail tables dressed in white on the lawn in front of The Genesis'),
     ('genesis-tables', 'Round tables inside The Genesis', 'Round tables with gold chairs and flowers'),
+    ('n-hall-floral', 'Flowers on the long tables', 'Bright flower arrangements down a long table set with gold chargers inside The Genesis'),
+    ('n-hall-round', 'A round-table reception', 'Round tables with gold chargers, flowers and gold chairs beneath draped fabric'),
     ('genesis-setup', 'The Genesis, banquet setup', 'Dining tables set for an event'),
     ('genesis-dinner', 'The Genesis, evening setup', 'Tables set with linen and flowers'),
     ('genesis-front', 'The Genesis from the lawn', 'The venue entrance with cocktail tables on the lawn'),
     ('genesis-lawn', 'Cocktail tables on the lawn', 'White-dressed cocktail tables on the lawn'),
 ])
-WA_EVT = WA + '?text=' + 'Hi%20Islas%20Moriones!%20We%27re%20planning%20a%20gathering.%20Preferred%20date%3A%20%20%7C%20Number%20of%20guests%3A%20%20%7C%20Occasion%3A%20'
+CA_ALT = 'A long garden table at dusk dressed with pink runners, roses and candles beneath string lights and palms'
 groups = intro('Gatherings &amp; Events', 'An island setting for getting together', 'Explore the events venue at Islas Moriones and speak with the team about bringing your group to Maniwaya.') + f'''
     <section class="section section--sandbg5" aria-labelledby="gen-title">
       <div class="wrap">
@@ -989,8 +1027,8 @@ groups = intro('Gatherings &amp; Events', 'An island setting for getting togethe
               <div><dt>Hire</dt><dd>Up to 5 hours, with exclusive use of the events area during the rental. Extra hours and setup time by arrangement</dd></div>
             </dl>
             <div class="actions">
-              <a class="btn btn--teal" href="{WA_EVT}" target="_blank" rel="noopener">Tell us about your gathering<span class="visually-hidden"> (opens WhatsApp in a new tab)</span></a>
-              {gallery_btn('genesis', 7)}
+              <a class="btn btn--teal" href="ask-gatherings.html">Tell us about your gathering</a>
+              {gallery_btn('genesis', 9)}
             </div>
           </div>
         </div>
@@ -1017,8 +1055,27 @@ groups = intro('Gatherings &amp; Events', 'An island setting for getting togethe
               <figure class="inset">{pic('genesis-tables', 'Round tables with gold chairs and flower arrangements inside The Genesis', '(min-width: 900px) 16vw, 44vw', '50% 60%')}</figure>
             </div>
             <div class="actions">
-              <a class="btn btn--teal" href="{WA_EVT}" target="_blank" rel="noopener">Ask about wedding packages<span class="visually-hidden"> (opens WhatsApp in a new tab)</span></a>
+              <a class="btn btn--teal" href="ask-gatherings.html?about=Wedding">Ask about wedding packages</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dune" id="celebrations" aria-labelledby="cele-title">
+      <div class="wrap">
+        <div class="feature feature--flip">
+          <figure class="feature__media feature__media--wide has-alt" data-reveal><span class="v-land">{pic('n-celebrate-w', CA_ALT, '(min-width: 900px) 56vw, 92vw')}</span><span class="v-port">{pic('n-celebrate-p', CA_ALT, '(min-width: 900px) 56vw, 92vw')}</span></figure>
+          <div class="feature__text" data-reveal>
+            <p class="eyebrow">Celebrations</p>
+            <h2 class="h-section" id="cele-title">Birthdays, reunions and milestones</h2>
+            <p>Mark the occasion with the people who matter, from a birthday dinner under the palms to a family reunion by the sea. Share your date, guest count and plans, and the team will talk you through the group packages and arrangements available.</p>
+            <div class="inset-row">
+              <figure class="inset">{pic('n-cake', 'A floral birthday cake on a table set with pink roses, candles and glassware', '(min-width: 900px) 16vw, 44vw')}</figure>
+              <figure class="inset">{pic('n-hall-floral', 'Bright flower arrangements down a long table set with gold chargers', '(min-width: 900px) 16vw, 44vw')}</figure>
+              <figure class="inset">{pic('n-longtable', 'A long outdoor table laid with bowls, plates and a colourful tropical runner under the trees', '(min-width: 900px) 16vw, 44vw', '50% 40%')}</figure>
+            </div>
+            <a class="btn btn--teal" href="ask-gatherings.html?about=Birthday%20or%20celebration">Plan a celebration</a>
           </div>
         </div>
       </div>
@@ -1033,7 +1090,7 @@ groups = intro('Gatherings &amp; Events', 'An island setting for getting togethe
             <h2 class="h-section" id="team-title">Where teams grow beyond the workplace</h2>
             <p>Bring your team together for team-building activities, leadership seminars, company outings and corporate retreats in a beachfront setting, with conference facilities, event spaces, island dining and island hopping all in one place.</p>
             <p>Packages can be customised around your group size, preferred activities, accommodation, meals, length of stay and budget.</p>
-            <a class="btn btn--teal" href="{WA_EVT}" target="_blank" rel="noopener">Plan a team visit<span class="visually-hidden"> (opens WhatsApp in a new tab)</span></a>
+            <a class="btn btn--teal" href="ask-gatherings.html?about=Company%20outing%20or%20team%20building">Plan a team visit</a>
           </div>
         </div>
       </div>
@@ -1056,112 +1113,133 @@ page('groups.html', 'groups.html', 'Gatherings & Events | Islas Moriones Beach R
      groups, sets=gen_set)
 
 # =====================================================================================  GALLERY
-G = [  # (category, id, caption, alt, wide?)
-    ('resort', 'e-sign', 'Welcome to Islas Moriones', 'The wooden resort sign in the garden', 0),
-    ('resort', 'e-pool-night2', 'The pool at night', 'The white main building and lit pool after dark', 0),
-    ('resort', 'e-dusk', 'The resort at dusk', 'The resort sign and lit main building at dusk', 0),
-    ('resort', 'e-dog', 'Pet-friendly stays', 'A bulldog on a leash on the sandy resort path', 0),
-    ('stays', 'e-campsite', 'The campsite', 'Dome tents and picnic tables beneath tall coconut palms', 0),
-    ('stays', 'e-tent-teal', 'Tent stays', 'A turquoise dome tent under coconut palms', 0),
-    ('stays', 'e-tent-lime', 'Tent stays', 'A lime-green dome tent in the palm garden', 0),
-    ('experiences', 'e-sanddollars', 'Sand dollars', 'Five white sand dollars held over turquoise water', 0),
-    ('experiences', 'e-seastars', 'Sea stars', 'Orange and blue sea stars on the reef', 0),
-    ('experiences', 'e-warrior-w', 'The Morion warrior beneath the reef', 'A Morion warrior bust among coral on the seabed', 0),
-    ('experiences', 'e-turtle', 'Sea turtle', 'A sea turtle on the sand at night', 0),
-    ('experiences', 'e-octopus', 'Blue-ringed octopus', 'A blue-ringed octopus among seagrass', 0),
-    ('experiences', 'e-sand-morion', 'A Morion in the sand', 'A sandcastle carved as a Morion warrior by the volleyball net', 0),
-    ('resort', 'e-resort-pool', 'The pool and main building', 'The white main building beside the palm-lined pool', 0),
-    ('resort', 'e-pool-night', 'The pool at night', 'The lit pool beneath the main building after dark', 0),
-    ('resort', 'e-resort-path', 'The garden path', 'A path beside the palm-lined pool', 0),
-    ('resort', 'e-pool-bikes', 'Poolside', 'Bicycles by the sunlit pool deck', 0),
-    ('resort', 'e-pool-pergola', 'Evening by the pool', 'The pool seen through pergola beams at night', 0),
-    ('resort', 'e-loungers', 'Pool loungers', 'White sun loungers beside the pool', 0),
-    ('resort', 'e-sunglasses', 'Beach days', 'Sunglasses on a lounger, the lifeguard tower beyond', 0),
-    ('resort', 'e-vball-wide', 'The beachfront', 'The volleyball net on the beach beneath shady trees', 1),
-    ('resort', 'e-sunset-coast', 'Sunset on the coast', 'A golden sunset over the rocky coastline', 1),
-    ('stays', 'e-room-blue', 'Single Standard Room', 'A single bed against a blue accent wall', 0),
-    ('stays', 'e-room-red', 'Deluxe Room', 'A queen bed against a red feature wall', 0),
-    ('stays', 'e-room-yellow', 'Superior Room', 'Two beds against a yellow-green wall', 0),
-    ('stays', 'e-room-three', 'Suite Room', 'Three beds under bright windows', 0),
-    ('stays', 'e-room-loft', 'Executive Loft Room', 'Two twin beds below the loft staircase', 0),
-    ('stays', 'e-room-family', 'Guest room', 'A room with several beds and a grey accent wall', 0),
-    ('stays', 'e-room-two', 'Guest room', 'Two neatly made beds in a bright room', 0),
-    ('stays', 'e-room-teal', 'Guest room', 'A bed with a trundle against a teal wall', 0),
-    ('stays', 'e-kubo-cart', 'The Luxury Kubo', 'The thatched Kubo and a wooden cart under the palms', 0),
-    ('stays', 'e-kubo-palms', 'The Luxury Kubo', 'The thatched Kubo with umbrella tables on the lawn', 0),
-    ('dining', 'e-beach-dining', 'Dinner on the beach', 'Long tables on the sand under string lights at dusk', 1),
-    ('gatherings', 'e-wedding-aisle', 'Beach wedding', 'A lantern-lined wedding aisle on the beach at sunset', 0),
-    ('gatherings', 'e-pavilion', 'The Genesis lawn', 'Cocktail tables on the lawn in front of The Genesis', 0),
-    ('gatherings', 'e-fire', 'Fire show', 'A fire dancer performing for guests at night', 1),
-    ('experiences', 'e-kayak', 'Crystal-clear kayak', 'A guest paddling a transparent kayak', 0),
-    ('experiences', 'e-vball', 'Beach volleyball', 'The volleyball net by the lifeguard tower', 0),
-    ('experiences', 'e-ecart-roses', 'Island tour by e-cart', 'The electric cart decorated with yellow flowers', 0),
-    ('experiences', 'e-boat-beach', 'Outrigger boat', 'An outrigger boat pulled up on the sand by the resort flags', 0),
-    ('experiences', 'e-boat-water', 'Boat by the shore', 'A small boat moored off the beach', 0),
-    ('experiences', 'e-palad', 'Palad Sandbar (island hopping, not resort grounds)', 'A long white sandbar in turquoise water', 0),
-    ('experiences', 'e-sandbar-people', 'Palad Sandbar from the air (island hopping)', 'Visitors walking along the sandbar', 0),
-    ('experiences', 'e-sandbar-aerial', 'Sandbar and boats (island hopping)', 'Outrigger boats moored along a sandbar, from above', 0),
-    ('experiences', 'e-ungab', 'Ungab Rock Formation (island hopping)', 'A natural rock arch above calm water', 0),
-    ('experiences', 'e-cliff-tree', 'Century Cliff Tree (island hopping)', 'A lone tree on a grassy clifftop', 0),
-    ('experiences', 'e-statues', 'Moriones Statue (island tour)', 'Morion warrior statues beside stone columns', 0),
-    ('experiences', 'e-sunset-rocks', 'Sunset over the coastal rocks', 'The sun setting behind a rock formation at sea', 1),
-    ('resort', 'tower-wide', 'The beachfront', 'The lifeguard tower and resort flags on the beach', 0),
-    ('stays', 'poolsuite-room', 'Pool Suite Room', 'Queen bed, sofa and kitchen in the Pool Suite Room', 0),
-    ('dining', 'skylight', 'Skylight Dining', 'Tables beneath the glass-roofed Skylight Dining pavilion', 0),
-    ('gatherings', 'genesis-hall', 'The Genesis Events Place', 'Long tables beneath draped fabric inside The Genesis', 0),
-    ('experiences', 'kayak-clear', 'Crystal-clear kayak', 'A crystal-clear kayak on calm water', 0),
-    ('resort', 'dusk-pool', 'The pool at dusk', 'The pool beside the main building at dusk', 0),
-    ('experiences', 'boat-longinus', 'M/V St. Longinus', 'The resort’s boat St. Longinus in clear water', 1),
-    ('stays', 'tent', 'Tent stay', 'A tent on the lawn under coconut palms', 0),
-    ('stays', 'tents-bamboo', 'Campsite', 'Tents beside a bamboo platform under palms', 0),
-    ('experiences', 'kayak-sign', 'Crystal-clear kayak', 'A clear kayak beside the resort sign', 0),
-    ('dining', 'deck-table', 'Dining on the deck', 'A wicker dining table on the timber deck', 0),
-    ('experiences', 'kayak-float', 'Crystal-clear kayak', 'A swimmer beside a transparent kayak, seen from above', 0),
-    ('resort', 'main-building', 'The main building', 'The white main building with its gabled roof', 0),
-    ('stays', 'room-deluxe', 'Deluxe Room', 'A queen bed against a red feature wall', 0),
-    ('gatherings', 'genesis-front', 'The Genesis from the lawn', 'Cocktail tables on the lawn in front of The Genesis', 0),
-    ('resort', 'e-beach-tower', 'Sun loungers on the beach', 'Wicker loungers in the shade, the lifeguard tower and mountains beyond', 1),
-    ('resort', 'beach-palms', 'Palms along the shore', 'Palms shading the sand in front of the resort', 1),
-    ('stays', 'poolsuite-loft', 'Pool Suite Room, loft view', 'Looking down from the loft over the kitchen', 0),
-    ('experiences', 'boat-omon', 'M/V Omon Express', 'The resort’s big outrigger boat in shallow water', 0),
-    ('dining', 'skylight-2', 'Skylight Dining', 'The Skylight Dining pavilion beside the main building', 0),
-    ('stays', 'room-suiteloft', 'Suite Loft Room', 'A bed beneath a staircase to the loft', 0),
-    ('resort', 'tower-blue', 'The lifeguard tower', 'The white lifeguard tower against a deep blue sky', 0),
-    ('gatherings', 'genesis-tables', 'Round-table setup', 'Round tables with gold chairs inside The Genesis', 0),
-    ('stays', 'kubo-loftbeds', 'Luxury Kubo, loft beds', 'Four single beds in the timber loft', 0),
-    ('experiences', 'e-tt-w', 'Table tennis', 'Paddles and a ball on the table tennis table under the palms', 0),
-    ('experiences', 'vball', 'Beach volleyball', 'A volleyball on the sand', 0),
-    ('experiences', 'darts2', 'Darts', 'Friends pulling darts from a dartboard', 0),
-    ('resort', 'lobby2', 'The lobby lounge', 'A lounge with a leaf-pattern mural', 1),
-    ('stays', 'poolsuite-family', 'Pool Suite Room, upstairs', 'Double beds on the upper level', 0),
-    ('experiences', 'ecart', 'E-cart land tour', 'An electric cart on the seawall', 0),
-    ('stays', 'room-superior', 'Superior Room', 'Two beds against a yellow wall', 0),
-    ('resort', 'reception', 'Reception', 'The reception desk below a double-height staircase', 0),
-    ('gatherings', 'genesis-dinner', 'Evening setup', 'Tables set with linen and flowers', 0),
-    ('stays', 'room-execloft', 'Executive Loft Room', 'Two beds below a staircase to the loft', 0),
-    ('experiences', 'boat-rogelius', 'M/V Rogelius', 'A white outrigger boat with a canopy', 0),
-    ('stays', 'kubo-living', 'Luxury Kubo lounge', 'A white sofa beside glass doors', 0),
-    ('resort', 'tower-storm', 'Before the rain', 'The lifeguard tower under dark storm clouds', 0),
-    ('stays', 'poolsuite-bath', 'Pool Suite bathroom', 'A bathroom with a glass shower', 0),
-    ('experiences', 'bikes-crop', 'Mountain bikes', 'Two mountain bikes on the rocky shore', 0),
-    ('stays', 'room-single', 'Single Standard Room', 'A single bed beside a teal wall', 0),
-    ('experiences', 'ungab-arch', 'Ungab Rock Formation (island hopping, not resort grounds)', 'A rock arch above a cove', 0),
-    ('experiences', 'sandbar-aerial', 'Palad Sandbar (island hopping, not resort grounds)', 'A white sandbar in turquoise water', 1),
-    ('stays', 'room-loftsingles', 'Single loft beds', 'Three single beds on a loft level', 0),
-    ('resort', 'palms-sky', 'Coconut palms', 'Coconut palms against a blue sky', 0),
-    ('experiences', 'maniwaya-rocks', 'Maniwaya shoreline (not resort grounds)', 'Rocks and the Maniwaya sign above the shore', 0),
-    ('stays', 'poolsuite-bar', 'Pool Suite breakfast bar', 'A timber breakfast bar with stools', 0),
+G = [  # (category, id, caption, alt), in viewing order
+    ('resort', 'e-dusk', 'The resort at dusk', 'The resort sign and lit main building at dusk'),
+    ('resort', 'e-sign', 'Welcome to Islas Moriones', 'The wooden resort sign in the garden'),
+    ('resort', 'e-resort-pool', 'The pool and main building', 'The white main building beside the palm-lined pool'),
+    ('resort', 'e-pool-night2', 'The pool at night', 'The white main building and lit pool after dark'),
+    ('resort', 'main-building', 'The main building', 'The white main building with its gabled roof'),
+    ('resort', 'reception', 'Reception', 'The reception desk below a double-height staircase'),
+    ('resort', 'lobby2', 'The lobby lounge', 'A lounge with a leaf-pattern mural'),
+    ('resort', 'e-resort-path', 'The garden path', 'A path beside the palm-lined pool'),
+    ('resort', 'e-pool-bikes', 'Poolside', 'Bicycles by the sunlit pool deck'),
+    ('resort', 'e-loungers', 'Pool loungers', 'White sun loungers beside the pool'),
+    ('resort', 'n-coconut', 'Lazy days by the pool', 'A fresh coconut and an open book on the pool deck'),
+    ('resort', 'dusk-pool', 'The pool at dusk', 'The pool beside the main building at dusk'),
+    ('resort', 'e-pool-night', 'The pool at night', 'The lit pool beneath the main building after dark'),
+    ('resort', 'e-pool-pergola', 'Evening by the pool', 'The pool seen through pergola beams at night'),
+    ('resort', 'palms-sky', 'Coconut palms', 'Coconut palms against a blue sky'),
+    ('resort', 'n-palm-lawn', 'The palm garden', 'Tall coconut palms over a green lawn under a blue sky'),
+    ('resort', 'beach-palms', 'Palms along the shore', 'Palms shading the sand in front of the resort'),
+    ('resort', 'e-beach-tower', 'Sun loungers on the beach', 'Wicker loungers in the shade, the lifeguard tower and mountains beyond'),
+    ('resort', 'e-sunglasses', 'Beach days', 'Sunglasses on a lounger, the lifeguard tower beyond'),
+    ('resort', 'tower-blue', 'The lifeguard tower', 'The white lifeguard tower against a deep blue sky'),
+    ('resort', 'tower-wide', 'The beachfront', 'The lifeguard tower and resort flags on the beach'),
+    ('resort', 'n-beach-sports', 'Jet skis on the beach', 'Jet skis on the sand, the lifeguard tower and flags along the shore'),
+    ('resort', 'e-vball-wide', 'The beachfront', 'The volleyball net on the beach beneath shady trees'),
+    ('resort', 'tower-storm', 'Before the rain', 'The lifeguard tower under dark storm clouds'),
+    ('resort', 'e-dog', 'Pet-friendly stays', 'A bulldog on a leash on the sandy resort path'),
+    ('stays', 'poolsuite-room', 'Pool Suite Room', 'Queen bed, sofa and kitchen in the Pool Suite Room'),
+    ('stays', 'poolsuite-loft', 'Pool Suite Room, loft view', 'Looking down from the loft over the kitchen'),
+    ('stays', 'poolsuite-family', 'Pool Suite Room, upstairs', 'Double beds on the upper level'),
+    ('stays', 'poolsuite-bar', 'Pool Suite breakfast bar', 'A timber breakfast bar with stools'),
+    ('stays', 'poolsuite-bath', 'Pool Suite bathroom', 'A bathroom with a glass shower'),
+    ('stays', 'e-kubo-cart', 'The Luxury Kubo', 'The thatched Kubo and a wooden cart under the palms'),
+    ('stays', 'e-kubo-palms', 'The Luxury Kubo', 'The thatched Kubo with umbrella tables on the lawn'),
+    ('stays', 'kubo-living', 'Luxury Kubo lounge', 'A white sofa beside glass doors'),
+    ('stays', 'kubo-loftbeds', 'Luxury Kubo, loft beds', 'Four single beds in the timber loft'),
+    ('stays', 'e-room-blue', 'Single Standard Room', 'A single bed against a blue accent wall'),
+    ('stays', 'room-single', 'Single Standard Room', 'A single bed beside a teal wall'),
+    ('stays', 'e-room-red', 'Deluxe Room', 'A queen bed against a red feature wall'),
+    ('stays', 'room-deluxe', 'Deluxe Room', 'A queen bed against a red feature wall'),
+    ('stays', 'e-room-yellow', 'Superior Room', 'Two beds against a yellow-green wall'),
+    ('stays', 'room-superior', 'Superior Room', 'Two beds against a yellow wall'),
+    ('stays', 'e-room-three', 'Suite Room', 'Three beds under bright windows'),
+    ('stays', 'e-room-loft', 'Executive Loft Room', 'Two twin beds below the loft staircase'),
+    ('stays', 'room-execloft', 'Executive Loft Room', 'Two beds below a staircase to the loft'),
+    ('stays', 'room-suiteloft', 'Suite Loft Room', 'A bed beneath a staircase to the loft'),
+    ('stays', 'room-loftsingles', 'Single loft beds', 'Three single beds on a loft level'),
+    ('stays', 'e-room-family', 'Guest room', 'A room with several beds and a grey accent wall'),
+    ('stays', 'e-room-two', 'Guest room', 'Two neatly made beds in a bright room'),
+    ('stays', 'e-room-teal', 'Guest room', 'A bed with a trundle against a teal wall'),
+    ('stays', 'e-campsite', 'The campsite', 'Dome tents and picnic tables beneath tall coconut palms'),
+    ('stays', 'e-tent-teal', 'Tent stays', 'A turquoise dome tent under coconut palms'),
+    ('stays', 'e-tent-lime', 'Tent stays', 'A lime-green dome tent in the palm garden'),
+    ('stays', 'tent', 'Tent stay', 'A tent on the lawn under coconut palms'),
+    ('dining', 'skylight', 'Skylight Dining', 'Tables beneath the glass-roofed Skylight Dining pavilion'),
+    ('dining', 'skylight-2', 'Skylight Dining', 'The Skylight Dining pavilion beside the main building'),
+    ('dining', 'n-breakfast', 'Breakfast by the beach', 'A breakfast plate of garlic rice, egg, dried fish and mango'),
+    ('dining', 'n-breakfast-brand', 'Morning by the sea', 'Pancakes and toast beside an Islas Moriones table sign, the beach beyond'),
+    ('dining', 'n-boodle-p', 'Boodle fight', 'Grilled seafood, rice and fruit laid out on banana leaves'),
+    ('dining', 'n-seafood-p', 'Seafood on banana leaves', 'Crab, shrimp and grilled seafood with plantains on banana leaves'),
+    ('dining', 'n-watermelon-p', 'Watermelon by the water', 'A hand holding watermelon slices above the clear sea'),
+    ('dining', 'deck-table', 'Dining on the deck', 'A wicker dining table on the timber deck'),
+    ('dining', 'n-longtable', 'A table for the group', 'A long outdoor table laid with bowls and a tropical runner'),
+    ('dining', 'e-beach-dining', 'Dinner on the beach', 'Long tables on the sand under string lights at dusk'),
+    ('gatherings', 'genesis-hall', 'The Genesis Events Place', 'Long tables beneath draped fabric inside The Genesis'),
+    ('gatherings', 'n-hall-round', 'A round-table reception', 'Round tables with gold chargers and flowers inside The Genesis'),
+    ('gatherings', 'genesis-tables', 'Round-table setup', 'Round tables with gold chairs inside The Genesis'),
+    ('gatherings', 'n-hall-floral', 'Flowers on the long tables', 'Bright flower arrangements down a long table inside The Genesis'),
+    ('gatherings', 'genesis-dinner', 'Evening setup', 'Tables set with linen and flowers'),
+    ('gatherings', 'genesis-front', 'The Genesis from the lawn', 'Cocktail tables on the lawn in front of The Genesis'),
+    ('gatherings', 'e-pavilion', 'The Genesis lawn', 'Cocktail tables on the lawn in front of The Genesis'),
+    ('gatherings', 'e-wedding-aisle', 'Beach wedding', 'A lantern-lined wedding aisle on the beach at sunset'),
+    ('gatherings', 'n-celebrate-w', 'Celebrations under the palms', 'A long garden table with pink runners and roses beneath string lights at dusk'),
+    ('gatherings', 'n-cake', 'A birthday table', 'A floral birthday cake among pink roses and candles'),
+    ('gatherings', 'e-fire', 'Fire show', 'A fire dancer performing for guests at night'),
+    ('experiences', 'e-kayak', 'Crystal-clear kayak', 'A guest paddling a transparent kayak'),
+    ('experiences', 'kayak-float', 'Crystal-clear kayak', 'A swimmer beside a transparent kayak, seen from above'),
+    ('experiences', 'kayak-clear', 'Crystal-clear kayak', 'A crystal-clear kayak on calm water'),
+    ('experiences', 'kayak-sign', 'Crystal-clear kayak', 'A clear kayak beside the resort sign'),
+    ('experiences', 'n-dive-shop', 'Seagrass 200 Dive Centre', 'The glass shopfront of the dive centre under a white pergola'),
+    ('experiences', 'n-dive-gear', 'Ready to dive', 'Scuba tanks, vests and fins on the dive centre terrace'),
+    ('experiences', 'e-tt-w', 'Table tennis', 'Paddles and a ball on the table tennis table under the palms'),
+    ('experiences', 'vball', 'Beach volleyball', 'A volleyball on the sand'),
+    ('experiences', 'e-vball', 'Beach volleyball', 'The volleyball net by the lifeguard tower'),
+    ('experiences', 'darts2', 'Darts', 'Friends pulling darts from a dartboard'),
+    ('experiences', 'bikes-crop', 'Mountain bikes', 'Two mountain bikes on the rocky shore'),
+    ('experiences', 'ecart', 'E-cart land tour', 'An electric cart on the seawall'),
+    ('experiences', 'e-ecart-roses', 'Island tour by e-cart', 'The electric cart decorated with yellow flowers'),
+    ('experiences', 'n-picnic', 'A picnic by the sea', 'A picnic blanket on the rocky shore above a clear cove'),
+    ('experiences', 'boat-longinus', 'M/V St. Longinus', 'The resort’s boat St. Longinus in clear water'),
+    ('experiences', 'boat-omon', 'M/V Omon Express', 'The resort’s big outrigger boat in shallow water'),
+    ('experiences', 'boat-rogelius', 'M/V Rogelius', 'A white outrigger boat with a canopy'),
+    ('experiences', 'e-boat-beach', 'Outrigger boat', 'An outrigger boat pulled up on the sand by the resort flags'),
+    ('experiences', 'e-boat-water', 'Boat by the shore', 'A small boat moored off the beach'),
+    ('experiences', 'e-sanddollars', 'Sand dollars', 'Five white sand dollars held over turquoise water'),
+    ('experiences', 'e-seastars', 'Sea stars', 'Orange and blue sea stars on the reef'),
+    ('experiences', 'e-turtle', 'Sea turtle', 'A sea turtle on the sand at night'),
+    ('experiences', 'e-octopus', 'Blue-ringed octopus', 'A blue-ringed octopus among seagrass'),
+    ('experiences', 'e-warrior-w', 'The Morion warrior beneath the reef', 'A Morion warrior bust among coral on the seabed'),
+    ('experiences', 'e-sand-morion', 'A Morion in the sand', 'A sandcastle carved as a Morion warrior by the volleyball net'),
+    ('experiences', 'e-palad', 'Palad Sandbar (island hopping, not resort grounds)', 'A long white sandbar in turquoise water'),
+    ('experiences', 'e-sandbar-people', 'Palad Sandbar from the air (island hopping)', 'Visitors walking along the sandbar'),
+    ('experiences', 'sandbar-aerial', 'Palad Sandbar (island hopping, not resort grounds)', 'A white sandbar in turquoise water'),
+    ('experiences', 'e-sandbar-aerial', 'Sandbar and boats (island hopping)', 'Outrigger boats moored along a sandbar, from above'),
+    ('experiences', 'n-sandbar', 'A sandbar at low tide (island hopping, not resort grounds)', 'A narrow sandbar stretching into turquoise water'),
+    ('experiences', 'e-ungab', 'Ungab Rock Formation (island hopping)', 'A natural rock arch above calm water'),
+    ('experiences', 'ungab-arch', 'Ungab Rock Formation (island hopping, not resort grounds)', 'A rock arch above a cove'),
+    ('experiences', 'n-rock-arch', 'Through the rock arch (island hopping, not resort grounds)', 'Turquoise water seen through a natural rock arch'),
+    ('experiences', 'e-cliff-tree', 'Century Cliff Tree (island hopping)', 'A lone tree on a grassy clifftop'),
+    ('experiences', 'e-statues', 'Moriones Statue (island tour)', 'Morion warrior statues beside stone columns'),
+    ('experiences', 'maniwaya-rocks', 'Maniwaya shoreline (not resort grounds)', 'Rocks and the Maniwaya sign above the shore'),
+    ('experiences', 'n-rocky-coast', 'Century Tree on the rocky coast (not resort grounds)', 'The Century Tree on a rocky clifftop above clear water'),
+    ('resort', 'e-sunset-coast', 'Sunset on the coast', 'A golden sunset over the rocky coastline'),
+    ('experiences', 'e-sunset-rocks', 'Sunset over the coastal rocks', 'The sun setting behind a rock formation at sea'),
+    ('resort', 'n-sunset-sea', 'Sunset over the sea', 'The sun setting on the horizon beneath an orange sky'),
+    ('resort', 'n-tower-sunset-w', 'Sunset on the beach', 'The lit lifeguard tower against a pink and orange sunset'),
 ]
 FILTERS = [('all', 'All'), ('resort', 'The Resort'), ('stays', 'Stays'), ('dining', 'Dining'), ('experiences', 'Experiences'), ('gatherings', 'Gatherings')]
 fbtn = '\n'.join(f'          <button type="button" class="chip{" is-active" if k == "all" else ""}" data-gallery-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}">{t}</button>' for k, t in FILTERS)
 gitems = []
-for cat, jid, cap, alt, wide in G:
-    gs = "(min-width: 900px) 24vw, (min-width: 600px) 32vw, 46vw"
+for cat, jid, cap, alt in G:
+    gs = "(min-width: 900px) 30vw, (min-width: 600px) 40vw, 60vw"
     if jid.endswith('-old'):
         base = jid[:-4]; widths, w, h = OLD[base]; src = f'assets/img/{base}-{widths[-1]}.jpg'; img = old(base, alt, gs)
     else:
         src, w, h = full(jid); img = pic(jid, alt, gs)
-    gitems.append(f'          <li data-cat="{cat}" class="g{" g--wide" if wide else ""}"><button type="button" data-full="{src}" data-w="{w}" data-h="{h}" data-caption="{html.escape(cap, quote=True)}" aria-label="Open photo: {html.escape(cap, quote=True)}">{img}</button></li>')
+    tw, th = SIZES[jid][-1] if jid in SIZES else OLD[jid][1:]
+    gitems.append(f'          <li data-cat="{cat}" class="g" style="--ar: {tw / th:.4f}"><button type="button" data-full="{src}" data-w="{w}" data-h="{h}" data-caption="{html.escape(cap, quote=True)}" aria-label="Open photo: {html.escape(cap, quote=True)}">{img}</button></li>')
 gallery = intro('Gallery', 'Explore Islas Moriones', 'A closer look at the places, spaces, and experiences that make up a stay on Maniwaya.') + f'''
     <section class="section section--tight" aria-label="Photo gallery">
       <div class="wrap">
@@ -1185,7 +1263,7 @@ here = intro('Getting Here', 'Your journey to Maniwaya', 'Islas Moriones Beach R
     <section class="section section--sandbg6" aria-labelledby="where-title">
       <div class="wrap">
         <div class="feature">
-          <figure class="feature__media feature__media--wide" data-reveal>{pic('sunset-boat-beach', 'An outrigger boat pulled up on the beach beneath an orange sunset over the water', '(min-width: 900px) 56vw, 92vw', '20% 75%')}</figure>
+          <figure class="feature__media feature__media--wide" data-reveal>{pic('n-rocky-coast', 'The Century Tree rooted on the edge of a rocky limestone cliff, a sea cave and boulders below and clear turquoise water along the shore', '(min-width: 900px) 56vw, 92vw', '55% 50%')}</figure>
           <div class="feature__text" data-reveal>
             <p class="eyebrow">Where to find us</p>
             <h2 class="h-section" id="where-title">On the west coast of Maniwaya</h2>
@@ -1234,7 +1312,7 @@ here = intro('Getting Here', 'Your journey to Maniwaya', 'Islas Moriones Beach R
             <figure class="card__media">VANIMG</figure>
             <h3 class="h-card">Van arrangements for groups</h3>
             <p>Round trips from Manila to General Luna and back in the resort’s two Foton high-roof vans, each with comfortable seating for 14, with the driver, fuel, tolls and parking included.</p>
-            <a class="text-link" href="contact.html">Ask about the van <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="ask-van.html">Ask about the van <span aria-hidden="true">→</span></a>
           </article>
         </div>
       </div>
@@ -1312,8 +1390,92 @@ page('contact.html', 'contact.html', 'Contact | Islas Moriones Beach Resort',
      'Check availability at Islas Moriones Beach Resort, or message the resort on Facebook, WhatsApp or email about tent stays, dining, experiences and group plans.',
      contact)
 
+# =====================================================================================  TOPIC ENQUIRY PAGES
+# Each "Ask about…" button opens a page with the topic's key details and a short form.
+# The form writes the guest's answers into a WhatsApp message or an email (no server needed).
+def field(kind, name, label, opts=None, req=False, ph=''):
+    r = ' required' if req else ''
+    fid = 'f-' + name
+    if kind == 'select':
+        o = ''.join(f'<option value="{html.escape(v)}">{html.escape(v)}</option>' for v in opts)
+        ctl = f'<select id="{fid}" name="{name}" data-label="{label}"{r}><option value="">Choose one</option>{o}</select>'
+    elif kind == 'textarea':
+        ctl = f'<textarea id="{fid}" name="{name}" rows="4" data-label="{label}" placeholder="{ph}"{r}></textarea>'
+    else:
+        extra = ' min="1" inputmode="numeric"' if kind == 'number' else ''
+        ctl = f'<input id="{fid}" name="{name}" type="{kind}" data-label="{label}"{extra}{f" placeholder={chr(34)}{ph}{chr(34)}" if ph else ""}{r}>'
+    return f'<div class="ask-field{" ask-field--full" if kind in ("textarea", "select") or name == "name" else ""}"><label for="{fid}">{label}</label>{ctl}</div>'
+
+ASK = [  # file, nav parent, eyebrow, h1, lead, photo, alt, focus, facts, topic phrase, fields
+    ('ask-diving.html', 'activities.html', 'Scuba diving', 'Ask about diving',
+     'Plan a dive with Seagrass 200 Dive Centre during your stay. Read the essentials, then send the team your dates and experience so they can reply with the options available.',
+     'n-dive-shop', 'The glass shopfront of Seagrass 200 Dive Centre under a white pergola, dive gear on the terrace', '50% 60%',
+     [('Where', 'Seagrass 200 Dive Centre, a scuba diving dive shop at the resort'), ('Arranging', 'Dives and arrangements are confirmed with the team'), ('Charges', 'Arranged separately from your stay; additional charges apply')],
+     'scuba diving with Seagrass 200 Dive Centre',
+     [('date', 'dive_date', 'Preferred dive date'), ('number', 'divers', 'Number of divers'), ('select', 'experience', 'Diving experience', ['Certified diver', 'First dive', 'Not sure yet'])]),
+    ('ask-jet-skis.html', 'activities.html', 'Jet skis', 'Ask about jet skis',
+     'Pick up the pace on the open water off Maniwaya. Send the team your date and group size and they will let you know what is available.',
+     'n-beach-sports', 'Jet skis pulled up on the resort beach, the white lifeguard tower and flags along the shore', '50% 50%',
+     [('Where', 'On the resort beach'), ('Arranging', 'Ask the team about availability for your dates'), ('Charges', 'Arranged separately from your stay; additional charges apply')],
+     'jet skis',
+     [('date', 'ride_date', 'Preferred date'), ('number', 'riders', 'Number of riders')]),
+    ('ask-dining.html', 'dining.html', 'Dining', 'Ask about meals and dining',
+     'From breakfast at the Easter Sunday Café to a boodle fight for your group, tell the team what you have in mind and they will help you plan it.',
+     'skylight', 'Skylight Dining: tables beneath a glass-roofed pavilion framed by coconut palms', '45% 55%',
+     [('Breakfast', '7:00 – 9:00 AM: Filipino, American and continental'), ('Lunch & dinner', '11:00 AM – 8:00 PM: soups, grilled dishes, seafood and pasta'), ('Packages', 'Meal packages, boodle fight dining (also on the bamboo raft) and bonfire menu packages'), ('Good to know', 'Kitchen use, griller use and paluto can be arranged. Corkage applies to outside food and drinks')],
+     'dining',
+     [('select', 'about', 'I’m asking about', ['Meals during my stay', 'Skylight Dining', 'Meal packages', 'Boodle fight', 'Bonfire menu package', 'Kitchen, griller or paluto']), ('date', 'dine_date', 'Preferred date'), ('number', 'guests', 'Number of guests')]),
+    ('ask-tents.html', 'rooms.html', 'Tent stays', 'Ask about tent stays',
+     'Sleep under the palms on the resort’s camping grounds. Share your dates and group size and the team will reply with the setups available.',
+     'e-campsite-bamboo', 'Dome tents around bamboo picnic tables on the sunlit campsite beneath coconut palms', '50% 72%',
+     [('Tent accommodation', 'A waterproof big tent with mattress, pillows and linens'), ('Tent pitching', 'Bring your own tent and set up on the camping grounds'), ('Facilities', 'Communal toilets and showers, and a charging station'), ('Included', 'Use of the pool, bonfire, volleyball, bamboo raft and badminton')],
+     'tent stays',
+     [('select', 'stay', 'Type of stay', ['Tent accommodation', 'Bring my own tent (tent pitching)', 'Not sure yet']), ('date', 'check_in', 'Check-in date'), ('number', 'guests', 'Number of guests')]),
+    ('ask-gatherings.html', 'groups.html', 'Gatherings & events', 'Plan your gathering',
+     'Weddings, celebrations, reunions and company events at The Genesis Events Place. Share your date, guest count and occasion and the team will reply with the options available.',
+     'genesis-hall', 'The Genesis Events Place: white fabric draped from a high ceiling over long dining tables, with glass walls to the garden', '50% 60%',
+     [('Venue', 'The Genesis Events Place, for 100 to 120 guests'), ('Options', 'Air-conditioned or non-air-conditioned use'), ('Hire', 'Up to 5 hours, with exclusive use of the events area. Extra hours and setup time by arrangement'), ('Weddings', 'The Minimalist, The Romantic and The Luxury packages, each designed for 100 guests'), ('Teams', 'Packages customised around group size, activities, rooms, meals, length of stay and budget')],
+     'a gathering at Islas Moriones',
+     [('select', 'about', 'Occasion', ['Wedding', 'Birthday or celebration', 'Reunion', 'Company outing or team building', 'Seminar or meeting', 'Something else']), ('date', 'event_date', 'Preferred date'), ('number', 'guests', 'Number of guests'), ('select', 'rooms', 'Overnight rooms needed', ['Yes', 'No', 'Not sure yet'])]),
+    ('ask-van.html', 'getting-here.html', 'Van rental', 'Ask about the van',
+     'Travel to the port together in the resort’s van. Send your travel date, group size and pick-up point and the team will confirm availability.',
+     'e-vans', 'The resort’s two white Foton high-roof vans', '50% 55%',
+     [('Route', 'Round trips from Manila to General Luna Port and back'), ('Vans', 'Two Foton high-roof vans, each with comfortable seating for 14'), ('Included', 'Driver, fuel, tolls and parking')],
+     'renting the van',
+     [('date', 'travel_date', 'Travel date'), ('number', 'passengers', 'Number of passengers'), ('text', 'pickup', 'Pick-up point')]),
+]
+for fname, parent, eyebrow, h1, lead, img, alt, focus, facts, topic, fields in ASK:
+    flds = [field('text', 'name', 'Your name', req=True)] + [field(f[0], f[1], f[2], f[3] if len(f) > 3 else None) for f in fields] \
+        + [field('textarea', 'message', 'Your question', ph='Anything else the team should know')]
+    spec = ''.join(f'<div><dt>{t}</dt><dd>{d}</dd></div>' for t, d in facts)
+    body = intro(eyebrow, h1, lead, back=True) + f'''
+    <section class="section section--dune" aria-label="Details and enquiry">
+      <div class="wrap ask">
+        <div class="ask__info" data-reveal>
+          <figure class="feature__media">{pic(img, alt, '(min-width: 900px) 44vw, 92vw', focus, eager=True)}</figure>
+          <h2 class="h-section h-section--sm">Good to know</h2>
+          <dl class="spec">{spec}</dl>
+        </div>
+        <div class="contact-card ask__form" data-reveal>
+          <p class="eyebrow">Send your question</p>
+          <h2 class="h-section h-section--sm">Tell us what you need</h2>
+          <p>Fill in what you know, then choose how to send it. Your answers are written into the message for you.</p>
+          <form class="ask-form" data-ask data-topic="{topic}" data-wa="{WA}" data-mail="{MAIL}">
+            {''.join(flds)}
+            <div class="ask-actions">
+              <button class="btn btn--teal" type="submit" value="wa">Send on WhatsApp</button>
+              <button class="btn btn--line" type="submit" value="mail">Send by email</button>
+            </div>
+          </form>
+          <p class="note">Prefer Facebook? <a href="{FB}" target="_blank" rel="noopener">Message Islas Moriones Beach Resort{NEWTAB}</a>.</p>
+        </div>
+      </div>
+    </section>
+'''
+    page(fname, parent, f'{h1} | Islas Moriones Beach Resort', lead, body)
+
 # =====================================================================================  GOOD TO KNOW
-know = intro('Good to Know', 'Before you arrive', 'Answers to common questions, from location to what is included, plus the resort’s pet policy.') + f'''
+know = intro('Good to Know', 'Before you arrive', 'Answers to common questions, from location to what is included, plus the resort’s pet policy.', back=True) + f'''
     <section class="section" aria-label="Questions and pet policy">
       <div class="wrap faq-grid">
         {PETS}

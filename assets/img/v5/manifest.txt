@@ -147,6 +147,13 @@ e-bikes-p|640x960 1024x1536|Assets from Client/November 1, 2026/Enhanced Photo/1
 e-sanddollars-w|640x480 1024x768|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Five Sand Dollars Over Turquoise Water.png
 e-rock-w|800x533 1400x933|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Pitted Coastal Rock at Golden Sunset-2 (1).png
 e-rock-p|640x960 1024x1536|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Pitted Rock and Golden Sunset-1 (1).png
+tents-campsite-full|1080x1080|Initial Images/469518456_605136372186168_174922518552061940_n.jpg
+darts2-full|1400x933|Initial Images/Pexels/pexels-kevin-malik-8763232.jpg
+e-morion-bust-full|1370x1148|Assets from Client/November 1, 2026/Enhanced Photo/Morion warrior bust beneath the reef-8.png
+e-warrior-p-full|1086x1448|Assets from Client/November 1, 2026/Enhanced Photo/Morion Reef Warrior Beneath Blue Waters.png
+maniwaya-cove-full|1400x2489|IMG_1188.HEIC
+sunset-boat-beach-full|1400x661|edited-images/sunset-boat.jpg
+deck-table-full|705x940|Assets from Client/October 30, 2026/203add1d0cc6e9e797221bf8adcd6392bb06b5e0.jpg
 e-campsite-bamboo|800x533 1400x933|Assets from Client/November 1, 2026/Enhanced Photo/10PM/Sunlit bamboo campsite by the palms-1.png
 cafe-logo|480x476|Assets from Client/November 1, 2026/WhatsApp Image 2026-10-31 at 6.34.46 AM (2).jpeg
 bikes-crop|800x853 1400x1493|IMG_1159.jpg
@@ -216,3 +223,32 @@ genesis-lawn|800x1423 1200x2134|IMG_1250.heic
 genesis-front|800x1423 1200x2134|IMG_1249.heic
 skylight|800x534 1424x951|viber_image_2026-10-20_16-40-23-113.jpg
 skylight-2|800x534 1424x951|viber_image_2026-10-20_16-40-23-429.jpg
+n-beach-sports|800x600 1400x1050|Assets from Client/November 2, 2026/Enhanced Photo/02_beach_and_water_sports_full_original_ratio.jpg
+n-breakfast|640x853 1200x1600|Assets from Client/November 2, 2026/Enhanced Photo/01_beachfront_breakfast_full_original_ratio.jpg
+n-breakfast-brand|640x800 1024x1280|Assets from Client/November 2, 2026/Enhanced Photo/03_resort_breakfast_and_branding_portrait.jpg
+n-boodle-p|640x800 1024x1280|Assets from Client/November 2, 2026/Enhanced Photo/04_boodle_feast_portrait.jpg
+n-seafood-p|640x800 1024x1280|Assets from Client/November 2, 2026/Enhanced Photo/03_seafood_feast_portrait.jpg
+n-watermelon-p|640x800 1024x1280|Assets from Client/November 2, 2026/Enhanced Photo/05_watermelon_beach_portrait.jpg
+n-longtable|640x800 1024x1280|Assets from Client/November 2, 2026/Enhanced Photo/05_outdoor_dining_portrait.jpg
+n-dive-shop|800x600 1448x1086|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_55_26 PM-9.png
+n-dive-gear|800x600 1448x1086|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_55_19 PM-5.png
+n-hall-floral|640x853 1200x1600|Assets from Client/November 2, 2026/Enhanced Photo/04_event_hall_floral_tables_full_original_ratio.jpg
+n-hall-round|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/01_event_hall_landscape.jpg
+n-celebrate-w|800x600 1448x1086|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_55_12 PM-1.png
+n-celebrate-p|640x800 1122x1402|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_55_15 PM-2.png
+n-cake|800x600 1448x1086|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_55_17 PM-3.png
+n-coconut|800x800 1400x1400|Assets from Client/November 2, 2026/Enhanced Photo/WhatsApp Image 2026-11-02 at 8.47.23 AM (2).jpeg
+n-tower-sunset-w|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_16_26 PM-4.png
+n-tower-sunset-p|640x800 1122x1402|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_16_25 PM-3.png
+n-sunset-sea|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/03_sunset_landscape.jpg
+n-sandbar|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/02_sandbar_landscape.jpg
+n-rock-arch|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/02_rock_arch_landscape.jpg
+n-beach-sports-p|640x480 1200x900|Assets from Client/November 2, 2026/Enhanced Photo/02_beach_and_water_sports_full_original_ratio.jpg
+n-kayak-w|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_16_40 PM-10.png
+n-kayak-p|640x800 1122x1402|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_16_38 PM-9.png
+n-dive-shop-p|640x800 1122x1402|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_55_27 PM-10.png
+kubo-bed3|800x1067 1200x1600|IMG_2174.HEIC
+r-exec-5|800x534 1424x951|viber_image_2026-10-20_17-16-02-324.jpg
+n-rocky-coast|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/05_rocky_coast_landscape.jpg
+n-picnic|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_50_32 PM-2.png
+n-palm-lawn|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_50_38 PM-6.png

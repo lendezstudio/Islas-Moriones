@@ -258,13 +258,52 @@
 
     function matches(el) { return filter === 'all' || el.getAttribute('data-cat') === filter; }
     function visible(el) { return matches(el) && (filter !== 'all' || expanded || items.indexOf(el) < INITIAL); }
+    // Justified rows: split the visible photos into rows that each fill the full width,
+    // keeping every row close to the target height (no gaps, nothing cropped)
+    function layout() {
+      if (!grid) return;
+      var shown = items.filter(function (el) { return !el.hidden; });
+      var cs = getComputedStyle(grid), W = Math.floor(grid.getBoundingClientRect().width);
+      var H = parseFloat(cs.getPropertyValue('--row')) || 200, gap = parseFloat(cs.columnGap) || 0;
+      var ar = shown.map(function (el) { return parseFloat(el.style.getPropertyValue('--ar')) || 1.33; });
+      var n = shown.length; if (!n || !W) return;
+      var best = [0], from = [0];
+      for (var j = 1; j <= n; j++) {
+        best[j] = Infinity; var sum = 0;
+        for (var i = j - 1; i >= 0; i--) {
+          sum += ar[i];
+          var h = (W - gap * (j - i - 1)) / sum;
+          if (h < H * .45 && i < j - 1) break;
+          var c = best[i] + Math.pow((h - H) / H, 2) * (h > H ? 2 : 1);
+          if (c < best[j]) { best[j] = c; from[j] = i; }
+        }
+      }
+      var rows = [], k = n;
+      while (k > 0) { rows.unshift([from[k], k]); k = from[k]; }
+      rows.forEach(function (r) {
+        var sum = 0; for (var i = r[0]; i < r[1]; i++) sum += ar[i];
+        var h = (W - gap * (r[1] - r[0] - 1)) / sum, left = W - gap * (r[1] - r[0] - 1);
+        for (var i = r[0]; i < r[1]; i++) {
+          var w = i === r[1] - 1 ? left : Math.floor(ar[i] * h);
+          left -= w;
+          shown[i].style.width = w + 'px'; shown[i].style.height = Math.round(h) + 'px';
+        }
+      });
+      grid.classList.add('is-justified');
+    }
     function apply(animate) {
-      if (animate) filterItems(items, visible); else items.forEach(function (el) { el.hidden = !visible(el); });
+      if (animate) { filterItems(items, visible); setTimeout(layout, reduceMotion() ? 0 : 310); } else items.forEach(function (el) { el.hidden = !visible(el); });
+      layout();
       if (moreWrap) moreWrap.hidden = filter !== 'all' || expanded;
       if (moreBtn) moreBtn.setAttribute('aria-expanded', String(expanded));
     }
     if (grid) {
       apply(false);
+      // Re-measure whenever the gallery's width changes (window resize, scrollbar appearing)
+      var lastW = 0, rt;
+      var relayout = function () { if (grid.clientWidth !== lastW) { lastW = grid.clientWidth; layout(); } };
+      if ('ResizeObserver' in window) new ResizeObserver(function () { clearTimeout(rt); rt = setTimeout(relayout, 60); }).observe(grid);
+      else window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(relayout, 150); });
       buttons.forEach(function (btn) {
         btn.addEventListener('click', function () {
           filter = btn.getAttribute('data-gallery-filter');
@@ -601,11 +640,54 @@
     });
   }
 
+  /* Back link: return to the previous page on this site, otherwise go home */
+  function initBack() {
+    $$('[data-back]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var ref = doc.referrer;
+        var same = false;
+        try { same = !!ref && new URL(ref).origin === location.origin && ref !== location.href; } catch (err) {}
+        if (same && history.length > 1) { e.preventDefault(); history.back(); }
+      });
+    });
+  }
+
+  /* Topic enquiry forms: write the answers into a WhatsApp message or an email */
+  function initAsk() {
+    $$('form[data-ask]').forEach(function (form) {
+      var about = new URLSearchParams(location.search).get('about');
+      var sel = $('select[name=about]', form);
+      if (about && sel) Array.prototype.forEach.call(sel.options, function (o) { if (o.value === about) sel.value = about; });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var via = e.submitter ? e.submitter.value : 'wa';
+        var lines = ['Hi Islas Moriones! I’d like to ask about ' + form.getAttribute('data-topic') + '.'];
+        $$('[data-label]', form).forEach(function (f) {
+          var v = (f.value || '').trim(); if (!v) return;
+          if (f.type === 'date') { var d = new Date(v + 'T00:00'); if (!isNaN(d)) v = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); }
+          lines.push(f.name === 'message' ? '\n' + v : f.getAttribute('data-label') + ': ' + v);
+        });
+        var text = lines.join('\n');
+        if (via === 'mail') {
+          location.href = 'mailto:' + form.getAttribute('data-mail') + '?subject=' + encodeURIComponent('Question about ' + form.getAttribute('data-topic')) + '&body=' + encodeURIComponent(text);
+        } else {
+          window.open(form.getAttribute('data-wa') + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+        }
+      });
+    });
+  }
+
+  /* On narrow screens the page menu scrolls sideways: bring the current page into view */
+  function initSubnav() {
+    var cur = $('.subnav a[aria-current="page"]'); if (!cur) return;
+    var list = cur.closest('ul'); if (list.scrollWidth > list.clientWidth) list.scrollLeft = cur.offsetLeft - 24;
+  }
+
   function initYear() { var y = $('[data-year]'); if (y) y.textContent = String(new Date().getFullYear()); }
 
   function start() {
     try { initReveals(); } catch (err) { root.classList.remove('js-anim'); }
-    [initHeader, initCarousel, initTabs, initGallery, initFaq, initMobileCta, initStrip, initFilm, initSliders, initStickyOffset, initYear].forEach(safe);
+    [initHeader, initCarousel, initTabs, initGallery, initFaq, initMobileCta, initStrip, initFilm, initSliders, initStickyOffset, initYear, initBack, initAsk, initSubnav].forEach(safe);
   }
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', start); else start();
 })();
