@@ -245,6 +245,14 @@ n-sandbar|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/02
 n-rock-arch|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/02_rock_arch_landscape.jpg
 n-beach-sports-p|640x480 1200x900|Assets from Client/November 2, 2026/Enhanced Photo/02_beach_and_water_sports_full_original_ratio.jpg
 darts-terrace-d|800x533 1050x700|Assets from Client/Dart poised before the dartboard.png
+n5-anemone-w|800x600 1400x1050|Assets from Client/November 5/Four Fish Beside a Sea Anemone-2.png
+n5-anemone-p|640x853 1086x1448|Assets from Client/November 5/Anemone with Four Reef Fish-5.png
+n5-dog-w|800x600 1400x1050|Assets from Client/November 5/Bulldog by the ocean at dusk-8.png
+n5-dog-p|640x853 1086x1448|Assets from Client/November 5/Bulldog by the Evening Ocean-7.png
+n5-birds-w|800x600 1400x1050|Assets from Client/November 5/Two Birds with Prey-6.png
+n5-birds-p|640x853 1086x1448|Assets from Client/November 5/Two birds perched with prey-1.png
+n5-nest-w|640x480 1086x814|Assets from Client/November 5/Three nestlings in a woven nest-4.png
+n5-nest-p|640x853 1086x1448|Assets from Client/November 5/Three hungry nestlings in a woven nest-3.png
 n-kayak-w|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_16_40 PM-10.png
 n-kayak-p|640x800 1122x1402|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_16_38 PM-9.png
 n-dive-shop-p|640x800 1122x1402|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_55_27 PM-10.png

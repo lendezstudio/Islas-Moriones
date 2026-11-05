@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '11.6'
+V = '11.8'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -521,6 +521,7 @@ STRIP = [
     ('e-boat-water', 'By the shore', 'A small boat moored in clear water off the beach, a resort flag on the sand'),
     ('n-tower-sunset-w', 'Sunset on the beach', 'The lit lifeguard tower on the sand beside the volleyball net, the sky pink and orange at sunset'),
     ('e-bikes-w', 'Mountain bikes on Maniwaya', 'Two mountain bikes resting against a fallen palm trunk on the grass beneath tall coconut palms'),
+    ('n5-dog-w', 'A friend on the sand', 'A happy bulldog on a leash lying on the warm sand by the sea at dusk'),
     ('e-sanddollars-w', 'Shells on the shore', 'A hand holding five white sand dollars above clear turquoise water'),
 ]
 items = []
@@ -847,12 +848,13 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
             <p class="eyebrow">Beneath the water</p>
             <h2 class="h-section" id="sea-title">Meet Maniwaya’s marine life</h2>
           </div>
-          <p>Snorkel the reefs around the island and you may meet sea stars, sea turtles and reef octopus. Look, but never touch: some reef creatures, such as the blue-ringed octopus, are venomous.</p>
+          <p>Snorkel the reefs around the island and you may meet clownfish, sea stars, sea turtles and reef octopus. Look, but never touch: some reef creatures, such as the blue-ringed octopus, are venomous.</p>
         </header>
-        <div class="cards cards--3">
-{card(pic('e-seastars', 'Orange and blue sea stars resting on the reef in clear shallow water', '(min-width: 900px) 30vw, 92vw', '50% 50%'), 'Sea stars', 'Orange and blue sea stars in the clear shallows. Admire them in the water and leave them where they live.')}
-{card(pic('e-turtle', 'A sea turtle resting on the sand at night', '(min-width: 900px) 30vw, 92vw', '45% 62%'), 'Sea turtles', 'If you are lucky enough to see one, give it space and keep lights low.')}
-{card(pic('e-octopus', 'A blue-ringed octopus on the sand among seagrass', '(min-width: 900px) 30vw, 92vw', '40% 60%'), 'Blue-ringed octopus', 'Beautiful and venomous. Admire it from a distance and never pick it up.')}
+        <div class="cards cards--4">
+{card(pic('n5-anemone-w', 'Black, white and yellow clownfish sheltering among the long tentacles of a sea anemone on the reef', '(min-width: 900px) 22vw, (min-width: 600px) 46vw, 92vw'), 'Clownfish', 'Small clownfish shelter among the tentacles of a sea anemone. Watch them from a distance and leave the anemone untouched.')}
+{card(pic('e-seastars', 'Orange and blue sea stars resting on the reef in clear shallow water', '(min-width: 900px) 22vw, (min-width: 600px) 46vw, 92vw', '50% 50%'), 'Sea stars', 'Orange and blue sea stars in the clear shallows. Admire them in the water and leave them where they live.')}
+{card(pic('e-turtle', 'A sea turtle resting on the sand at night', '(min-width: 900px) 22vw, (min-width: 600px) 46vw, 92vw', '45% 62%'), 'Sea turtles', 'If you are lucky enough to see one, give it space and keep lights low.')}
+{card(pic('e-octopus', 'A blue-ringed octopus on the sand among seagrass', '(min-width: 900px) 22vw, (min-width: 600px) 46vw, 92vw', '40% 60%'), 'Blue-ringed octopus', 'Beautiful and venomous. Admire it from a distance and never pick it up.')}
         </div>
         <div class="feature feature--flip shells" id="shells">
           <figure class="feature__media" data-reveal>{pic('e-sanddollars', 'A hand holding five white sand dollars above clear turquoise water and rippled sand', '(min-width: 900px) 46vw, 92vw', '50% 64%')}</figure>
@@ -860,6 +862,27 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
             <p class="eyebrow">On the shore</p>
             <h3 class="h-section h-section--sm">Pick up shells on Maniwaya</h3>
             <p>Walk the clear shallows and white sand at low tide and you can pick up shells and sand dollars along Maniwaya’s shore. Keep only empty, sun-bleached ones and leave anything still living in the water.</p>
+          </div>
+        </div>
+        <div class="shells" id="birds">
+          <header class="section-head section-head--split">
+            <div>
+              <p class="eyebrow">In the trees</p>
+              <h3 class="h-section h-section--sm">Birds among the leaves</h3>
+            </div>
+            <p>Sea life is not the only wildlife on Maniwaya. Look up into the trees and you may spot songbirds bringing food to their young. Watch quietly from a distance and leave nests undisturbed.</p>
+          </header>
+          <div class="bird-photos" data-reveal>
+            <figure class="feature__media">{pic('n5-birds-w', 'Two yellow-vented songbirds perched on a weathered branch among green leaves, one with an insect in its beak', '(min-width: 600px) 46vw, 46vw')}</figure>
+            <figure class="feature__media">{pic('n5-nest-w', 'Three nestlings with bright red open beaks in a woven grass nest among green leaves', '(min-width: 600px) 46vw, 46vw')}</figure>
+          </div>
+        </div>
+        <div class="friend" id="island-friend" data-reveal>
+          <figure class="feature__media friend__media">{pic('n5-dog-p', 'A happy bulldog on a leash lying on the warm sand by the sea at dusk', '(min-width: 800px) 40vw, 92vw', '50% 75%')}</figure>
+          <div class="friend__text">
+            <p class="eyebrow">Golden hour</p>
+            <h3 class="h-section">A friend on the sand</h3>
+            <p>Some of the best company on Maniwaya has four paws. As the day cools and the sky turns gold, you may find this happy soul stretched out on the warm sand, tongue out and in no hurry at all.</p>
           </div>
         </div>
         <div class="dive-photos" id="diving" data-reveal>
@@ -1139,6 +1162,7 @@ G = [  # (category, id, caption, alt), in viewing order
     ('resort', 'e-vball-wide', 'The beachfront', 'The volleyball net on the beach beneath shady trees'),
     ('resort', 'tower-storm', 'Before the rain', 'The lifeguard tower under dark storm clouds'),
     ('resort', 'e-dog', 'Pet-friendly stays', 'A bulldog on a leash on the sandy resort path'),
+    ('resort', 'n5-dog-p', 'A friend on the sand', 'A happy bulldog on a leash lying on the warm sand by the sea at dusk'),
     ('stays', 'poolsuite-room', 'Pool Suite Room', 'Queen bed, sofa and kitchen in the Pool Suite Room'),
     ('stays', 'poolsuite-loft', 'Pool Suite Room, loft view', 'Looking down from the loft over the kitchen'),
     ('stays', 'poolsuite-family', 'Pool Suite Room, upstairs', 'Double beds on the upper level'),
@@ -1210,8 +1234,11 @@ G = [  # (category, id, caption, alt), in viewing order
     ('experiences', 'e-seastars', 'Sea stars', 'Orange and blue sea stars on the reef'),
     ('experiences', 'e-turtle', 'Sea turtle', 'A sea turtle on the sand at night'),
     ('experiences', 'e-octopus', 'Blue-ringed octopus', 'A blue-ringed octopus among seagrass'),
+    ('experiences', 'n5-anemone-p', 'Clownfish', 'Clownfish among the tentacles of a sea anemone'),
     ('experiences', 'e-warrior-w', 'The Morion warrior beneath the reef', 'A Morion warrior bust among coral on the seabed'),
     ('experiences', 'e-sand-morion', 'A Morion in the sand', 'A sandcastle carved as a Morion warrior by the volleyball net'),
+    ('experiences', 'n5-birds-p', 'Birds among the leaves', 'Two songbirds perched on a weathered branch, one with an insect in its beak'),
+    ('experiences', 'n5-nest-p', 'Nestlings', 'Three nestlings with bright red open beaks in a woven nest'),
     ('experiences', 'e-palad', 'Palad Sandbar (island hopping, not resort grounds)', 'A long white sandbar in turquoise water'),
     ('experiences', 'e-sandbar-people', 'Palad Sandbar from the air (island hopping)', 'Visitors walking along the sandbar'),
     ('experiences', 'sandbar-aerial', 'Palad Sandbar (island hopping, not resort grounds)', 'A white sandbar in turquoise water'),

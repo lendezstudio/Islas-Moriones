@@ -794,3 +794,13 @@ body.menu-open .subnav { visibility: hidden; }
   .slider .slide-item { margin-inline: calc(var(--sw) * -.04); transform: scale(.84); }
 }
 @media (prefers-reduced-motion: reduce) { .slider .slide-item { transition: none; } }
+
+/* Birds: the two photos stay side by side at every width */
+.bird-photos { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(8px, 1.4vw, 14px); }
+
+/* A friend on the sand: photo set into a soft panel beside a larger heading */
+.friend { display: grid; margin-top: clamp(36px, 5vw, 64px); background: var(--linen); border: 1px solid var(--line); }
+.friend__media { aspect-ratio: 4 / 5; }
+.friend__text { align-self: center; padding: clamp(28px, 5vw, 72px); }
+.friend__text p:not(.eyebrow) { margin-bottom: 0; color: var(--muted); font-size: clamp(1.06rem, 1rem + .3vw, 1.2rem); line-height: 1.7; }
+@media (min-width: 800px) { .friend { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); } }

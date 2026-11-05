@@ -17,6 +17,7 @@ os.makedirs(OUT, exist_ok=True); os.makedirs(CLEAN, exist_ok=True)
 MARK_L = (0, 0, 1, .89)   # landscape staff photo: trim the bottom strip holding the phone mark
 MARK_P = (0, 0, 1, .92)   # portrait staff photo
 N2 = 'Assets from Client/November 2, 2026/Enhanced Photo'
+N5 = 'Assets from Client/November 5'
 
 # id, source file, crop, output widths
 JOBS = [
@@ -280,6 +281,14 @@ JOBS = [
     ('n-rock-arch', f'{N2}/02_rock_arch_landscape.jpg', None, (800, 1400)),
     ('n-beach-sports-p', f'{N2}/02_beach_and_water_sports_full_original_ratio.jpg', None, (640, 1200)),
     ('darts-terrace-d', 'Assets from Client/Dart poised before the dartboard.png', (.143, .107, .827, .791), (800, 1050)),
+    ('n5-anemone-w', f'{N5}/Four Fish Beside a Sea Anemone-2.png', None, (800, 1400)),
+    ('n5-anemone-p', f'{N5}/Anemone with Four Reef Fish-5.png', None, (640, 1086)),
+    ('n5-dog-w', f'{N5}/Bulldog by the ocean at dusk-8.png', None, (800, 1400)),
+    ('n5-dog-p', f'{N5}/Bulldog by the Evening Ocean-7.png', None, (640, 1086)),
+    ('n5-birds-w', f'{N5}/Two Birds with Prey-6.png', None, (800, 1400)),
+    ('n5-birds-p', f'{N5}/Two birds perched with prey-1.png', None, (640, 1086)),
+    ('n5-nest-w', f'{N5}/Three nestlings in a woven nest-4.png', None, (640, 1086)),
+    ('n5-nest-p', f'{N5}/Three hungry nestlings in a woven nest-3.png', None, (640, 1086)),
     ('n-kayak-w', f'{N2}/ChatGPT Image Nov 2, 2026, 01_16_40 PM-10.png', None, (800, 1400)),
     ('n-kayak-p', f'{N2}/ChatGPT Image Nov 2, 2026, 01_16_38 PM-9.png', None, (640, 1122)),
     ('n-dive-shop-p', f'{N2}/ChatGPT Image Nov 2, 2026, 01_55_27 PM-10.png', None, (640, 1122)),
