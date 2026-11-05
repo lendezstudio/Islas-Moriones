@@ -244,7 +244,7 @@ n-sunset-sea|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo
 n-sandbar|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/02_sandbar_landscape.jpg
 n-rock-arch|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/02_rock_arch_landscape.jpg
 n-beach-sports-p|640x480 1200x900|Assets from Client/November 2, 2026/Enhanced Photo/02_beach_and_water_sports_full_original_ratio.jpg
-darts-terrace|800x533 1400x933|Assets from Client/Dart poised before the dartboard.png
+darts-terrace-c|800x533 1248x832|Assets from Client/Dart poised before the dartboard.png
 n-kayak-w|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_16_40 PM-10.png
 n-kayak-p|640x800 1122x1402|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_16_38 PM-9.png
 n-dive-shop-p|640x800 1122x1402|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_55_27 PM-10.png
