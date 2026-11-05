@@ -279,6 +279,7 @@ JOBS = [
     ('n-sandbar', f'{N2}/02_sandbar_landscape.jpg', None, (800, 1400)),
     ('n-rock-arch', f'{N2}/02_rock_arch_landscape.jpg', None, (800, 1400)),
     ('n-beach-sports-p', f'{N2}/02_beach_and_water_sports_full_original_ratio.jpg', None, (640, 1200)),
+    ('darts-terrace', 'Assets from Client/Dart poised before the dartboard.png', None, (800, 1400)),
     ('n-kayak-w', f'{N2}/ChatGPT Image Nov 2, 2026, 01_16_40 PM-10.png', None, (800, 1400)),
     ('n-kayak-p', f'{N2}/ChatGPT Image Nov 2, 2026, 01_16_38 PM-9.png', None, (640, 1122)),
     ('n-dive-shop-p', f'{N2}/ChatGPT Image Nov 2, 2026, 01_55_27 PM-10.png', None, (640, 1122)),

@@ -277,7 +277,7 @@ INCLUDED = [  # (photo id, alt, title, caption) all from the resort's inclusion 
     ('old:bamboo-raft', 'The covered bamboo raft with a long table on turquoise water', 'Bamboo raft', 'Float off the shore on the resort’s bamboo raft.'),
     ('e-fire', 'A fire dancer spinning flames on the sand at night while guests watch from long tables', 'Fire show', 'Evenings by the fire on the sand.'),
     ('e-tt-w', 'Two table-tennis paddles and a ball on a blue table by the net, palms and the beach behind', 'Ping-pong', 'Table tennis in the shade of the palms.'),
-    ('darts2-full', 'Two friends pulling darts from a dartboard on the wall', 'Darts', 'A dartboard for friendly games.'),
+    ('darts-terrace', 'A guest in a grey T-shirt taking aim at a dartboard on a wooden stand on the covered terrace', 'Darts', 'A dartboard for friendly games.'),
     ('badminton', 'Two badminton rackets and shuttlecocks resting on grass', 'Badminton', 'Rackets for a game on the lawn.'),
     ('e-vball', 'The volleyball net on the white-sand beach beside the lifeguard tower, an outrigger boat in the water beyond', 'Beach volleyball', 'A net on the sand, a few steps from the water.'),
 ]
@@ -1196,7 +1196,7 @@ G = [  # (category, id, caption, alt), in viewing order
     ('experiences', 'e-tt-w', 'Table tennis', 'Paddles and a ball on the table tennis table under the palms'),
     ('experiences', 'vball', 'Beach volleyball', 'A volleyball on the sand'),
     ('experiences', 'e-vball', 'Beach volleyball', 'The volleyball net by the lifeguard tower'),
-    ('experiences', 'darts2', 'Darts', 'Friends pulling darts from a dartboard'),
+    ('experiences', 'darts-terrace', 'Darts', 'A guest in a grey T-shirt taking aim at a dartboard on a wooden stand on the covered terrace'),
     ('experiences', 'bikes-crop', 'Mountain bikes', 'Two mountain bikes on the rocky shore'),
     ('experiences', 'ecart', 'E-cart land tour', 'An electric cart on the seawall'),
     ('experiences', 'e-ecart-roses', 'Island tour by e-cart', 'The electric cart decorated with yellow flowers'),
