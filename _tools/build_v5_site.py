@@ -74,6 +74,7 @@ FOCUS = {  # subject positions for photos whose subject sits off-centre
     'n-coconut': '58% 20%', 'n-tower-sunset-w': '62% 55%', 'n-tower-sunset-p': '50% 55%', 'n-beach-sports': '50% 50%', 'n-beach-sports-p': '8% 50%', 'n-kayak-w': '45% 60%', 'n-kayak-p': '50% 60%', 'n-dive-shop-p': '50% 60%',
     'n-boodle-p': '50% 50%', 'n-celebrate-w': '50% 70%', 'n-celebrate-p': '50% 75%', 'n-cake': '50% 55%', 'n-dive-shop': '50% 60%', 'n-dive-gear': '50% 65%', 'n-hall-floral': '50% 70%',
     'e-tt-w': '50% 75%', 'badminton': '50% 55%', 'e-cliff-tree': '50% 45%', 'bonfire-smores': '42% 50%', 'e-loungers': '50% 60%', 'old:bamboo-raft': '50% 45%', 'e-boat-water': '50% 62%', 'poolsuite-bed': '50% 60%', 'e-sandbar-people': '50% 55%', 'e-vball': '45% 55%', 'darts2-full': '50% 50%',
+    'n7-clown': '50% 55%',
     'genesis-lawn': '50% 75%', 'palms-sky': '50% 40%', 'maniwaya-rocks': '50% 70%', 'kubo-exterior': '50% 50%',
 }
 
@@ -299,7 +300,7 @@ CLOSER = [  # resort photographs, no overlaid text
     ('e-cliff-tree', 'Century Cliff Tree', 'A lone wind-shaped tree on a grassy clifftop above the blue sea'),
     ('e-pool-night2', 'The pool at night', 'The white main building and its lit pool after dark, palms in the courtyard'),
     ('e-sandbar-people', 'Sandbar from above', 'Aerial view of visitors walking along a white sandbar in turquoise water, boats moored off its tip'),
-    ('n7-clown-w', 'Clownfish in the anemone', 'A red and black clownfish nestled among the golden tentacles of a sea anemone, brain coral and bright blue water behind'),
+    ('n7-clown', 'Clownfish in the anemone', 'A red and black clownfish nestled among the golden tentacles of a sea anemone, brain coral and bright blue water behind'),
     ('e-pool-bikes', 'The pool and palms', 'The sunlit pool deck with bicycles beside the white resort buildings and palms'),
     ('e-sunglasses', 'Beach days', 'The white lifeguard tower and volleyball net on the sand, outrigger boats in the calm blue sea beyond'),
     ('e-kayak-lake', 'Crystal-clear kayak', 'A guest in a sun hat paddling a transparent kayak, mountains on the horizon'),

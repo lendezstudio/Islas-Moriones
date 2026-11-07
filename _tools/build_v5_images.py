@@ -291,7 +291,6 @@ JOBS = [
     ('n5-nest-w', f'{N5}/Three nestlings in a woven nest-4.png', None, (640, 1086)),
     ('n5-nest-p', f'{N5}/Three hungry nestlings in a woven nest-3.png', None, (640, 1086)),
     ('n7-banana-c', 'edited-images/v5/n7-beach-clean.png', (95/1672, 12/941, 1185/1672, 1), (640, 1090)),
-    ('n7-clown-w', f'{N7}/WhatsApp Image 2026-11-07 at 10.55.28 AM.jpeg', (46/1600, 381/1399, 1573/1600, 1), (800, 1400)),
     ('n7-clown', f'{N7}/WhatsApp Image 2026-11-07 at 10.55.28 AM.jpeg', None, (800, 1400)),
     ('n7-chow-p', f'{N7}/Fluffy Chow Chow by the Sea-2.png', None, (640, 1122)),
     ('n7-chow-w', f'{N7}/Fluffy Chow Chow by the Sea-3.png', None, (800, 1400)),

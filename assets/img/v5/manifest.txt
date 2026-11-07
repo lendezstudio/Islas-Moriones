@@ -254,7 +254,6 @@ n5-birds-p|640x853 1086x1448|Assets from Client/November 5/Two birds perched wit
 n5-nest-w|640x480 1086x814|Assets from Client/November 5/Three nestlings in a woven nest-4.png
 n5-nest-p|640x853 1086x1448|Assets from Client/November 5/Three hungry nestlings in a woven nest-3.png
 n7-banana-c|640x545 1090x929|edited-images/v5/n7-beach-clean.png
-n7-clown-w|800x533 1400x933|Assets from Client/November 7/WhatsApp Image 2026-11-07 at 10.55.28 AM.jpeg
 n7-clown|800x700 1400x1224|Assets from Client/November 7/WhatsApp Image 2026-11-07 at 10.55.28 AM.jpeg
 n7-chow-p|640x800 1122x1402|Assets from Client/November 7/Fluffy Chow Chow by the Sea-2.png
 n7-chow-w|800x450 1400x788|Assets from Client/November 7/Fluffy Chow Chow by the Sea-3.png
