@@ -846,9 +846,9 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
 {card(pic('biker', 'A rider in a helmet on a mountain bike on a grassy hilltop', '(min-width: 900px) 30vw, 92vw', '50% 15%'), 'Mountain bikes', 'Tour Maniwaya by mountain bike, with stops such as the Moriones Statue, Maniwaya Port, the Century Cliff Tree and the island’s old Chinese and Japanese mansion houses. A tour guide can be arranged.')}
 {card(pic('e-ecart-roses', 'The resort’s white electric cart, decorated with yellow flowers, under coconut palms', '(min-width: 900px) 30vw, 92vw', '50% 60%'), 'Maniwaya Island tour', 'A land tour by electric cart to the Moriones Statue, Maniwaya Pier, Sunong Bato, the Century Cliff Tree and the Butterfly Farm. Senior and child friendly.')}
 {card(old('exp-snorkel', 'A snorkeller swimming through clear blue water', '(min-width: 900px) 30vw, 92vw', '50% 35%'), 'Snorkelling gear', 'Masks, snorkels and fins are available.')}
-{card(old('exp-massage', 'Hands giving a relaxing back massage to a guest lying under a white towel', '(min-width: 900px) 30vw, 92vw', '60% 50%'), 'In-room massage', 'Unwind after a day outdoors with a massage in your room.')}
-{card(old('exp-karaoke', 'A microphone lit in purple stage light', '(min-width: 900px) 30vw, 92vw', '35% 50%'), 'Karaoke', 'A night in with your group and a few favourite songs.')}
-{card(old('exp-laundry', 'Clothes being loaded into a front-loading washing machine', '(min-width: 900px) 30vw, 92vw', '45% 50%'), 'Laundry service', 'For longer stays, so you can pack light.')}
+{card(pic('n7-massage', 'Hands giving a relaxing back massage to a guest lying under white towels, candles and orchids glowing behind', '(min-width: 900px) 30vw, 92vw', '50% 40%'), 'In-room massage', 'Unwind after a day outdoors with a massage in your room.')}
+{card(pic('n7-karaoke', 'A microphone on a stand, soft lights glowing behind it', '(min-width: 900px) 30vw, 92vw', '50% 50%'), 'Karaoke', 'A night in with your group and a few favourite songs.')}
+{card(pic('n7-laundry', 'A smiling staff member carrying a neat stack of freshly folded towels in the laundry room', '(min-width: 900px) 30vw, 92vw', '70% 50%'), 'Laundry service', 'For longer stays, so you can pack light.')}
         </div>
       </div>
     </section>
