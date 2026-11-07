@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '12.1'
+V = '12.2'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -889,17 +889,17 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
             <figure class="feature__media">{pic('n5-nest-w', 'Three nestlings with bright red open beaks in a woven grass nest among green leaves', '(min-width: 600px) 46vw, 46vw')}</figure>
           </div>
         </div>
-        <div class="friend" id="island-friend" data-reveal>
-          <figure class="feature__media friend__media">{pic('n5-dog-p', 'A happy bulldog on a leash lying on the warm sand by the sea at dusk', '(min-width: 800px) 40vw, 92vw', '50% 75%')}</figure>
-          <div class="friend__text">
+        <div class="friends" id="island-friend" data-reveal>
+          <header class="friends__head">
             <p class="eyebrow">Golden hour</p>
             <h3 class="h-section">Friends on the sand</h3>
             <p>Some of the best company on Maniwaya has four paws. As the day cools and the sky turns gold, you may find these happy souls out on the warm sand, tongues out and in no hurry at all.</p>
+          </header>
+          <div class="friends__row">
+            <figure class="friends__item"><div class="feature__media">{pic('n7-dog-p', 'A happy white dog standing on the sand, tongue out, with the sea and shady trees behind', '(min-width: 700px) 28vw, 44vw', '50% 100%')}</div><figcaption>Always smiling</figcaption></figure>
+            <figure class="friends__item"><div class="feature__media">{pic('n5-dog-p', 'A happy bulldog on a leash lying on the warm sand by the sea at dusk', '(min-width: 700px) 28vw, 92vw', '50% 75%')}</div><figcaption>Golden hour regular</figcaption></figure>
+            <figure class="friends__item"><div class="feature__media">{pic('n7-chow-p', 'A fluffy golden Chow Chow sitting on the sand with its eyes closed and nose in the air, the volleyball net, resort flags and sea behind', '(min-width: 700px) 28vw, 44vw')}</div><figcaption>Soaking up the sun</figcaption></figure>
           </div>
-        </div>
-        <div class="bird-photos friend-photos" data-reveal>
-          <figure class="feature__media">{pic('n7-dog-p', 'A happy white dog standing on the sand, tongue out, with the sea and shady trees behind', '46vw', '50% 100%')}</figure>
-          <figure class="feature__media">{pic('n7-chow-p', 'A fluffy golden Chow Chow sitting on the sand with its eyes closed and nose in the air, the volleyball net, resort flags and sea behind', '46vw')}</figure>
         </div>
         <div class="dive-photos" id="diving" data-reveal>
           <figure class="feature__media">{pic('n-dive-shop', 'The glass shopfront of Seagrass 200 Dive Centre under a white pergola, wetsuits hanging inside and dive gear on the terrace', '(min-width: 900px) 46vw, 92vw')}</figure>
