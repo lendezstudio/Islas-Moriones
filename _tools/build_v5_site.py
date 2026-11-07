@@ -199,7 +199,10 @@ def lb_set(name, items):
         lis.append(f'      <li data-full="{src}" data-w="{w}" data-h="{h}" data-caption="{html.escape(cap, quote=True)}" data-alt="{html.escape(alt, quote=True)}"></li>')
     return f'    <ul data-set="{name}">\n' + '\n'.join(lis) + '\n    </ul>\n'
 
-def head(title, desc, preload=''):
+SITE = 'https://islasmoriones.com/'
+SHARE_IMG = SITE + 'assets/share/islas-moriones-share-v2.jpg'
+SHARE_ALT = 'Islas Moriones Beach Resort logo over a beach view on Maniwaya Island, Marinduque'
+def head(title, desc, preload='', url=SITE):
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -212,11 +215,18 @@ def head(title, desc, preload=''):
   <meta property="og:site_name" content="Islas Moriones Beach Resort">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{desc}">
-  <meta property="og:image" content="https://lendezstudio.github.io/Islas-Moriones/assets/img/share-preview.jpg">
+  <meta property="og:url" content="{url}">
+  <meta property="og:image" content="{SHARE_IMG}">
+  <meta property="og:image:secure_url" content="{SHARE_IMG}">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="The Islas Moriones Beach Resort logo beside outrigger boats on the resort's beach">
+  <meta property="og:image:alt" content="{SHARE_ALT}">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{desc}">
+  <meta name="twitter:image" content="{SHARE_IMG}">
+  <meta name="twitter:image:alt" content="{SHARE_ALT}">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
@@ -230,8 +240,8 @@ def head(title, desc, preload=''):
 '''
 
 def page(fname, cur, title, desc, main, sets='', preload='', canonical=None, extra_head=''):
-    canon = canonical or ('https://lendezstudio.github.io/Islas-Moriones/' + ('' if fname == 'index.html' else fname))
-    h = head(title, desc, preload).replace('</head>', f'  <link rel="canonical" href="{canon}">\n{extra_head}</head>')
+    canon = canonical or (SITE + ('' if fname == 'index.html' else fname))
+    h = head(title, desc, preload, canon).replace('</head>', f'  <link rel="canonical" href="{canon}">\n{extra_head}</head>')
     body = (f'<body class="{"home" if fname == "index.html" else "inner"}">\n  <a class="skip-link" href="#main">Skip to content</a>\n\n'
             + header(cur) + f'\n  <main id="main">\n{main}\n  </main>\n\n' + FOOTER.replace(f'<li><a href="{cur}">', f'<li><a href="{cur}" aria-current="page">', 1)
             + (f'\n  <div hidden>\n{sets}  </div>\n' if sets else '') + '\n' + LIGHTBOX + '</body>\n</html>\n')
@@ -539,7 +549,7 @@ def _num(m):
 strip_set = re.sub(r'data-id="sX"', _num, strip_set)
 
 page('index.html', 'index.html', 'Islas Moriones Beach Resort | Maniwaya Island, Marinduque',
-     'Islas Moriones Beach Resort on Maniwaya Island, Marinduque: rooms and tent stays, a pool by the beach, island experiences, dining and an events venue. Check availability or message the resort.',
+     'Beachfront island stays on Maniwaya, Marinduque. Rooms and tent stays, a pool by the beach, dining and an events venue. Message us to plan your stay.',
      home, sets=strip_set,
      preload='\n  <link rel="preload" as="image" href="assets/video/islas-moriones-hero-poster.jpg" fetchpriority="high">')
 
