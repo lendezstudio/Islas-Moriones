@@ -17,7 +17,7 @@ BCOM = 'https://www.booking.com/hotel/ph/islas-moriones-beach-resort.html'
 MAIL = 'islasmoriones.cmhi@gmail.com'
 NEWTAB = '<span class="visually-hidden"> (opens in a new tab)</span>'
 BOOKTAB = '<span class="visually-hidden"> (opens the booking site in a new tab)</span>'
-V = '11.8'
+V = '12.1'
 
 # ---------- reusable verified chunks from the current pages (read before overwriting) ----------
 MENU, FAQ, PETS = rd('_tools/content/menu.html'), rd('_tools/content/faq.html'), rd('_tools/content/pets.html')
@@ -299,6 +299,7 @@ CLOSER = [  # resort photographs, no overlaid text
     ('e-cliff-tree', 'Century Cliff Tree', 'A lone wind-shaped tree on a grassy clifftop above the blue sea'),
     ('e-pool-night2', 'The pool at night', 'The white main building and its lit pool after dark, palms in the courtyard'),
     ('e-sandbar-people', 'Sandbar from above', 'Aerial view of visitors walking along a white sandbar in turquoise water, boats moored off its tip'),
+    ('n7-clown-w', 'Clownfish in the anemone', 'A red and black clownfish nestled among the golden tentacles of a sea anemone, brain coral and bright blue water behind'),
     ('e-pool-bikes', 'The pool and palms', 'The sunlit pool deck with bicycles beside the white resort buildings and palms'),
     ('e-sunglasses', 'Beach days', 'The white lifeguard tower and volleyball net on the sand, outrigger boats in the calm blue sea beyond'),
     ('e-kayak-lake', 'Crystal-clear kayak', 'A guest in a sun hat paddling a transparent kayak, mountains on the horizon'),
@@ -516,6 +517,7 @@ STRIP = [
     ('n-coconut', 'Lazy days by the pool', 'A fresh coconut with a frangipani flower beside an open book on the pool deck'),
     ('e-palad', 'Palad Sandbar (island hopping)', 'Palad Sandbar, a long white sandbar curving into turquoise water under a blue sky'),
     ('n-kayak-w', 'Crystal-clear kayak', 'Looking down through a crystal-clear kayak, life vests and a paddle over turquoise water, the island shore beyond'),
+    ('n7-dog-w', 'A friendly face on the beach', 'A happy white dog standing on the sand, tongue out, with the sea and shady trees behind'),
     ('room-suiteloft', 'Suite Loft Room', 'A loft room with a staircase above the bed'),
     ('e-rock-w', 'Sunset over the coastal rocks', 'A pitted coastal rock topped with greenery above the sea, the sun setting gold on the horizon'),
     ('e-boat-water', 'By the shore', 'A small boat moored in clear water off the beach, a resort flag on the sand'),
@@ -817,6 +819,15 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
           </div>
         </div>
 
+        <div class="feature jetskis" id="banana-boat">
+          <figure class="feature__media banana-frame" data-reveal>{pic('n7-banana-c', 'A bright yellow banana boat pulled up on the resort beach, clear kayaks on the sand and a jet ski out on the water', '(min-width: 900px) 46vw, 92vw')}</figure>
+          <div class="feature__text" data-reveal>
+            <h3 class="h-section h-section--sm">Banana boat</h3>
+            <p>Gather your group, climb on and hold tight for a splash across the water off Maniwaya. Ask the team about rides and availability for your dates.</p>
+            <a class="btn btn--line" href="ask-banana-boat.html">Ask about the banana boat</a>
+          </div>
+        </div>
+
         <div class="boats" id="boats">
           <header class="section-head section-head--split">
             <h3 class="h-section h-section--sm">Boat rentals</h3>
@@ -881,9 +892,13 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
           <figure class="feature__media friend__media">{pic('n5-dog-p', 'A happy bulldog on a leash lying on the warm sand by the sea at dusk', '(min-width: 800px) 40vw, 92vw', '50% 75%')}</figure>
           <div class="friend__text">
             <p class="eyebrow">Golden hour</p>
-            <h3 class="h-section">A friend on the sand</h3>
-            <p>Some of the best company on Maniwaya has four paws. As the day cools and the sky turns gold, you may find this happy soul stretched out on the warm sand, tongue out and in no hurry at all.</p>
+            <h3 class="h-section">Friends on the sand</h3>
+            <p>Some of the best company on Maniwaya has four paws. As the day cools and the sky turns gold, you may find these happy souls out on the warm sand, tongues out and in no hurry at all.</p>
           </div>
+        </div>
+        <div class="bird-photos friend-photos" data-reveal>
+          <figure class="feature__media">{pic('n7-dog-p', 'A happy white dog standing on the sand, tongue out, with the sea and shady trees behind', '46vw', '50% 100%')}</figure>
+          <figure class="feature__media">{pic('n7-chow-p', 'A fluffy golden Chow Chow sitting on the sand with its eyes closed and nose in the air, the volleyball net, resort flags and sea behind', '46vw')}</figure>
         </div>
         <div class="dive-photos" id="diving" data-reveal>
           <figure class="feature__media">{pic('n-dive-shop', 'The glass shopfront of Seagrass 200 Dive Centre under a white pergola, wetsuits hanging inside and dive gear on the terrace', '(min-width: 900px) 46vw, 92vw')}</figure>
@@ -1163,6 +1178,8 @@ G = [  # (category, id, caption, alt), in viewing order
     ('resort', 'tower-storm', 'Before the rain', 'The lifeguard tower under dark storm clouds'),
     ('resort', 'e-dog', 'Pet-friendly stays', 'A bulldog on a leash on the sandy resort path'),
     ('resort', 'n5-dog-p', 'A friend on the sand', 'A happy bulldog on a leash lying on the warm sand by the sea at dusk'),
+    ('resort', 'n7-dog-p', 'A friendly face on the beach', 'A happy white dog standing on the sand, tongue out, with the sea and shady trees behind'),
+    ('resort', 'n7-chow-w', 'Sun on the sand', 'A fluffy golden Chow Chow sitting on the wide sandy beach, the volleyball net, resort flags and sea behind'),
     ('stays', 'poolsuite-room', 'Pool Suite Room', 'Queen bed, sofa and kitchen in the Pool Suite Room'),
     ('stays', 'poolsuite-loft', 'Pool Suite Room, loft view', 'Looking down from the loft over the kitchen'),
     ('stays', 'poolsuite-family', 'Pool Suite Room, upstairs', 'Double beds on the upper level'),
@@ -1217,11 +1234,13 @@ G = [  # (category, id, caption, alt), in viewing order
     ('experiences', 'kayak-sign', 'Crystal-clear kayak', 'A clear kayak beside the resort sign'),
     ('experiences', 'n-dive-shop', 'Seagrass 200 Dive Centre', 'The glass shopfront of the dive centre under a white pergola'),
     ('experiences', 'n-dive-gear', 'Ready to dive', 'Scuba tanks, vests and fins on the dive centre terrace'),
+    ('experiences', 'n7-beach-p', 'Banana boat on the beach', 'A yellow banana boat and clear kayaks on the sand beneath a palm and resort flags'),
     ('experiences', 'e-tt-w', 'Table tennis', 'Paddles and a ball on the table tennis table under the palms'),
     ('experiences', 'vball', 'Beach volleyball', 'A volleyball on the sand'),
     ('experiences', 'e-vball', 'Beach volleyball', 'The volleyball net by the lifeguard tower'),
     ('experiences', 'darts-terrace-d', 'Darts', 'A guest in a grey T-shirt taking aim at a dartboard on a wooden stand on the covered terrace'),
     ('experiences', 'bikes-crop', 'Mountain bikes', 'Two mountain bikes on the rocky shore'),
+    ('experiences', 'n7-bikes-p', 'Mountain bikes, ready to ride', 'Mountain bikes hung in neat rows along a white wall in the covered walkway'),
     ('experiences', 'ecart', 'E-cart land tour', 'An electric cart on the seawall'),
     ('experiences', 'e-ecart-roses', 'Island tour by e-cart', 'The electric cart decorated with yellow flowers'),
     ('experiences', 'n-picnic', 'A picnic by the sea', 'A picnic blanket on the rocky shore above a clear cove'),
@@ -1235,6 +1254,7 @@ G = [  # (category, id, caption, alt), in viewing order
     ('experiences', 'e-turtle', 'Sea turtle', 'A sea turtle on the sand at night'),
     ('experiences', 'e-octopus', 'Blue-ringed octopus', 'A blue-ringed octopus among seagrass'),
     ('experiences', 'n5-anemone-p', 'Clownfish', 'Clownfish among the tentacles of a sea anemone'),
+    ('experiences', 'n7-clown', 'Clownfish in the anemone', 'A red and black clownfish nestled among the golden tentacles of a sea anemone, brain coral behind'),
     ('experiences', 'e-warrior-w', 'The Morion warrior beneath the reef', 'A Morion warrior bust among coral on the seabed'),
     ('experiences', 'e-sand-morion', 'A Morion in the sand', 'A sandcastle carved as a Morion warrior by the volleyball net'),
     ('experiences', 'n5-birds-p', 'Birds among the leaves', 'Two songbirds perched on a weathered branch, one with an insect in its beak'),
@@ -1445,6 +1465,12 @@ ASK = [  # file, nav parent, eyebrow, h1, lead, photo, alt, focus, facts, topic 
      'n-beach-sports', 'Jet skis pulled up on the resort beach, the white lifeguard tower and flags along the shore', '50% 50%',
      [('Where', 'On the resort beach'), ('Arranging', 'Ask the team about availability for your dates'), ('Charges', 'Arranged separately from your stay; additional charges apply')],
      'jet skis',
+     [('date', 'ride_date', 'Preferred date'), ('number', 'riders', 'Number of riders')]),
+    ('ask-banana-boat.html', 'activities.html', 'Banana boat', 'Ask about the banana boat',
+     'Gather your group for a splash across the water off Maniwaya. Send the team your date and group size and they will let you know what is available.',
+     'n7-banana-c', 'A bright yellow banana boat pulled up on the resort beach, clear kayaks on the sand and a jet ski out on the water', '50% 80%',
+     [('Where', 'On the resort beach'), ('Arranging', 'Ask the team about availability for your dates'), ('Charges', 'Arranged separately from your stay; additional charges apply')],
+     'the banana boat',
      [('date', 'ride_date', 'Preferred date'), ('number', 'riders', 'Number of riders')]),
     ('ask-dining.html', 'dining.html', 'Dining', 'Ask about meals and dining',
      'From breakfast at the Easter Sunday Café to a boodle fight for your group, tell the team what you have in mind and they will help you plan it.',

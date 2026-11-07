@@ -804,3 +804,8 @@ body.menu-open .subnav { visibility: hidden; }
 .friend__text { align-self: center; padding: clamp(28px, 5vw, 72px); }
 .friend__text p:not(.eyebrow) { margin-bottom: 0; color: var(--muted); font-size: clamp(1.06rem, 1rem + .3vw, 1.2rem); line-height: 1.7; }
 @media (min-width: 800px) { .friend { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); } }
+.friend-photos { margin-top: clamp(8px, 1.4vw, 14px); }
+.friend-photos .feature__media { aspect-ratio: 4 / 5; }
+
+/* Banana boat: wider view showing the flags and the palm */
+.banana-frame { aspect-ratio: 1090 / 929; }

@@ -18,6 +18,7 @@ MARK_L = (0, 0, 1, .89)   # landscape staff photo: trim the bottom strip holding
 MARK_P = (0, 0, 1, .92)   # portrait staff photo
 N2 = 'Assets from Client/November 2, 2026/Enhanced Photo'
 N5 = 'Assets from Client/November 5'
+N7 = 'Assets from Client/November 7'
 
 # id, source file, crop, output widths
 JOBS = [
@@ -289,6 +290,15 @@ JOBS = [
     ('n5-birds-p', f'{N5}/Two birds perched with prey-1.png', None, (640, 1086)),
     ('n5-nest-w', f'{N5}/Three nestlings in a woven nest-4.png', None, (640, 1086)),
     ('n5-nest-p', f'{N5}/Three hungry nestlings in a woven nest-3.png', None, (640, 1086)),
+    ('n7-banana-c', 'edited-images/v5/n7-beach-clean.png', (95/1672, 12/941, 1185/1672, 1), (640, 1090)),
+    ('n7-clown-w', f'{N7}/WhatsApp Image 2026-11-07 at 10.55.28 AM.jpeg', (46/1600, 381/1399, 1573/1600, 1), (800, 1400)),
+    ('n7-clown', f'{N7}/WhatsApp Image 2026-11-07 at 10.55.28 AM.jpeg', None, (800, 1400)),
+    ('n7-chow-p', f'{N7}/Fluffy Chow Chow by the Sea-2.png', None, (640, 1122)),
+    ('n7-chow-w', f'{N7}/Fluffy Chow Chow by the Sea-3.png', None, (800, 1400)),
+    ('n7-beach-p', f'{N7}/Beach Resort With Kayaks and Banana Boat-8.png', None, (640, 1122)),
+    ('n7-bikes-p', f'{N7}/Resort corridor with wall-mounted bicycles-5.png', None, (640, 1122)),
+    ('n7-dog-w', f'{N7}/Pale dog on a beach-3.png', None, (800, 1400)),
+    ('n7-dog-p', f'{N7}/Pale dog on a tropical beach-6.png', None, (640, 1122)),
     ('n-kayak-w', f'{N2}/ChatGPT Image Nov 2, 2026, 01_16_40 PM-10.png', None, (800, 1400)),
     ('n-kayak-p', f'{N2}/ChatGPT Image Nov 2, 2026, 01_16_38 PM-9.png', None, (640, 1122)),
     ('n-dive-shop-p', f'{N2}/ChatGPT Image Nov 2, 2026, 01_55_27 PM-10.png', None, (640, 1122)),
