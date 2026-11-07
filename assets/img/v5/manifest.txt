@@ -261,8 +261,6 @@ n7-beach-p|640x800 1122x1402|Assets from Client/November 7/Beach Resort With Kay
 n7-bikes-p|640x800 1122x1402|Assets from Client/November 7/Resort corridor with wall-mounted bicycles-5.png
 n7-dog-w|800x450 1400x788|Assets from Client/November 7/Pale dog on a beach-3.png
 n7-dog-p|640x800 1122x1402|Assets from Client/November 7/Pale dog on a tropical beach-6.png
-n7-massage|640x960 1024x1536|Assets from Client/November 7/WhatsApp Image 2026-11-07 at 1.02.15 PM.jpeg
-n7-laundry|800x515 1399x900|Assets from Client/November 7/WhatsApp Image 2026-11-07 at 1.02.16 PM (1).jpeg
 n7-karaoke|640x961 1066x1600|Assets from Client/November 7/WhatsApp Image 2026-11-07 at 1.02.16 PM.jpeg
 n-kayak-w|800x450 1400x788|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_16_40 PM-10.png
 n-kayak-p|640x800 1122x1402|Assets from Client/November 2, 2026/Enhanced Photo/ChatGPT Image Nov 2, 2026, 01_16_38 PM-9.png

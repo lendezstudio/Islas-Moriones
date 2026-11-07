@@ -298,8 +298,6 @@ JOBS = [
     ('n7-bikes-p', f'{N7}/Resort corridor with wall-mounted bicycles-5.png', None, (640, 1122)),
     ('n7-dog-w', f'{N7}/Pale dog on a beach-3.png', None, (800, 1400)),
     ('n7-dog-p', f'{N7}/Pale dog on a tropical beach-6.png', None, (640, 1122)),
-    ('n7-massage', f'{N7}/WhatsApp Image 2026-11-07 at 1.02.15 PM.jpeg', None, (640, 1024)),
-    ('n7-laundry', f'{N7}/WhatsApp Image 2026-11-07 at 1.02.16 PM (1).jpeg', None, (800, 1399)),
     ('n7-karaoke', f'{N7}/WhatsApp Image 2026-11-07 at 1.02.16 PM.jpeg', None, (640, 1066)),
     ('n-kayak-w', f'{N2}/ChatGPT Image Nov 2, 2026, 01_16_40 PM-10.png', None, (800, 1400)),
     ('n-kayak-p', f'{N2}/ChatGPT Image Nov 2, 2026, 01_16_38 PM-9.png', None, (640, 1122)),
