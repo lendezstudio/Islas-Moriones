@@ -5,11 +5,14 @@ frosted, softly faded area carries the official logo and two lines of text. The 
 rendered with Playwright (so the site's own Google Fonts are used), then saved as an
 optimised JPG with Pillow.
 
-Layout: the picnic by the clear cove, with a light frosted haze in the centre carrying
+Photo style: the picnic by the clear cove, with a light frosted haze in the centre carrying
 the logo, "Come for the island, stay for the memories." and "Maniwaya Island, Marinduque".
 Centred, so the text survives apps that crop the thumbnail to a square.
 
-Run from the project root:  python scripts/make-share-image.py [output.jpg]
+Brand-only styles (logo centred on a solid colour, no photo): teal, sand.
+The live share image is 'teal' (the default): the white logo on the brand teal.
+
+Run from the project root:  python scripts/make-share-image.py [teal|sand|photo] [output.jpg]
 Needs: pip install playwright pillow  and  python -m playwright install chromium
 """
 import base64, io, os, sys
@@ -18,7 +21,7 @@ from playwright.sync_api import sync_playwright
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LOGO = os.path.join(ROOT, 'assets', 'brand', 'logo-islas-moriones-teal-760.png')  # official logo, used as is
-OUT = os.path.join(ROOT, 'assets', 'share', 'islas-moriones-share-v2.jpg')
+OUT = os.path.join(ROOT, 'assets', 'share', 'islas-moriones-share-v3.jpg')
 W, H = 1200, 630
 MAX_BYTES = 300 * 1024
 
@@ -51,6 +54,21 @@ def layout():
     <div class="where">Maniwaya Island, Marinduque</div>
   </div>'''
 
+def brand_layout(bg, logo_file):
+    """Logo only, centred on a solid brand colour (no photo)."""
+    logo = os.path.join(ROOT, 'assets', 'brand', logo_file)
+    return lambda: f'''<style>{BASE}
+  body {{ background: {bg}; display: flex; align-items: center; justify-content: center; }}
+  img {{ width: 560px; height: auto; display: block; }}
+</style></head><body>
+  <img src="{data_uri(logo, 'image/png')}" alt="">'''
+
+LAYOUTS = {
+    'photo': layout,
+    'teal': brand_layout('#009891', 'logo-islas-moriones-white-760.png'),  # white logo on the brand teal
+    'sand': brand_layout('#F1E9DC', 'logo-islas-moriones-teal-760.png'),   # teal logo on the site's sand
+}
+
 def render(layout, out):
     html = f'<!doctype html><html><head><meta charset="utf-8">{FONTS}{layout()}</body></html>'
     with sync_playwright() as p:
@@ -73,5 +91,7 @@ def render(layout, out):
     print(f'{os.path.relpath(out, ROOT)}  {W}x{H}  {buf.tell() // 1024} KB  (quality {q})')
 
 if __name__ == '__main__':
-    out = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else OUT
-    render(layout, out)
+    args = sys.argv[1:]
+    style = args.pop(0) if args and args[0] in LAYOUTS else 'teal'
+    out = os.path.abspath(args[0]) if args else OUT
+    render(LAYOUTS[style], out)

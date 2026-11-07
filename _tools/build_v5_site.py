@@ -200,8 +200,8 @@ def lb_set(name, items):
     return f'    <ul data-set="{name}">\n' + '\n'.join(lis) + '\n    </ul>\n'
 
 SITE = 'https://islasmoriones.com/'
-SHARE_IMG = SITE + 'assets/share/islas-moriones-share-v2.jpg'
-SHARE_ALT = 'Islas Moriones Beach Resort logo over a beach view on Maniwaya Island, Marinduque'
+SHARE_IMG = SITE + 'assets/share/islas-moriones-share-v3.jpg'
+SHARE_ALT = 'The Islas Moriones Beach Resort logo in white on a teal background'
 def head(title, desc, preload='', url=SITE):
     return f'''<!doctype html>
 <html lang="en">
