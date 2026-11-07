@@ -847,7 +847,7 @@ exp = intro('Experiences', 'Make the most of island days', 'Spend time enjoying 
 {card(pic('e-ecart-roses', 'The resort’s white electric cart, decorated with yellow flowers, under coconut palms', '(min-width: 900px) 30vw, 92vw', '50% 60%'), 'Maniwaya Island tour', 'A land tour by electric cart to the Moriones Statue, Maniwaya Pier, Sunong Bato, the Century Cliff Tree and the Butterfly Farm. Senior and child friendly.')}
 {card(old('exp-snorkel', 'A snorkeller swimming through clear blue water', '(min-width: 900px) 30vw, 92vw', '50% 35%'), 'Snorkelling gear', 'Masks, snorkels and fins are available.')}
 {card(old('exp-massage', 'Hands giving a relaxing back massage to a guest lying under a white towel', '(min-width: 900px) 30vw, 92vw', '60% 50%'), 'In-room massage', 'Unwind after a day outdoors with a massage in your room.')}
-{card(pic('n7-stage', 'A small round stage with speakers, two stools and a microphone stand in front of a dark geometric breeze-block wall, beneath a glass roof', '(min-width: 900px) 30vw, 92vw', '35% 50%'), 'Karaoke', 'A night in with your group and a few favourite songs.')}
+{card(pic('n7-singer', 'A guest sitting on a stool on the small stage, singing into a microphone in front of a dark geometric breeze-block wall', '(min-width: 900px) 30vw, 92vw', '50% 53.5%'), 'Karaoke', 'A night in with your group and a few favourite songs.')}
 {card(old('exp-laundry', 'Clothes being loaded into a front-loading washing machine', '(min-width: 900px) 30vw, 92vw', '45% 50%'), 'Laundry service', 'For longer stays, so you can pack light.')}
         </div>
       </div>
